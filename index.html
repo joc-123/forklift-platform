@@ -68,6 +68,253 @@
 <button id="battery_size_btn">Detect Battery Size</button>
 
 <div id="battery_size_result"></div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
+/* ================= CONFIG ================= */
+
+const ANON_KEY = "PASTE_YOUR_REAL_SUPABASE_ANON_KEY_HERE";
+
+const ENDPOINT_DECODE    = "https://qoleyzrhexkddryfxznz.supabase.co/rest/v1/rpc/decode_forklift";
+const ENDPOINT_MODELS    = "https://qoleyzrhexkddryfxznz.supabase.co/rest/v1/rpc/get_models";
+const ENDPOINT_BATT_DATE = "https://qoleyzrhexkddryfxznz.supabase.co/rest/v1/rpc/decode_battery";
+const ENDPOINT_BATT_SIZE = "https://qoleyzrhexkddryfxznz.supabase.co/rest/v1/rpc/detect_battery_size";
+const ENDPOINT_BATT_MFGS = "https://qoleyzrhexkddryfxznz.supabase.co/rest/v1/rpc/get_battery_manufacturers";
+
+/* ================= HELPER ================= */
+
+function el(id) {
+  return document.getElementById(id);
+}
+
+/* ================= LOAD FORKLIFT MODELS ================= */
+
+async function loadModels() {
+  const manufacturerEl = el("manufacturer");
+  const modelSelect = el("model");
+  if (!manufacturerEl || !modelSelect) return;
+
+  modelSelect.innerHTML = "";
+
+  try {
+    const response = await fetch(ENDPOINT_MODELS, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "apikey": ANON_KEY,
+        "Authorization": "Bearer " + ANON_KEY
+      },
+      body: JSON.stringify({ manufacturer_input: manufacturerEl.value })
+    });
+
+    const data = await response.json();
+    if (!data) return;
+
+    data.forEach(model => {
+      const opt = document.createElement("option");
+      opt.value = model;
+      opt.text = model;
+      modelSelect.appendChild(opt);
+    });
+
+  } catch (err) {
+    console.error("Model load error:", err);
+  }
+}
+
+/* ================= LOAD BATTERY MANUFACTURERS ================= */
+
+async function loadBatteryManufacturers() {
+  const select = el("battery_manufacturer");
+  if (!select) return;
+
+  try {
+    const response = await fetch(ENDPOINT_BATT_MFGS, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "apikey": ANON_KEY,
+        "Authorization": "Bearer " + ANON_KEY
+      },
+      body: JSON.stringify({})
+    });
+
+    const data = await response.json();
+    if (!data) return;
+
+    select.innerHTML = "";
+
+    data.forEach(name => {
+      const opt = document.createElement("option");
+      opt.value = name;
+      opt.text = name;
+      select.appendChild(opt);
+    });
+
+  } catch (err) {
+    console.error("Battery manufacturer load error:", err);
+  }
+}
+
+/* ================= FORKLIFT YEAR DECODER ================= */
+
+async function decodeForkliftYear() {
+
+  const manufacturer = el("manufacturer")?.value;
+  const model = el("model")?.value;
+  const serial = el("serial")?.value.trim();
+
+  if (!manufacturer || !model || !serial) {
+    el("result").innerHTML = "<b>Please enter model and serial.</b>";
+    return;
+  }
+
+  try {
+    const response = await fetch(ENDPOINT_DECODE, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "apikey": ANON_KEY,
+        "Authorization": "Bearer " + ANON_KEY
+      },
+      body: JSON.stringify({
+        manufacturer_input: manufacturer,
+        model_input: model,
+        serial_input: serial
+      })
+    });
+
+    const data = await response.json();
+
+    el("result").innerHTML = `
+      <div style="padding:15px;border:1px solid #ccc;border-radius:6px;">
+        <strong>${manufacturer} ${model}</strong><br>
+        Manufacture Year: ${data.manufacture_year ?? "Unknown"}
+      </div>
+    `;
+
+  } catch (err) {
+    console.error("Forklift decode error:", err);
+    el("result").innerHTML = "Error decoding forklift.";
+  }
+}
+
+/* ================= BATTERY DATE DECODER ================= */
+
+async function decodeBatteryDate() {
+
+  const manufacturer = el("battery_manufacturer")?.value;
+  const serial = el("battery_serial")?.value.trim();
+
+  if (!manufacturer || !serial) {
+    el("battery_date_result").innerHTML = "<b>Please enter battery serial.</b>";
+    return;
+  }
+
+  try {
+    const response = await fetch(ENDPOINT_BATT_DATE, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "apikey": ANON_KEY,
+        "Authorization": "Bearer " + ANON_KEY
+      },
+      body: JSON.stringify({
+        manufacturer_input: manufacturer,
+        serial_input: serial
+      })
+    });
+
+    const data = await response.json();
+
+    el("battery_date_result").innerHTML = `
+      <div style="padding:15px;border:1px solid #ccc;border-radius:6px;">
+        <strong>Battery ${data.manufacturer}</strong><br>
+        Manufacture Year: ${data.manufacture_year ?? "Unknown"}<br>
+        ${data.manufacture_month ? "Month: " + data.manufacture_month + "<br>" : ""}
+        ${data.manufacture_month_range ? "Month Range: " + data.manufacture_month_range + "<br>" : ""}
+        ${data.facility_code ? "Facility: " + data.facility_code : ""}
+      </div>
+    `;
+
+  } catch (err) {
+    console.error("Battery date error:", err);
+    el("battery_date_result").innerHTML = "Error decoding battery.";
+  }
+}
+
+/* ================= BATTERY SIZE DETECTOR ================= */
+
+async function detectBatterySize() {
+
+  const manufacturer = el("battery_forklift_manufacturer")?.value;
+  const model = el("battery_model")?.value.trim();
+
+  if (!manufacturer || !model) {
+    el("battery_size_result").innerHTML =
+      "<b>Please enter forklift manufacturer and model.</b>";
+    return;
+  }
+
+  try {
+    const response = await fetch(ENDPOINT_BATT_SIZE, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "apikey": ANON_KEY,
+        "Authorization": "Bearer " + ANON_KEY
+      },
+      body: JSON.stringify({
+        manufacturer_input: manufacturer,
+        model_input: model,
+        year_input: null
+      })
+    });
+
+    const data = await response.json();
+
+    if (!data.found) {
+      el("battery_size_result").innerHTML =
+        "<p>No battery fitment found.</p>";
+      return;
+    }
+
+    let html = "";
+
+    data.battery_options.forEach((opt, i) => {
+      html += `
+        <div style="margin-top:10px;padding:10px;border:1px solid #ccc;border-radius:6px;">
+          <strong>Option ${i + 1}</strong><br>
+          Voltage: ${opt.voltage}V<br>
+          Amp Hour: ${opt.amp_hour_range}<br>
+          Tray: ${opt.tray_dimensions}<br>
+          ${opt.notes ? "Notes: " + opt.notes : ""}
+        </div>
+      `;
+    });
+
+    el("battery_size_result").innerHTML = html;
+
+  } catch (err) {
+    console.error("Battery size error:", err);
+    el("battery_size_result").innerHTML =
+      "<p>Error detecting battery size.</p>";
+  }
+}
+
+/* ================= EVENT BINDINGS ================= */
+
+el("btn")?.addEventListener("click", decodeForkliftYear);
+el("battery_date_btn")?.addEventListener("click", decodeBatteryDate);
+el("battery_size_btn")?.addEventListener("click", detectBatterySize);
+el("manufacturer")?.addEventListener("change", loadModels);
+
+/* ================= INITIAL LOAD ================= */
+
+loadModels();
+loadBatteryManufacturers();
+
+});
+</script>
 </body>
 </html>
