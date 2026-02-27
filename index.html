@@ -161,29 +161,31 @@ document.addEventListener("DOMContentLoaded", function() {
 
     /* ================= RAYMOND SERIAL LOGIC ================= */
 
-if (manufacturer === "Raymond") {
+if (mfg === "Raymond") {
+  console.log("✅ RAYMOND BRANCH HIT. Serial =", serial);
 
-  // Format: 520-17-05448
   const match = serial.match(/^(\d{3})-(\d{2})-/);
 
-  if (!match) {
-    el("result").innerHTML = "Invalid Raymond serial format.";
+  console.log("✅ RAYMOND REGEX MATCH =", match);
+
+  if (match) {
+    const modelCode = match[1];
+    const yearDigits = parseInt(match[2], 10);
+
+    const manufactureYear =
+      yearDigits <= (new Date().getFullYear() % 100)
+        ? 2000 + yearDigits
+        : 1900 + yearDigits;
+
+    el("result").innerHTML =
+      "<b>Raymond " + modelCode + "</b><br>Year: " + manufactureYear;
+
     return;
   }
 
-  const modelCode = match[1];   // 520
-  const yearCode = parseInt(match[2], 10); // 17
-
-  const currentYY = new Date().getFullYear() % 100;
-
-  const manufactureYear =
-    yearCode <= currentYY
-      ? 2000 + yearCode
-      : 1900 + yearCode;
-
-  el("result").innerHTML =
-    "<b>Raymond " + modelCode + "</b><br>Year: " + manufactureYear;
-
+  el("result").innerHTML = "Invalid Raymond serial format (expected 520-17-XXXXX).";
+  return;
+}
   return; // STOP — do not call database
 }
     const res = await fetch(ENDPOINT_DECODE,{
