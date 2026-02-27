@@ -159,6 +159,33 @@ document.addEventListener("DOMContentLoaded", function() {
       return;
     }
 
+    /* ================= RAYMOND SERIAL LOGIC ================= */
+
+if (manufacturer === "Raymond") {
+
+  // Format: 520-17-05448
+  const match = serial.match(/^(\d{3})-(\d{2})-/);
+
+  if (!match) {
+    el("result").innerHTML = "Invalid Raymond serial format.";
+    return;
+  }
+
+  const modelCode = match[1];   // 520
+  const yearCode = parseInt(match[2], 10); // 17
+
+  const currentYY = new Date().getFullYear() % 100;
+
+  const manufactureYear =
+    yearCode <= currentYY
+      ? 2000 + yearCode
+      : 1900 + yearCode;
+
+  el("result").innerHTML =
+    "<b>Raymond " + modelCode + "</b><br>Year: " + manufactureYear;
+
+  return; // STOP — do not call database
+}
     const res = await fetch(ENDPOINT_DECODE,{
       method:"POST",
       headers:{
