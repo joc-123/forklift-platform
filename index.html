@@ -78,7 +78,8 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-
+window.__APP_LOADED__ = true;
+console.log("✅ APP LOADED");
 const ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFvbGV5enJoZXhrZGRyeWZ4em56Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE1OTg3NDQsImV4cCI6MjA4NzE3NDc0NH0.vYwvjNDE6Gistzk-5k2DDXIxmfr8wrnyXkvhMB0Ciuk";
 
 const ENDPOINT_DECODE = "https://qoleyzrhexkddryfxznz.supabase.co/rest/v1/rpc/decode_forklift";
@@ -166,7 +167,11 @@ async function decodeForkliftYear(){
 
 el("btn").addEventListener("click", decodeForkliftYear);
 el("manufacturer").addEventListener("change", loadModels);
-
+console.log("✅ EVENTS BOUND", {
+  btn: !!document.getElementById("btn"),
+  battery_date_btn: !!document.getElementById("battery_date_btn"),
+  battery_size_btn: !!document.getElementById("battery_size_btn")
+});
 loadModels();
 loadBatteryManufacturers();
 
