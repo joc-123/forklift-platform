@@ -43,7 +43,7 @@
 <br><br>
 
 <label>Battery Serial:</label>
-<input type="text" id="battery_serial">
+<input type="text" id="battery_serial" placeholder="Enter battery serial">
 
 <br><br>
 
@@ -68,7 +68,7 @@
 <br><br>
 
 <label>Forklift Model:</label>
-<input type="text" id="battery_model">
+<input type="text" id="battery_model" placeholder="e.g., 8FBCU25">
 
 <br><br>
 
@@ -77,25 +77,25 @@
 <div id="battery_size_result"></div>
 
 <script>
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
 
-  console.log("✅ APP LOADED");
+  /* ================= CONFIG ================= */
 
   const ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFvbGV5enJoZXhrZGRyeWZ4em56Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE1OTg3NDQsImV4cCI6MjA4NzE3NDc0NH0.vYwvjNDE6Gistzk-5k2DDXIxmfr8wrnyXkvhMB0Ciuk";
 
-  const ENDPOINT_DECODE    = "https://qoleyzrhexkddryfxznz.supabase.co/rest/v1/rpc/decode_forklift";
-  const ENDPOINT_MODELS    = "https://qoleyzrhexkddryfxznz.supabase.co/rest/v1/rpc/get_models";
-  const ENDPOINT_BATT_DATE = "https://qoleyzrhexkddryfxznz.supabase.co/rest/v1/rpc/decode_battery";
-  const ENDPOINT_BATT_SIZE = "https://qoleyzrhexkddryfxznz.supabase.co/rest/v1/rpc/detect_battery_size";
-  const ENDPOINT_BATT_MFGS = "https://qoleyzrhexkddryfxznz.supabase.co/rest/v1/rpc/get_battery_manufacturers";
+  const ENDPOINT_DECODE      = "https://qoleyzrhexkddryfxznz.supabase.co/rest/v1/rpc/decode_forklift";
+  const ENDPOINT_MODELS      = "https://qoleyzrhexkddryfxznz.supabase.co/rest/v1/rpc/get_models";
+  const ENDPOINT_BATT_DATE   = "https://qoleyzrhexkddryfxznz.supabase.co/rest/v1/rpc/decode_battery";
+  const ENDPOINT_BATT_SIZE   = "https://qoleyzrhexkddryfxznz.supabase.co/rest/v1/rpc/detect_battery_size";
+  const ENDPOINT_BATT_MFGS   = "https://qoleyzrhexkddryfxznz.supabase.co/rest/v1/rpc/get_battery_manufacturers";
 
   function el(id){ return document.getElementById(id); }
 
-  async function loadModels(){
-    const manufacturerEl = el("manufacturer");
-    const modelSelect = el("model");
-    if (!manufacturerEl || !modelSelect) return;
+  /* ================= LOAD FORKLIFT MODELS ================= */
 
+  async function loadModels() {
+    const manufacturer = el("manufacturer").value;
+    const modelSelect = el("model");
     modelSelect.innerHTML = "";
 
     const res = await fetch(ENDPOINT_MODELS,{
@@ -105,25 +105,26 @@ document.addEventListener("DOMContentLoaded", function() {
         "apikey":ANON_KEY,
         "Authorization":"Bearer "+ANON_KEY
       },
-      body:JSON.stringify({ manufacturer_input: manufacturerEl.value })
+      body:JSON.stringify({ manufacturer_input: manufacturer })
     });
 
     const data = await res.json();
 
-    if (!res.ok) { console.error("get_models failed:", res.status, data); return; }
-    if (!Array.isArray(data)) { console.error("get_models unexpected:", data); return; }
+    if (!res.ok || !Array.isArray(data)) return;
 
-    data.forEach(m=>{
+    data.forEach(model=>{
       const opt = document.createElement("option");
-      opt.value = m;
-      opt.text = m;
+      opt.value = model;
+      opt.text = model;
       modelSelect.appendChild(opt);
     });
   }
 
+  /* ================= LOAD BATTERY MANUFACTURERS ================= */
+
   async function loadBatteryManufacturers(){
     const select = el("battery_manufacturer");
-    if (!select) return;
+    select.innerHTML = "";
 
     const res = await fetch(ENDPOINT_BATT_MFGS,{
       method:"POST",
@@ -136,80 +137,83 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     const data = await res.json();
+    if (!res.ok || !Array.isArray(data)) return;
 
-    if (!res.ok) { console.error("get_battery_manufacturers failed:", res.status, data); return; }
-    if (!Array.isArray(data)) { console.error("get_battery_manufacturers unexpected:", data); return; }
-
-    select.innerHTML = "";
-    data.forEach(n=>{
+    data.forEach(name=>{
       const opt=document.createElement("option");
-      opt.value=n;
-      opt.text=n;
+      opt.value=name;
+      opt.text=name;
       select.appendChild(opt);
     });
   }
 
-async function decodeForkliftYear() {
-  const mfg = el("manufacturer")?.value;
-  const model = el("model")?.value;
-  const serial = el("serial")?.value.trim();
+  /* ================= FORKLIFT YEAR ================= */
 
-  if (!mfg || !model || !serial) {
-    el("result").innerHTML = "Enter model + serial.";
-    return;
-  }
+  async function decodeForkliftYear(){
 
-  // ================= RAYMOND SERIAL LOGIC =================
-  if (mfg === "Raymond") {
-    const match = serial.match(/^(\d{3})-(\d{2})-/);
+    const mfg = el("manufacturer").value;
+    const model = el("model").value;
+    const serial = el("serial").value.trim();
 
-    if (!match) {
-      el("result").innerHTML = "Invalid Raymond serial format (expected 520-17-XXXXX).";
+    if (!mfg || !model || !serial){
+      el("result").innerHTML = "Enter model + serial.";
       return;
     }
 
-    const modelCode = match[1];
-    const yearDigits = parseInt(match[2], 10);
-    const currentYY = new Date().getFullYear() % 100;
+    // Raymond local decoding
+    if (mfg === "Raymond") {
 
-    const manufactureYear =
-      yearDigits <= currentYY ? (2000 + yearDigits) : (1900 + yearDigits);
+      const match = serial.match(/^(\d{3})-(\d{2})-/);
 
-    el("result").innerHTML = `<b>Raymond ${modelCode}</b><br>Year: ${manufactureYear}`;
-    return; // stop here; do not call Supabase
+      if (!match){
+        el("result").innerHTML = "Invalid Raymond serial format (520-17-XXXXX)";
+        return;
+      }
+
+      const yearDigits = parseInt(match[2],10);
+      const currentYY = new Date().getFullYear() % 100;
+
+      const year = yearDigits <= currentYY
+        ? 2000 + yearDigits
+        : 1900 + yearDigits;
+
+      el("result").innerHTML = "<b>Raymond</b><br>Year: "+year;
+      return;
+    }
+
+    const res = await fetch(ENDPOINT_DECODE,{
+      method:"POST",
+      headers:{
+        "Content-Type":"application/json",
+        "apikey":ANON_KEY,
+        "Authorization":"Bearer "+ANON_KEY
+      },
+      body:JSON.stringify({
+        manufacturer_input:mfg,
+        model_input:model,
+        serial_input:serial
+      })
+    });
+
+    const data = await res.json();
+    if (!res.ok){
+      el("result").innerHTML = "Decode error";
+      return;
+    }
+
+    el("result").innerHTML =
+      "<b>"+mfg+" "+model+"</b><br>Year: "+(data.manufacture_year || "Unknown");
   }
 
-  // ================= DATABASE FALLBACK =================
-  const res = await fetch(ENDPOINT_DECODE, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "apikey": ANON_KEY,
-      "Authorization": "Bearer " + ANON_KEY
-    },
-    body: JSON.stringify({
-      manufacturer_input: mfg,
-      model_input: model,
-      serial_input: serial
-    })
-  });
+  /* ================= BATTERY DATE ================= */
 
-  const data = await res.json();
-
-  if (!res.ok) {
-    console.error("decode_forklift failed:", res.status, data);
-    el("result").innerHTML = data.message || "Decode error";
-    return;
-  }
-
-  el("result").innerHTML = `<b>${mfg} ${model}</b><br>Year: ${data.manufacture_year ?? "Unknown"}`;
-}
   async function decodeBatteryDate(){
-    const mfg = el("battery_manufacturer")?.value;
-    const serial = el("battery_serial")?.value.trim();
 
-    if(!mfg || !serial){
-      el("battery_date_result").innerHTML = "Enter battery manufacturer + serial.";
+    const mfg = el("battery_manufacturer").value;
+    const serial = el("battery_serial").value.trim();
+
+    if (!mfg || !serial){
+      el("battery_date_result").innerHTML = "Enter battery serial.";
       return;
     }
 
@@ -220,27 +224,31 @@ async function decodeForkliftYear() {
         "apikey":ANON_KEY,
         "Authorization":"Bearer "+ANON_KEY
       },
-      body:JSON.stringify({ manufacturer_input:mfg, serial_input:serial })
+      body:JSON.stringify({
+        manufacturer_input:mfg,
+        serial_input:serial
+      })
     });
 
     const data = await res.json();
-
-    if(!res.ok){ console.error("decode_battery failed:", res.status, data); el("battery_date_result").innerHTML = data.message || "Battery decode error"; return; }
+    if (!res.ok){
+      el("battery_date_result").innerHTML = "Battery decode error";
+      return;
+    }
 
     el("battery_date_result").innerHTML =
-      `<b>${data.manufacturer}</b><br>
-       Year: ${data.manufacture_year ?? "Unknown"}<br>
-       ${data.manufacture_month ? "Month: "+data.manufacture_month+"<br>" : ""}
-       ${data.manufacture_month_range ? "Month Range: "+data.manufacture_month_range+"<br>" : ""}
-       ${data.facility_code ? "Facility: "+data.facility_code : ""}`;
+      "<b>"+data.manufacturer+"</b><br>Year: "+(data.manufacture_year || "Unknown");
   }
 
-  async function detectBatterySize(){
-    const mfg = el("battery_forklift_manufacturer")?.value;
-    const model = el("battery_model")?.value.trim();
+  /* ================= BATTERY SIZE ================= */
 
-    if(!mfg || !model){
-      el("battery_size_result").innerHTML = "Enter forklift manufacturer + model.";
+  async function detectBatterySize(){
+
+    const mfg = el("battery_forklift_manufacturer").value;
+    const model = el("battery_model").value.trim();
+
+    if (!mfg || !model){
+      el("battery_size_result").innerHTML = "Enter forklift model.";
       return;
     }
 
@@ -251,36 +259,36 @@ async function decodeForkliftYear() {
         "apikey":ANON_KEY,
         "Authorization":"Bearer "+ANON_KEY
       },
-      body:JSON.stringify({ manufacturer_input:mfg, model_input:model, year_input:null })
+      body:JSON.stringify({
+        manufacturer_input:mfg,
+        model_input:model,
+        year_input:null
+      })
     });
 
     const data = await res.json();
-
-    if(!res.ok){ console.error("detect_battery_size failed:", res.status, data); el("battery_size_result").innerHTML = data.message || "Battery size error"; return; }
-
-    if(!data.found){
+    if (!res.ok || !data.found){
       el("battery_size_result").innerHTML = "No battery fitment found.";
       return;
     }
 
     let html = "";
     data.battery_options.forEach((opt,i)=>{
-      html += `<div style="margin:8px 0;padding:8px;border:1px solid #ccc;border-radius:6px;">
-        <b>Option ${i+1}</b><br>
-        Voltage: ${opt.voltage}V<br>
-        AH: ${opt.amp_hour_range}<br>
-        Tray: ${opt.tray_dimensions}<br>
-        ${opt.notes ? "Notes: "+opt.notes : ""}
-      </div>`;
+      html += "<div><b>Option "+(i+1)+"</b><br>"+
+              "Voltage: "+opt.voltage+"V<br>"+
+              "AH: "+opt.amp_hour_range+"<br>"+
+              "Tray: "+opt.tray_dimensions+"</div><hr>";
     });
 
     el("battery_size_result").innerHTML = html;
   }
 
-  el("btn")?.addEventListener("click", decodeForkliftYear);
-  el("battery_date_btn")?.addEventListener("click", decodeBatteryDate);
-  el("battery_size_btn")?.addEventListener("click", detectBatterySize);
-  el("manufacturer")?.addEventListener("change", loadModels);
+  /* ================= EVENTS ================= */
+
+  el("btn").addEventListener("click", decodeForkliftYear);
+  el("battery_date_btn").addEventListener("click", decodeBatteryDate);
+  el("battery_size_btn").addEventListener("click", detectBatterySize);
+  el("manufacturer").addEventListener("change", loadModels);
 
   loadModels();
   loadBatteryManufacturers();
