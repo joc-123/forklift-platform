@@ -43,7 +43,7 @@
 <br><br>
 
 <label>Battery Serial:</label>
-<input type="text" id="battery_serial">
+<input type="text" id="battery_serial" placeholder="Enter battery serial">
 
 <br><br>
 
@@ -68,7 +68,7 @@
 <br><br>
 
 <label>Forklift Model:</label>
-<input type="text" id="battery_model">
+<input type="text" id="battery_model" placeholder="e.g., 8FBCU25">
 
 <br><br>
 
@@ -160,32 +160,42 @@ async function decodeForkliftYear(){
 
   const mfg = el("manufacturer").value;
   const model = el("model").value;
-  const serial = el("serial").value.trim();
+  const serialRaw = el("serial").value;
+  const serial = (serialRaw || "").trim();
 
   if(!mfg || !model || !serial){
     el("result").innerHTML="Enter model + serial.";
     return;
   }
 
-  /* ===== Raymond Local Serial Logic ===== */
-  if(mfg==="Raymond"){
-    const match = serial.match(/^(\d{3})-(\d{2})-/);
+  /* ===== Raymond Serial Logic (Final Locked Version) =====
+     Supports:
+       520-17-05448
+       52017-05448
+       520 17 05448
+       5201705448
+  */
+  if(mfg === "Raymond"){
+
+    const cleaned = serial.replace(/\s+/g, "").toUpperCase();
+    const match = cleaned.match(/^(\d{3})[- ]?(\d{2})[- ]?/);
 
     if(!match){
-      el("result").innerHTML="Invalid Raymond serial format (520-17-XXXXX).";
+      el("result").innerHTML = "Invalid Raymond serial format (expected 520-17-XXXXX).";
       return;
     }
 
-    const yearDigits=parseInt(match[2],10);
-    const currentYY=new Date().getFullYear()%100;
+    const modelCode = match[1];
+    const yearDigits = parseInt(match[2], 10);
+    const currentYY = new Date().getFullYear() % 100;
 
-    const manufactureYear=
-      yearDigits<=currentYY ? 2000+yearDigits : 1900+yearDigits;
+    const manufactureYear =
+      yearDigits <= currentYY ? (2000 + yearDigits) : (1900 + yearDigits);
 
-    el("result").innerHTML=
-      "<b>Raymond "+match[1]+"</b><br>Year: "+manufactureYear;
+    el("result").innerHTML =
+      "<b>Raymond " + modelCode + "</b><br>Year: " + manufactureYear;
 
-    return;
+    return; // no Supabase call for Raymond
   }
 
   /* ===== Supabase Fallback ===== */
@@ -218,7 +228,7 @@ async function decodeForkliftYear(){
 
 async function decodeBatteryDate(){
   const mfg=el("battery_manufacturer").value;
-  const serial=el("battery_serial").value.trim();
+  const serial=(el("battery_serial").value||"").trim();
 
   if(!mfg||!serial){
     el("battery_date_result").innerHTML="Enter battery manufacturer + serial.";
@@ -243,15 +253,14 @@ async function decodeBatteryDate(){
   }
 
   el("battery_date_result").innerHTML=
-    "<b>"+data.manufacturer+"</b><br>Year: "+
-    (data.manufacture_year||"Unknown");
+    "<b>"+data.manufacturer+"</b><br>Year: "+(data.manufacture_year||"Unknown");
 }
 
 /* ================= BATTERY SIZE ================= */
 
 async function detectBatterySize(){
   const mfg=el("battery_forklift_manufacturer").value;
-  const model=el("battery_model").value.trim();
+  const model=(el("battery_model").value||"").trim();
 
   if(!mfg||!model){
     el("battery_size_result").innerHTML="Enter forklift manufacturer + model.";
