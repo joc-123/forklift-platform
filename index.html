@@ -159,34 +159,27 @@ async function decodeForkliftYear() {
     return;
   }
 
-  /* ================= RAYMOND SERIAL LOGIC ================= */
+  // ================= RAYMOND SERIAL LOGIC =================
   if (mfg === "Raymond") {
-    console.log("✅ RAYMOND BRANCH HIT. Serial =", serial);
-
     const match = serial.match(/^(\d{3})-(\d{2})-/);
-    console.log("✅ RAYMOND REGEX MATCH =", match);
 
-    if (match) {
-      const modelCode = match[1];
-      const yearDigits = parseInt(match[2], 10);
-
-      const manufactureYear =
-        yearDigits <= (new Date().getFullYear() % 100)
-          ? 2000 + yearDigits
-          : 1900 + yearDigits;
-
-      el("result").innerHTML =
-        "<b>Raymond " + modelCode + "</b><br>Year: " + manufactureYear;
-
-      return; // ✅ stop here, DO NOT hit database
+    if (!match) {
+      el("result").innerHTML = "Invalid Raymond serial format (expected 520-17-XXXXX).";
+      return;
     }
 
-    el("result").innerHTML =
-      "Invalid Raymond serial format (expected 520-17-XXXXX).";
-    return; // ✅ stop here too
+    const modelCode = match[1];
+    const yearDigits = parseInt(match[2], 10);
+    const currentYY = new Date().getFullYear() % 100;
+
+    const manufactureYear =
+      yearDigits <= currentYY ? (2000 + yearDigits) : (1900 + yearDigits);
+
+    el("result").innerHTML = `<b>Raymond ${modelCode}</b><br>Year: ${manufactureYear}`;
+    return; // stop here; do not call Supabase
   }
 
-  /* ================= DATABASE FALLBACK ================= */
+  // ================= DATABASE FALLBACK =================
   const res = await fetch(ENDPOINT_DECODE, {
     method: "POST",
     headers: {
@@ -209,33 +202,8 @@ async function decodeForkliftYear() {
     return;
   }
 
-  el("result").innerHTML =
-    `<b>${mfg} ${model}</b><br>Year: ${data.manufacture_year ?? "Unknown"}`;
+  el("result").innerHTML = `<b>${mfg} ${model}</b><br>Year: ${data.manufacture_year ?? "Unknown"}`;
 }
-  }
-
-  el("result").innerHTML = "Invalid Raymond serial format (expected 520-17-XXXXX).";
-  return;
-}
-  return; // STOP — do not call database
-}
-    const res = await fetch(ENDPOINT_DECODE,{
-      method:"POST",
-      headers:{
-        "Content-Type":"application/json",
-        "apikey":ANON_KEY,
-        "Authorization":"Bearer "+ANON_KEY
-      },
-      body:JSON.stringify({ manufacturer_input:mfg, model_input:model, serial_input:serial })
-    });
-
-    const data = await res.json();
-
-    if (!res.ok) { console.error("decode_forklift failed:", res.status, data); el("result").innerHTML = data.message || "Decode error"; return; }
-
-    el("result").innerHTML = `<b>${mfg} ${model}</b><br>Year: ${data.manufacture_year ?? "Unknown"}`;
-  }
-
   async function decodeBatteryDate(){
     const mfg = el("battery_manufacturer")?.value;
     const serial = el("battery_serial")?.value.trim();
