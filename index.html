@@ -109,6 +109,61 @@ return {
 };
 }
 
+/* ================= LOAD MODELS ================= */
+
+async function loadModels(){
+const manufacturer = el("manufacturer").value;
+const modelSelect = el("model");
+modelSelect.innerHTML = "";
+
+const res = await fetch(ENDPOINT_MODELS,{
+method:"POST",
+headers:headers(),
+body:JSON.stringify({ manufacturer_input:manufacturer })
+});
+
+const data = await res.json();
+
+if(!res.ok || !Array.isArray(data)){
+console.error("Model load error:", data);
+return;
+}
+
+data.forEach(m=>{
+const opt=document.createElement("option");
+opt.value=m;
+opt.text=m;
+modelSelect.appendChild(opt);
+});
+}
+
+/* ================= LOAD BATTERY MANUFACTURERS ================= */
+
+async function loadBatteryManufacturers(){
+const select = el("battery_manufacturer");
+select.innerHTML="";
+
+const res = await fetch(ENDPOINT_BATT_MFGS,{
+method:"POST",
+headers:headers(),
+body:JSON.stringify({})
+});
+
+const data = await res.json();
+
+if(!res.ok || !Array.isArray(data)){
+console.error("Battery manufacturer load error:", data);
+return;
+}
+
+data.forEach(n=>{
+const opt=document.createElement("option");
+opt.value=n;
+opt.text=n;
+select.appendChild(opt);
+});
+}
+
 /* ================= FORKLIFT YEAR ================= */
 
 async function decodeForkliftYear(){
@@ -122,7 +177,7 @@ el("result").innerHTML="Enter serial number.";
 return;
 }
 
-/* ================= RAYMOND ================= */
+/* Raymond */
 if(mfg==="Raymond"){
 const match=serial.match(/^(\d{3})-(\d{2})-/);
 if(!match){ el("result").innerHTML="Invalid Raymond serial."; return; }
@@ -132,24 +187,18 @@ el("result").innerHTML="<b>Raymond "+match[1]+"</b><br>Year: "+year;
 return;
 }
 
-/* ================= BENDI ================= */
+/* Bendi */
 if(mfg==="Bendi"){
-// Example: B30/42AC/CE-1710A-10646
 const match = serial.match(/-(\d{2})(\d{2})/);
 if(!match){ el("result").innerHTML="Invalid Bendi serial."; return; }
-
 const yy=parseInt(match[1],10);
 const mm=parseInt(match[2],10);
 const year=yy<=new Date().getFullYear()%100?2000+yy:1900+yy;
-
-el("result").innerHTML=
-"<b>Bendi "+model+"</b><br>"+
-"Year: "+year+"<br>"+
-"Month: "+mm;
+el("result").innerHTML="<b>Bendi "+model+"</b><br>Year: "+year+"<br>Month: "+mm;
 return;
 }
 
-/* ================= BLUE GIANT ================= */
+/* Blue Giant */
 if(mfg==="Blue Giant"){
 const s=serial.replace(/\D/g,"");
 if(s.length<2){ el("result").innerHTML="Invalid Blue Giant serial."; return; }
@@ -159,19 +208,17 @@ el("result").innerHTML="<b>Blue Giant</b><br>Year: "+year;
 return;
 }
 
-/* ================= ALLIS CHALMERS ================= */
+/* Allis-Chalmers */
 if(mfg==="Allis-Chalmers"){
 const dashMatch=serial.match(/^\d-(\d{2})-/);
 if(dashMatch){
 const yy=parseInt(dashMatch[1],10);
-const year=1900+yy;
-el("result").innerHTML="<b>Allis-Chalmers</b><br>Year: "+year;
+el("result").innerHTML="<b>Allis-Chalmers</b><br>Year: "+(1900+yy);
 return;
 }
 }
 
-/* ================= DATABASE FALLBACK ================= */
-
+/* Database fallback */
 const res=await fetch(ENDPOINT_DECODE,{
 method:"POST",
 headers:headers(),
@@ -189,9 +236,7 @@ el("result").innerHTML="Decode error";
 return;
 }
 
-el("result").innerHTML=
-"<b>"+mfg+" "+model+"</b><br>Year: "+(data.manufacture_year||"Unknown");
-
+el("result").innerHTML="<b>"+mfg+" "+model+"</b><br>Year: "+(data.manufacture_year||"Unknown");
 }
 
 /* ================= BATTERY DATE ================= */
@@ -219,9 +264,7 @@ el("battery_date_result").innerHTML="Error";
 return;
 }
 
-el("battery_date_result").innerHTML=
-"<b>"+data.manufacturer+"</b><br>Year: "+(data.manufacture_year||"Unknown");
-
+el("battery_date_result").innerHTML="<b>"+data.manufacturer+"</b><br>Year: "+(data.manufacture_year||"Unknown");
 }
 
 /* ================= BATTERY SIZE ================= */
@@ -262,6 +305,10 @@ el("battery_size_result").innerHTML=html;
 el("btn").addEventListener("click",decodeForkliftYear);
 el("battery_date_btn").addEventListener("click",decodeBatteryDate);
 el("battery_size_btn").addEventListener("click",detectBatterySize);
+el("manufacturer").addEventListener("change",loadModels);
+
+loadModels();
+loadBatteryManufacturers();
 
 });
 </script>
