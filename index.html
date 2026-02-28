@@ -15,6 +15,7 @@
 <option>Yale</option>
 <option>Crown</option>
 <option>Raymond</option>
+<option>Aisle-Master</option>
 </select>
 
 <br><br>
@@ -63,6 +64,7 @@
 <option>Yale</option>
 <option>Mitsubishi</option>
 <option>Raymond</option>
+<option>Aisle-Master</option>
 </select>
 
 <br><br>
@@ -167,7 +169,7 @@ async function decodeForkliftYear(){
     return;
   }
 
-  /* Raymond Logic */
+  /* ===== RAYMOND SERIAL LOGIC ===== */
   if(mfg==="Raymond"){
     const match = serial.match(/^(\d{3})-(\d{2})-/);
     if(!match){
@@ -181,7 +183,21 @@ async function decodeForkliftYear(){
     return;
   }
 
-  /* Hyster Model Fallback */
+  /* ===== AISLE-MASTER SERIAL LOGIC ===== */
+  if(mfg==="Aisle-Master"){
+    if(serial.length===6){
+      const yearDigits=parseInt(serial.substring(2,4));
+      el("result").innerHTML="<b>Aisle-Master "+model+"</b><br>Year: 20"+yearDigits;
+      return;
+    }
+    if(serial.length===5){
+      const firstTwo=parseInt(serial.substring(0,2));
+      el("result").innerHTML="<b>Aisle-Master "+model+"</b><br>Year: 20"+firstTwo;
+      return;
+    }
+  }
+
+  /* ===== HYSTER MODEL ESTIMATE ===== */
   if(mfg==="Hyster"){
     const hysterRanges={
       "S40XM":[1996,2006],
@@ -201,6 +217,7 @@ async function decodeForkliftYear(){
     return;
   }
 
+  /* ===== DATABASE FALLBACK ===== */
   const res=await fetch(ENDPOINT_DECODE,{
     method:"POST",
     headers:{
