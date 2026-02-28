@@ -15,7 +15,10 @@
   <option>Yale</option>
   <option>Crown</option>
   <option>Raymond</option>
+  <option>Case</option>
   <option>Allis-Chalmers</option>
+  <option>Aisle-Master</option>
+  <option>Blue Giant</option>
 </select>
 
 <br><br>
@@ -64,6 +67,10 @@
   <option>Yale</option>
   <option>Mitsubishi</option>
   <option>Raymond</option>
+  <option>Case</option>
+  <option>Allis-Chalmers</option>
+  <option>Aisle-Master</option>
+  <option>Blue Giant</option>
 </select>
 
 <br><br>
@@ -82,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
   console.log("✅ APP LOADED");
 
-  // ✅ YOUR REAL KEY (exactly as you provided)
+  // ✅ Your real Supabase anon key (as provided)
   const ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFvbGV5enJoZXhrZGRyeWZ4em56Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE1OTg3NDQsImV4cCI6MjA4NzE3NDc0NH0.vYwvjNDE6Gistzk-5k2DDXIxmfr8wrnyXkvhMB0Ciuk";
 
   // RPC endpoints
@@ -109,24 +116,13 @@ document.addEventListener("DOMContentLoaded", function(){
     const modelSelect = el("model");
     if (!manufacturerEl || !modelSelect) return;
 
-    // Clear model + clear result + clear serial when changing manufacturer
+    // Clear model + clear results + clear serial whenever manufacturer changes
     modelSelect.innerHTML = "";
     el("serial").value = "";
     el("result").innerHTML = "";
 
     const mfg = manufacturerEl.value;
 
-    // For Allis-Chalmers, we don't have a model list; allow free typing in model box via fallback:
-    // We'll still show a placeholder option to avoid empty select confusion.
-    if (mfg === "Allis-Chalmers") {
-      const opt = document.createElement("option");
-      opt.value = "";
-      opt.text  = "(Type model above if needed — serial drives year)";
-      modelSelect.appendChild(opt);
-      return;
-    }
-
-    // For Raymond, Atlas logic uses serial; still keep models from DB if you have them.
     try {
       const res = await fetch(ENDPOINT_MODELS,{
         method:"POST",
@@ -145,19 +141,11 @@ document.addEventListener("DOMContentLoaded", function(){
         return;
       }
 
-      if (!Array.isArray(data)) {
-        console.error("get_models unexpected payload:", data);
+      // If manufacturer has no models in DB, show a helpful placeholder
+      if (!Array.isArray(data) || data.length === 0){
         const opt = document.createElement("option");
         opt.value = "";
-        opt.text  = "No models (unexpected response)";
-        modelSelect.appendChild(opt);
-        return;
-      }
-
-      if (data.length === 0) {
-        const opt = document.createElement("option");
-        opt.value = "";
-        opt.text  = "No models available";
+        opt.text  = "(No models listed — serial decoding still works)";
         modelSelect.appendChild(opt);
         return;
       }
@@ -184,7 +172,6 @@ document.addEventListener("DOMContentLoaded", function(){
     const select = el("battery_manufacturer");
     if (!select) return;
 
-    // Clear battery fields on reload
     select.innerHTML = "";
     el("battery_serial").value = "";
     el("battery_date_result").innerHTML = "";
@@ -207,16 +194,7 @@ document.addEventListener("DOMContentLoaded", function(){
         return;
       }
 
-      if (!Array.isArray(data)) {
-        console.error("get_battery_manufacturers unexpected:", data);
-        const opt = document.createElement("option");
-        opt.value = "";
-        opt.text  = "No battery brands (unexpected response)";
-        select.appendChild(opt);
-        return;
-      }
-
-      if (data.length === 0) {
+      if (!Array.isArray(data) || data.length === 0){
         const opt = document.createElement("option");
         opt.value = "";
         opt.text  = "No battery brands available";
@@ -244,15 +222,16 @@ document.addEventListener("DOMContentLoaded", function(){
 
   async function decodeForkliftYear(){
     const mfg = el("manufacturer")?.value;
-    const model = el("model")?.value || "";
-    const serial = el("serial")?.value.trim();
+    const model = (el("model")?.value || "").trim();
+    const serial = (el("serial")?.value || "").trim();
 
     if (!mfg || !serial){
       el("result").innerHTML = "<b>Please enter a serial number.</b>";
       return;
     }
 
-    // RAYMOND: first 3 digits model, 4th-5th digits year (since 1977)
+    // ---------------- RAYMOND ----------------
+    // Format: 520-17-05448 => year = 2017 (digits 4-5)
     if (mfg === "Raymond"){
       const match = serial.match(/^(\d{3})-(\d{2})-/);
       if (!match){
@@ -271,9 +250,9 @@ document.addEventListener("DOMContentLoaded", function(){
       return;
     }
 
-    // ALLIS-CHALMERS:
-    // System 1 (1971-1974): 1-71-08-57 => year = 1971
-    // System 2 (1974-1992): BFD-42356 => 3rd letter = year code
+    // ---------------- ALLIS-CHALMERS ----------------
+    // System 1 (1971-1974): 1-71-08-57 => year = 1971 (second block)
+    // System 2 (1974-1992): BFD-42356 => 3rd letter is year code
     if (mfg === "Allis-Chalmers"){
       const dashMatch = serial.match(/^\d-(\d{2})-\d{2}-\d+/);
       if (dashMatch){
@@ -308,7 +287,81 @@ document.addEventListener("DOMContentLoaded", function(){
       return;
     }
 
-    // DB fallback
+    // ---------------- AISLE-MASTER ----------------
+    // System 1 (<=2013): 6 digits -> MMYYPP, year = digits 3-4
+    // System 2 (2014+): 5 digits -> heuristic mapping (can refine later)
+    if (mfg === "Aisle-Master"){
+      const s = serial.replace(/\s+/g,"").toUpperCase();
+
+      if (/^\d{6}$/.test(s)){
+        const yy = parseInt(s.substring(2,4), 10);
+        const year = 2000 + yy;
+        el("result").innerHTML =
+          `<b>Aisle-Master ${model || ""}</b><br>
+           Year: ${year}<br>
+           Method: 6-digit MMYYPP system`;
+        return;
+      }
+
+      if (/^\d{5}$/.test(s)){
+        const n = parseInt(s,10);
+        let year = null;
+        if (n >= 32000) year = 2016;
+        else if (n >= 28000) year = 2015;
+        else year = 2014;
+
+        el("result").innerHTML =
+          `<b>Aisle-Master ${model || ""}</b><br>
+           Year: ${year}<br>
+           Method: 5-digit post-2013 heuristic`;
+        return;
+      }
+
+      el("result").innerHTML = "Invalid Aisle-Master serial format.";
+      return;
+    }
+
+    // ---------------- BLUE GIANT ----------------
+    // After 1976: first two digits are the year (YY)
+    // Example 160123456 => 2016, 990123456 => 1999
+    if (mfg === "Blue Giant"){
+      const s = serial.replace(/\s+/g,"");
+      if (!/^\d{2}/.test(s)){
+        el("result").innerHTML = "Invalid Blue Giant serial.";
+        return;
+      }
+
+      const yy = parseInt(s.substring(0,2),10);
+      const currentYY = new Date().getFullYear() % 100;
+      const year = (yy <= currentYY) ? (2000 + yy) : (1900 + yy);
+
+      el("result").innerHTML =
+        `<b>Blue Giant ${model || ""}</b><br>
+         Year: ${year}<br>
+         Method: first two digits (YY)`;
+      return;
+    }
+
+    // ---------------- HYSTER MODEL ESTIMATE (fallback when serial is missing/unknown) ----------------
+    // NOTE: We keep this conservative; serial decode still preferred via DB.
+    if (mfg === "Hyster" && !serial){
+      const hysterRanges = {
+        "S40XM":[1996,2006],
+        "S50XM":[1996,2006],
+        "H40XL":[1981,1993],
+        "H70XM":[1996,2006]
+      };
+      if (hysterRanges[model]){
+        const r = hysterRanges[model];
+        el("result").innerHTML =
+          `<b>Hyster ${model}</b><br>
+           Estimated Range: ${r[0]}-${r[1]}<br>
+           Method: Model production range (estimate)`;
+        return;
+      }
+    }
+
+    // ---------------- DATABASE FALLBACK ----------------
     try {
       const res = await fetch(ENDPOINT_DECODE,{
         method:"POST",
@@ -344,7 +397,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
   async function decodeBatteryDate(){
     const mfg = el("battery_manufacturer")?.value;
-    const serial = el("battery_serial")?.value.trim();
+    const serial = (el("battery_serial")?.value || "").trim();
 
     if (!mfg || !serial){
       el("battery_date_result").innerHTML = "<b>Enter battery manufacturer + serial.</b>";
@@ -388,7 +441,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
   async function detectBatterySize(){
     const mfg = el("battery_forklift_manufacturer")?.value;
-    const model = el("battery_model")?.value.trim();
+    const model = (el("battery_model")?.value || "").trim();
 
     if (!mfg || !model){
       el("battery_size_result").innerHTML = "<b>Enter forklift manufacturer + model.</b>";
