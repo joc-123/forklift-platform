@@ -8,11 +8,7 @@
   select, input { padding: 6px; min-width: 260px; }
   button { padding: 8px 12px; cursor: pointer; }
   .card { margin-top: 12px; padding: 12px; border: 1px solid #ccc; border-radius: 8px; }
-  .muted { color: #666; font-size: 13px; }
   .row { margin: 8px 0; }
-  .opt { border:1px solid #e0e0e0; border-radius:8px; padding:10px; margin:10px 0; }
-  .opt label { cursor:pointer; }
-  code { background:#f6f6f6; padding:2px 6px; border-radius:6px; }
 </style>
 </head>
 <body>
@@ -26,20 +22,18 @@
 
 <div class="row">
   <label>Model:</label>
-  <select id="model_select"></select>
-  <input type="text" id="model_text" placeholder="Type model (if not in dropdown)" style="display:none;">
-  <div class="muted" id="model_hint"></div>
+  <select id="model"></select>
 </div>
 
 <div class="row">
   <label>Serial:</label>
-  <input type="text" id="serial" placeholder="Enter forklift serial">
+  <input type="text" id="serial">
 </div>
 
 <button id="btn">Decode Forklift Year</button>
 <div id="result"></div>
 
-<hr style="margin:40px 0;">
+<hr>
 
 <h2>Battery Date Decoder</h2>
 
@@ -50,13 +44,13 @@
 
 <div class="row">
   <label>Battery Serial:</label>
-  <input type="text" id="battery_serial" placeholder="Enter battery serial">
+  <input type="text" id="battery_serial">
 </div>
 
 <button id="battery_date_btn">Decode Battery Date</button>
 <div id="battery_date_result"></div>
 
-<hr style="margin:40px 0;">
+<hr>
 
 <h2>Battery Size Detector</h2>
 
@@ -67,259 +61,196 @@
 
 <div class="row">
   <label>Forklift Model:</label>
-  <input type="text" id="battery_model" placeholder="e.g., 8FBCU25">
+  <input type="text" id="battery_model">
 </div>
 
 <button id="battery_size_btn">Detect Battery Size</button>
 <div id="battery_size_result"></div>
 
-<hr style="margin:40px 0;">
+<hr>
 
-<h2>Charger Selector (Exact)</h2>
+<h2>Charger Selector</h2>
 
 <div class="row">
-  <label>Exact Battery AH (C5):</label>
-  <input type="number" id="charger_ah_exact" placeholder="e.g., 750">
+  <label>Exact Battery AH:</label>
+  <input type="number" id="charger_ah_exact">
 </div>
 
 <div class="row">
   <label>Chemistry:</label>
   <select id="charger_chemistry">
-    <option value="Flooded">Flooded</option>
-    <option value="AGM">AGM</option>
-    <option value="TPPL">TPPL</option>
-    <option value="Lithium">Lithium</option>
+    <option>Flooded</option>
+    <option>AGM</option>
+    <option>TPPL</option>
+    <option>Lithium</option>
   </select>
 </div>
 
 <div class="row">
-  <label>Usage profile:</label>
+  <label>Usage:</label>
   <select id="charger_usage">
-    <option value="Conventional">Conventional</option>
-    <option value="Multi-shift">Multi-shift</option>
-    <option value="Opportunity">Opportunity</option>
-    <option value="Fast">Fast</option>
+    <option>Conventional</option>
+    <option>Multi-shift</option>
+    <option>Opportunity</option>
+    <option>Fast</option>
   </select>
 </div>
 
-<button id="charger_btn">Determine Required Charger</button>
+<button id="charger_btn">Determine Charger</button>
 <div id="charger_result"></div>
 
 <script>
 document.addEventListener("DOMContentLoaded", function(){
 
-  // ✅ correct working key (the one you validated)
-  const ANON_KEY =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFvbGV5enJoZXhrZGRyeWZ4em56Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE1OTg3NDQsImV4cCI6MjA4NzE3NDc0NH0.vYwvjNDE6Gistzk-5k2DDXIxmfr8wrnyXkvhMB0Ciuk";
+const ANON_KEY =
+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFvbGV5enJoZXhrZGRyeWZ4em56Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE1OTg3NDQsImV4cCI6MjA4NzE3NDc0NH0.vYwvjNDE6Gistzk-5k2DDXIxmfr8wrnyXkvhMB0Ciuk";
 
-  const ENDPOINT_DECODE    = "https://qoleyzrhexkddryfxznz.supabase.co/rest/v1/rpc/decode_forklift";
-  const ENDPOINT_MODELS    = "https://qoleyzrhexkddryfxznz.supabase.co/rest/v1/rpc/get_models";
-  const ENDPOINT_BATT_DATE = "https://qoleyzrhexkddryfxznz.supabase.co/rest/v1/rpc/decode_battery";
-  const ENDPOINT_BATT_SIZE = "https://qoleyzrhexkddryfxznz.supabase.co/rest/v1/rpc/detect_battery_size";
-  const ENDPOINT_BATT_MFGS = "https://qoleyzrhexkddryfxznz.supabase.co/rest/v1/rpc/get_battery_manufacturers";
-  const ENDPOINT_CHARGER   = "https://qoleyzrhexkddryfxznz.supabase.co/rest/v1/rpc/calculate_charger";
+const BASE = "https://qoleyzrhexkddryfxznz.supabase.co/rest/v1/rpc/";
 
-  // ✅ This must exist or your manufacturer dropdown will be empty = NO MODELS
-  const MANUFACTURERS = [
-    "Aisle-Master","Allis-Chalmers","Balkancar","Barrett","Bendi","Big Joe","Blue Giant",
-    "Case","Caterpillar","Clark","Combilift","Crown","Daewoo / Doosan","Drexel","Hangcha",
-    "Harlow","Heli","Hyster","Hyundai","JCB","Jungheinrich","Kalmar","Komatsu","Linde",
-    "Load Lifter","Manitou","Maximal","Mitsubishi","Moffett","Nissan","Princeton",
-    "Raymond","Sellick","Spyder","Tailift","Taylor","TCM","Toyota","Tusk","Unicarriers","Yale"
-  ];
+function headers(){
+  return {
+    "Content-Type":"application/json",
+    "apikey":ANON_KEY,
+    "Authorization":"Bearer " + ANON_KEY
+  };
+}
 
-  function el(id){ return document.getElementById(id); }
-  function headers(){
-    return {
-      "Content-Type":"application/json",
-      "apikey":ANON_KEY,
-      "Authorization":"Bearer " + ANON_KEY
-    };
-  }
+function el(id){ return document.getElementById(id); }
 
-  function populateManufacturers(){
-    const mfgSel = el("manufacturer");
-    const battMfgSel = el("battery_forklift_manufacturer");
+/* ================= LOAD MANUFACTURERS ================= */
 
-    mfgSel.innerHTML = "";
-    battMfgSel.innerHTML = "";
-
-    MANUFACTURERS.forEach(name=>{
-      const o1 = document.createElement("option");
-      o1.value = name; o1.text = name;
-      mfgSel.appendChild(o1);
-
-      const o2 = document.createElement("option");
-      o2.value = name; o2.text = name;
-      battMfgSel.appendChild(o2);
-    });
-
-    // defaults
-    mfgSel.value = "Toyota";
-    battMfgSel.value = "Toyota";
-  }
-
-  async function loadModels(){
-    const manufacturer = el("manufacturer").value;
-    el("model_select").innerHTML = "";
-
-    const res = await fetch(ENDPOINT_MODELS,{
-      method:"POST",
-      headers:headers(),
-      body:JSON.stringify({ manufacturer_input: manufacturer })
-    });
-
-    const data = await res.json();
-
-    if(!res.ok){
-      console.error("get_models error:", data);
-      return;
-    }
-
-    // Your get_models returns json_agg, sometimes wrapped as array, sometimes null.
-    if(!Array.isArray(data) || data.length === 0){
-      // fallback: let user type model if none
-      el("model_select").style.display = "none";
-      el("model_text").style.display = "inline-block";
-      el("model_hint").textContent = "No models in DB for " + manufacturer + ". Type model manually.";
-      return;
-    }
-
-    el("model_select").style.display = "inline-block";
-    el("model_text").style.display = "none";
-    el("model_text").value = "";
-    el("model_hint").textContent = "";
-
-    data.forEach(m=>{
-      const opt = document.createElement("option");
-      opt.value = m;
-      opt.text = m;
-      el("model_select").appendChild(opt);
-    });
-  }
-
-  async function loadBatteryManufacturers(){
-    el("battery_manufacturer").innerHTML = "";
-
-    const res = await fetch(ENDPOINT_BATT_MFGS,{
-      method:"POST",
-      headers:headers(),
-      body:JSON.stringify({})
-    });
-
-    const data = await res.json();
-
-    if(!res.ok){
-      console.error("get_battery_manufacturers error:", data);
-      return;
-    }
-
-    if(!Array.isArray(data)) return;
-
-    data.forEach(n=>{
-      const opt = document.createElement("option");
-      opt.value = n;
-      opt.text = n;
-      el("battery_manufacturer").appendChild(opt);
-    });
-  }
-
-  function currentModel(){
-    // if dropdown hidden, use text
-    if(el("model_text").style.display !== "none") return el("model_text").value.trim();
-    return el("model_select").value;
-  }
-
-  // EVENTS
-
-  el("manufacturer").addEventListener("change", ()=>{
-    // clear prior result + serial
-    el("serial").value = "";
-    el("result").innerHTML = "";
-    loadModels();
+async function loadManufacturers(){
+  const res = await fetch(BASE + "get_manufacturers", {
+    method:"POST",
+    headers:headers(),
+    body:JSON.stringify({})
   });
 
-  el("btn").addEventListener("click", async ()=>{
-    const mfg = el("manufacturer").value;
-    const model = currentModel();
-    const serial = el("serial").value.trim();
+  const data = await res.json();
+  if(!res.ok || !Array.isArray(data)) return;
 
-    const res = await fetch(ENDPOINT_DECODE,{
-      method:"POST",
-      headers:headers(),
-      body:JSON.stringify({
-        manufacturer_input: mfg,
-        model_input: model,
-        serial_input: serial
-      })
+  ["manufacturer","battery_forklift_manufacturer"].forEach(id=>{
+    const select = el(id);
+    select.innerHTML="";
+    data.forEach(name=>{
+      const opt=document.createElement("option");
+      opt.value=name;
+      opt.text=name;
+      select.appendChild(opt);
     });
-
-    const data = await res.json();
-    el("result").innerHTML =
-      "<div class='card'><b>Year:</b> " + (data.manufacture_year || "Unknown") + "</div>";
   });
 
-  el("battery_date_btn").addEventListener("click", async ()=>{
-    const res = await fetch(ENDPOINT_BATT_DATE,{
-      method:"POST",
-      headers:headers(),
-      body:JSON.stringify({
-        manufacturer_input: el("battery_manufacturer").value,
-        serial_input: el("battery_serial").value.trim()
-      })
-    });
-
-    const data = await res.json();
-    el("battery_date_result").innerHTML =
-      "<div class='card'><b>Year:</b> " + (data.manufacture_year || "Unknown") + "</div>";
-  });
-
-  el("battery_forklift_manufacturer").addEventListener("change", ()=>{
-    el("battery_model").value = "";
-    el("battery_size_result").innerHTML = "";
-  });
-
-  el("battery_size_btn").addEventListener("click", async ()=>{
-    const res = await fetch(ENDPOINT_BATT_SIZE,{
-      method:"POST",
-      headers:headers(),
-      body:JSON.stringify({
-        manufacturer_input: el("battery_forklift_manufacturer").value,
-        model_input: el("battery_model").value.trim(),
-        year_input: null
-      })
-    });
-
-    const data = await res.json();
-    el("battery_size_result").innerHTML =
-      "<div class='card'><b>Found:</b> " + (data.found ? "Yes" : "No") + "</div>";
-  });
-
-  el("charger_btn").addEventListener("click", async ()=>{
-    const res = await fetch(ENDPOINT_CHARGER,{
-      method:"POST",
-      headers:headers(),
-      body:JSON.stringify({
-        // NOTE: keeping your current logic; later we will auto-pull voltage from battery option selection
-        voltage_input: 48,
-        ah_input: parseInt(el("charger_ah_exact").value, 10),
-        chemistry_input: el("charger_chemistry").value,
-        usage_input: el("charger_usage").value
-      })
-    });
-
-    const data = await res.json();
-    el("charger_result").innerHTML =
-      "<div class='card'><b>Recommended Amps:</b> " + (data.recommended_amps || "—") + "</div>";
-  });
-
-  // INIT ORDER MATTERS:
-  // 1) populate manufacturers
-  // 2) load models (needs selected manufacturer)
-  // 3) load battery manufacturers
-  populateManufacturers();
   loadModels();
-  loadBatteryManufacturers();
+}
+
+/* ================= LOAD MODELS ================= */
+
+async function loadModels(){
+  const res = await fetch(BASE + "get_models", {
+    method:"POST",
+    headers:headers(),
+    body:JSON.stringify({
+      manufacturer_input: el("manufacturer").value
+    })
+  });
+
+  const data = await res.json();
+  const select = el("model");
+  select.innerHTML="";
+
+  if(!res.ok || !Array.isArray(data)) return;
+
+  data.forEach(m=>{
+    const opt=document.createElement("option");
+    opt.value=m;
+    opt.text=m;
+    select.appendChild(opt);
+  });
+}
+
+/* ================= YEAR ================= */
+
+el("btn").addEventListener("click", async ()=>{
+  const res = await fetch(BASE + "decode_forklift", {
+    method:"POST",
+    headers:headers(),
+    body:JSON.stringify({
+      manufacturer_input: el("manufacturer").value,
+      model_input: el("model").value,
+      serial_input: el("serial").value
+    })
+  });
+
+  const data = await res.json();
+  el("result").innerHTML =
+    "<div class='card'><b>Year:</b> " +
+    (data.manufacture_year || "Unknown") +
+    "</div>";
+});
+
+/* ================= BATTERY DATE ================= */
+
+el("battery_date_btn").addEventListener("click", async ()=>{
+  const res = await fetch(BASE + "decode_battery", {
+    method:"POST",
+    headers:headers(),
+    body:JSON.stringify({
+      manufacturer_input: el("battery_manufacturer").value,
+      serial_input: el("battery_serial").value
+    })
+  });
+
+  const data = await res.json();
+  el("battery_date_result").innerHTML =
+    "<div class='card'><b>Year:</b> " +
+    (data.manufacture_year || "Unknown") +
+    "</div>";
+});
+
+/* ================= BATTERY SIZE ================= */
+
+el("battery_size_btn").addEventListener("click", async ()=>{
+  const res = await fetch(BASE + "detect_battery_size", {
+    method:"POST",
+    headers:headers(),
+    body:JSON.stringify({
+      manufacturer_input: el("battery_forklift_manufacturer").value,
+      model_input: el("battery_model").value,
+      year_input: null
+    })
+  });
+
+  const data = await res.json();
+  el("battery_size_result").innerHTML =
+    "<div class='card'><b>Found:</b> " +
+    (data.found ? "Yes" : "No") +
+    "</div>";
+});
+
+/* ================= CHARGER ================= */
+
+el("charger_btn").addEventListener("click", async ()=>{
+  const res = await fetch(BASE + "calculate_charger", {
+    method:"POST",
+    headers:headers(),
+    body:JSON.stringify({
+      voltage_input:48,
+      ah_input:parseInt(el("charger_ah_exact").value,10),
+      chemistry_input:el("charger_chemistry").value,
+      usage_input:el("charger_usage").value
+    })
+  });
+
+  const data = await res.json();
+  el("charger_result").innerHTML =
+    "<div class='card'><b>Recommended Amps:</b> " +
+    (data.recommended_amps || "—") +
+    "</div>";
+});
+
+/* INIT */
+el("manufacturer").addEventListener("change", loadModels);
+loadManufacturers();
 
 });
 </script>
