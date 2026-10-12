@@ -2,10 +2,11 @@
 <html>
 <head>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Forklift Intelligence Platform</title>
   <style>
     body { font-family: Arial, sans-serif; line-height: 1.35; padding: 12px; }
-    select, input { padding: 6px; min-width: 280px; }
+    select, input { padding: 6px; min-width: min(280px, 100%); max-width: 100%; box-sizing: border-box; }
     button { padding: 8px 12px; cursor: pointer; }
     hr { margin: 30px 0; }
     .row { margin: 10px 0; }
@@ -20,39 +21,46 @@
 <h2>Forklift Year Decoder</h2>
 
 <div class="row">
-  <label>Manufacturer:</label><br>
+  <label for="manufacturer">Manufacturer:</label><br>
   <select id="manufacturer"></select>
 </div>
 
 <div class="row">
-  <label>Model:</label><br>
+  <label for="model">Model:</label><br>
   <select id="model"></select>
+  <p class="muted">If your model is missing, enter it below. A listed model does not establish date-rule coverage.</p>
+  <label for="model_manual">Unlisted model (overrides selection):</label><br>
+  <input type="text" id="model_manual" maxlength="100" disabled placeholder="Model exactly as shown on the data plate">
 </div>
 
 <div class="row">
-  <label>Serial:</label><br>
-  <input type="text" id="serial" placeholder="Enter forklift serial">
+  <label for="serial">Serial:</label><br>
+  <input type="text" id="serial" maxlength="64" placeholder="Enter forklift serial">
 </div>
 
-<button id="btn_year">Decode Forklift Year</button>
-<div id="year_result"></div>
+<button id="btn_year" disabled>Decode Forklift Year</button>
+<button id="retry_forklift" type="button">Reload forklift catalogue</button>
+<p id="forklift_coverage" class="muted">Loading catalogue; rule coverage is not yet verified.</p>
+<div id="year_result" role="status" aria-live="polite" aria-atomic="true"></div>
 
 <hr>
 
 <h2>Battery Date Decoder</h2>
 
 <div class="row">
-  <label>Battery Manufacturer:</label><br>
+  <label for="battery_manufacturer">Battery Manufacturer:</label><br>
   <select id="battery_manufacturer"></select>
 </div>
 
 <div class="row">
-  <label>Battery Serial:</label><br>
-  <input type="text" id="battery_serial" placeholder="Enter battery serial">
+  <label for="battery_serial">Battery Serial:</label><br>
+  <input type="text" id="battery_serial" maxlength="64" placeholder="Enter battery serial">
 </div>
 
-<button id="btn_batt_date">Decode Battery Date</button>
-<div id="battery_date_result"></div>
+<button id="btn_batt_date" disabled>Decode Battery Date</button>
+<button id="retry_battery" type="button">Reload battery catalogue</button>
+<p id="battery_coverage" class="muted">Loading catalogue; rule coverage is not yet verified.</p>
+<div id="battery_date_result" role="status" aria-live="polite" aria-atomic="true"></div>
 
 <hr>
 
@@ -140,135 +148,203 @@ document.addEventListener("DOMContentLoaded", async function () {
     return { res, data };
   }
 
-  // -------------------------
-  // Load manufacturers (DB)
-  // -------------------------
-  async function loadManufacturers(){
-    const { res, data } = await rpc("get_manufacturers", {});
-    if(!res.ok || !Array.isArray(data)) return;
-
-    // Year decoder manufacturer list
-    const m1 = el("manufacturer");
-    // Chain manufacturer list
-    const m2 = el("chain_mfg");
-
-    m1.innerHTML = "";
-    m2.innerHTML = "";
-
-    data.forEach(name=>{
-      const o1 = document.createElement("option");
-      o1.value = name; o1.text = name;
-      m1.appendChild(o1);
-
-      const o2 = document.createElement("option");
-      o2.value = name; o2.text = name;
-      m2.appendChild(o2);
-    });
-
-    // defaults
-    m1.value = "Toyota";
-    m2.value = "Toyota";
+  // Decoder requests have their own timeout/error contract; charger behavior is unchanged.
+  async function decoderRpc(name, body){
+    const controller = new AbortController();
+    const timer = setTimeout(()=>controller.abort(), 15000);
+    try {
+      const res = await fetch(BASE + name, {method: 'POST', headers: headers(),
+        body: JSON.stringify(body || {}), signal: controller.signal});
+      if(!res.ok) throw new Error(`Service request failed (HTTP ${res.status}). Please retry.`);
+      try { return await res.json(); }
+      catch(error) {
+        if(error.name === 'AbortError') throw error;
+        throw new Error('The service returned an unreadable response. Please retry.');
+      }
+    } catch(error) {
+      if(error.name === 'AbortError') throw new Error('The request timed out. Please retry.');
+      if(error instanceof TypeError) throw new Error('Could not reach the decoder service. Check your connection and retry.');
+      throw error;
+    } finally { clearTimeout(timer); }
   }
 
-  // -------------------------
-  // Load models (DB) for year decoder
-  // -------------------------
+  // Only text nodes are used for decoder and catalogue content.
+  function message(id, text, state='info'){
+    const box = el(id);
+    box.replaceChildren();
+    box.dataset.state = state;
+    const panel = document.createElement('div');
+    panel.className = 'card';
+    panel.textContent = text;
+    box.appendChild(panel);
+    return panel;
+  }
+  function options(id, values, empty){
+    const select = el(id);
+    select.replaceChildren();
+    (values.length ? values : ['']).forEach(value=>{
+      const option = document.createElement('option');
+      option.value = value; option.textContent = value || empty;
+      select.appendChild(option);
+    });
+    select.disabled = !values.length;
+  }
+  function catalogue(data){
+    if(!Array.isArray(data) || !data.every(x=>typeof x === 'string' && x.trim()))
+      throw new Error('The service returned an unexpected catalogue. Please retry.');
+    return [...new Set(data)];
+  }
+  const forklift = {version:0, ready:false, result:'year_result', button:'btn_year'};
+  const battery = {version:0, ready:false, result:'battery_date_result', button:'btn_batt_date'};
+  let modelVersion = 0;
+  function invalidate(state){
+    state.version++;
+    el(state.result).setAttribute("aria-busy", "false");
+    el(state.button).disabled = !state.ready;
+    message(state.result, 'Inputs changed. Decode again to get a result for these inputs.');
+  }
   async function loadModels(){
-    const mfg = el("manufacturer").value;
-    const { res, data } = await rpc("get_models", { manufacturer_input: mfg });
-
-    const modelSel = el("model");
-    modelSel.innerHTML = "";
-
-    if(!res.ok || !Array.isArray(data) || data.length === 0){
-      const opt = document.createElement("option");
-      opt.value = "";
-      opt.text = "No models in DB";
-      modelSel.appendChild(opt);
-      return;
+    const version = ++modelVersion;
+    const mfg = el('manufacturer').value;
+    forklift.ready = false; invalidate(forklift);
+    options('model', [], 'Loading models…');
+    el('model_manual').value = '';
+    el('model_manual').disabled = true;
+    el('btn_year').disabled = true;
+    try {
+      const data = catalogue((await decoderRpc('get_models', {manufacturer_input:mfg})) ?? []);
+      if(version !== modelVersion) return;
+      options('model', data, 'No models listed');
+      forklift.ready = Boolean(mfg);
+      el('model_manual').disabled = !forklift.ready;
+      el('btn_year').disabled = !forklift.ready;
+      message('year_result', data.length ? 'Enter the serial from the data plate.' :
+        'No models are listed. Enter the model from the data plate; decoding may still be unsupported.', 'info');
+    } catch(error){
+      if(version !== modelVersion) return;
+      options('model', [], 'Models unavailable');
+      message('year_result', error.message, 'error');
     }
-
-    data.forEach(m=>{
-      const opt = document.createElement("option");
-      opt.value = m; opt.text = m;
-      modelSel.appendChild(opt);
-    });
   }
-
-  // -------------------------
-  // Battery manufacturers (DB)
-  // -------------------------
+  async function loadManufacturers(){
+    el('retry_forklift').disabled = true;
+    ++modelVersion;
+    forklift.ready = false; invalidate(forklift);
+    options('manufacturer', [], 'Loading manufacturers…');
+    options('model', [], 'Waiting for manufacturers…');
+    el('model_manual').value = '';
+    el('model_manual').disabled = true;
+    try {
+      const data = catalogue(await decoderRpc('get_manufacturers', {}));
+      options('manufacturer', data, 'No manufacturers listed');
+      options('chain_mfg', data, 'No manufacturers listed');
+      if(data.includes('Toyota')) { el('manufacturer').value='Toyota'; el('chain_mfg').value='Toyota'; }
+      el('forklift_coverage').textContent = `Catalogue: ${data.length} manufacturers listed. Listed models are not proof of a verified serial rule.`;
+      if(data.length) await loadModels();
+      else message('year_result','Unsupported: no forklift manufacturers are listed.','unsupported');
+    } catch(error){
+      options('manufacturer', [], 'Manufacturers unavailable');
+      options('model', [], 'Models unavailable');
+      el('forklift_coverage').textContent = 'Coverage unavailable until the catalogue loads.';
+      message('year_result', error.message, 'error');
+    } finally { el('retry_forklift').disabled = false; }
+  }
   async function loadBatteryManufacturers(){
-    const { res, data } = await rpc("get_battery_manufacturers", {});
-    const sel = el("battery_manufacturer");
-    sel.innerHTML = "";
-
-    if(!res.ok || !Array.isArray(data) || data.length === 0){
-      const opt = document.createElement("option");
-      opt.value = "";
-      opt.text = "No battery manufacturers";
-      sel.appendChild(opt);
-      return;
+    el('retry_battery').disabled = true;
+    battery.ready = false; invalidate(battery);
+    options('battery_manufacturer', [], 'Loading manufacturers…');
+    try {
+      const data = catalogue(await decoderRpc('get_battery_manufacturers', {}));
+      options('battery_manufacturer', data, 'No manufacturers listed');
+      battery.ready = data.length > 0;
+      el('btn_batt_date').disabled = !battery.ready;
+      el('battery_coverage').textContent = data.length ?
+        `Catalogue: ${data.join(', ')}. Availability is not independently verified rule coverage; other brands are unsupported here.` :
+        'No battery manufacturers listed.';
+      message('battery_date_result', data.length ? 'Enter the serial from the battery data plate.' :
+        'Unsupported: no battery manufacturers are listed.', data.length ? 'info' : 'unsupported');
+    } catch(error){
+      options('battery_manufacturer', [], 'Manufacturers unavailable');
+      el('battery_coverage').textContent = 'Coverage unavailable until the catalogue loads.';
+      message('battery_date_result', error.message, 'error');
+    } finally { el('retry_battery').disabled = false; }
+  }
+  function renderDecode(id, data, input){
+    if(!data || typeof data !== 'object' || Array.isArray(data))
+      throw new Error('The service returned an unexpected decoder response. Please retry.');
+    const status = String(data.status || '').toLowerCase();
+    const method = typeof data.decoding_method === 'string' ? data.decoding_method : '';
+    let state='unverified', title='Unverified database estimate';
+    if(data.error || status === 'error') { state='error'; title='The decoder reported an error. No date is confirmed.'; }
+    else if(status === 'invalid') { state='invalid'; title='Check the input: no date was determined.'; }
+    else if(data.supported === false || status === 'unsupported' || /unsupported|not supported/i.test(method)) {
+      state='unsupported'; title='Unsupported: no supported rule is reported for this input.';
+    } else if(data.ambiguous === true || status === 'ambiguous' || /ambiguous|multiple/i.test(method) ||
+      (Array.isArray(data.candidate_years) && data.candidate_years.length > 1)) {
+      state='ambiguous'; title='Ambiguous: the service could not determine one year.';
+    } else if(data.found === false || data.manufacture_year == null || data.manufacture_year === '' || status === 'unknown') {
+      state='unknown'; title='Unknown: no year was determined. This does not prove the serial is invalid.';
+    } else if(!['string', 'number'].includes(typeof data.manufacture_year) ||
+      !/^\d{4}$/.test(String(data.manufacture_year)) || Number(data.manufacture_year)<1900 || Number(data.manufacture_year)>new Date().getFullYear()) {
+      throw new Error('The service returned an invalid or future year. No date is confirmed.');
     }
-
-    data.forEach(n=>{
-      const opt = document.createElement("option");
-      opt.value = n; opt.text = n;
-      sel.appendChild(opt);
+    if(state === 'unverified' && data.estimate_kind === 'stored_record')
+      title = 'Stored-record estimate — not manufacturer verified';
+    const panel = message(id, title, state);
+    function line(label, value){
+      if(value == null || value === '') return;
+      if(typeof value !== 'string' && typeof value !== 'number') return;
+      const row = document.createElement('div'); row.textContent = `${label}: ${value}`; panel.appendChild(row);
+    }
+    line('Manufacturer', input.manufacturer_input);
+    line('Model', input.model_input); line('Serial', input.serial_input);
+    if(state === 'unverified') {
+      line(data.estimate_kind === 'stored_record' ? 'Estimated year' : 'Reported year', data.manufacture_year);
+      line('Reported month', data.manufacture_month);
+      line('Reported month range', data.manufacture_month_range);
+      line('Reported facility', data.facility || data.facility_code);
+    }
+    line('Details', data.notes);
+    if(state !== 'unverified' && Array.isArray(data.candidate_years)) {
+      const years = [...new Set(data.candidate_years.filter(year =>
+        Number.isInteger(year) && year >= 1900 && year <= new Date().getFullYear()))];
+      if(years.length) line('Stored evidence years (not a decoded date)', years.join(', '));
+    }
+    line('Database method', method);
+    line('Database confidence (not independently verified)', data.confidence);
+    line('Verification', 'Confirm against the manufacturer’s documentation or data plate. A database result alone is not a verified manufacture date.');
+  }
+  function setupDecoder(state, rpcName, getInput){
+    el(state.button).addEventListener('click', async()=>{
+      if(!state.ready) return;
+      const input = getInput();
+      if(!input.manufacturer_input || !input.serial_input || (rpcName === 'decode_forklift' && !input.model_input)) {
+        message(state.result, 'Select a manufacturer and model where required, and enter a serial.', 'invalid'); return;
+      }
+      const version = ++state.version;
+      el(state.button).disabled = true;
+      el(state.result).setAttribute('aria-busy', 'true');
+      message(state.result, 'Checking the database…', 'loading');
+      try {
+        const data = await decoderRpc(rpcName, input);
+        if(version !== state.version) return;
+        renderDecode(state.result, data, input);
+      } catch(error){
+        if(version === state.version) message(state.result, error.message, 'error');
+      } finally {
+        if(version === state.version) { el(state.button).disabled = !state.ready; el(state.result).setAttribute('aria-busy','false'); }
+      }
     });
   }
-
-  // -------------------------
-  // Year decode
-  // -------------------------
-  el("btn_year").addEventListener("click", async ()=>{
-    const mfg = el("manufacturer").value;
-    const model = el("model").value;
-    const serial = el("serial").value.trim();
-
-    const { res, data } = await rpc("decode_forklift", {
-      manufacturer_input: mfg,
-      model_input: model,
-      serial_input: serial
-    });
-
-    if(!res.ok){
-      el("year_result").innerHTML = card(`<b>Decode error:</b> ${data.message || JSON.stringify(data)}`);
-      return;
-    }
-
-    el("year_result").innerHTML = card(
-      `<b>${data.manufacturer} ${data.model}</b><br>
-       <b>Year:</b> ${data.manufacture_year ?? "Unknown"}<br>
-       <span class="muted">Method: ${data.decoding_method} | Confidence: ${data.confidence}</span>`
-    );
+  setupDecoder(forklift, 'decode_forklift', ()=>({manufacturer_input:el('manufacturer').value,
+    model_input:el('model_manual').value.trim() || el('model').value, serial_input:el('serial').value.trim()}));
+  setupDecoder(battery, 'decode_battery', ()=>({manufacturer_input:el('battery_manufacturer').value,
+    serial_input:el('battery_serial').value.trim()}));
+  [['model','change',forklift],['model_manual','input',forklift],['serial','input',forklift],['battery_manufacturer','change',battery],['battery_serial','input',battery]].forEach(([id,event,state])=>{
+    el(id).addEventListener(event, ()=>{ if(id === 'model') el('model_manual').value = ''; invalidate(state); el(state.result).setAttribute('aria-busy','false'); });
   });
-
-  // -------------------------
-  // Battery date decode
-  // -------------------------
-  el("btn_batt_date").addEventListener("click", async ()=>{
-    const mfg = el("battery_manufacturer").value;
-    const serial = el("battery_serial").value.trim();
-
-    const { res, data } = await rpc("decode_battery", {
-      manufacturer_input: mfg,
-      serial_input: serial
-    });
-
-    if(!res.ok){
-      el("battery_date_result").innerHTML = card(`<b>Decode error:</b> ${data.message || JSON.stringify(data)}`);
-      return;
-    }
-
-    let html = `<b>${data.manufacturer}</b><br><b>Year:</b> ${data.manufacture_year ?? "Unknown"}<br>`;
-    if(data.manufacture_month) html += `<b>Month:</b> ${data.manufacture_month}<br>`;
-    if(data.manufacture_month_range) html += `<b>Month Range:</b> ${data.manufacture_month_range}<br>`;
-    if(data.facility_code) html += `<b>Facility:</b> ${data.facility_code}<br>`;
-    html += `<span class="muted">Method: ${data.decoding_method || "DB"}</span>`;
-
-    el("battery_date_result").innerHTML = card(html);
-  });
+  el('retry_forklift').addEventListener('click', loadManufacturers);
+  el('retry_battery').addEventListener('click', loadBatteryManufacturers);
 
   // -------------------------
   // Full chain: battery fitment
@@ -403,9 +479,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   el("manufacturer").addEventListener("change", loadModels);
 
   // init (order matters)
-  await loadManufacturers();
-  await loadModels();
-  await loadBatteryManufacturers();
+  await Promise.allSettled([loadManufacturers(), loadBatteryManufacturers()]);
 
 });
 </script>
