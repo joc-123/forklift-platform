@@ -28,7 +28,6 @@
 <div class="row">
   <label for="model">Model:</label><br>
   <select id="model"></select>
-  <p class="muted">If your model is missing, enter it below. A listed model does not establish date-rule coverage.</p>
   <label for="model_manual">Unlisted model (overrides selection):</label><br>
   <input type="text" id="model_manual" maxlength="100" disabled placeholder="Model exactly as shown on the data plate">
 </div>
@@ -40,7 +39,6 @@
 
 <button id="btn_year" disabled>Decode Forklift Year</button>
 <button id="retry_forklift" type="button">Reload forklift catalogue</button>
-<p id="forklift_coverage" class="muted">Loading catalogue; rule coverage is not yet verified.</p>
 <div id="year_result" role="status" aria-live="polite" aria-atomic="true"></div>
 
 <hr>
@@ -59,7 +57,6 @@
 
 <button id="btn_batt_date" disabled>Decode Battery Date</button>
 <button id="retry_battery" type="button">Reload battery catalogue</button>
-<p id="battery_coverage" class="muted">Loading catalogue; rule coverage is not yet verified.</p>
 <div id="battery_date_result" role="status" aria-live="polite" aria-atomic="true"></div>
 
 <hr>
@@ -239,13 +236,11 @@ document.addEventListener("DOMContentLoaded", async function () {
       options('manufacturer', data, 'No manufacturers listed');
       options('chain_mfg', data, 'No manufacturers listed');
       if(data.includes('Toyota')) { el('manufacturer').value='Toyota'; el('chain_mfg').value='Toyota'; }
-      el('forklift_coverage').textContent = `Catalogue: ${data.length} manufacturers listed. Listed models are not proof of a verified serial rule.`;
       if(data.length) await loadModels();
       else message('year_result','Unsupported: no forklift manufacturers are listed.','unsupported');
     } catch(error){
       options('manufacturer', [], 'Manufacturers unavailable');
       options('model', [], 'Models unavailable');
-      el('forklift_coverage').textContent = 'Coverage unavailable until the catalogue loads.';
       message('year_result', error.message, 'error');
     } finally { el('retry_forklift').disabled = false; }
   }
@@ -258,14 +253,10 @@ document.addEventListener("DOMContentLoaded", async function () {
       options('battery_manufacturer', data, 'No manufacturers listed');
       battery.ready = data.length > 0;
       el('btn_batt_date').disabled = !battery.ready;
-      el('battery_coverage').textContent = data.length ?
-        `Catalogue: ${data.join(', ')}. Availability is not independently verified rule coverage; other brands are unsupported here.` :
-        'No battery manufacturers listed.';
       message('battery_date_result', data.length ? 'Enter the serial from the battery data plate.' :
         'Unsupported: no battery manufacturers are listed.', data.length ? 'info' : 'unsupported');
     } catch(error){
       options('battery_manufacturer', [], 'Manufacturers unavailable');
-      el('battery_coverage').textContent = 'Coverage unavailable until the catalogue loads.';
       message('battery_date_result', error.message, 'error');
     } finally { el('retry_battery').disabled = false; }
   }
