@@ -7,6 +7,7 @@
   <style>
     body { font-family: Arial, sans-serif; line-height: 1.35; padding: 12px; }
     select, input { padding: 6px; min-width: min(280px, 100%); max-width: 100%; box-sizing: border-box; }
+    input[type="radio"] { min-width: 0; }
     button { padding: 8px 12px; cursor: pointer; }
     hr { margin: 30px 0; }
     .row { margin: 10px 0; }
@@ -61,41 +62,43 @@
 
 <hr>
 
-<h2>Full Chain Automation</h2>
-<div class="muted">
-  Enter forklift → get battery options → select exact battery option → get exact charger + connector + kW + breaker.
+<h2>Battery Fitment Lookup</h2>
+
+<div class="row">
+  <label for="chain_mfg">Forklift Manufacturer:</label><br>
+  <select id="chain_mfg" disabled></select>
 </div>
 
 <div class="row">
-  <label>Forklift Manufacturer:</label><br>
-  <select id="chain_mfg"></select>
-</div>
-
-<div class="row">
-  <label>Forklift Model:</label><br>
-  <input type="text" id="chain_model" placeholder="e.g., 8FBCU25">
+  <label for="chain_model">Forklift Model:</label><br>
+  <input type="text" id="chain_model" maxlength="100" placeholder="e.g., 8FBCU25">
 </div>
 
 <button id="btn_batt_fitment">Find Battery Options</button>
-<div id="battery_fitment_result"></div>
+<div id="battery_fitment_result" role="status" aria-live="polite" aria-atomic="true"></div>
 
 <hr>
 
-<h2>Charger Selector</h2>
+<h2>Charger Estimate</h2>
+<p id="charger_scope" class="muted">Calculates an unverified output estimate; it does not search for actual charger products. Voltage and AH alone do not establish battery or charger compatibility.</p>
 
 <div class="row">
-  <label>Selected Battery Option:</label>
-  <div id="selected_battery_summary" class="card">None selected yet.</div>
+  <div>Selected Battery Record:</div>
+  <div id="selected_battery_summary" class="card" role="status" aria-live="polite">None selected yet.</div>
 </div>
 
 <div class="row">
-  <label>Exact Battery AH (C5):</label><br>
-  <input type="number" id="ah_exact" placeholder="Type exact AH from battery data plate">
-  <div class="muted">For “exact charger”, use the exact AH stamped on the battery. (If your option shows a range, this is required.)</div>
+  <label for="voltage_exact">Battery plate voltage (V):</label><br>
+  <input type="number" id="voltage_exact" min="1" step="1" disabled placeholder="Read from the battery data plate">
 </div>
 
 <div class="row">
-  <label>Chemistry:</label><br>
+  <label for="ah_exact">Battery plate AH (C5):</label><br>
+  <input type="number" id="ah_exact" min="1" step="1" disabled placeholder="Read from the battery data plate">
+</div>
+
+<div class="row">
+  <label for="chemistry">Chemistry:</label><br>
   <select id="chemistry">
     <option value="Flooded">Flooded</option>
     <option value="AGM">AGM</option>
@@ -105,7 +108,7 @@
 </div>
 
 <div class="row">
-  <label>Usage Profile:</label><br>
+  <label for="usage">Usage Profile:</label><br>
   <select id="usage">
     <option value="Conventional">Conventional (overnight)</option>
     <option value="Multi-shift">Multi-shift</option>
@@ -114,8 +117,8 @@
   </select>
 </div>
 
-<button id="btn_charger">Determine Exact Charger</button>
-<div id="charger_result"></div>
+<button id="btn_charger" disabled>Estimate Charger Output</button>
+<div id="charger_result" role="status" aria-live="polite" aria-atomic="true"></div>
 
 <script>
 document.addEventListener("DOMContentLoaded", async function () {
@@ -145,7 +148,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     return { res, data };
   }
 
-  // Decoder requests have their own timeout/error contract; charger behavior is unchanged.
+  // Decoder requests use a timeout/error contract also shared by fitment/charger requests.
   async function decoderRpc(name, body){
     const controller = new AbortController();
     const timer = setTimeout(()=>controller.abort(), 15000);
@@ -194,6 +197,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   const forklift = {version:0, ready:false, result:'year_result', button:'btn_year'};
   const battery = {version:0, ready:false, result:'battery_date_result', button:'btn_batt_date'};
   let modelVersion = 0;
+  let onManufacturerCatalogueChange = ()=>{};
   function invalidate(state){
     state.version++;
     el(state.result).setAttribute("aria-busy", "false");
@@ -224,6 +228,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
   }
   async function loadManufacturers(){
+    onManufacturerCatalogueChange();
+    options('chain_mfg', [], 'Loading manufacturers…');
     el('retry_forklift').disabled = true;
     ++modelVersion;
     forklift.ready = false; invalidate(forklift);
@@ -241,6 +247,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     } catch(error){
       options('manufacturer', [], 'Manufacturers unavailable');
       options('model', [], 'Models unavailable');
+      options('chain_mfg', [], 'Manufacturers unavailable');
       message('year_result', error.message, 'error');
     } finally { el('retry_forklift').disabled = false; }
   }
@@ -338,132 +345,144 @@ document.addEventListener("DOMContentLoaded", async function () {
   el('retry_battery').addEventListener('click', loadBatteryManufacturers);
 
   // -------------------------
-  // Full chain: battery fitment
+  // Full chain: battery fitment candidates and charger estimates
   // -------------------------
-  let lastOptions = [];
-  let selectedIdx = null;
-  let selectedVoltage = null;
+  let fitmentVersion = 0;
+  let chargerVersion = 0;
+  let selectedBattery = null;
+  let fitmentInput = null;
 
-  function parseAhRange(str){
-    if(!str) return {min:null,max:null};
-    const nums = String(str).match(/\d+/g);
-    if(!nums || nums.length===0) return {min:null,max:null};
-    if(nums.length===1) return {min:+nums[0], max:+nums[0]};
-    return {min:+nums[0], max:+nums[1]};
+  function detail(panel, label, value){
+    const row = document.createElement('div');
+    row.textContent = `${label}: ${value == null || value === '' ? 'Not recorded' : value}`;
+    panel.appendChild(row);
   }
+  function positiveInteger(value){
+    if(typeof value !== 'number' && typeof value !== 'string') return null;
+    if(typeof value === 'string' && !value.trim()) return null;
+    const n = Number(value);
+    return Number.isSafeInteger(n) && n > 0 && n <= 2147483647 ? n : null;
+  }
+  function invalidateCharger(text='Inputs changed. Calculate a new estimate for these inputs.'){
+    ++chargerVersion;
+    el('charger_result').setAttribute('aria-busy','false');
+    el('btn_charger').disabled = !selectedBattery;
+    message('charger_result', text);
+  }
+  function resetFitment(){
+    ++fitmentVersion;
+    selectedBattery = null; fitmentInput = null;
+    el('battery_fitment_result').setAttribute('aria-busy','false');
+    el('btn_batt_fitment').disabled = false;
+    el('selected_battery_summary').textContent = 'None selected yet.';
+    for(const id of ['ah_exact','voltage_exact']) { el(id).value=''; el(id).disabled=true; }
+    invalidateCharger('Select a battery record and enter the values from its data plate.');
+    message('battery_fitment_result','Enter the forklift model to find candidate battery records.');
+  }
+  onManufacturerCatalogueChange = resetFitment;
+  el('chain_mfg').addEventListener('change', resetFitment);
+  el('chain_model').addEventListener('input', resetFitment);
+  for(const [id,event] of [['voltage_exact','input'],['ah_exact','input'],['chemistry','change'],['usage','change']])
+    el(id).addEventListener(event, ()=>invalidateCharger());
 
-  el("btn_batt_fitment").addEventListener("click", async ()=>{
-    const mfg = el("chain_mfg").value;
-    const model = el("chain_model").value.trim();
-
-    const { res, data } = await rpc("detect_battery_size", {
-      manufacturer_input: mfg,
-      model_input: model,
-      year_input: null
-    });
-
-    if(!res.ok){
-      el("battery_fitment_result").innerHTML = card(`<b>Battery fitment error:</b> ${data.message || JSON.stringify(data)}`);
-      return;
+  el('btn_batt_fitment').addEventListener('click', async()=>{
+    const input = {manufacturer_input:el('chain_mfg').value, model_input:el('chain_model').value.trim(), year_input:null};
+    resetFitment();
+    if(!input.manufacturer_input || !input.model_input || input.model_input.length>100 ||
+       !/^[A-Za-z0-9 .\/-]+$/.test(input.model_input) || !/[A-Za-z]/.test(input.model_input)) {
+      message('battery_fitment_result','Select a manufacturer and enter the complete model from the truck plate.','invalid'); return;
     }
-
-    if(!data.found){
-      el("battery_fitment_result").innerHTML = card(`<b>No battery fitment found</b> for ${mfg} ${model}.`);
-      lastOptions = [];
-      selectedIdx = null;
-      selectedVoltage = null;
-      el("selected_battery_summary").innerHTML = "None selected yet.";
-      el("ah_exact").value = "";
-      el("charger_result").innerHTML = "";
-      return;
-    }
-
-    lastOptions = data.battery_options || [];
-    selectedIdx = null;
-    selectedVoltage = null;
-    el("selected_battery_summary").innerHTML = "None selected yet.";
-    el("ah_exact").value = "";
-    el("charger_result").innerHTML = "";
-
-    let html = `<b>Battery options for ${mfg} ${model}</b><div class="muted">Select the exact option below to calculate an exact charger.</div>`;
-
-    lastOptions.forEach((opt,i)=>{
-      html += `
-        <div class="opt">
-          <label>
-            <input type="radio" name="bopt" value="${i}">
-            <b>Option ${i+1}</b> — ${opt.voltage}V | AH: ${opt.amp_hour_range} | Tray: ${opt.tray_dimensions}
-          </label>
-          ${opt.notes ? `<div class="muted">${opt.notes}</div>` : ""}
-        </div>
-      `;
-    });
-
-    el("battery_fitment_result").innerHTML = card(html);
-
-    document.querySelectorAll('input[name="bopt"]').forEach(r=>{
-      r.addEventListener("change", ()=>{
-        selectedIdx = parseInt(r.value,10);
-        const opt = lastOptions[selectedIdx];
-        selectedVoltage = parseInt(opt.voltage,10);
-
-        const ah = parseAhRange(opt.amp_hour_range);
-        // Pre-fill exact AH with max if range, exact if single
-        if(ah.min && ah.max && ah.min === ah.max) el("ah_exact").value = ah.max;
-        else if(ah.max) el("ah_exact").value = ah.max;
-        else el("ah_exact").value = "";
-
-        el("selected_battery_summary").innerHTML =
-          `<b>Option ${selectedIdx+1}</b><br>
-           Voltage: <b>${opt.voltage}V</b><br>
-           AH: <b>${opt.amp_hour_range}</b><br>
-           Tray: <b>${opt.tray_dimensions}</b>
-           ${opt.notes ? `<br><span class="muted">${opt.notes}</span>` : ""}`;
+    const version = fitmentVersion;
+    el('btn_batt_fitment').disabled = true;
+    el('battery_fitment_result').setAttribute('aria-busy','true');
+    message('battery_fitment_result','Finding battery records…','loading');
+    try {
+      const data = await decoderRpc('detect_battery_size',input);
+      if(version !== fitmentVersion) return;
+      if(!data || typeof data !== 'object' || Array.isArray(data) || typeof data.found !== 'boolean' || !Array.isArray(data.battery_options))
+        throw new Error('The service returned an unexpected battery lookup response. Please retry.');
+      if(!data.found || !data.battery_options.length) {
+        message('battery_fitment_result','No battery records found for these inputs.','unknown'); return;
+      }
+      if(typeof data.normalized_model !== 'string' || !data.normalized_model.trim())
+        throw new Error('The service could not narrow this lookup. Enter the complete model from the truck plate.');
+      if(!data.battery_options.every(opt=>opt && typeof opt === 'object' && !Array.isArray(opt) && positiveInteger(opt.voltage) &&
+         ['amp_hour_range','tray_dimensions','notes'].every(key=>opt[key] == null || typeof opt[key] === 'string')))
+        throw new Error('The service returned incomplete battery records. No selection was made.');
+      fitmentInput = input;
+      const panel = message('battery_fitment_result','Candidate battery records — related models may be included.','unverified');
+      const note = document.createElement('p');
+      note.textContent = 'Confirm voltage, dimensions, weight and connector against the truck and battery plates.'; panel.appendChild(note);
+      data.battery_options.forEach((opt,i)=>{
+        const box = document.createElement('div'); box.className='opt';
+        const label = document.createElement('label');
+        const radio = document.createElement('input'); radio.type='radio'; radio.name='bopt'; radio.value=String(i);
+        label.appendChild(radio);
+        const name = document.createElement('span'); name.textContent=` Record ${i+1} — ${opt.voltage}V`; label.appendChild(name);
+        box.appendChild(label);
+        detail(box,'Stored AH',opt.amp_hour_range);
+        detail(box,'Stored tray dimensions (units not supplied)',opt.tray_dimensions);
+        if(opt.notes) detail(box,'Record note',opt.notes);
+        panel.appendChild(box);
+        radio.addEventListener('change',()=>{
+          if(version !== fitmentVersion || !radio.checked) return;
+          selectedBattery = {voltage:positiveInteger(opt.voltage), index:i};
+          const summary = el('selected_battery_summary'); summary.replaceChildren();
+          detail(summary,'Record',i+1); detail(summary,'Stored voltage',`${opt.voltage}V`); detail(summary,'Stored AH',opt.amp_hour_range);
+          for(const id of ['ah_exact','voltage_exact']) { el(id).value=''; el(id).disabled=false; }
+          invalidateCharger('Enter battery plate voltage and AH (C5) to calculate an estimate.');
+        });
       });
-    });
+    } catch(error) {
+      if(version === fitmentVersion) message('battery_fitment_result',error.message,'error');
+    } finally {
+      if(version === fitmentVersion) { el('btn_batt_fitment').disabled=false; el('battery_fitment_result').setAttribute('aria-busy','false'); }
+    }
   });
 
-  // -------------------------
-  // Charger calculation (exact)
-  // -------------------------
-  el("btn_charger").addEventListener("click", async ()=>{
-    if(selectedIdx === null || selectedVoltage === null){
-      el("charger_result").innerHTML = card("<b>Select a battery option first.</b>");
-      return;
+  el('btn_charger').addEventListener('click',async()=>{
+    if(!selectedBattery || !fitmentInput) return;
+    const v=positiveInteger(el('voltage_exact').value), ah=positiveInteger(el('ah_exact').value);
+    if(!v || !ah) { message('charger_result','Enter positive whole-number voltage and AH (C5) from the battery plate.','invalid'); return; }
+    if(v !== selectedBattery.voltage) {
+      message('charger_result','Plate voltage does not match this record. Select a record with the matching voltage.','invalid'); return;
     }
-
-    const ahExact = parseInt(el("ah_exact").value,10);
-    if(!ahExact || ahExact <= 0){
-      el("charger_result").innerHTML = card("<b>Enter the exact battery AH (C5) from the battery data plate.</b>");
-      return;
+    const chemistry=el('chemistry').value, usage=el('usage').value;
+    if(!['Flooded','AGM','TPPL','Lithium'].includes(chemistry) || !['Conventional','Multi-shift','Opportunity','Fast'].includes(usage)) {
+      message('charger_result','Choose a listed chemistry and usage profile.','invalid'); return;
     }
-
-    const chemistry = el("chemistry").value;
-    const usage = el("usage").value;
-
-    const { res, data } = await rpc("calculate_charger", {
-      voltage_input: selectedVoltage,
-      ah_input: ahExact,
-      chemistry_input: chemistry,
-      usage_input: usage
-    });
-
-    if(!res.ok || !data.ok){
-      el("charger_result").innerHTML = card(`<b>Charger error:</b> ${data.message || JSON.stringify(data)}`);
-      return;
+    const version=++chargerVersion;
+    const input={voltage_input:v, ah_input:ah, chemistry_input:chemistry, usage_input:usage};
+    el('btn_charger').disabled=true; el('charger_result').setAttribute('aria-busy','true');
+    message('charger_result','Calculating an estimate…','loading');
+    try {
+      const data=await decoderRpc('calculate_charger',input);
+      if(version !== chargerVersion) return;
+      if(!data || typeof data !== 'object' || Array.isArray(data) || typeof data.ok !== 'boolean')
+        throw new Error('The service returned an unexpected charger response. Please retry.');
+      if(!data.ok) throw new Error(typeof data.message === 'string' ? data.message : 'No charger estimate was returned.');
+      const targetAmps=positiveInteger(data.target_amps), estimatedAmps=positiveInteger(data.recommended_amps);
+      if(data.recommended_voltage !== v || !targetAmps || !estimatedAmps ||
+         typeof data.recommended_kw !== 'number' || !Number.isFinite(data.recommended_kw) || data.recommended_kw<=0 ||
+         typeof data.charge_rate_c !== 'number' || !Number.isFinite(data.charge_rate_c) || data.charge_rate_c<=0)
+        throw new Error('The service returned an incomplete or inconsistent estimate. No charger specification is confirmed.');
+      if(estimatedAmps < targetAmps)
+        throw new Error('The service output is below its own current target. No estimate is shown; confirm the specification with the battery/charger supplier.');
+      const panel=message('charger_result','Unverified charger estimate','unverified');
+      detail(panel,'Scope','Calculation only; no actual charger product has been looked up or confirmed compatible. Voltage and AH alone do not establish compatibility.');
+      detail(panel,'Battery plate voltage',`${v}V`); detail(panel,'Battery plate AH (C5)',ah);
+      detail(panel,'Chemistry',chemistry); detail(panel,'Usage',usage);
+      detail(panel,'Calculated current target',`${targetAmps}A`);
+      detail(panel,'Service current estimate',`${estimatedAmps}A`);
+      detail(panel,'Approximate DC power',`${data.recommended_kw} kW`);
+      detail(panel,'Rate used',`${data.charge_rate_c}C`);
+      detail(panel,'Verification','Confirm charging profile and current limits with the battery/charger documentation. Connector and supply-circuit ratings require the actual equipment specifications.');
+      if(typeof data.notes === 'string' && data.notes) detail(panel,'Service note',data.notes);
+    } catch(error) {
+      if(version === chargerVersion) message('charger_result',error.message,'error');
+    } finally {
+      if(version === chargerVersion) { el('btn_charger').disabled=!selectedBattery; el('charger_result').setAttribute('aria-busy','false'); }
     }
-
-    el("charger_result").innerHTML = card(
-      `<b>Exact Charger Requirements</b><br><br>
-       <b>Charger Voltage:</b> ${data.recommended_voltage}V<br>
-       <b>DC Output:</b> ${data.recommended_amps}A<br>
-       <b>Approx Power:</b> ${data.recommended_kw} kW<br>
-       <b>Connector:</b> ${data.connector_size} (${data.connector_color})<br><br>
-       <b>Estimated input @ 480V 3φ:</b> ${data.estimated_input_amps_480v_3ph}A<br>
-       <b>Recommended breaker @ 480V 3φ:</b> ${data.recommended_breaker_amps_480v_3ph}A<br>
-       <div class="muted">Charge rate: ${data.charge_rate_c}C | Target: ${data.target_amps}A</div>
-       ${data.notes ? `<div class="muted" style="margin-top:8px;">Notes: ${data.notes}</div>` : ""}`
-    );
   });
 
   // change events
