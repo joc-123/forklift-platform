@@ -213,7 +213,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     el('model_manual').disabled = true;
     el('btn_year').disabled = true;
     try {
-      const data = catalogue((await decoderRpc('get_models', {manufacturer_input:mfg})) ?? []);
+      const data = catalogue(await decoderRpc('get_models', {manufacturer_input:mfg}));
       if(version !== modelVersion) return;
       options('model', data, 'No models listed');
       forklift.ready = Boolean(mfg);
