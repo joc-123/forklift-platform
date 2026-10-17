@@ -1,0 +1,702 @@
+{
+  "title": "Forklift IQ - Skyjack manufacturing-year research",
+  "version": 1,
+  "researched_date_utc": "2026-10-17",
+  "scope": "Current SJ E, micro, rough-terrain and legacy SJIII scissor lifts; manufacture-year identification only.",
+  "result": {
+    "machine_serial_year_algorithms_verified": 0,
+    "machine_serial_annual_intervals_verified": 0,
+    "new_machine_year_assignments": 0,
+    "label_identification_records": 6,
+    "database_changes_made": false
+  },
+  "evidence_records": [
+    {
+      "id": "skyjack-dc-e-249533aga-nameplate-and-manufactured-label",
+      "manufacturer": "Skyjack",
+      "equipment_type": "scissor_lift",
+      "models": [
+        "SJ3215 E",
+        "SJ3219 E",
+        "SJ3220 E",
+        "SJ3226 E",
+        "SJ3232 E",
+        "SJ4726 E",
+        "SJ4732 E",
+        "SJ4740 E"
+      ],
+      "serial_applicability": [
+        {
+          "models": [
+            "SJ3215 E",
+            "SJ3219 E"
+          ],
+          "from": "A100040000",
+          "through": "A100999999"
+        },
+        {
+          "models": [
+            "SJ3220 E",
+            "SJ3226 E",
+            "SJ3232 E"
+          ],
+          "from": "A101019000",
+          "through": "A101999999"
+        },
+        {
+          "models": [
+            "SJ4726 E",
+            "SJ4732 E"
+          ],
+          "from": "A102014000",
+          "through": "A102999999"
+        },
+        {
+          "models": [
+            "SJ4740 E"
+          ],
+          "from": "A103007000",
+          "through": "A103999999"
+        }
+      ],
+      "source_ids": [
+        "skyjack-dc-e-249533aga-nameplate-and-manufactured-label"
+      ],
+      "year_decoding_supported": false,
+      "supported_claims": [
+        {
+          "claim": "Nameplate explicitly includes model year.",
+          "field_label": "Model year",
+          "location": "Rear of MEWP; diagram depicts SJ3219 E",
+          "pdf_page_1_based": 11
+        },
+        {
+          "claim": "Separate label supplies month and year of manufacture.",
+          "field_label": "Manufactured MM/YYYY",
+          "location": "Rear; diagram depicts SJ3219 E, separate label below/near serial plate",
+          "pdf_page_1_based": 104
+        }
+      ],
+      "disposition": "label_identification_only",
+      "ambiguities": [
+        "No serial-number-to-year algorithm is established by this source.",
+        "Manual revision/publication date and serial applicability are not the manufacture date of an individual machine.",
+        "Read the actual machine label; leave absent, illegible, or conflicting date values unresolved.",
+        "The manual notes serial-plate information varies between MEWPs. No rule equating model year and manufacture year is supplied."
+      ],
+      "prior_evidence_record": {
+        "manufacturer": "Skyjack",
+        "equipment_type": "scissor_lift",
+        "source_type": "official_manufacturer_operation_manual",
+        "verified_date_utc": "2026-10-17",
+        "verification_method": "Official techpub.skyjack.com document wrapper inspected to obtain embedded PDF URL; PDF downloaded, text extracted, cited pages rendered and visually verified. Original PDF retrieved again in this pass; SHA-256 matches prior verified source exactly.",
+        "year_decoding_supported": false,
+        "ambiguities": [
+          "No serial-number-to-year algorithm is established by this source.",
+          "Manual revision/publication date and serial applicability are not the manufacture date of an individual machine.",
+          "Read the actual machine label; leave absent, illegible, or conflicting date values unresolved.",
+          "The manual notes serial-plate information varies between MEWPs. No rule equating model year and manufacture year is supplied."
+        ],
+        "id": "skyjack-dc-e-249533aga-nameplate-and-manufactured-label",
+        "title": "DC Electric Scissors Operation Manual (ANSI/CSA)",
+        "source_url": "https://techpub.skyjack.com/document?id=249533A&region=NA",
+        "pdf_url": "https://skyjack.tor1.cdn.digitaloceanspaces.com/skyjack/uploads/249533AGA-2.pdf",
+        "catalog_url": "https://techpub.skyjack.com/products/SJ3215_19_E",
+        "document_revision": "249533AGA",
+        "document_date": "2026-07-14",
+        "document_date_as_printed": "July 14 2026",
+        "pdf_page_count": 128,
+        "models": [
+          "SJ3215 E",
+          "SJ3219 E",
+          "SJ3220 E",
+          "SJ3226 E",
+          "SJ3232 E",
+          "SJ4726 E",
+          "SJ4732 E",
+          "SJ4740 E"
+        ],
+        "serial_applicability": [
+          {
+            "models": [
+              "SJ3215 E",
+              "SJ3219 E"
+            ],
+            "from": "A100040000",
+            "through": "A100999999"
+          },
+          {
+            "models": [
+              "SJ3220 E",
+              "SJ3226 E",
+              "SJ3232 E"
+            ],
+            "from": "A101019000",
+            "through": "A101999999"
+          },
+          {
+            "models": [
+              "SJ4726 E",
+              "SJ4732 E"
+            ],
+            "from": "A102014000",
+            "through": "A102999999"
+          },
+          {
+            "models": [
+              "SJ4740 E"
+            ],
+            "from": "A103007000",
+            "through": "A103999999"
+          }
+        ],
+        "serial_scope_source": {
+          "pdf_page_1_based": 2,
+          "pdf_page_index_0_based": 1,
+          "printed_page": null
+        },
+        "evidence": [
+          {
+            "section": "1.3 Serial number nameplate",
+            "pdf_page_1_based": 11,
+            "pdf_page_index_0_based": 10,
+            "printed_page": "11",
+            "field_label": "Model year",
+            "location": "Rear of MEWP; diagram depicts SJ3219 E",
+            "meaning": "Nameplate explicitly includes model year."
+          },
+          {
+            "section": "8.5 Rear, label 4",
+            "pdf_page_1_based": 104,
+            "pdf_page_index_0_based": 103,
+            "printed_page": "104",
+            "field_label": "Manufactured MM/YYYY",
+            "location": "Rear; diagram depicts SJ3219 E, separate label below/near serial plate",
+            "meaning": "Separate label supplies month and year of manufacture."
+          }
+        ],
+        "supported_use": "Preserve model year and manufacture month/year as separate fields; use actual labels for the listed serial scopes.",
+        "source_sha256": "15a51f0a3791789667eaf5269d7e94824e29e1ee4ca3c75598c7df49e3e732b5",
+        "source_file": "sources/249533AGA-2.pdf"
+      }
+    },
+    {
+      "id": "skyjack-rt-257020aca-nameplate-and-manufactured-label",
+      "manufacturer": "Skyjack",
+      "equipment_type": "scissor_lift",
+      "models": [
+        "SJ6826 RT",
+        "SJ6832 RT"
+      ],
+      "serial_applicability": [
+        {
+          "models": [
+            "SJ6826 RT",
+            "SJ6832 RT"
+          ],
+          "from": "A200010000",
+          "through": "A200999999"
+        }
+      ],
+      "source_ids": [
+        "skyjack-rt-257020aca-nameplate-and-manufactured-label"
+      ],
+      "year_decoding_supported": false,
+      "supported_claims": [
+        {
+          "claim": "Nameplate explicitly includes model year.",
+          "field_label": "Model year",
+          "location": "Side of MEWP",
+          "pdf_page_1_based": 12
+        },
+        {
+          "claim": "Separate manufactured month/year label.",
+          "field_label": "Manufactured MM/YYYY",
+          "location": "Right side of MEWP, lower chassis area; use diagram for precise location",
+          "pdf_page_1_based": 82
+        }
+      ],
+      "disposition": "label_identification_only",
+      "ambiguities": [
+        "No serial-number-to-year algorithm is established by this source.",
+        "Manual revision/publication date and serial applicability are not the manufacture date of an individual machine.",
+        "Read the actual machine label; leave absent, illegible, or conflicting date values unresolved.",
+        "No rule equating model year and manufacture year is supplied."
+      ],
+      "prior_evidence_record": {
+        "manufacturer": "Skyjack",
+        "equipment_type": "scissor_lift",
+        "source_type": "official_manufacturer_operation_manual",
+        "verified_date_utc": "2026-10-17",
+        "verification_method": "Official techpub.skyjack.com document wrapper inspected to obtain embedded PDF URL; PDF downloaded, text extracted, cited pages rendered and visually verified. Original PDF retrieved again in this pass; SHA-256 matches prior verified source exactly.",
+        "year_decoding_supported": false,
+        "ambiguities": [
+          "No serial-number-to-year algorithm is established by this source.",
+          "Manual revision/publication date and serial applicability are not the manufacture date of an individual machine.",
+          "Read the actual machine label; leave absent, illegible, or conflicting date values unresolved.",
+          "No rule equating model year and manufacture year is supplied."
+        ],
+        "id": "skyjack-rt-257020aca-nameplate-and-manufactured-label",
+        "title": "Rough Terrain Scissors Operation Manual (ANSI/CSA)",
+        "source_url": "https://techpub.skyjack.com/document?id=257020A&region=NA",
+        "pdf_url": "https://skyjack.tor1.cdn.digitaloceanspaces.com/skyjack/uploads/257020ACA.pdf",
+        "catalog_url": "https://techpub.skyjack.com/products/SJ6826_32_RT",
+        "document_revision": "257020ACA",
+        "document_date": "2026-06",
+        "document_date_as_printed": "June 2026",
+        "pdf_page_count": 102,
+        "models": [
+          "SJ6826 RT",
+          "SJ6832 RT"
+        ],
+        "serial_applicability": [
+          {
+            "models": [
+              "SJ6826 RT",
+              "SJ6832 RT"
+            ],
+            "from": "A200010000",
+            "through": "A200999999"
+          }
+        ],
+        "serial_scope_source": {
+          "pdf_page_1_based": 2,
+          "pdf_page_index_0_based": 1,
+          "printed_page": null
+        },
+        "evidence": [
+          {
+            "section": "1.3 Serial number nameplate",
+            "pdf_page_1_based": 12,
+            "pdf_page_index_0_based": 11,
+            "printed_page": "12",
+            "field_label": "Model year",
+            "location": "Side of MEWP",
+            "meaning": "Nameplate explicitly includes model year."
+          },
+          {
+            "section": "8.2 Right side (continued), label 15",
+            "pdf_page_1_based": 82,
+            "pdf_page_index_0_based": 81,
+            "printed_page": "82",
+            "field_label": "Manufactured MM/YYYY",
+            "location": "Right side of MEWP, lower chassis area; use diagram for precise location",
+            "meaning": "Separate manufactured month/year label."
+          }
+        ],
+        "supported_use": "Read explicit model-year and manufactured month/year fields for these RT scissor models and serial scope; retain date semantics separately.",
+        "source_sha256": "393ca69383ddd0ace7e4e29bc0ee550e5c0df6caf7dbf539c9f88c2ebe1e25b0",
+        "source_file": "sources/257020ACA.pdf"
+      }
+    },
+    {
+      "id": "skyjack-sjiii-170469aha-date-manufactured-nameplate",
+      "manufacturer": "Skyjack",
+      "equipment_type": "scissor_lift",
+      "models": [
+        "SJIII 3215",
+        "SJIII 3219",
+        "SJIII 3220",
+        "SJIII 3226",
+        "SJIII 4620",
+        "SJIII 4626",
+        "SJIII 4632"
+      ],
+      "serial_applicability": [
+        {
+          "models": [
+            "SJIII 3215"
+          ],
+          "from": "10001094",
+          "through": null,
+          "printed_scope": "10 001 094 & Above"
+        },
+        {
+          "models": [
+            "SJIII 3219"
+          ],
+          "from": "22067625",
+          "through": null,
+          "printed_scope": "22 067 625 & Above"
+        },
+        {
+          "models": [
+            "SJIII 3220"
+          ],
+          "from": "60004661",
+          "through": null,
+          "printed_scope": "60 004 661 & Above"
+        },
+        {
+          "models": [
+            "SJIII 3226"
+          ],
+          "from": "27020827",
+          "through": null,
+          "printed_scope": "27 020 827 & Above"
+        },
+        {
+          "models": [
+            "SJIII 4620",
+            "SJIII 4626",
+            "SJIII 4632"
+          ],
+          "from": "70020612",
+          "through": null,
+          "printed_scope": "SJIII 46XX: 70 020 612 & Above"
+        }
+      ],
+      "source_ids": [
+        "skyjack-sjiii-170469aha-date-manufactured-nameplate"
+      ],
+      "year_decoding_supported": false,
+      "supported_claims": [
+        {
+          "claim": "Nameplate includes date manufactured.",
+          "field_label": "Date manufactured",
+          "location": "Rear of aerial platform",
+          "pdf_page_1_based": 37
+        }
+      ],
+      "disposition": "label_identification_only",
+      "ambiguities": [
+        "No serial-number-to-year algorithm is established by this source.",
+        "Manual revision/publication date and serial applicability are not the manufacture date of an individual machine.",
+        "Read the actual machine label; leave absent, illegible, or conflicting date values unresolved.",
+        "Date format is not specified in this passage.",
+        "The cover scope says & Above; current catalog narrows SJIII 3215 to 10001094-10099999 and SJIII 3219 to 22067625-22199999. Do not transfer these SJIII ranges to successor models."
+      ],
+      "prior_evidence_record": {
+        "manufacturer": "Skyjack",
+        "equipment_type": "scissor_lift",
+        "source_type": "official_manufacturer_operation_manual",
+        "verified_date_utc": "2026-10-17",
+        "verification_method": "Official techpub.skyjack.com document wrapper inspected to obtain embedded PDF URL; PDF downloaded, text extracted, cited pages rendered and visually verified. Original PDF retrieved again in this pass; SHA-256 matches prior verified source exactly.",
+        "year_decoding_supported": false,
+        "ambiguities": [
+          "No serial-number-to-year algorithm is established by this source.",
+          "Manual revision/publication date and serial applicability are not the manufacture date of an individual machine.",
+          "Read the actual machine label; leave absent, illegible, or conflicting date values unresolved.",
+          "Date format is not specified in this passage.",
+          "The cover scope says & Above; current catalog narrows SJIII 3215 to 10001094-10099999 and SJIII 3219 to 22067625-22199999. Do not transfer these SJIII ranges to successor models."
+        ],
+        "id": "skyjack-sjiii-170469aha-date-manufactured-nameplate",
+        "title": "DC Electric Scissors Operating Manual (ANSI/CSA)",
+        "source_url": "https://techpub.skyjack.com/document?id=170469A&region=NA",
+        "pdf_url": "https://skyjack.tor1.cdn.digitaloceanspaces.com/skyjack/uploads/170469AHA-1.pdf",
+        "catalog_url": "https://techpub.skyjack.com/products/SJIII_3215_19",
+        "document_revision": "170469AHA",
+        "document_date": "2022-11-03",
+        "document_date_as_printed": "November 3 2022",
+        "pdf_page_count": 108,
+        "models": [
+          "SJIII 3215",
+          "SJIII 3219",
+          "SJIII 3220",
+          "SJIII 3226",
+          "SJIII 4620",
+          "SJIII 4626",
+          "SJIII 4632"
+        ],
+        "serial_applicability": [
+          {
+            "models": [
+              "SJIII 3215"
+            ],
+            "from": "10001094",
+            "through": null,
+            "printed_scope": "10 001 094 & Above"
+          },
+          {
+            "models": [
+              "SJIII 3219"
+            ],
+            "from": "22067625",
+            "through": null,
+            "printed_scope": "22 067 625 & Above"
+          },
+          {
+            "models": [
+              "SJIII 3220"
+            ],
+            "from": "60004661",
+            "through": null,
+            "printed_scope": "60 004 661 & Above"
+          },
+          {
+            "models": [
+              "SJIII 3226"
+            ],
+            "from": "27020827",
+            "through": null,
+            "printed_scope": "27 020 827 & Above"
+          },
+          {
+            "models": [
+              "SJIII 4620",
+              "SJIII 4626",
+              "SJIII 4632"
+            ],
+            "from": "70020612",
+            "through": null,
+            "printed_scope": "SJIII 46XX: 70 020 612 & Above"
+          }
+        ],
+        "serial_scope_source": {
+          "pdf_page_1_based": 2,
+          "pdf_page_index_0_based": 1,
+          "printed_page": null
+        },
+        "evidence": [
+          {
+            "section": "3.4 Serial Number Nameplate",
+            "pdf_page_1_based": 37,
+            "pdf_page_index_0_based": 36,
+            "printed_page": "37",
+            "field_label": "Date manufactured",
+            "location": "Rear of aerial platform",
+            "meaning": "Nameplate includes date manufactured."
+          }
+        ],
+        "supported_use": "Read the explicit manufacture-date field on the rear nameplate; do not assign a serial-coded year.",
+        "source_sha256": "aa1066c456609cb32d4591bc8e5e22bd69463c10f9c5e8e3ac2d81fbd974a87f",
+        "source_file": "sources/170469AHA-1.pdf"
+      }
+    },
+    {
+      "id": "skyjack-micro-248548aea-labels",
+      "manufacturer": "Skyjack",
+      "equipment_type": "scissor_lift",
+      "models": [
+        "SJ3213 micro",
+        "SJ3219 micro"
+      ],
+      "serial_applicability": [
+        {
+          "from": "A104000000",
+          "through": "A104999999",
+          "basis": "Current NA catalog; manual cover uses & above."
+        }
+      ],
+      "source_ids": [
+        "micro-248548aea",
+        "catalog-micro"
+      ],
+      "year_decoding_supported": false,
+      "supported_claims": [
+        {
+          "claim": "Left-side nameplate includes a model-year field.",
+          "field_label": "Model year",
+          "pdf_page_1_based": 11
+        },
+        {
+          "claim": "Separate left-side label gives actual manufactured month/year; read the machine label.",
+          "field_label": "Manufactured MM/YYYY",
+          "pdf_page_1_based": 77,
+          "label_number": 13
+        }
+      ],
+      "disposition": "label_identification_only",
+      "ambiguities": [
+        "No serial-to-year formula. Actual machine label must be photographed/read; a blank manual illustration does not supply a year."
+      ]
+    },
+    {
+      "id": "skyjack-large-rt-221491aha-labels",
+      "manufacturer": "Skyjack",
+      "equipment_type": "scissor_lift",
+      "models": [
+        "SJ9233 RT",
+        "SJ9243 RT",
+        "SJ9253 RT",
+        "SJ9664 RT"
+      ],
+      "serial_applicability": [
+        {
+          "models": [
+            "SJ9233 RT",
+            "SJ9243 RT",
+            "SJ9253 RT"
+          ],
+          "from": "A202000001",
+          "through": null,
+          "basis": "Manual cover & Above; current inspected catalog caps A202999999."
+        },
+        {
+          "models": [
+            "SJ9664 RT"
+          ],
+          "from": "A203000001",
+          "through": null,
+          "basis": "Manual cover & Above; do not extend to unrelated successor serial families."
+        }
+      ],
+      "source_ids": [
+        "large-rt-221491aha",
+        "catalog-large-rt"
+      ],
+      "year_decoding_supported": false,
+      "supported_claims": [
+        {
+          "claim": "Side nameplate includes model year.",
+          "field_label": "Model year",
+          "pdf_page_1_based": 12
+        },
+        {
+          "claim": "Separate manufactured-month/year label appears on the left side, label 21.",
+          "field_label": "Manufactured MM/YYYY",
+          "pdf_page_1_based": 100,
+          "label_number": 21
+        }
+      ],
+      "disposition": "label_identification_only",
+      "ambiguities": [
+        "No serial-to-year formula; do not confuse model-year and manufacture-date labels."
+      ]
+    },
+    {
+      "id": "skyjack-sj3013-label-variants",
+      "manufacturer": "Skyjack",
+      "equipment_type": "scissor_lift",
+      "models": [
+        "SJ3013 micro"
+      ],
+      "serial_applicability": [
+        {
+          "from": "M09281002",
+          "through": "M09301244"
+        }
+      ],
+      "source_ids": [
+        "sj3013-239872aca",
+        "sj3013-236613afa",
+        "catalog-sj3013"
+      ],
+      "year_decoding_supported": false,
+      "supported_claims": [
+        {
+          "claim": "ANSI/CSA manual describes a rear-side nameplate with model year.",
+          "field_label": "Model year",
+          "source_id": "sj3013-239872aca",
+          "pdf_page_1_based": 11
+        },
+        {
+          "claim": "ANSI manual describes a rear-side nameplate with date of production.",
+          "field_label": "Date of production",
+          "source_id": "sj3013-236613afa",
+          "pdf_page_1_based": 11
+        }
+      ],
+      "disposition": "label_identification_only",
+      "ambiguities": [
+        "Two manual variants share the catalog serial scope but use different date-field semantics. Match actual machine compliance plate/manual; do not merge field meanings.",
+        "236613AFA cover and 236613AEA page-11 footer differ.",
+        "Current SJ3013 service-manual scope M09301245-M09309999 does not authorize transferring the inspected operation-manual date-field claim to that later interval."
+      ]
+    }
+  ],
+  "cautions_and_unresolved_claims": [
+    {
+      "id": "no-published-machine-year-algorithm-verified",
+      "status": "unresolved",
+      "finding": "This research did not establish a manufacturer-issued serial-to-manufacturing-year formula or a verified annual serial interval table for Skyjack scissor lifts.",
+      "applies_to": "All scoped Skyjack scissor families; no inference about whether unpublished factory records exist."
+    },
+    {
+      "id": "elevate-production-year-semantic-risk",
+      "source_ids": [
+        "elevatelive-home",
+        "elevatelive-app-3c3023cf"
+      ],
+      "finding": "The public client labels a Machine Info field Production Year, but module 9231 derives the displayed year from machineInfo.in_service_date, falling back to machineInfo.shipped_on.",
+      "evidence_method": "Static source inspection of the current public JavaScript bundle. No real machine lookup was performed.",
+      "disposition": "corroboration_only_not_manufacture_year_authority",
+      "required_followup": "Ask Skyjack to confirm the data definitions and whether exact factory manufacture dates are accessible before mapping this value to manufacture_year. No outreach sent."
+    },
+    {
+      "id": "skycoded-component-date-not-machine-date",
+      "source_ids": [
+        "skycoded-210280ad"
+      ],
+      "pdf_page_1_based": 88,
+      "models": [
+        "SJIII 3226",
+        "SJIII 4632"
+      ],
+      "serial_applicability": [
+        {
+          "model": "SJIII 3226",
+          "from": "80150000",
+          "through": "80179999"
+        },
+        {
+          "model": "SJIII 4632",
+          "from": "80180000",
+          "through": "80199999"
+        }
+      ],
+      "finding": "A yyymm/nnnnn serial date rule appears in the service manual, with 20811 meaning November 2008. The source explicitly identifies this as the SKYCODED module serial number.",
+      "disposition": "exclude_from_machine_year_decoder",
+      "reason": "A controller component can predate machine assembly or be replaced; the manual supplies no machine-year equivalence."
+    },
+    {
+      "id": "manual-date-not-machine-date",
+      "source_ids": [
+        "catalog-sjiii3219",
+        "catalog-dc-e",
+        "tech-tip-2026-lookup"
+      ],
+      "finding": "Technical Publications provides model/serial-specific documents, serial applicability and last-modified metadata. These are documentation dates and parts/configuration breaks, not annual manufacturing cutoffs.",
+      "disposition": "manual_routing_only"
+    },
+    {
+      "id": "2020-serial-change-not-annual-boundary",
+      "source_ids": [
+        "tech-tip-2020-ansi"
+      ],
+      "finding": "The 14 April 2020 tech tip announces new serial numbers and SJ designation for updated ANSI/SAIA DC scissors. It does not state exact manufacture dates for serials or a serial-year formula.",
+      "disposition": "historical_context_only"
+    },
+    {
+      "id": "osha-2009-anchor-conflict",
+      "source_url": "https://www.osha.gov/ords/imis/generalsearch.citation_detail?cit_id=01001B&id=314989211",
+      "finding": "An OSHA citation associates SJIII 3219 serial 22018949 with manufacture in 2009, but elsewhere in the same text renders the serial as 220189498.",
+      "disposition": "hold_ambiguous_exact_match",
+      "reason": "Do not silently fix a serial typo or extend one machine observation to an interval."
+    },
+    {
+      "id": "secondary-year-leads-not-imported",
+      "source_urls": [
+        "https://www.justanswer.com/construction-and-road-equipment/7l4tq-old-skyjack-sj-iii-4626serial-xxxxx.html",
+        "https://manualzz.com/doc/84155392/skyjack-sjiii-3219-parts-manual",
+        "https://www.flatearthequipment.com/brand/skyjack/serial-lookup"
+      ],
+      "finding": "Search surfaced unsupported positional-year claims, a manual-host summary that equates a 2022 revision to manufacturing year, and a decoder explicitly describing best-effort estimates.",
+      "disposition": "lead_only_not_year_evidence",
+      "reason": "No matching primary machine-year rule verified."
+    }
+  ],
+  "lookup_workflow": {
+    "serial_only_result": "Manufacturing year not established. Use plate or manufacturer confirmation.",
+    "steps": [
+      "Capture full model and full serial verbatim, plus the whole manufacturer identification plate and any adjacent manufactured-date label. Preserve leading zeroes and A/C/M prefix letters.",
+      "Use Skyjack Technical Publications with exact model/serial and region to find the applicable manual and label-location diagram.",
+      "Read explicit date fields from the actual machine, preserving the source label: model_year, manufacture_year/month, or production_date. Never replace one field with another implicitly.",
+      "Store the photo or manufacturer response, exact serial, date semantics, source URL or evidence ID, and verification date. Machine-specific evidence permits an exact match only.",
+      "If missing, illegible, contradictory or out of scope, leave manufacturing year unresolved. Skyjack Product Support is a verified escalation route; obtain user approval before contacting them.",
+      "ELEVATE Live may corroborate serial/model/resources. Its current Production Year field is not accepted here as a manufacturing date because of the in-service/shipped-date derivation.",
+      "Never extrapolate years from numeric ordering, manual-revision dates, catalog last-modified dates, launch announcements, model numbers, controller serials, engine date codes, invoice dates or warranty start dates."
+    ],
+    "manufacturer_contacts": {
+      "service_email": "service@skyjack.com",
+      "parts_email": "parts@skyjack.com",
+      "us_phone": "1-800-275-9522",
+      "source_id": "skyjack-support"
+    },
+    "suggested_confirmation_questions": [
+      "For this exact machine model and full serial, what are the factory manufacture month/year and model year, separately?",
+      "Is there a published serial-to-year table or public supported lookup for these scissor families?",
+      "In ELEVATE Live, does Production Year represent in-service date, shipment date, model year, or factory manufacture date?"
+    ]
+  }
+}

@@ -1,0 +1,406 @@
+{
+  "verified_on": "2026-10-17",
+  "reviewed_article": "https://www.fridayparts.com/blog/genie-serial-number-lookup",
+  "article_retrieval": "Public HTML downloaded successfully; web renderer cache miss did not imply unavailable",
+  "claim_checks": [
+    {
+      "claim": "Older GS serial segment can yield model year",
+      "verdict": "supported_with_scope",
+      "evidence": "96316 p iii, 97385 p iii, 1272217 p v, 1272222 p iv. Use their exact model and serial applicability."
+    },
+    {
+      "claim": "A denotes facility",
+      "verdict": "supported",
+      "evidence": "97385 legend; facility is not design revision or year."
+    },
+    {
+      "claim": "August 31 / September 1 2016 transition",
+      "verdict": "supported_for_verified_manual_families",
+      "evidence": "1272217 p v covers 11 slab models; 1272222 p iv covers four GS84/90 models. Do not automatically extend to every Genie product."
+    },
+    {
+      "claim": "05 indicates 2005; 15/16 indicate 2015/2016 in older structure",
+      "verdict": "supported_as_scoped_model_year",
+      "evidence": "Explicit model-year legends plus applicable historical era; require valid serial structure and manual scope."
+    },
+    {
+      "claim": "Newer serial has no separate year segment",
+      "verdict": "supported_for_verified_formats",
+      "evidence": "1272217 and 1272222 post-transition diagrams omit model year; read separate plate year."
+    },
+    {
+      "claim": "Model year can differ from build date",
+      "verdict": "preserve_separate_fields",
+      "evidence": "Official older plate diagrams contain both fields; no equality rule established."
+    },
+    {
+      "claim": "Universal front-left/battery-compartment location",
+      "verdict": "not_established_universally",
+      "evidence": "1272217 identifies chassis label/stamp with model diagram; 1272222 says label inside cover. Use model-specific diagram."
+    },
+    {
+      "claim": "Serial ranges help select manuals/parts",
+      "verdict": "supported_for_manual_selection",
+      "evidence": "Official model catalogs and manual cover ranges. No blanket parts compatibility approval follows."
+    }
+  ],
+  "new_primary_record": {
+    "id": "genie-1272217-slab-transition",
+    "source_url": "https://manuals.genielift.com/Parts%20And%20Service%20Manuals/data/Service/Scissors/1272217.pdf",
+    "document": "1272217GT Rev E1 October 2023",
+    "scope_pdf_page": 2,
+    "legend_pdf_page": 5,
+    "legend_printed_page": "v",
+    "models": [
+      "GS-1530",
+      "GS-1532",
+      "GS-1930",
+      "GS-1932",
+      "GS-2032",
+      "GS-2632",
+      "GS-3232",
+      "GS-2046",
+      "GS-2646",
+      "GS-3246",
+      "GS-4047"
+    ],
+    "scope": [
+      {
+        "models": [
+          "GS-1530",
+          "GS-1532",
+          "GS-1930",
+          "GS-1932"
+        ],
+        "intervals": [
+          [
+            "GS3010A-110000",
+            null
+          ],
+          [
+            "GS3011C-10000",
+            "GS3016C-23999"
+          ],
+          [
+            "GS3014D-101",
+            "GS3016D-607"
+          ],
+          [
+            "GS3016P-151487",
+            "GS3016P-160599"
+          ],
+          [
+            "GS30C-24000",
+            null
+          ],
+          [
+            "GS30D-6080",
+            "GS30D-40100"
+          ],
+          [
+            "GS30P-160600",
+            "GS30P-200100"
+          ]
+        ]
+      },
+      {
+        "models": [
+          "GS-2032",
+          "GS-2632",
+          "GS-3232"
+        ],
+        "intervals": [
+          [
+            "GS3211A-110000",
+            null
+          ],
+          [
+            "GS3212C-10000",
+            "GS3216C-17299"
+          ],
+          [
+            "GS3216P-142676",
+            "GS3216P-148699"
+          ],
+          [
+            "GS32C-17300",
+            null
+          ],
+          [
+            "GS32D-101",
+            "GS32D-10100"
+          ],
+          [
+            "GS32P-148700",
+            "GS32P-200100"
+          ]
+        ]
+      },
+      {
+        "models": [
+          "GS-2046",
+          "GS-2646",
+          "GS-3246"
+        ],
+        "intervals": [
+          [
+            "GS4612A-110000",
+            null
+          ],
+          [
+            "GS4612C-10000",
+            "GS4616C-18099"
+          ],
+          [
+            "GS4614D-101",
+            "GS4616D-5029"
+          ],
+          [
+            "GS4616P-138362",
+            "GS4616P-141799"
+          ],
+          [
+            "GS46C-18100",
+            null
+          ],
+          [
+            "GS46D-5030",
+            "GS46D-20100"
+          ],
+          [
+            "GS46P-141800",
+            "GS46P-200100"
+          ]
+        ]
+      },
+      {
+        "models": [
+          "GS-4047"
+        ],
+        "intervals": [
+          [
+            "GS4712C-101",
+            "GS4716C-4499"
+          ],
+          [
+            "GS4714D-101",
+            "GS4716D-3959"
+          ],
+          [
+            "GS4716P-101",
+            "GS4716P-999"
+          ],
+          [
+            "GS47C-4500",
+            null
+          ],
+          [
+            "GS47D-3960",
+            null
+          ],
+          [
+            "GS47P-1000",
+            null
+          ]
+        ]
+      }
+    ],
+    "pre_transition": {
+      "label": "To August 31, 2016",
+      "example": "GS3016P-123456",
+      "model_family_positions": [
+        1,
+        4
+      ],
+      "model_year_positions": [
+        5,
+        6
+      ],
+      "facility_position": 7,
+      "sequence_start_position": 9,
+      "model_year_example": 2016
+    },
+    "post_transition": {
+      "label": "From September 1, 2016",
+      "example": "GS30P-123456",
+      "year_component": false,
+      "facility_position": 5,
+      "sequence_start_position": 7
+    },
+    "plate_fields": {
+      "older": [
+        "Manufacture date",
+        "Model year"
+      ],
+      "newer": [
+        "Year of manufacture"
+      ]
+    },
+    "verification": "Official PDF scope and legend rendered and visually checked",
+    "sha256": "7a310bad617d423ceb19c6b5b5acc5d932b8dea5220f6c34240d0f8c1f682b0e",
+    "conflicts": [
+      {
+        "field": "GS30D older range end",
+        "pdf_value": "GS3016D-607",
+        "catalog_value": "GS3016D-6079",
+        "catalog_url": "https://manuals.genielift.com/parts%20and%20service%20manuals/servscissors1.htm",
+        "action": "Retain both raw values; do not silently correct. Hold disputed 608–6079 tail pending stronger evidence."
+      },
+      {
+        "field": "GS30P older range start",
+        "pdf_value": "GS3016P-151487",
+        "catalog_value": "GS3016P-142281",
+        "action": "Use overlap 151487–160599 for automatic application; hold earlier disputed interval."
+      }
+    ],
+    "limitations": [
+      "Examples illustrate a parser, not actual dated units.",
+      "Null upper bound preserves source wording; do not extend across future format generations.",
+      "Validate exact model, family, facility and serial applicability before parsing.",
+      "The two-digit year needs era-scoped expansion; no universal century pivot.",
+      "Family code cannot uniquely identify every commercial model."
+    ]
+  },
+  "correction_to_prior_evidence": {
+    "id": "genie-97385-format-example-conflict",
+    "kind": "scoped_model_year_format_with_illustrative_plate_conflict",
+    "models": [
+      "GS-1530",
+      "GS-1532",
+      "GS-1930",
+      "GS-1932",
+      "GS-2032",
+      "GS-2632",
+      "GS-2046",
+      "GS-2646",
+      "GS-3246",
+      "GS-3232"
+    ],
+    "source_url": "https://manuals.genielift.com/Parts%20And%20Service%20Manuals/data/Service/Scissors/97385.pdf",
+    "document": "97385 Rev E10, February 2012",
+    "pages": [
+      {
+        "pdf_page_1_based": 1,
+        "printed_page": "cover"
+      },
+      {
+        "pdf_page_1_based": 3,
+        "printed_page": "iii"
+      }
+    ],
+    "serial_applicability": [
+      {
+        "models": [
+          "GS-1530",
+          "GS-1532",
+          "GS-1930",
+          "GS-1932"
+        ],
+        "from": "GS3005A-76000",
+        "through": "GS3011A-109999"
+      },
+      {
+        "models": [
+          "GS-1530",
+          "GS-1532",
+          "GS-1930",
+          "GS-1932"
+        ],
+        "from": "GS3005B-76000",
+        "through": "GS3009B-98941"
+      },
+      {
+        "models": [
+          "GS-1530",
+          "GS-1532",
+          "GS-1930",
+          "GS-1932"
+        ],
+        "from": "GS3008C-101",
+        "through": "GS3011C-9999"
+      },
+      {
+        "models": [
+          "GS-2032",
+          "GS-2632",
+          "GS-3232"
+        ],
+        "from": "GS3205-75407",
+        "through": "GS3209-94602"
+      },
+      {
+        "models": [
+          "GS-2032",
+          "GS-2632",
+          "GS-3232"
+        ],
+        "from": "GS3209A-94603",
+        "through": "GS3212A-109999"
+      },
+      {
+        "models": [
+          "GS-2032",
+          "GS-2632",
+          "GS-3232"
+        ],
+        "from": "GS3205B-76000",
+        "through": "GS3209B-98941"
+      },
+      {
+        "models": [
+          "GS-2032",
+          "GS-2632",
+          "GS-3232"
+        ],
+        "from": "GS3208C-101",
+        "through": "GS3212C-9999"
+      },
+      {
+        "models": [
+          "GS-2046",
+          "GS-2646",
+          "GS-3246"
+        ],
+        "from": "GS4605-75438",
+        "through": "GS4609-95192"
+      },
+      {
+        "models": [
+          "GS-2046",
+          "GS-2646",
+          "GS-3246"
+        ],
+        "from": "GS4609A-95193",
+        "through": "GS4611A-109999"
+      },
+      {
+        "models": [
+          "GS-2046",
+          "GS-2646",
+          "GS-3246"
+        ],
+        "from": "GS4608C-101",
+        "through": "GS4612C-9999"
+      }
+    ],
+    "example": "GS3005A-12345",
+    "manufacture_year": null,
+    "evidence": "Diagram labels GS30=model, 05=model year, A=facility (used for models manufactured at multiple facilities), remainder=sequence. Example plate instead prints model year 2011 and manufacture date 04/12/2005.",
+    "limitations": [
+      "Internally inconsistent illustrative plate; quarantine the example and do not turn it into a dated unit record.",
+      "Facility letter is not a year/design-revision code.",
+      "Cover grouped ranges are manual applicability, not proof every individual model exists throughout each interval."
+    ],
+    "verification": "Official legend visually checked.",
+    "verified_on": "2026-10-17",
+    "universal_decoder": false,
+    "allowed_use": "Use the explicit legend to interpret the model-year segment within verified manual applicability; quarantine only conflicting illustrative plate dates, not the legend itself."
+  },
+  "implementation_guidance": [
+    "Expose a Model year result when source-scoped serial decoding supports it. Do not discard useful year evidence just because manufacture date is unknown.",
+    "Retain manufacture_year separately and leave it null without plate or factory record evidence.",
+    "Match pattern and source scope before decoding; retain provenance and raw serial.",
+    "Yearless format returns year unavailable from serial, not a fabricated year.",
+    "Do not implement a universal 10th-character VIN rule for Genie GS."
+  ]
+}

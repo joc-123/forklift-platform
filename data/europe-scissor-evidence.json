@@ -1,0 +1,1028 @@
+{
+  "schema_version": "1.0",
+  "project": "Forklift IQ",
+  "batch": "AIRO, IMER/ITECO, PB Lifttechnik, Holland Lift, Hy-Brid/Custom Equipment/AXCS",
+  "observed_at": "2026-10-17",
+  "summary": {
+    "confirmed_universal_serial_year_decoders": 0,
+    "confirmed_annual_serial_intervals": 0,
+    "year_policy": "Read explicit original machine manufacture-year/date field or use an exact-serial manufacturer build record. Otherwise unresolved.",
+    "live_project_mutations": false
+  },
+  "rules": [
+    {
+      "id": "EUYEAR-AIRO-X-XS",
+      "brand": "AIRO / Tigieffe",
+      "models": [
+        "X8 EN",
+        "X10 EW",
+        "X10 EW WIND",
+        "X10 EN",
+        "X12 EW",
+        "X12 EW WIND",
+        "X12 EN",
+        "X14 EW",
+        "XS7 E RESTYLING",
+        "XS8 E RESTYLING LIGHT",
+        "XS8 E RESTYLING",
+        "XS9 E RESTYLING"
+      ],
+      "region": "EU/CE manual; Italian plate verified",
+      "method": "explicit_machine_plate",
+      "status": "supported_scoped",
+      "year_field": "ANNO / YEAR",
+      "label_location": "Base-chassis plate as shown in section 1.8; serial additionally stamped into chassis. Confirm position from model diagram, not assumed front/rear.",
+      "serial_applicability": "No numeric serial limits stated in identification section.",
+      "evidence_summary": "Year field is separate from machine serial. The chassis stamp supplies identity if the plate is missing.",
+      "source_ids": [
+        "AIRO01",
+        "AIRO02"
+      ],
+      "limits": "No interpretation of SF xx.xx.xx; 2012-09 is manual edition. Do not propagate to all AIRO models.",
+      "runtime_serial_decoder_enabled": false,
+      "manufacturing_year": null
+    },
+    {
+      "id": "EUYEAR-AIRO-XL",
+      "brand": "AIRO / Tigieffe",
+      "models": [
+        "XL17 E",
+        "XL20 RTE"
+      ],
+      "region": "English 11/2023; CE mark in legend",
+      "method": "explicit_machine_plate",
+      "status": "provisional_indexed_only",
+      "year_field": "D: Year of construction",
+      "label_location": "Unverified pending full plate figure",
+      "serial_applicability": "No serial bounds verified.",
+      "evidence_summary": "Indexed original manual separates model, serial, punched serial and construction year.",
+      "source_ids": [
+        "AIRO03"
+      ],
+      "limits": "Full PDF retrieval failed; not ready for automatic plate-position guidance.",
+      "runtime_serial_decoder_enabled": false,
+      "manufacturing_year": null
+    },
+    {
+      "id": "EUYEAR-IMER-IM47",
+      "brand": "IMER",
+      "models": [
+        "IM 4746",
+        "IM 4752"
+      ],
+      "region": "US ANSI A92.20/2018 manual",
+      "method": "explicit_machine_plate",
+      "status": "supported_scoped",
+      "year_field": "MANUFACTURING YEAR",
+      "label_location": "Metal identification plate fixed to chassis",
+      "serial_applicability": "No serial bounds stated in inspected manual.",
+      "evidence_summary": "Standard-model identification figure shows IM 4752 and separates manufacture year from serial number; manual covers IM 4746 and IM 4752.",
+      "source_ids": [
+        "IMER01"
+      ],
+      "limits": "June 2019 revision and May 2026 hosting path are document metadata, not unit dates.",
+      "runtime_serial_decoder_enabled": false,
+      "manufacturing_year": null
+    },
+    {
+      "id": "EUYEAR-ITECO-IT122",
+      "brand": "ITECO",
+      "models": [
+        "IT10122",
+        "IT12122"
+      ],
+      "region": "CE plate; English 06/2008 manual; standard-model diagram",
+      "method": "explicit_machine_plate",
+      "status": "supported_scoped",
+      "year_field": "ANNO DI COSTRUZIONE",
+      "label_location": "Metal plate fixed to truck/chassis",
+      "serial_applicability": "No serial bounds stated.",
+      "evidence_summary": "Plate separately identifies model, serial (MATRICOLA), and construction year.",
+      "source_ids": [
+        "ITECO01"
+      ],
+      "limits": "Do not replace historical ITECO manufacturer with IMER solely because IMER bought assets in 2009.",
+      "runtime_serial_decoder_enabled": false,
+      "manufacturing_year": null
+    },
+    {
+      "id": "EUYEAR-PB-S131",
+      "brand": "PB Lifttechnik",
+      "models": [
+        "PB S131-19 E"
+      ],
+      "region": "English original-manual translation; TOP19",
+      "method": "explicit_machine_plate",
+      "status": "supported_with_source_conflicts",
+      "year_field": "Year of manufacturing",
+      "label_location": "Identification type plate; exact chassis location not specified on inspected page",
+      "serial_applicability": "Illustration 19132.***; edition footer 48/14/1115 is unresolved applicability metadata.",
+      "evidence_summary": "Separate year field shown as **.20** beside serial.",
+      "source_ids": [
+        "PB01"
+      ],
+      "limits": "Do not decode 19 as 2019. Body says S131-13 E while cover/plate say S131-19 E. Exact document fit requires review.",
+      "runtime_serial_decoder_enabled": false,
+      "manufacturing_year": null
+    },
+    {
+      "id": "EUYEAR-PB-S151",
+      "brand": "PB Lifttechnik",
+      "models": [
+        "PB S151-16 E"
+      ],
+      "region": "German original-manual reproduction; edition unverified",
+      "method": "explicit_machine_plate",
+      "status": "corroborating_indexed_only",
+      "year_field": "Baujahr",
+      "label_location": "Underframe/chassis (Untergestell)",
+      "serial_applicability": "Illustration 16151.***; no numeric start/end verified.",
+      "evidence_summary": "Model-specific identification section locates the plate in underframe and lists a separate construction-year field.",
+      "source_ids": [
+        "PB02"
+      ],
+      "limits": "Do not infer 2016 from 16 prefix; original PDF edition still needed.",
+      "runtime_serial_decoder_enabled": false,
+      "manufacturing_year": null
+    },
+    {
+      "id": "EUYEAR-HL-D25",
+      "brand": "Holland Lift International",
+      "models": [
+        "HL-190 D25 4WD/P/N",
+        "HL-220 D25 4WD/P/N",
+        "B-165DL25 4WD/P/N",
+        "B-195DL25 4WD/P/N"
+      ],
+      "region": "Legacy English operator manual rev.0 28/5/15",
+      "method": "explicit_machine_plate",
+      "status": "supported_scoped",
+      "year_field": "Bouwjaar / Year of manufacture / Baujahr",
+      "label_location": "Bottom carriage, section 1.6.1",
+      "serial_applicability": "No serial-number bounds stated.",
+      "evidence_summary": "Plate image gives construction year separately from chassis number.",
+      "source_ids": [
+        "HL01"
+      ],
+      "limits": "No extrapolation to future HOLLAND LIFT by Sinoboom production; 2015 is manual date only.",
+      "runtime_serial_decoder_enabled": false,
+      "manufacturing_year": null
+    },
+    {
+      "id": "EUYEAR-HYBRID-S2",
+      "brand": "Hy-Brid / Custom Equipment",
+      "models": [
+        "HB-830",
+        "HB-830CE",
+        "HB-1230",
+        "HB-1230CE"
+      ],
+      "region": "ANSI/CSA and CE variants separated by exact manual/model",
+      "method": "serial_identity_then_support",
+      "status": "year_unresolved",
+      "year_field": "No manufacture-year field verified in this source",
+      "label_location": "Chassis behind lower controls, reached by opening lower control panel; duplicate reference on platform below manual box. Use qualified personnel and model safety instructions.",
+      "serial_applicability": "Only exact SUPO-686 Rev A ranges in applicability ledger.",
+      "evidence_summary": "Manual provides serial-plate location and narrow applicability.",
+      "source_ids": [
+        "AXCS01"
+      ],
+      "limits": "No rule equates D03 or D08 to calendar years; CE endpoints kept in raw shorthand.",
+      "runtime_serial_decoder_enabled": false,
+      "manufacturing_year": null
+    },
+    {
+      "id": "EUYEAR-AXCS-PS",
+      "brand": "AXCS / Hy-Brid / Custom Equipment",
+      "models": [
+        "PS-1030",
+        "PS-1430",
+        "PS-1930"
+      ],
+      "region": "ANSI/CSA/CE manual; CE- prefix retained",
+      "method": "exact_serial_resources_then_support",
+      "status": "year_unresolved",
+      "year_field": "No manufacture-year decoder established",
+      "label_location": "PS5.0-S Rev G model decal diagrams pp.16–21 identify serial decal as item 31; exact position needs visual check.",
+      "serial_applicability": "PS10-50001 onward; PS14-50001 onward; PS19-50001 onward in operations manual.",
+      "evidence_summary": "Official manual explicitly describes CE- prefix; public portal routes exact serial to resources.",
+      "source_ids": [
+        "AXCS03",
+        "AXCS04",
+        "AXCS05",
+        "AXCS06",
+        "AXCS09"
+      ],
+      "limits": "PS10/14/19 are not established years. Parts overlap at PS14-50861/50862 prevents unique catalogue routing. No year-returning portal result tested.",
+      "runtime_serial_decoder_enabled": false,
+      "manufacturing_year": null
+    },
+    {
+      "id": "EUYEAR-AXCS-EL",
+      "brand": "AXCS / Custom Equipment",
+      "models": [
+        "EL-1930e",
+        "EL-2632e"
+      ],
+      "region": "ANSI/SIA A92.20 maintenance manual",
+      "method": "manufacturer_confirmation_required",
+      "status": "year_unresolved",
+      "year_field": "Unverified",
+      "label_location": "Not established from inspected maintenance manual",
+      "serial_applicability": "No serial-date applicability bounds established.",
+      "evidence_summary": "Manual requires model and serial for manufacturer assistance.",
+      "source_ids": [
+        "AXCS07"
+      ],
+      "limits": "Manual footer, revision and copyright dates are not manufacture dates; QR rollout to EL was only planned in July 2026 announcement.",
+      "runtime_serial_decoder_enabled": false,
+      "manufacturing_year": null
+    }
+  ],
+  "manual_applicability": [
+    {
+      "id": "APP-S2-1",
+      "brand": "Hy-Brid",
+      "model": "HB-830",
+      "raw_serial_scope": "D03-20000–D03-20003",
+      "scope_meaning": "manual_or_parts_applicability_only",
+      "manufacturing_year": null,
+      "year_inference_permitted": false,
+      "status": "supported_manual_scope_only",
+      "source_id": "AXCS01",
+      "notes": "SUPO-686 Rev A; preserve gaps and raw abbreviated CE endpoints."
+    },
+    {
+      "id": "APP-S2-2",
+      "brand": "Hy-Brid",
+      "model": "HB-830CE",
+      "raw_serial_scope": "E03-20000-29999",
+      "scope_meaning": "manual_or_parts_applicability_only",
+      "manufacturing_year": null,
+      "year_inference_permitted": false,
+      "status": "supported_manual_scope_only",
+      "source_id": "AXCS01",
+      "notes": "SUPO-686 Rev A; preserve gaps and raw abbreviated CE endpoints."
+    },
+    {
+      "id": "APP-S2-3",
+      "brand": "Hy-Brid",
+      "model": "HB-1230",
+      "raw_serial_scope": "D08-20001–D08-20043; D08-20046–D08-20063",
+      "scope_meaning": "manual_or_parts_applicability_only",
+      "manufacturing_year": null,
+      "year_inference_permitted": false,
+      "status": "supported_manual_scope_only",
+      "source_id": "AXCS01",
+      "notes": "SUPO-686 Rev A; preserve gaps and raw abbreviated CE endpoints."
+    },
+    {
+      "id": "APP-S2-4",
+      "brand": "Hy-Brid",
+      "model": "HB-1230CE",
+      "raw_serial_scope": "E08-25001-25999",
+      "scope_meaning": "manual_or_parts_applicability_only",
+      "manufacturing_year": null,
+      "year_inference_permitted": false,
+      "status": "supported_manual_scope_only",
+      "source_id": "AXCS01",
+      "notes": "SUPO-686 Rev A; preserve gaps and raw abbreviated CE endpoints."
+    },
+    {
+      "id": "APP-PSOPS-1",
+      "brand": "AXCS / Hy-Brid",
+      "model": "PS-1030",
+      "raw_serial_scope": "PS10-50001 -",
+      "scope_meaning": "manual_or_parts_applicability_only",
+      "manufacturing_year": null,
+      "year_inference_permitted": false,
+      "status": "supported_manual_scope_only",
+      "source_id": "AXCS06",
+      "notes": "PS5.0-S Rev G, p.2. CE units add CE-. No upper bound stated in this PDF."
+    },
+    {
+      "id": "APP-PSOPS-2",
+      "brand": "AXCS / Hy-Brid",
+      "model": "PS-1430",
+      "raw_serial_scope": "PS14-50001 -",
+      "scope_meaning": "manual_or_parts_applicability_only",
+      "manufacturing_year": null,
+      "year_inference_permitted": false,
+      "status": "supported_manual_scope_only",
+      "source_id": "AXCS06",
+      "notes": "PS5.0-S Rev G, p.2. CE units add CE-. No upper bound stated in this PDF."
+    },
+    {
+      "id": "APP-PSOPS-3",
+      "brand": "AXCS / Hy-Brid",
+      "model": "PS-1930",
+      "raw_serial_scope": "PS19-50001 -",
+      "scope_meaning": "manual_or_parts_applicability_only",
+      "manufacturing_year": null,
+      "year_inference_permitted": false,
+      "status": "supported_manual_scope_only",
+      "source_id": "AXCS06",
+      "notes": "PS5.0-S Rev G, p.2. CE units add CE-. No upper bound stated in this PDF."
+    },
+    {
+      "id": "APP-PSPARTS-1",
+      "brand": "AXCS / Hy-Brid",
+      "model": "PS-1030",
+      "raw_serial_scope": "D01-40001–D01-49999",
+      "scope_meaning": "manual_or_parts_applicability_only",
+      "manufacturing_year": null,
+      "year_inference_permitted": false,
+      "status": "index_routing_only",
+      "source_id": "AXCS03",
+      "notes": "Confirm exact PDF/equipment configuration before application."
+    },
+    {
+      "id": "APP-PSPARTS-2",
+      "brand": "AXCS / Hy-Brid",
+      "model": "PS-1030",
+      "raw_serial_scope": "PS10-50001–PS10-50081",
+      "scope_meaning": "manual_or_parts_applicability_only",
+      "manufacturing_year": null,
+      "year_inference_permitted": false,
+      "status": "index_routing_only",
+      "source_id": "AXCS03",
+      "notes": "Confirm exact PDF/equipment configuration before application."
+    },
+    {
+      "id": "APP-PSPARTS-3",
+      "brand": "AXCS / Hy-Brid",
+      "model": "PS-1030",
+      "raw_serial_scope": "PS10-50082–PS10-59999",
+      "scope_meaning": "manual_or_parts_applicability_only",
+      "manufacturing_year": null,
+      "year_inference_permitted": false,
+      "status": "index_routing_only",
+      "source_id": "AXCS03",
+      "notes": "Confirm exact PDF/equipment configuration before application."
+    },
+    {
+      "id": "APP-PSPARTS-4",
+      "brand": "AXCS / Hy-Brid",
+      "model": "PS-1430",
+      "raw_serial_scope": "D02-40001–D02-49999",
+      "scope_meaning": "manual_or_parts_applicability_only",
+      "manufacturing_year": null,
+      "year_inference_permitted": false,
+      "status": "index_routing_only",
+      "source_id": "AXCS03",
+      "notes": "Confirm exact PDF/equipment configuration before application."
+    },
+    {
+      "id": "APP-PSPARTS-5",
+      "brand": "AXCS / Hy-Brid",
+      "model": "PS-1430",
+      "raw_serial_scope": "PS14-50001–PS14-50862",
+      "scope_meaning": "manual_or_parts_applicability_only",
+      "manufacturing_year": null,
+      "year_inference_permitted": false,
+      "status": "conflict_overlap",
+      "source_id": "AXCS03",
+      "notes": "Live parts index; endpoint is a catalogue boundary, not an annual boundary. Overlap needs manufacturer clarification."
+    },
+    {
+      "id": "APP-PSPARTS-6",
+      "brand": "AXCS / Hy-Brid",
+      "model": "PS-1430",
+      "raw_serial_scope": "PS14-50861–PS14-59999",
+      "scope_meaning": "manual_or_parts_applicability_only",
+      "manufacturing_year": null,
+      "year_inference_permitted": false,
+      "status": "conflict_overlap",
+      "source_id": "AXCS03",
+      "notes": "Live parts index; endpoint is a catalogue boundary, not an annual boundary. Overlap needs manufacturer clarification."
+    },
+    {
+      "id": "APP-PSPARTS-7",
+      "brand": "AXCS / Hy-Brid",
+      "model": "PS-1930",
+      "raw_serial_scope": "PS19-50001–PS19-51953",
+      "scope_meaning": "manual_or_parts_applicability_only",
+      "manufacturing_year": null,
+      "year_inference_permitted": false,
+      "status": "index_routing_only",
+      "source_id": "AXCS03",
+      "notes": "Confirm exact PDF/equipment configuration before application."
+    },
+    {
+      "id": "APP-PSPARTS-8",
+      "brand": "AXCS / Hy-Brid",
+      "model": "PS-1930",
+      "raw_serial_scope": "PS19-51954–PS19-59999",
+      "scope_meaning": "manual_or_parts_applicability_only",
+      "manufacturing_year": null,
+      "year_inference_permitted": false,
+      "status": "index_routing_only",
+      "source_id": "AXCS03",
+      "notes": "Confirm exact PDF/equipment configuration before application."
+    }
+  ],
+  "lineage": [
+    {
+      "id": "L-IMER",
+      "brands": [
+        "ITECO",
+        "IMER Access"
+      ],
+      "event_year": 2009,
+      "event": "IMER acquired ITECO assets; official group history identifies acquisition of Iteco in Pegognaga.",
+      "sources": [
+        "IMER02",
+        "IMER03"
+      ],
+      "catalog_action": "Retain ITECO as historical manufacturer/brand and IMER Access as successor support family; no automatic rebadge or year cutoff."
+    },
+    {
+      "id": "L-HL",
+      "brands": [
+        "Holland Lift International",
+        "HOLLAND LIFT by Sinoboom"
+      ],
+      "event_date": "2025-04-07",
+      "event": "Sinoboom announced acquisition of Holland Lift brand/IP through Sinoboom BV, planned technical adaptation/certification and first production in Poznan in Q1 2026.",
+      "sources": [
+        "HL02",
+        "HL03"
+      ],
+      "catalog_action": "Separate legacy lineage from planned Sinoboom production. Actual restart and serial system unknown. Acquisition is not an individual manufacture date."
+    },
+    {
+      "id": "L-AXCS",
+      "brands": [
+        "Hy-Brid Lifts",
+        "Custom Equipment LLC",
+        "AXCS Equipment"
+      ],
+      "event_date": "2025-01-06",
+      "event": "AXCS Equipment identity announced by Custom Equipment with gradual branding transition.",
+      "sources": [
+        "AXCS08"
+      ],
+      "catalog_action": "Retain Custom Equipment legal manufacturer and Hy-Brid legacy/product identity. Rebrand does not create a serial-year boundary."
+    }
+  ],
+  "public_lookup_routes": [
+    {
+      "brand": "AIRO",
+      "url": "https://airo.com/wp-content/uploads/2021/10/Serie-X-XS-RESTYLING-English-from-2012-09.pdf",
+      "method": "Exact-model original manual, machine year plate, full chassis serial; manufacturer service if missing",
+      "public_year_decoder_verified": false,
+      "sources": [
+        "AIRO01",
+        "AIRO02"
+      ],
+      "blocker": "No public universal year lookup verified; no outreach performed."
+    },
+    {
+      "brand": "IMER / ITECO",
+      "url": "https://imerusa.com/aerial/im-series-scissors/",
+      "method": "Public model manual first; manufacturer-linked customer-care portal if user already has authorized access",
+      "public_year_decoder_verified": false,
+      "sources": [
+        "IMER01",
+        "ITECO01",
+        "IMER04",
+        "IMER05"
+      ],
+      "blocker": "Portal login/CAPTCHA; not entered and no year-returning function verified."
+    },
+    {
+      "brand": "PB Lifttechnik",
+      "url": "https://pblift.de/unternehmen/mitarbeiter",
+      "method": "Read separate year plate; current service team can be asked for factory record with exact model and serial after approval",
+      "public_year_decoder_verified": false,
+      "sources": [
+        "PB01",
+        "PB02",
+        "PB03"
+      ],
+      "blocker": "No public serial-year search verified. Do not use outdated manual contact addresses without rechecking."
+    },
+    {
+      "brand": "Holland Lift",
+      "url": "https://www.sinoboom.com/content/details_34_986.html",
+      "method": "Legacy model plate first; corporate lineage announcement identifies successor brand/IP owner, not guaranteed legacy record service",
+      "public_year_decoder_verified": false,
+      "sources": [
+        "HL01",
+        "HL02"
+      ],
+      "blocker": "No public year lookup or verified legacy factory-record custodian established."
+    },
+    {
+      "brand": "Hy-Brid / AXCS",
+      "url": "https://axcs.com/parts/hybrid-lifts-pro-series",
+      "method": "Exact serial public resource/parts lookup, or serial-specific QR on supported recent units; manufacturer service for date confirmation",
+      "public_year_decoder_verified": false,
+      "sources": [
+        "AXCS01",
+        "AXCS02",
+        "AXCS03",
+        "AXCS09",
+        "AXCS10"
+      ],
+      "blocker": "Lookup presence verified, manufacturing-year response not verified. No sample serial submitted. Avoid service-ticket/registration submissions without approval."
+    }
+  ],
+  "conflicts": [
+    {
+      "id": "C-PB-MODEL",
+      "sources": [
+        "PB01"
+      ],
+      "issue": "Cover and plate PB S131-19 E; machine-description body PB S131-13 E.",
+      "disposition": "Preserve raw discrepancy; require document-to-unit match; do not silently repair model name."
+    },
+    {
+      "id": "C-PB-EDITION",
+      "sources": [
+        "PB01"
+      ],
+      "issue": "Edition 48/14/1115 explicitly labeled cw/year/from Serial.-No.; sample machine serial 19132.***.",
+      "disposition": "Store edition raw; do not make 1115 a calendar-year interval or invent missing prefix."
+    },
+    {
+      "id": "C-AXCS-OVERLAP",
+      "sources": [
+        "AXCS03",
+        "AXCS04",
+        "AXCS05"
+      ],
+      "issue": "Two PS-1430 parts scopes overlap at PS14-50861 and PS14-50862.",
+      "disposition": "No unique automatic catalogue choice for either serial; seek exact-serial result or manufacturer clarification."
+    },
+    {
+      "id": "C-AXCS-MODEL",
+      "sources": [
+        "AXCS04"
+      ],
+      "issue": "Page title identifies PS-1430; Shop Parts subsection says PS1930.",
+      "disposition": "Preserve conflict; parts-list routing requires confirmation, not a guessed rename."
+    },
+    {
+      "id": "C-AXCS-PS-DATES",
+      "sources": [
+        "AXCS06"
+      ],
+      "issue": "Revision March 2023; copyright 2026; upload path 2026/04.",
+      "disposition": "Record distinct document metadata; none supplies unit manufacture year."
+    },
+    {
+      "id": "C-AXCS-EL-DATES",
+      "sources": [
+        "AXCS07"
+      ],
+      "issue": "Body footer March 2025; back-cover revision June 2026; upload path 2026/09.",
+      "disposition": "Keep distinct; not a machine date rule."
+    },
+    {
+      "id": "C-AXCS-QR-HISTORY",
+      "sources": [
+        "AXCS09",
+        "AXCS11"
+      ],
+      "issue": "2026 announcement refers to initial QR introduction in 2021; About timeline places QR introduction in 2020.",
+      "disposition": "Exact introduction year unresolved and unnecessary for dating units."
+    },
+    {
+      "id": "C-AXCS-PORTAL-DATE",
+      "sources": [
+        "AXCS10"
+      ],
+      "issue": "Article heading June 15, 2026; body dateline June 17, 2026.",
+      "disposition": "Use 2026 announcement without inventing exact publication/event equivalence."
+    },
+    {
+      "id": "C-HL-RESTART",
+      "sources": [
+        "HL02",
+        "HL03"
+      ],
+      "issue": "Q1 2026 production was announced as a plan; no later primary confirmation found in this research.",
+      "disposition": "Actual restart date and new serial conventions remain unresolved; do not mark resumed or permanently discontinued from this announcement alone."
+    },
+    {
+      "id": "C-AIRO-ACCESS",
+      "sources": [
+        "AIRO03"
+      ],
+      "issue": "Only indexed original-manual excerpt accessible; full PDF repeatedly 502.",
+      "disposition": "Provisional plate-field record; complete document check remains pending."
+    }
+  ],
+  "actionable_gaps": [
+    {
+      "priority": 1,
+      "scope": "All brands",
+      "need": "Actual machine plate photo, complete serial with prefixes/punctuation, exact model and region.",
+      "reason": "Research establishes how to identify dates, not the year of an unspecified machine."
+    },
+    {
+      "priority": 1,
+      "scope": "PB S131-19 E and AXCS PS-1430",
+      "need": "Manufacturer correction or exact-machine manual/parts confirmation.",
+      "reason": "Model text conflicts and serial overlap must not be normalized by guesswork."
+    },
+    {
+      "priority": 1,
+      "scope": "Holland Lift by Sinoboom",
+      "need": "Dated primary evidence of completed production restart and serial/nameplate instructions for new machines.",
+      "reason": "2025 announcement is forward-looking; planned Q1 2026 is not established production."
+    },
+    {
+      "priority": 2,
+      "scope": "AIRO XL17 E / XL20 RTE",
+      "need": "Full 11/2023 PDF and legible identification diagram.",
+      "reason": "Only indexed manufacturer text verified; no exact placement yet."
+    },
+    {
+      "priority": 2,
+      "scope": "PB S151-16 E",
+      "need": "Full original manual edition and serial applicability.",
+      "reason": "Indexed p.23 supports separate year field and chassis location, not full applicability."
+    },
+    {
+      "priority": 2,
+      "scope": "AXCS / Hy-Brid",
+      "need": "Unit-specific portal result or factory build record explicitly giving manufacture date.",
+      "reason": "Parts and QR routes do not themselves prove a date decoder."
+    },
+    {
+      "priority": 2,
+      "scope": "IMER Global Customer Care",
+      "need": "Existing authorized account access only if portal evidence is needed.",
+      "reason": "No login requested or attempted; exact year lookup ability unknown."
+    }
+  ],
+  "sources": [
+    {
+      "id": "AIRO01",
+      "brand": "AIRO",
+      "title": "X/XS use and maintenance, 045.20.UEM-EN, 2012-09",
+      "url": "https://airo.com/wp-content/uploads/2021/10/Serie-X-XS-RESTYLING-English-from-2012-09.pdf",
+      "publisher": "Tigieffe Srl / AIRO",
+      "hosting": "manufacturer",
+      "scope": "Listed X/XS models; English EU manual",
+      "locator": "Cover; p.2 revision history; p.10 section 1.8",
+      "verification": "manufacturer PDF text inspected via web",
+      "observed_at": "2026-10-17",
+      "notes": "Direct download returned 502; no local original English PDF. Revision and URL dates are not unit manufacture dates."
+    },
+    {
+      "id": "AIRO02",
+      "brand": "AIRO",
+      "title": "X/XS uso e manutenzione, 045.20.UEM-IT, 2012-09",
+      "url": "https://www.uprent.it/public/file/X10EN-X12EN-X12EWRR2012-9296.pdf",
+      "publisher": "Tigieffe Srl / AIRO",
+      "hosting": "third-party mirror of original manufacturer manual",
+      "scope": "Same X/XS edition; Italian EU manual",
+      "locator": "Cover; p.10 section 1.8 and plate diagram",
+      "verification": "downloaded; text extracted; plate page visually checked",
+      "observed_at": "2026-10-17",
+      "notes": "",
+      "local_source_basename": "airo-x-xs-it.pdf",
+      "sha256": "462dc6d4e571b02e8323bd114bc38940ede9ba0b8a31b7eaa7101a9c8dfe9b55",
+      "bytes": 21843963
+    },
+    {
+      "id": "AIRO03",
+      "brand": "AIRO",
+      "title": "XL17 E / XL20 RTE use and maintenance, English 11/2023",
+      "url": "https://airo.com/wp-content/uploads/2024/06/Serie-XL17-E-XL20-RTE-Inglese-2023-11_.pdf",
+      "publisher": "Tigieffe Srl / AIRO",
+      "hosting": "manufacturer",
+      "scope": "XL17 E / XL20 RTE only",
+      "locator": "Printed p.2 identification legend",
+      "verification": "manufacturer search-index text only",
+      "observed_at": "2026-10-17",
+      "notes": "Full retrieval repeatedly returned 502. Indexed legend lists year of construction separately from serial. Provisional until full document and plate figure can be checked."
+    },
+    {
+      "id": "IMER01",
+      "brand": "IMER",
+      "title": "IM 4746 / IM 4752 use and maintenance, MUM IM47 EN R00 06/2019",
+      "url": "https://imerusa.com/wp-content/uploads/2026/05/im_47_usa_ansi_r00-s.pdf",
+      "publisher": "IMER International SpA, Access Platform Division",
+      "hosting": "manufacturer",
+      "scope": "IM 4746 / IM 4752; US ANSI A92.20/2018 edition; standard-model illustration shown is IM 4752",
+      "locator": "Cover; p.2; p.22 Identification",
+      "verification": "downloaded; plate page visually checked",
+      "observed_at": "2026-10-17",
+      "notes": "",
+      "local_source_basename": "imer-im47.pdf",
+      "sha256": "226ab496ca4560c532aa114fafc9379b5de0b150929fbe260a5583ed19791beb",
+      "bytes": 6190154
+    },
+    {
+      "id": "ITECO01",
+      "brand": "ITECO",
+      "title": "IT10122 / IT12122 operating and maintenance, MUM_IT122_GB_R03 06/2008",
+      "url": "https://atermonas.com/wp-content/uploads/2023/10/MUM_IT122_GB_R03.pdf",
+      "publisher": "ITECO SpA",
+      "hosting": "third-party mirror of original manufacturer manual",
+      "scope": "IT10122 / IT12122, standard-model identification; CE plate illustration",
+      "locator": "Cover; p.10; p.20 Identification",
+      "verification": "downloaded; plate page visually checked",
+      "observed_at": "2026-10-17",
+      "notes": "",
+      "local_source_basename": "iteco-it122.pdf",
+      "sha256": "7d4fcffc65dfd5cf30e738099151a41ecc2429db5c1a839d28d23369d934c2b2",
+      "bytes": 3913510
+    },
+    {
+      "id": "IMER02",
+      "brand": "IMER / ITECO",
+      "title": "IMER Group company history",
+      "url": "https://www.imergroup.com/en/about-us/",
+      "publisher": "IMER Group",
+      "hosting": "manufacturer",
+      "scope": "Corporate history and current Access division",
+      "locator": "History timeline; Pegognaga plant",
+      "verification": "manufacturer webpage read",
+      "observed_at": "2026-10-17",
+      "notes": ""
+    },
+    {
+      "id": "IMER03",
+      "brand": "IMER / ITECO",
+      "title": "Powered Access Line catalogue",
+      "url": "https://www.imergroup.com/files/pdf-cataloghi/EN-powered-access-line.pdf",
+      "publisher": "IMER Group",
+      "hosting": "manufacturer",
+      "scope": "IMER Access history",
+      "locator": "PDF page 2 introductory company history",
+      "verification": "manufacturer PDF text inspected via web",
+      "observed_at": "2026-10-17",
+      "notes": "Explicit 2009 purchase of ITECO assets corroborates history timeline; no serial dates."
+    },
+    {
+      "id": "IMER04",
+      "brand": "IMER",
+      "title": "IM Series scissors; Parts & Manuals route",
+      "url": "https://imerusa.com/aerial/im-series-scissors/",
+      "publisher": "IMER USA",
+      "hosting": "manufacturer",
+      "scope": "Current US IM scissor support route",
+      "locator": "Navigation: Parts & Manuals",
+      "verification": "manufacturer webpage read",
+      "observed_at": "2026-10-17",
+      "notes": ""
+    },
+    {
+      "id": "IMER05",
+      "brand": "IMER",
+      "title": "IMER Global Customer Care",
+      "url": "https://www.imerglobalcustomercare.com/it",
+      "publisher": "IMER",
+      "hosting": "manufacturer support destination linked by manufacturer",
+      "scope": "Customer-care portal",
+      "locator": "Public login screen",
+      "verification": "public screen read; no login",
+      "observed_at": "2026-10-17",
+      "notes": "Username/password and CAPTCHA present. No logged-in contents or year-returning capability verified."
+    },
+    {
+      "id": "PB01",
+      "brand": "PB Lifttechnik",
+      "title": "PB S131-19 E TOP19 operating and maintenance instructions",
+      "url": "https://www.malarlift.se/wp-content/uploads/2013/04/Operating-Instructions-PB-S131-19-E__E_.pdf",
+      "publisher": "PB Lifttechnik GmbH",
+      "hosting": "third-party mirror of original manufacturer manual",
+      "scope": "PB S131-19 E; type SCH13119007505HBF00",
+      "locator": "Cover; pp.6,20,22",
+      "verification": "downloaded; plate page visually checked",
+      "observed_at": "2026-10-17",
+      "notes": "Edition and model-name conflicts recorded separately.",
+      "local_source_basename": "pb-s131.pdf",
+      "sha256": "8a4185e7141bde1528412d21affe8b59e4602ef645c8f925f70b58449b3a66ef",
+      "bytes": 7270110
+    },
+    {
+      "id": "PB02",
+      "brand": "PB Lifttechnik",
+      "title": "PB S151-16 E Betriebs- und Wartungsanleitung",
+      "url": "https://www.manualslib.de/manual/395641/Pb-S151-16-E.html?page=23",
+      "publisher": "PB Lifttechnik GmbH",
+      "hosting": "third-party reproduction of original manufacturer manual",
+      "scope": "PB S151-16 E only; German; edition not verified",
+      "locator": "p.23 Kennzeichnung / Typenschild",
+      "verification": "indexed manufacturer-manual page text inspected",
+      "observed_at": "2026-10-17",
+      "notes": "Direct page retrieval timed out; use as model-scoped corroboration; exact edition remains unverified."
+    },
+    {
+      "id": "PB03",
+      "brand": "PB Lifttechnik",
+      "title": "PB current staff and service contacts",
+      "url": "https://pblift.de/unternehmen/mitarbeiter",
+      "publisher": "PB Lifttechnik GmbH",
+      "hosting": "manufacturer",
+      "scope": "Current service route",
+      "locator": "Service team",
+      "verification": "manufacturer webpage downloaded/read",
+      "observed_at": "2026-10-17",
+      "notes": "service@pblift.de; +49 (0)9077/9500-95. Do not blindly reuse obsolete pbgmbh.de contact data from old manuals.",
+      "local_source_basename": "pblift-team.html",
+      "sha256": "beb72326e8231b191486e2ca3581d545553c0b725f9dace53def690ef99a92e4",
+      "bytes": 266703
+    },
+    {
+      "id": "HL01",
+      "brand": "Holland Lift",
+      "title": "D25 operator manual, rev.0, 28/5/15",
+      "url": "https://www.mateco.bg/uploads/products/operating_manual_file/1273_HL-190_220D25_B-165_195DL25_ENG_REV_0%20%28klein%29.pdf",
+      "publisher": "Holland Lift International BV",
+      "hosting": "third-party mirror of original manufacturer manual",
+      "scope": "HL-190 D25 4WD/P/N; HL-220 D25 4WD/P/N; B-165DL25 4WD/P/N; B-195DL25 4WD/P/N",
+      "locator": "p.6 section 1.6.1 and plate image",
+      "verification": "downloaded; plate page visually checked",
+      "observed_at": "2026-10-17",
+      "notes": "",
+      "local_source_basename": "holland-d25.pdf",
+      "sha256": "a0aa2d435c0d4da5756c5edcf5d21e79f3d417112628f75ebf96f0232a8b64fc",
+      "bytes": 4724880
+    },
+    {
+      "id": "HL02",
+      "brand": "Holland Lift / Sinoboom",
+      "title": "Sinoboom acquisition of Holland Lift brand and IP",
+      "url": "https://www.sinoboom.com/content/details_34_986.html",
+      "publisher": "Sinoboom",
+      "hosting": "manufacturer / acquiring company",
+      "scope": "Brand/IP acquisition announcement, April 2025; production plan",
+      "locator": "Brand Strategy; Design; Product Launch",
+      "verification": "manufacturer announcement downloaded/read",
+      "observed_at": "2026-10-17",
+      "notes": "Displayed 04/07/2025 is interpreted as April 7 using Chinese counterpart. Q1 2026 is a production plan; actual restart was not established.",
+      "local_source_basename": "sinoboom-holland.html",
+      "sha256": "2d98c943d9732562e091d1fdfb93f76e14dae5aa8179a2c732f62f4bf2c9aa20",
+      "bytes": 29203
+    },
+    {
+      "id": "HL03",
+      "brand": "Holland Lift / Sinoboom",
+      "title": "Chinese counterpart of acquisition announcement",
+      "url": "https://www.sinoboom.com.cn/content/details_34_2318.html",
+      "publisher": "Sinoboom",
+      "hosting": "manufacturer / acquiring company",
+      "scope": "Date disambiguation for acquisition announcement",
+      "locator": "Body names 2025年4月7日; page header 04/08/2025",
+      "verification": "manufacturer announcement downloaded/read",
+      "observed_at": "2026-10-17",
+      "notes": "Body event April 7; posting April 8. These are corporate-event dates, not individual-machine dates.",
+      "local_source_basename": "sinoboom-holland-zh.html",
+      "sha256": "6313bc4fda0e1a5b6e77cb3f87a196850a2fdd464784176a3eeb1f407c0221db",
+      "bytes": 32337
+    },
+    {
+      "id": "AXCS01",
+      "brand": "Hy-Brid / Custom Equipment",
+      "title": "Series II parts manual SUPO-686 Rev A",
+      "url": "https://www.hybridlifts.com/files/documents/parts_manuals/SUPO-686.pdf",
+      "publisher": "Custom Equipment LLC",
+      "hosting": "manufacturer",
+      "scope": "HB-830, HB-830CE, HB-1230, HB-1230CE; exact cover ranges",
+      "locator": "Cover; printed pp.2–3, PDF page 2 spread",
+      "verification": "manufacturer PDF text read via web",
+      "observed_at": "2026-10-17",
+      "notes": "Direct download returned 403. Raw CE endpoint shorthand retained. No year decoder."
+    },
+    {
+      "id": "AXCS02",
+      "brand": "AXCS / Hy-Brid",
+      "title": "Official resource library",
+      "url": "https://axcs.com/service/resources?_language=english",
+      "publisher": "Custom Equipment LLC / AXCS",
+      "hosting": "manufacturer",
+      "scope": "Current and legacy manuals; language/model/certification filters",
+      "locator": "Resource index",
+      "verification": "manufacturer webpage read",
+      "observed_at": "2026-10-17",
+      "notes": "Index metadata is routing evidence; original PDF controls applicability."
+    },
+    {
+      "id": "AXCS03",
+      "brand": "AXCS / Hy-Brid",
+      "title": "Pro Series parts index and serial lookup",
+      "url": "https://axcs.com/parts/hybrid-lifts-pro-series",
+      "publisher": "Custom Equipment LLC / AXCS",
+      "hosting": "manufacturer",
+      "scope": "PS-1030, PS-1430, PS-1930; exact-serial parts route",
+      "locator": "Shop by Serial Number; model ranges",
+      "verification": "manufacturer webpage read",
+      "observed_at": "2026-10-17",
+      "notes": "PS-1430 range overlap is unresolved; public form observed but no unit lookup submitted. Year output unverified."
+    },
+    {
+      "id": "AXCS04",
+      "brand": "AXCS / Hy-Brid",
+      "title": "PS-1430 early parts catalogue",
+      "url": "https://axcs.com/parts/hybrid-lifts-pro-series/ps-1430/ps14-50001-ps14-50862",
+      "publisher": "Custom Equipment LLC / AXCS",
+      "hosting": "manufacturer",
+      "scope": "Header PS-1430, PS14-50001–PS14-50862",
+      "locator": "Title; resources; shop parts heading",
+      "verification": "manufacturer webpage read",
+      "observed_at": "2026-10-17",
+      "notes": "Shop Parts subsection says PS1930 despite page title PS-1430. Preserve source conflict."
+    },
+    {
+      "id": "AXCS05",
+      "brand": "AXCS / Hy-Brid",
+      "title": "PS-1430 later parts catalogue",
+      "url": "https://axcs.com/parts/hybrid-lifts-pro-series/ps-1430/ps14-50861-ps14-59999",
+      "publisher": "Custom Equipment LLC / AXCS",
+      "hosting": "manufacturer",
+      "scope": "PS-1430, PS14-50861–PS14-59999",
+      "locator": "Title and resource range",
+      "verification": "manufacturer webpage read",
+      "observed_at": "2026-10-17",
+      "notes": "Overlaps early catalogue at 50861 and 50862; includes both pre-2025 and 2025+ decal groups, not a year decoder."
+    },
+    {
+      "id": "AXCS06",
+      "brand": "AXCS / Hy-Brid",
+      "title": "Pro Series operation and safety, PS5.0-S Rev G",
+      "url": "https://axcs.com/wp-content/uploads/2026/04/PS5.0-S-REV-G.pdf",
+      "publisher": "Custom Equipment LLC / AXCS",
+      "hosting": "manufacturer",
+      "scope": "PS-1030 from PS10-50001; PS-1430 from PS14-50001; PS-1930 from PS19-50001; CE prefix specified",
+      "locator": "pp.1–2,16–21,44",
+      "verification": "manufacturer PDF text read via web",
+      "observed_at": "2026-10-17",
+      "notes": "Revision March 2023, copyright 2026, URL April 2026. None gives manufacture date. Direct download returned 403."
+    },
+    {
+      "id": "AXCS07",
+      "brand": "AXCS",
+      "title": "EL series maintenance, EL1.0TE-M",
+      "url": "https://axcs.com/wp-content/uploads/2026/09/AXCS-EL-TE-Maint-Rev-05.pdf",
+      "publisher": "Custom Equipment LLC / AXCS",
+      "hosting": "manufacturer",
+      "scope": "EL-1930e and EL-2632e; ANSI/SIA A92.20",
+      "locator": "Cover; p.5; revision history; back cover",
+      "verification": "downloaded and text checked",
+      "observed_at": "2026-10-17",
+      "notes": "Body March 2025, back-cover revision June 2026, URL September 2026; no unit date rule.",
+      "local_source_basename": "axcs-el-te.pdf",
+      "sha256": "8ed8a7d003e1fae33af277170bec771dd30a965dc937413472303440e19cd351",
+      "bytes": 1827473
+    },
+    {
+      "id": "AXCS08",
+      "brand": "AXCS / Hy-Brid",
+      "title": "Eric Liner introduces AXCS Equipment",
+      "url": "https://axcs.com/news/eric-liner-introduces-axcs-equipment",
+      "publisher": "Custom Equipment / AXCS",
+      "hosting": "manufacturer",
+      "scope": "January 6, 2025 corporate identity announcement",
+      "locator": "Announcement body",
+      "verification": "manufacturer webpage read",
+      "observed_at": "2026-10-17",
+      "notes": "AXCS Equipment by Custom Equipment; former Hy-Brid identity; gradual branding transition, not serial boundary."
+    },
+    {
+      "id": "AXCS09",
+      "brand": "AXCS / Hy-Brid",
+      "title": "Advanced serial-specific QR codes",
+      "url": "https://axcs.com/articles/axcs-equipment-enhances-machine-support-with-advanced-serial-specific-qr-codes",
+      "publisher": "AXCS",
+      "hosting": "manufacturer",
+      "scope": "July 29, 2026; recent Pro Series/Zero Turn shipments",
+      "locator": "Announcement body",
+      "verification": "manufacturer webpage read",
+      "observed_at": "2026-10-17",
+      "notes": "Exact-serial manuals/bulletins/parts access; EL/TH rollout later. Year output not claimed. 2021 initial QR statement differs from About timeline 2020."
+    },
+    {
+      "id": "AXCS10",
+      "brand": "AXCS / Hy-Brid",
+      "title": "Self-service parts portal announcement",
+      "url": "https://axcs.com/articles/axcs-launches-self-service-parts-portal-for-rental-fleets-and-contractors",
+      "publisher": "AXCS",
+      "hosting": "manufacturer",
+      "scope": "2026 public parts lookup, current and legacy equipment",
+      "locator": "Announcement body",
+      "verification": "manufacturer webpage read",
+      "observed_at": "2026-10-17",
+      "notes": "Heading June 15, body dateline June 17. Date conflict irrelevant to machine manufacture."
+    },
+    {
+      "id": "AXCS11",
+      "brand": "AXCS / Hy-Brid",
+      "title": "About AXCS history",
+      "url": "https://axcs.com/about",
+      "publisher": "AXCS",
+      "hosting": "manufacturer",
+      "scope": "Corporate/product history",
+      "locator": "Timeline",
+      "verification": "manufacturer webpage read",
+      "observed_at": "2026-10-17",
+      "notes": "2020 QR introduction differs from 2021 in later QR announcement. Neither dates any unit."
+    }
+  ]
+}

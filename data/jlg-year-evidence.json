@@ -1,0 +1,399 @@
+{
+  "schema_version": "1.0",
+  "project": "Forklift IQ",
+  "subject": "JLG scissor-lift manufacture-year lookup",
+  "research_date_utc": "2026-10-17",
+  "status": "official_public_lookup_verified_manufacture_year_unresolved",
+  "summary": {
+    "validated_scissor_manufacture_year_rules": 0,
+    "validated_annual_serial_year_ranges": 0,
+    "verified_guest_lookup_examples": 4,
+    "universal_decoder_supported": false,
+    "interpretation": "The official public lookup is useful but its observed dates are shipment, in-service and warranty dates. The research did not establish a manufacture-year decoder or annual serial ranges."
+  },
+  "lookup": {
+    "source_id": "jlg-equipment-information",
+    "entry_url": "https://onlineexpress.jlg.com/equipment-information?locale=en-us",
+    "public_entry_page": true,
+    "guest_result_verified": true,
+    "login_required_for_tested_reads": false,
+    "tested_serials": [
+      "0200239382",
+      "M200085546",
+      "0200239053",
+      "M200087696"
+    ],
+    "unverified": [
+      "Coverage of every legacy or non-US serial",
+      "Any additional fields available to authorized account holders",
+      "An OEM-supported API or permission for bulk extraction",
+      "Exact manufacturing dates for these four machines"
+    ]
+  },
+  "coverage": [
+    {
+      "cohort": "legacy_ES",
+      "models": [
+        "1930ES",
+        "2030ES",
+        "2032ES",
+        "2630ES",
+        "2632ES",
+        "2646ES",
+        "3246ES"
+      ],
+      "sources": [
+        "jlg-old-es-3121166",
+        "jlg-es-3121656-h"
+      ],
+      "evidence_status": "Country-prefix and manual-scope evidence; serial-specific date lookup verified for 1930ES only.",
+      "manufacture_year_rule": null
+    },
+    {
+      "cohort": "newer_ES",
+      "models": [
+        "ES1932"
+      ],
+      "sources": [
+        "jlg-pvc-faq",
+        "jlg-guest-M200085546"
+      ],
+      "evidence_status": "Live OEM guest result verified, including PVC; manufacture field absent in inspected machine information.",
+      "manufacture_year_rule": null
+    },
+    {
+      "cohort": "legacy_RT",
+      "models": [
+        "3394RT",
+        "4394RT"
+      ],
+      "sources": [
+        "jlg-guest-0200239053"
+      ],
+      "evidence_status": "Manual serial applicability located; live OEM guest result is specifically 4394RT.",
+      "manufacture_year_rule": null
+    },
+    {
+      "cohort": "newer_RT_ERT",
+      "models": [
+        "RT2669",
+        "RT3369",
+        "RT4069",
+        "ERT2669",
+        "ERT3369"
+      ],
+      "sources": [
+        "jlg-rt-31217162-b",
+        "jlg-guest-M200087696"
+      ],
+      "evidence_status": "PVC-scoped RT/ERT manual and live OEM RT4069 guest result; no annual year map established.",
+      "manufacture_year_rule": null
+    }
+  ],
+  "unit_observations": [
+    {
+      "id": "jlg-guest-0200239382",
+      "manufacturer": "JLG",
+      "equipment_class": "scissor_lift",
+      "model": "1930ES",
+      "serial_number": "0200239382",
+      "lookup_url": "https://onlineexpress.jlg.com/serial-number-search/details/0200239382",
+      "checked_on": "2026-10-17",
+      "authentication": "guest_no_login",
+      "source_id": "jlg-equipment-information",
+      "input_provenance": "Public lower serial boundary in JLG manual 3121656 Rev H.",
+      "input_source": "jlg-es-3121656-h",
+      "observed_fields": {
+        "Ship Date": "12/30/2014",
+        "In Service Date": "12/30/2014",
+        "Warranty End Date": "12/29/2015"
+      },
+      "normalized_dates": {
+        "ship_date": "2014-12-30",
+        "in_service_date": "2014-12-30",
+        "warranty_end_date": "2015-12-29"
+      },
+      "pvc": null,
+      "manufacture_date": null,
+      "manufacture_year": null,
+      "model_year": null,
+      "year_resolution_status": "unresolved_manufacture_year",
+      "confidence_observed_fields": "high_live_manufacturer_record",
+      "confidence_manufacture_year": "not_established",
+      "automatic_manufacture_year_decode_allowed": false,
+      "prohibited_inferences": [
+        "Do not relabel ship year, in-service year, warranty year or PVC digits as manufacture year.",
+        "Do not extrapolate an annual serial range from this isolated record.",
+        "Do not infer model from a family-wide manual serial boundary."
+      ]
+    },
+    {
+      "id": "jlg-guest-M200085546",
+      "manufacturer": "JLG",
+      "equipment_class": "scissor_lift",
+      "model": "ES1932",
+      "serial_number": "M200085546",
+      "lookup_url": "https://onlineexpress.jlg.com/serial-number-search/details/M200085546",
+      "checked_on": "2026-10-17",
+      "authentication": "guest_no_login",
+      "source_id": "jlg-equipment-information",
+      "input_provenance": "Public seller serial used only as a lookup lead; all recorded date fields below are from the official JLG result.",
+      "input_source": "https://www.mascus.ro/construction/scissor-lifts/jlg-es1932/jushtknl.html",
+      "observed_fields": {
+        "Ship Date": "11/09/2023",
+        "In Service Date": "01/08/2024",
+        "Warranty End Date": "01/07/2025",
+        "PVC": "2304"
+      },
+      "normalized_dates": {
+        "ship_date": "2023-11-09",
+        "in_service_date": "2024-01-08",
+        "warranty_end_date": "2025-01-07"
+      },
+      "pvc": "2304",
+      "manufacture_date": null,
+      "manufacture_year": null,
+      "model_year": null,
+      "year_resolution_status": "unresolved_manufacture_year",
+      "confidence_observed_fields": "high_live_manufacturer_record",
+      "confidence_manufacture_year": "not_established",
+      "automatic_manufacture_year_decode_allowed": false,
+      "prohibited_inferences": [
+        "Do not relabel ship year, in-service year, warranty year or PVC digits as manufacture year.",
+        "Do not extrapolate an annual serial range from this isolated record.",
+        "Do not infer model from a family-wide manual serial boundary."
+      ]
+    },
+    {
+      "id": "jlg-guest-0200239053",
+      "manufacturer": "JLG",
+      "equipment_class": "scissor_lift",
+      "model": "4394RT",
+      "serial_number": "0200239053",
+      "lookup_url": "https://onlineexpress.jlg.com/serial-number-search/details/0200239053",
+      "checked_on": "2026-10-17",
+      "authentication": "guest_no_login",
+      "source_id": "jlg-equipment-information",
+      "input_provenance": "Public manual applicability boundary for 3394RT/4394RT; exact machine model resolved by official lookup.",
+      "input_source": "https://onlineexpress.jlg.com/technical-publications/search/english-united-states/model-10m/model-junior-8a/model-dr-1001-ahg-stage-v/model-3394rt/_/N-1063887702%2B1382890170%2B1715418530%2B4158988246%2B1464102402?locale=en-us",
+      "observed_fields": {
+        "Ship Date": "11/19/2014",
+        "In Service Date": "11/19/2014",
+        "Warranty End Date": "11/18/2015"
+      },
+      "normalized_dates": {
+        "ship_date": "2014-11-19",
+        "in_service_date": "2014-11-19",
+        "warranty_end_date": "2015-11-18"
+      },
+      "pvc": null,
+      "manufacture_date": null,
+      "manufacture_year": null,
+      "model_year": null,
+      "year_resolution_status": "unresolved_manufacture_year",
+      "confidence_observed_fields": "high_live_manufacturer_record",
+      "confidence_manufacture_year": "not_established",
+      "automatic_manufacture_year_decode_allowed": false,
+      "prohibited_inferences": [
+        "Do not relabel ship year, in-service year, warranty year or PVC digits as manufacture year.",
+        "Do not extrapolate an annual serial range from this isolated record.",
+        "Do not infer model from a family-wide manual serial boundary."
+      ]
+    },
+    {
+      "id": "jlg-guest-M200087696",
+      "manufacturer": "JLG",
+      "equipment_class": "scissor_lift",
+      "model": "RT4069",
+      "serial_number": "M200087696",
+      "lookup_url": "https://onlineexpress.jlg.com/serial-number-search/details/M200087696",
+      "checked_on": "2026-10-17",
+      "authentication": "guest_no_login",
+      "source_id": "jlg-equipment-information",
+      "input_provenance": "Public ClearSky kit serial applicability boundary across RT/ERT models; exact machine model resolved by official lookup.",
+      "input_source": "https://onlineexpress.jlg.com/technical-publications/search/english-united-states/model-rt4069/model-600a-hc3/model-c-501-h-x4-stage-v/pvc-not-applicable/_/N-1063887702%2B2690396563%2B1351206730%2B1443540440%2B3269256090?locale=en-us",
+      "observed_fields": {
+        "Ship Date": "02/16/2024",
+        "In Service Date": "02/27/2025",
+        "Warranty End Date": "02/26/2028",
+        "PVC": "2204"
+      },
+      "normalized_dates": {
+        "ship_date": "2024-02-16",
+        "in_service_date": "2025-02-27",
+        "warranty_end_date": "2028-02-26"
+      },
+      "pvc": "2204",
+      "manufacture_date": null,
+      "manufacture_year": null,
+      "model_year": null,
+      "year_resolution_status": "unresolved_manufacture_year",
+      "confidence_observed_fields": "high_live_manufacturer_record",
+      "confidence_manufacture_year": "not_established",
+      "automatic_manufacture_year_decode_allowed": false,
+      "prohibited_inferences": [
+        "Do not relabel ship year, in-service year, warranty year or PVC digits as manufacture year.",
+        "Do not extrapolate an annual serial range from this isolated record.",
+        "Do not infer model from a family-wide manual serial boundary."
+      ]
+    }
+  ],
+  "rules": {
+    "accepted_for_catalog": [
+      "Preserve the exact date label and provenance when showing OEM lookup results.",
+      "Use model-specific manual scope for country-prefix or plate-location guidance.",
+      "Keep unknown manufacturing years null and visibly unresolved."
+    ],
+    "rejected_for_automatic_year_decoding": [
+      "02, 12, B2, or M2 country/family prefixes",
+      "A 17-character VIN convention applied to JLG scissor serials without a model-specific OEM rule",
+      "Manual issue/revision dates",
+      "Product launch years",
+      "Component dates or power-module design changes",
+      "PVC digits",
+      "Auction or dealer year labels",
+      "Ship, service or warranty dates"
+    ]
+  },
+  "out_of_scope_dated_evidence": [
+    {
+      "model": "1230ES",
+      "equipment_class": "vertical_mast",
+      "source_id": "jlg-1230es-3121223-ag",
+      "classification_source_id": "jlg-1230es-classification",
+      "details": {
+        "france_production_start_month": "2006-08",
+        "france_production_end_month": "2010-02",
+        "france_last_serial": "A200009897",
+        "mexico_production_start_month": "2016-03",
+        "mexico_first_serial": "M130000235",
+        "usa_prefix_transition_month": "2015-07",
+        "usa_prefix_text_ambiguity": "The same page gives 013 in its format example and 13 in its transition note; preserve raw wording."
+      },
+      "disposition": "exclude_from_scissor_year_decoder",
+      "automatic_manufacture_year_decode_allowed": false
+    }
+  ],
+  "next_evidence_needed": [
+    "A clear original manufacturer plate with an explicit manufacture-date/year field, matched to the full serial and exact model.",
+    "Or a JLG/dealer record explicitly identifying the manufacturing date for the full serial.",
+    "Or an official model/region-scoped serial/year table or decoder with applicability bounds."
+  ],
+  "authorization": "No accounts created, logins performed, manufacturer contacts sent or existing project records altered. This is additive research.",
+  "sources": [
+    {
+      "id": "jlg-equipment-information",
+      "title": "JLG Online Express Equipment Information",
+      "url": "https://onlineexpress.jlg.com/equipment-information?locale=en-us",
+      "publisher": "JLG",
+      "authority": "manufacturer_primary",
+      "verification": "Live guest lookup in dot cloud browser on 2026-10-17; four public serials submitted through search UI. Sign In remained available; no login was performed.",
+      "supported_claim": "Public serial-specific identity, ship date, in-service date, warranty end date and, on newer samples, PVC.",
+      "limitation": "No manufacturing date or manufacturing year field observed on the four machine-information results. Does not prove no other JLG system has that field."
+    },
+    {
+      "id": "jlg-online-express-faq",
+      "title": "19 Questions About Using JLG\u2019s Online Express Site Answered",
+      "url": "https://www.jlg.com/en/directaccess/19-questions-about-using-jlgs-online-express-site-answered",
+      "publisher": "JLG",
+      "authority": "manufacturer_primary",
+      "document_date": "2023-01-01",
+      "verification": "Official public web text retrieved.",
+      "supported_claim": "Serial search in Equipment Information supports build-sheet/component research and the in-service date.",
+      "limitation": "FAQ does not describe that in-service date as a manufacture date."
+    },
+    {
+      "id": "jlg-pvc-faq",
+      "title": "Product Variant Code (PVC) FAQs",
+      "url": "https://www.jlg.com/dfsmedia/e4042b10c9ce4595b4cc059f1299f079/70312-source",
+      "publisher": "JLG",
+      "authority": "manufacturer_primary",
+      "revision_label": "R031422",
+      "verification": "Official-domain indexed PDF text retrieved; full PDF fetch failed, so no downloaded-copy or visual-verification claim.",
+      "supported_claim": "PVC identifies a six-month block with the same build and helps select the appropriate manual; it is on the serial tag and accessible by serial lookup.",
+      "limitation": "No PVC-character-to-individual-manufacture-date rule is supplied. A design/configuration block is not an exact build-date observation."
+    },
+    {
+      "id": "jlg-es-3121656-h",
+      "title": "ES Service and Maintenance Manual 3121656 Rev H",
+      "url": "https://csapps.jlg.com/OnlineManuals/Manuals/JLG/JLG%20Scissor%20Lifts/ES%20Scissors/1930ES_2030ES_2032ES_2630ES_2632ES_2646ES_3246ES/Service%20Manuals/SN-0200239382%2C%20B200020297%2C%20M200000100%2C%20and%201200025021%20to%20Present/3121656_H_1930ES%2C2032ES%2C2632ES%2C2646ES%2C3246ES_JLG_Service_English.pdf",
+      "publisher": "JLG",
+      "authority": "manufacturer_primary",
+      "document_date": "2018-07-23",
+      "models": [
+        "1930ES",
+        "2032ES",
+        "2632ES",
+        "2646ES",
+        "3246ES"
+      ],
+      "verification": "Existing downloaded official PDF and previously visually checked page 1-7, PDF page 19; preserved source record.",
+      "supported_claim": "02 and B2 identify USA-built and China-built machines in this manual\u2019s scope, respectively; left-rear plate location.",
+      "limitation": "Country-prefix evidence only, not a year decoder. The URL directory contains additional model names absent from the cover.",
+      "original_incorrect_url": "https://techpub.skyjack.com/document?id=170469A&region=NA",
+      "correction_note": "Replaced erroneous Skyjack manual URL with already reviewed JLG 3121656 Rev H source."
+    },
+    {
+      "id": "jlg-old-es-3121166",
+      "title": "ES Service and Maintenance Manual 3121166",
+      "url": "https://csapps.jlg.com/OnlineManuals/Manuals/JLG/JLG%20Scissor%20Lifts/ES%20Scissors/1930ES_2030ES_2032ES_2630ES_2632ES_2646ES_3246ES/Service%20Manuals/Prior%20to%20SN-0200239382%20and%20B200020297/Service_3121166_11-27-13_Global_English.pdf",
+      "publisher": "JLG",
+      "authority": "manufacturer_primary",
+      "document_date": "2013-11-27",
+      "models": [
+        "1930ES",
+        "2030ES",
+        "2630ES",
+        "2646ES",
+        "3246ES"
+      ],
+      "verification": "Official PDF downloaded, and official web PDF text retrieved.",
+      "page_reference": "Printed page b, PDF page 4",
+      "supported_claim": "The mid-2010 power-module change is discussed; later USA/Belgium machines may use either module, and China machines use the ZAPI module.",
+      "limitation": "Component-change chronology is not a dated annual serial range. Replaced components cannot establish a machine manufacture date."
+    },
+    {
+      "id": "jlg-rt-31217162-b",
+      "title": "RT/ERT Operation and Safety Manual 31217162 Rev B",
+      "url": "https://csapps.jlg.com/OnlineManuals/Manuals/JLG/JLG%20Scissor%20Lifts/RT2669%2C%20RT3369/Operation%20Manuals/PVC%202004/31217162_B_RT2669%2C%20RT3369%2C%20ERT2669%2C%20ERT3369_JLG_Operation_English.pdf",
+      "publisher": "JLG",
+      "authority": "manufacturer_primary",
+      "document_date": "2021-09-28",
+      "models": [
+        "RT2669",
+        "RT3369",
+        "ERT2669",
+        "ERT3369"
+      ],
+      "pvc_scope": [
+        "2004"
+      ],
+      "verification": "Official PDF downloaded and text inspected.",
+      "supported_claim": "A modern RT/ERT manual explicitly has PVC 2004 applicability.",
+      "limitation": "Its revision date and PVC are not an individual serial-to-manufacture-year mapping."
+    },
+    {
+      "id": "jlg-1230es-3121223-ag",
+      "title": "1230ES Illustrated Parts Manual 3121223 Rev AG",
+      "url": "https://csapps.jlg.com/OnlineManuals/Manuals/JLG/JLG%20Vertical%20Mast/1230ES/Parts%20Manuals/3121223_AG_1230ES_JLG_Parts_English.pdf",
+      "publisher": "JLG",
+      "authority": "manufacturer_primary",
+      "models": [
+        "1230ES"
+      ],
+      "verification": "Official PDF downloaded; printed/PDF page 3 rendered and visually checked.",
+      "supported_claim": "France production Aug 2006\u2013Feb 2010 ending at A200009897; Mexico begins Mar 2016 with M130000235; USA prefix changes in Jul 2015.",
+      "limitation": "1230ES is a vertical-mast lift. The page mistakenly calls it a scissor lift; these facts are excluded from scissor-lift year rules. It gives no annual mapping."
+    },
+    {
+      "id": "jlg-1230es-classification",
+      "title": "JLG 6V Battery compatibility list",
+      "url": "https://onlineexpress.jlg.com/parts/electrical/batteries-and-cells-and-accessories/batteries/jlg-genuine-batteries/p/015796-000?locale=en-us",
+      "publisher": "JLG",
+      "authority": "manufacturer_primary",
+      "verification": "Official public web text retrieved.",
+      "supported_claim": "The manufacturer separately lists ES-series scissors and 1230ES under ES Vertical Mast.",
+      "limitation": "Used only to resolve equipment-class scope, not for dating."
+    }
+  ]
+}

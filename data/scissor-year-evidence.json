@@ -602,6 +602,2922 @@
         }
       ],
       "evidence_type": "explicit_plate_or_label_fields"
+    },
+    {
+      "id": "genie-96316-older-slab-format",
+      "manufacturer": "Genie",
+      "models": [
+        "GS-1530",
+        "GS-1532",
+        "GS-1930",
+        "GS-1932",
+        "GS-2032",
+        "GS-2632",
+        "GS-2046",
+        "GS-2646",
+        "GS-3246"
+      ],
+      "source_url": "https://manuals.genielift.com/Parts%20And%20Service%20Manuals/data/Service/Scissors/96316.pdf",
+      "document": "Service Manual 96316",
+      "revision": "E4",
+      "document_date": "June 2009",
+      "pages": [
+        {
+          "pdf_page_1_based": 1,
+          "printed_page": "cover"
+        },
+        {
+          "pdf_page_1_based": 3,
+          "printed_page": "iii"
+        }
+      ],
+      "serial_applicability": [
+        {
+          "models": [
+            "GS-1530",
+            "GS-1532",
+            "GS-1930",
+            "GS-1932"
+          ],
+          "from": "GS3003-60000",
+          "through": "GS3005-75999"
+        },
+        {
+          "models": [
+            "GS-2032",
+            "GS-2632"
+          ],
+          "from": "GS3204-60000",
+          "through": "GS3205-75406"
+        },
+        {
+          "models": [
+            "GS-2046",
+            "GS-2646",
+            "GS-3246"
+          ],
+          "from": "GS4604-60000",
+          "through": "GS4605-75437"
+        }
+      ],
+      "supported_output": "The illustrated GS3005-12345 has model-year component 05 (example model year 2005). This is not a machine manufacture-year result.",
+      "manufacture_date_evidence": "Legend explicitly labels 05 as model year; example plate separately shows Manufacture date 04/12/05. No facility character in this older format.",
+      "ambiguities": [
+        "Model-year format only; not an actual machine-year record.",
+        "Illustrative sequence 12345 lies outside cover applicability.",
+        "No complete century/pivot table; date month/day ordering is not defined on this page.",
+        "Cover endpoints do not create complete manufacture-year boundaries."
+      ],
+      "automatic_manufacture_year_decode_allowed": false
+    },
+    {
+      "id": "genie-97385-format-example-conflict",
+      "manufacturer": "Genie",
+      "models": [
+        "GS-1530",
+        "GS-1532",
+        "GS-1930",
+        "GS-1932",
+        "GS-2032",
+        "GS-2632",
+        "GS-2046",
+        "GS-2646",
+        "GS-3246",
+        "GS-3232"
+      ],
+      "source_url": "https://manuals.genielift.com/Parts%20And%20Service%20Manuals/data/Service/Scissors/97385.pdf",
+      "document": "Service Manual 97385",
+      "revision": "E10",
+      "document_date": "February 2012",
+      "pages": [
+        {
+          "pdf_page_1_based": 1,
+          "printed_page": "cover"
+        },
+        {
+          "pdf_page_1_based": 3,
+          "printed_page": "iii"
+        }
+      ],
+      "serial_applicability": [
+        {
+          "models": [
+            "GS-1530",
+            "GS-1532",
+            "GS-1930",
+            "GS-1932"
+          ],
+          "from": "GS3005A-76000",
+          "through": "GS3011A-109999"
+        },
+        {
+          "models": [
+            "GS-1530",
+            "GS-1532",
+            "GS-1930",
+            "GS-1932"
+          ],
+          "from": "GS3005B-76000",
+          "through": "GS3009B-98941"
+        },
+        {
+          "models": [
+            "GS-1530",
+            "GS-1532",
+            "GS-1930",
+            "GS-1932"
+          ],
+          "from": "GS3008C-101",
+          "through": "GS3011C-9999"
+        },
+        {
+          "models": [
+            "GS-2032",
+            "GS-2632",
+            "GS-3232"
+          ],
+          "from": "GS3205-75407",
+          "through": "GS3209-94602"
+        },
+        {
+          "models": [
+            "GS-2032",
+            "GS-2632",
+            "GS-3232"
+          ],
+          "from": "GS3209A-94603",
+          "through": "GS3212A-109999"
+        },
+        {
+          "models": [
+            "GS-2032",
+            "GS-2632",
+            "GS-3232"
+          ],
+          "from": "GS3205B-76000",
+          "through": "GS3209B-98941"
+        },
+        {
+          "models": [
+            "GS-2032",
+            "GS-2632",
+            "GS-3232"
+          ],
+          "from": "GS3208C-101",
+          "through": "GS3212C-9999"
+        },
+        {
+          "models": [
+            "GS-2046",
+            "GS-2646",
+            "GS-3246"
+          ],
+          "from": "GS4605-75438",
+          "through": "GS4609-95192"
+        },
+        {
+          "models": [
+            "GS-2046",
+            "GS-2646",
+            "GS-3246"
+          ],
+          "from": "GS4609A-95193",
+          "through": "GS4611A-109999"
+        },
+        {
+          "models": [
+            "GS-2046",
+            "GS-2646",
+            "GS-3246"
+          ],
+          "from": "GS4608C-101",
+          "through": "GS4612C-9999"
+        }
+      ],
+      "supported_output": "Use the explicit legend to interpret the model-year segment within verified manual applicability; quarantine only conflicting illustrative plate dates, not the legend itself.",
+      "manufacture_date_evidence": "Diagram labels GS30=model, 05=model year, A=facility (used for models manufactured at multiple facilities), remainder=sequence. Example plate instead prints model year 2011 and manufacture date 04/12/2005.",
+      "ambiguities": [
+        "Internally inconsistent illustrative plate; quarantine the example and do not turn it into a dated unit record.",
+        "Facility letter is not a year/design-revision code.",
+        "Cover grouped ranges are manual applicability, not proof every individual model exists throughout each interval."
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "document_serial_scope": [
+        {
+          "models": [
+            "GS-1530",
+            "GS-1532",
+            "GS-1930",
+            "GS-1932"
+          ],
+          "from": "GS3005A-76000",
+          "through": "GS3011A-109999"
+        },
+        {
+          "models": [
+            "GS-1530",
+            "GS-1532",
+            "GS-1930",
+            "GS-1932"
+          ],
+          "from": "GS3005B-76000",
+          "through": "GS3009B-98941"
+        },
+        {
+          "models": [
+            "GS-1530",
+            "GS-1532",
+            "GS-1930",
+            "GS-1932"
+          ],
+          "from": "GS3008C-101",
+          "through": "GS3011C-9999"
+        },
+        {
+          "models": [
+            "GS-2032",
+            "GS-2632",
+            "GS-3232"
+          ],
+          "from": "GS3205-75407",
+          "through": "GS3209-94602"
+        },
+        {
+          "models": [
+            "GS-2032",
+            "GS-2632",
+            "GS-3232"
+          ],
+          "from": "GS3209A-94603",
+          "through": "GS3212A-109999"
+        },
+        {
+          "models": [
+            "GS-2032",
+            "GS-2632",
+            "GS-3232"
+          ],
+          "from": "GS3205B-76000",
+          "through": "GS3209B-98941"
+        },
+        {
+          "models": [
+            "GS-2032",
+            "GS-2632",
+            "GS-3232"
+          ],
+          "from": "GS3208C-101",
+          "through": "GS3212C-9999"
+        },
+        {
+          "models": [
+            "GS-2046",
+            "GS-2646",
+            "GS-3246"
+          ],
+          "from": "GS4605-75438",
+          "through": "GS4609-95192"
+        },
+        {
+          "models": [
+            "GS-2046",
+            "GS-2646",
+            "GS-3246"
+          ],
+          "from": "GS4609A-95193",
+          "through": "GS4611A-109999"
+        },
+        {
+          "models": [
+            "GS-2046",
+            "GS-2646",
+            "GS-3246"
+          ],
+          "from": "GS4608C-101",
+          "through": "GS4612C-9999"
+        }
+      ]
+    },
+    {
+      "id": "actual-plate-gs90f-54033",
+      "manufacturer": "Genie",
+      "models": [
+        "GS-5390"
+      ],
+      "source_url": "https://used.genielift.com/awpUEQpdfListing?unitId=1169168%2AUEQ",
+      "document": "Official Genie used-equipment listing: GS90F-54033",
+      "revision": "not stated",
+      "document_date": "not established",
+      "pages": [
+        {
+          "pdf_page_1_based": 11,
+          "printed_page": null
+        }
+      ],
+      "document_serial_scope": [
+        [
+          "GS90F-54033",
+          "GS90F-54033"
+        ]
+      ],
+      "supported_output": "Exact-unit reference only: the photographed plate for GS-5390 serial GS90F-54033 states Year of Manufacture 2017. This does not determine the year of your machine or any other serial.",
+      "ambiguities": [
+        "This is a listing photograph, not an independently authenticated factory production record.",
+        "No month/day supplied; no production start/end dates inferred.",
+        "Exact serial match only, with source provenance; no interpolation to adjacent serials or all GS90F machines.",
+        "The listing title says GS-5390 RT; catalogue model identity is GS-5390. Match the actual plate, not a guessed alias."
+      ],
+      "automatic_manufacture_year_decode_allowed": false
+    },
+    {
+      "id": "MEC-SE-01",
+      "manufacturer": "MEC",
+      "models": [
+        "1930SE",
+        "2632SE",
+        "3346SE",
+        "4046SE",
+        "4555SE"
+      ],
+      "source_url": "https://www.mecawp.com/wp-content/uploads/2020/01/94119-A92.6.pdf",
+      "document": "SE Series Slab Scissors Operator Manual 94119",
+      "revision": "see source edition",
+      "document_date": "2016-06-01",
+      "pages": [
+        {
+          "pdf_page_1_based": 42,
+          "printed_page": null
+        }
+      ],
+      "serial_applicability": [
+        {
+          "models": [
+            "1930SE"
+          ],
+          "from": "16400000",
+          "through": "16402099"
+        },
+        {
+          "models": [
+            "2632SE"
+          ],
+          "from": "16500000",
+          "through": "16500899"
+        },
+        {
+          "models": [
+            "3346SE"
+          ],
+          "from": "16600000",
+          "through": "16600599"
+        },
+        {
+          "models": [
+            "4046SE"
+          ],
+          "from": "16700000",
+          "through": "16701299"
+        },
+        {
+          "models": [
+            "4555SE"
+          ],
+          "from": "16800001",
+          "through": "16801399"
+        }
+      ],
+      "supported_output": "MFG DATE records manufacture month/year. MODEL YEAR is a separate machine-model-year value. Store both independently if visible.",
+      "ambiguities": [
+        "Serial ranges select manuals; they are not annual production ranges. A 2016 manual date does not date every covered machine.",
+        "See separate manual-applicability records; preserve index/cover differences",
+        "Applied the intersection of manual-cover and index ranges. Nano10-XD serials 18000000–18000018 and 4555SE serial 16800000 remain unresolved for these manuals."
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "source_locator": "Cover; printed page 40 (PDF page 42)"
+    },
+    {
+      "id": "MEC-NANO-01",
+      "manufacturer": "MEC",
+      "models": [
+        "Nano10-XD"
+      ],
+      "source_url": "https://www.mecawp.com/wp-content/uploads/2022/02/96250-A92.20.pdf",
+      "document": "Nano10-XD Operator Manual 96250",
+      "revision": "see source edition",
+      "document_date": "2025-03",
+      "pages": [
+        {
+          "pdf_page_1_based": 39,
+          "printed_page": null
+        }
+      ],
+      "serial_applicability": [
+        {
+          "models": [
+            "Nano10-XD"
+          ],
+          "from": "18000019",
+          "through": "not established; cover says Up"
+        }
+      ],
+      "supported_output": "Read MFG DATE on the original serial plate.",
+      "ambiguities": [
+        "Keep serials 18000000-18000018 unresolved for this manual. March 2025 is its revision, not unit year; first two serial digits are not verified as year.",
+        "Manual cover 18000019-Up; website index 18000000-current",
+        "Applied the intersection of manual-cover and index ranges. Nano10-XD serials 18000000–18000018 and 4555SE serial 16800000 remain unresolved for these manuals."
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "source_locator": "Cover; printed page 36 (PDF page 39)"
+    },
+    {
+      "id": "MEC-MICRO19-01",
+      "manufacturer": "MEC",
+      "models": [
+        "Micro 19"
+      ],
+      "source_url": "https://www.mecawp.com/wp-content/uploads/2020/06/94553-A92.6.pdf",
+      "document": "Micro 19 Operator Manual 94553r1",
+      "revision": "see source edition",
+      "document_date": "2017-09",
+      "pages": [],
+      "serial_applicability": [
+        {
+          "models": [
+            "Micro 19"
+          ],
+          "from": "16900000",
+          "through": "16910999"
+        }
+      ],
+      "supported_output": "MFG DATE and MODEL YEAR are distinct fields on the serial plate.",
+      "ambiguities": [
+        "September 2017 is publication metadata. The 169 prefix is not established as a manufacture-year code.",
+        "Current index routes 16900000-16910999 to 94553-A92.6; 16911000+ to newer manual",
+        "Applied the intersection of manual-cover and index ranges. Nano10-XD serials 18000000–18000018 and 4555SE serial 16800000 remain unresolved for these manuals."
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "source_locator": "Cover; printed page 29"
+    },
+    {
+      "id": "HAU-COMPACT-01",
+      "manufacturer": "Haulotte",
+      "models": [
+        "COMPACT 8",
+        "COMPACT 8W",
+        "COMPACT 10N",
+        "COMPACT 10",
+        "COMPACT 12"
+      ],
+      "source_url": "https://www.jms.co.uk/wp-content/uploads/resources/Haulotte_compact_8_10_12.pdf",
+      "document": "COMPACT 8, 8W, 10N, 10 and 12 Operating and Maintenance Instructions, 242 032 6060",
+      "revision": "see source edition",
+      "document_date": "2005-10",
+      "pages": [
+        {
+          "pdf_page_1_based": 21,
+          "printed_page": null
+        }
+      ],
+      "serial_applicability": [
+        {
+          "from": "not established",
+          "through": "No serial applicability boundary established in this edition"
+        }
+      ],
+      "supported_output": "Read YEAR OF MANUFACTURE on the machine plate. This edition locates the plate at the back-right of the chassis and instructs users to identify the machine by type and serial.",
+      "ambiguities": [
+        "October 2005 is the manual issue date. Do not extend its location or specification details to the 2022 redesigned Compact family without checking that family manual.",
+        "No serial applicability boundary established in this edition"
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "source_locator": "Printed page 7 (PDF page 21), section 2.1"
+    },
+    {
+      "id": "UPR-X26N-01",
+      "manufacturer": "UpRight",
+      "models": [
+        "X26N"
+      ],
+      "source_url": "https://www.epartsplus.com/media/pdf/documentations/upright/service-parts-manuals/508244-005_X-26-N_sn51119%2B_C.PS.zip",
+      "document": "X26N Service & Parts Manual 508244-005",
+      "revision": "see source edition",
+      "document_date": "2010-02",
+      "pages": [],
+      "serial_applicability": [
+        {
+          "from": "not established",
+          "through": "Boundary disputed: index/filename 51119+ versus visible cover 5119+"
+        }
+      ],
+      "supported_output": "Plate is at rear of chassis. Backup serial stamp is on chassis top above front axle pivot. Obtain exact model and serial, then request date evidence through successor support if the plate lacks a usable date.",
+      "ambiguities": [
+        "Image review confirms a source conflict, not just OCR. Do not silently correct the cover or map Feb10 to machine year. No universal decoder verified.",
+        "Boundary disputed: index/filename 51119+ versus visible cover 5119+"
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "source_locator": "PDF page 1 cover and PDF page 3 identification"
+    },
+    {
+      "id": "SNK-FORMAT-01",
+      "manufacturer": "Snorkel",
+      "models": [
+        "S3370RT"
+      ],
+      "source_url": "https://snorkellifts.com/the-toolbox/how-to-read-snorkel-serial-plates/",
+      "document": "How To Read Snorkel Serial Plates",
+      "revision": "see source edition",
+      "document_date": "2020-08-08",
+      "pages": [],
+      "serial_applicability": [
+        {
+          "from": "not established",
+          "through": "MODEL-PP-YYMMNNNNN example layout; legacy applicability and adoption date unspecified"
+        }
+      ],
+      "supported_output": "The four-digit date segment is YYMM. Published example S3370RT-07-170300298 maps 1703 to March 2017; 00298 is the unit sequence.",
+      "ambiguities": [
+        "Do not apply to numeric-only/other legacy serials or UpRight. Prose mentions three dashes, but its printed example contains two. No general start/end-year table is supplied.",
+        "MODEL-PP-YYMMNNNNN example layout; legacy applicability and adoption date unspecified"
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "source_locator": "SERIAL NUMBER; LOCATING THE SERIAL PLATE"
+    },
+    {
+      "id": "skyjack-micro-248548aea-labels-micro-248548aea",
+      "manufacturer": "Skyjack",
+      "models": [
+        "SJ3213 micro",
+        "SJ3219 micro"
+      ],
+      "source_url": "https://techpub.skyjack.com/document?id=248548A&region=NA",
+      "document": "SJ3213 micro / SJ3219 micro operation manual",
+      "revision": "248548AEA",
+      "document_date": "2026-05",
+      "pages": [
+        {
+          "pdf_page_1_based": 11
+        },
+        {
+          "pdf_page_1_based": 77
+        }
+      ],
+      "source_locator": "Model applicability and identification guidance",
+      "document_serial_scope": [
+        {
+          "from": "A104000000",
+          "through": "A104999999",
+          "basis": "Current NA catalog; manual cover uses & above."
+        }
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [
+        "No serial-to-year formula. Actual machine label must be photographed/read; a blank manual illustration does not supply a year."
+      ],
+      "pdf_url": "https://skyjack.tor1.cdn.digitaloceanspaces.com/skyjack/uploads/248548AEA.pdf",
+      "supported_output": "Left-side nameplate includes a model-year field. Separate left-side label gives actual manufactured month/year; read the machine label.",
+      "serial_scope_note": "Match exact North American compliance variant and serial family. No automatic serial-to-year formula."
+    },
+    {
+      "id": "skyjack-large-rt-221491aha-labels-large-rt-221491aha",
+      "manufacturer": "Skyjack",
+      "models": [
+        "SJ9233 RT",
+        "SJ9243 RT",
+        "SJ9253 RT",
+        "SJ9664 RT"
+      ],
+      "source_url": "https://techpub.skyjack.com/document?id=221491A&region=NA",
+      "document": "SJ9233 / SJ9243 / SJ9253 / SJ9664 RT operation manual",
+      "revision": "221491AHA",
+      "document_date": "2026-07",
+      "pages": [
+        {
+          "pdf_page_1_based": 12
+        },
+        {
+          "pdf_page_1_based": 100
+        }
+      ],
+      "source_locator": "Model applicability and identification guidance",
+      "document_serial_scope": [
+        {
+          "models": [
+            "SJ9233 RT",
+            "SJ9243 RT",
+            "SJ9253 RT"
+          ],
+          "from": "A202000001",
+          "through": "A202999999",
+          "basis": "Manual cover & Above; current inspected catalog caps A202999999."
+        },
+        {
+          "models": [
+            "SJ9664 RT"
+          ],
+          "from": "A203000001",
+          "through": null,
+          "basis": "Manual cover & Above; do not extend to unrelated successor serial families."
+        }
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [
+        "No serial-to-year formula; do not confuse model-year and manufacture-date labels."
+      ],
+      "pdf_url": "https://skyjack.tor1.cdn.digitaloceanspaces.com/skyjack/uploads/221491AHA.pdf",
+      "supported_output": "Side nameplate includes model year. Separate manufactured-month/year label appears on the left side, label 21.",
+      "serial_scope_note": "Match exact North American compliance variant and serial family. No automatic serial-to-year formula."
+    },
+    {
+      "id": "skyjack-sj3013-label-variants-sj3013-239872aca",
+      "manufacturer": "Skyjack",
+      "models": [
+        "SJ3013 micro"
+      ],
+      "source_url": "https://techpub.skyjack.com/document?id=239872A&region=NA",
+      "document": "SJ3013 micro operation manual, ANSI/CSA",
+      "revision": "239872ACA",
+      "document_date": "2024-03",
+      "pages": [
+        {
+          "pdf_page_1_based": 11
+        }
+      ],
+      "source_locator": "Model applicability and identification guidance",
+      "document_serial_scope": [
+        {
+          "from": "M09281002",
+          "through": "M09301244"
+        }
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [
+        "Two manual variants share the catalog serial scope but use different date-field semantics. Match actual machine compliance plate/manual; do not merge field meanings.",
+        "236613AFA cover and 236613AEA page-11 footer differ.",
+        "Current SJ3013 service-manual scope M09301245-M09309999 does not authorize transferring the inspected operation-manual date-field claim to that later interval."
+      ],
+      "pdf_url": "https://skyjack.tor1.cdn.digitaloceanspaces.com/skyjack/uploads/239872ACA.pdf",
+      "supported_output": "ANSI/CSA manual describes a rear-side nameplate with model year.",
+      "serial_scope_note": "Match exact North American compliance variant and serial family. No automatic serial-to-year formula."
+    },
+    {
+      "id": "skyjack-sj3013-label-variants-sj3013-236613afa",
+      "manufacturer": "Skyjack",
+      "models": [
+        "SJ3013 micro"
+      ],
+      "source_url": "https://techpub.skyjack.com/document?id=236613A&region=NA",
+      "document": "SJ3013 micro operation manual, ANSI",
+      "revision": "236613AFA",
+      "document_date": "2024-06-26",
+      "pages": [
+        {
+          "pdf_page_1_based": 11
+        }
+      ],
+      "source_locator": "Model applicability and identification guidance",
+      "document_serial_scope": [
+        {
+          "from": "M09281002",
+          "through": "M09301244"
+        }
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [
+        "Two manual variants share the catalog serial scope but use different date-field semantics. Match actual machine compliance plate/manual; do not merge field meanings.",
+        "236613AFA cover and 236613AEA page-11 footer differ.",
+        "Current SJ3013 service-manual scope M09301245-M09309999 does not authorize transferring the inspected operation-manual date-field claim to that later interval."
+      ],
+      "pdf_url": "https://skyjack.tor1.cdn.digitaloceanspaces.com/skyjack/uploads/236613AFA-1.pdf",
+      "supported_output": "ANSI manual describes a rear-side nameplate with date of production.",
+      "serial_scope_note": "Match exact North American compliance variant and serial family. No automatic serial-to-year formula."
+    },
+    {
+      "id": "genie-1272217-slab-transition",
+      "manufacturer": "Genie",
+      "models": [
+        "GS-1530",
+        "GS-1532",
+        "GS-1930",
+        "GS-1932",
+        "GS-2032",
+        "GS-2632",
+        "GS-3232",
+        "GS-2046",
+        "GS-2646",
+        "GS-3246",
+        "GS-4047"
+      ],
+      "source_url": "https://manuals.genielift.com/Parts%20And%20Service%20Manuals/data/Service/Scissors/1272217.pdf",
+      "document": "Service and Repair Manual 1272217GT",
+      "revision": "E1",
+      "document_date": "October 2023",
+      "pages": [
+        {
+          "pdf_page_1_based": 2
+        },
+        {
+          "pdf_page_1_based": 5,
+          "printed_page": "v"
+        }
+      ],
+      "source_locator": "Model applicability and identification guidance",
+      "document_serial_scope": [
+        {
+          "models": [
+            "GS-1530",
+            "GS-1532",
+            "GS-1930",
+            "GS-1932"
+          ],
+          "from": "GS3010A-110000",
+          "through": null
+        },
+        {
+          "models": [
+            "GS-1530",
+            "GS-1532",
+            "GS-1930",
+            "GS-1932"
+          ],
+          "from": "GS3011C-10000",
+          "through": "GS3016C-23999"
+        },
+        {
+          "models": [
+            "GS-1530",
+            "GS-1532",
+            "GS-1930",
+            "GS-1932"
+          ],
+          "from": "GS3014D-101",
+          "through": "GS3016D-607"
+        },
+        {
+          "models": [
+            "GS-1530",
+            "GS-1532",
+            "GS-1930",
+            "GS-1932"
+          ],
+          "from": "GS3016P-151487",
+          "through": "GS3016P-160599"
+        },
+        {
+          "models": [
+            "GS-1530",
+            "GS-1532",
+            "GS-1930",
+            "GS-1932"
+          ],
+          "from": "GS30C-24000",
+          "through": null
+        },
+        {
+          "models": [
+            "GS-1530",
+            "GS-1532",
+            "GS-1930",
+            "GS-1932"
+          ],
+          "from": "GS30D-6080",
+          "through": "GS30D-40100"
+        },
+        {
+          "models": [
+            "GS-1530",
+            "GS-1532",
+            "GS-1930",
+            "GS-1932"
+          ],
+          "from": "GS30P-160600",
+          "through": "GS30P-200100"
+        },
+        {
+          "models": [
+            "GS-2032",
+            "GS-2632",
+            "GS-3232"
+          ],
+          "from": "GS3211A-110000",
+          "through": null
+        },
+        {
+          "models": [
+            "GS-2032",
+            "GS-2632",
+            "GS-3232"
+          ],
+          "from": "GS3212C-10000",
+          "through": "GS3216C-17299"
+        },
+        {
+          "models": [
+            "GS-2032",
+            "GS-2632",
+            "GS-3232"
+          ],
+          "from": "GS3216P-142676",
+          "through": "GS3216P-148699"
+        },
+        {
+          "models": [
+            "GS-2032",
+            "GS-2632",
+            "GS-3232"
+          ],
+          "from": "GS32C-17300",
+          "through": null
+        },
+        {
+          "models": [
+            "GS-2032",
+            "GS-2632",
+            "GS-3232"
+          ],
+          "from": "GS32D-101",
+          "through": "GS32D-10100"
+        },
+        {
+          "models": [
+            "GS-2032",
+            "GS-2632",
+            "GS-3232"
+          ],
+          "from": "GS32P-148700",
+          "through": "GS32P-200100"
+        },
+        {
+          "models": [
+            "GS-2046",
+            "GS-2646",
+            "GS-3246"
+          ],
+          "from": "GS4612A-110000",
+          "through": null
+        },
+        {
+          "models": [
+            "GS-2046",
+            "GS-2646",
+            "GS-3246"
+          ],
+          "from": "GS4612C-10000",
+          "through": "GS4616C-18099"
+        },
+        {
+          "models": [
+            "GS-2046",
+            "GS-2646",
+            "GS-3246"
+          ],
+          "from": "GS4614D-101",
+          "through": "GS4616D-5029"
+        },
+        {
+          "models": [
+            "GS-2046",
+            "GS-2646",
+            "GS-3246"
+          ],
+          "from": "GS4616P-138362",
+          "through": "GS4616P-141799"
+        },
+        {
+          "models": [
+            "GS-2046",
+            "GS-2646",
+            "GS-3246"
+          ],
+          "from": "GS46C-18100",
+          "through": null
+        },
+        {
+          "models": [
+            "GS-2046",
+            "GS-2646",
+            "GS-3246"
+          ],
+          "from": "GS46D-5030",
+          "through": "GS46D-20100"
+        },
+        {
+          "models": [
+            "GS-2046",
+            "GS-2646",
+            "GS-3246"
+          ],
+          "from": "GS46P-141800",
+          "through": "GS46P-200100"
+        },
+        {
+          "models": [
+            "GS-4047"
+          ],
+          "from": "GS4712C-101",
+          "through": "GS4716C-4499"
+        },
+        {
+          "models": [
+            "GS-4047"
+          ],
+          "from": "GS4714D-101",
+          "through": "GS4716D-3959"
+        },
+        {
+          "models": [
+            "GS-4047"
+          ],
+          "from": "GS4716P-101",
+          "through": "GS4716P-999"
+        },
+        {
+          "models": [
+            "GS-4047"
+          ],
+          "from": "GS47C-4500",
+          "through": null
+        },
+        {
+          "models": [
+            "GS-4047"
+          ],
+          "from": "GS47D-3960",
+          "through": null
+        },
+        {
+          "models": [
+            "GS-4047"
+          ],
+          "from": "GS47P-1000",
+          "through": null
+        }
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [
+        "Examples illustrate a parser, not actual dated units.",
+        "Null upper bound preserves source wording; do not extend across future format generations.",
+        "Validate exact model, family, facility and serial applicability before parsing.",
+        "The two-digit year needs era-scoped expansion; no universal century pivot.",
+        "Family code cannot uniquely identify every commercial model.",
+        "GS30D older range end: manual GS3016D-607; catalogue GS3016D-6079. Retain both raw values; do not silently correct. Hold disputed 608–6079 tail pending stronger evidence.",
+        "GS30P older range start: manual GS3016P-151487; catalogue GS3016P-142281. Use overlap 151487–160599 for automatic application; hold earlier disputed interval."
+      ],
+      "supported_output": "The older format has a model-year component; the newer format omits it. Model year and manufacture date are separate fields. Use the limited checker below and actual plate."
+    },
+    {
+      "id": "jcb-electric-drive",
+      "manufacturer": "JCB",
+      "models": [
+        "S1932E EDRV",
+        "S2632E EDRV",
+        "S2646E EDRV",
+        "S3246E EDRV",
+        "S4046E EDRV",
+        "S4550E EDRV"
+      ],
+      "source_url": "https://www.jcb.com/globalassets/digizuite/73912-electric-drive-scissors-om-1-1/",
+      "document": "EN9841/9167 Issue 5, July 2024",
+      "revision": "Issue 5",
+      "document_date": "July 2024",
+      "pages": [
+        {
+          "pdf_page_1_based": 11,
+          "printed_page": "1"
+        },
+        {
+          "pdf_page_1_based": 19,
+          "printed_page": "9"
+        }
+      ],
+      "source_locator": "Model applicability and identification guidance",
+      "document_serial_scope": [
+        {
+          "models": [
+            "S1932E EDRV"
+          ],
+          "from": "VIN prefix RAJA0151, RAJA0B51",
+          "through": "exact generation only; no year interval"
+        },
+        {
+          "models": [
+            "S2632E EDRV"
+          ],
+          "from": "VIN prefix RAJA0452, RAJA0E52",
+          "through": "exact generation only; no year interval"
+        },
+        {
+          "models": [
+            "S2646E EDRV"
+          ],
+          "from": "VIN prefix RAJA0552, RAJA0F52",
+          "through": "exact generation only; no year interval"
+        },
+        {
+          "models": [
+            "S3246E EDRV"
+          ],
+          "from": "VIN prefix RAJA0653, RAJA0G53",
+          "through": "exact generation only; no year interval"
+        },
+        {
+          "models": [
+            "S4046E EDRV"
+          ],
+          "from": "VIN prefix RAJA0753, RAJA0H53",
+          "through": "exact generation only; no year interval"
+        },
+        {
+          "models": [
+            "S4550E EDRV"
+          ],
+          "from": "VIN prefix RAJA0854, RAJA0J54",
+          "through": "exact generation only; no year interval"
+        }
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [
+        "No tenth-character year rule established.",
+        "VIN prefix identifies model applicability, not manufacture year.",
+        "Do not transfer RAJ-prefix applicability to older CSZ serials.",
+        "Document issue and export watermark dates are not machine dates."
+      ],
+      "supported_output": "Actual plate can supply year information when present. Source combines model/manufacture year wording but does not define their equality or a serial algorithm. Model and manufacture year — Only for markets requiring model and manufacture year.",
+      "serial_scope_note": "English manual; date field conditional on market requirement",
+      "plate_location": "Machine identification plate on chassis end opposite ladder; VIN stamp shown on chassis side rails. Use Figure 5 for exact physical locations."
+    },
+    {
+      "id": "jcb-hydraulic-drive",
+      "manufacturer": "JCB",
+      "models": [
+        "S1530E",
+        "S1930E",
+        "S2032E",
+        "S2632E",
+        "S2646E",
+        "S3246E",
+        "S4046E",
+        "S4550E"
+      ],
+      "source_url": "https://www.jcb.com/globalassets/digizuite/78775-hd-om-v1/",
+      "document": "EN9831/9700 Issue 7, October 2021",
+      "revision": "Issue 7",
+      "document_date": "October 2021",
+      "pages": [
+        {
+          "pdf_page_1_based": 9,
+          "printed_page": "1"
+        },
+        {
+          "pdf_page_1_based": 17,
+          "printed_page": "9"
+        }
+      ],
+      "source_locator": "Model applicability and identification guidance",
+      "document_serial_scope": [
+        {
+          "models": [
+            "S1530E"
+          ],
+          "from": "VIN prefix RAJA0001",
+          "through": "exact generation only; no year interval"
+        },
+        {
+          "models": [
+            "S1930E"
+          ],
+          "from": "VIN prefix RAJA0101",
+          "through": "exact generation only; no year interval"
+        },
+        {
+          "models": [
+            "S2032E"
+          ],
+          "from": "VIN prefix RAJA0202",
+          "through": "exact generation only; no year interval"
+        },
+        {
+          "models": [
+            "S2632E"
+          ],
+          "from": "VIN prefix RAJA0402",
+          "through": "exact generation only; no year interval"
+        },
+        {
+          "models": [
+            "S2646E"
+          ],
+          "from": "VIN prefix RAJA0502",
+          "through": "exact generation only; no year interval"
+        },
+        {
+          "models": [
+            "S3246E"
+          ],
+          "from": "VIN prefix RAJA0603",
+          "through": "exact generation only; no year interval"
+        },
+        {
+          "models": [
+            "S4046E"
+          ],
+          "from": "VIN prefix RAJA0713",
+          "through": "exact generation only; no year interval"
+        },
+        {
+          "models": [
+            "S4550E"
+          ],
+          "from": "VIN prefix RAJA0814",
+          "through": "exact generation only; no year interval"
+        }
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [
+        "No tenth-character year rule established.",
+        "VIN prefix identifies model applicability, not manufacture year.",
+        "Do not transfer RAJ-prefix applicability to older CSZ serials.",
+        "Document issue and export watermark dates are not machine dates."
+      ],
+      "supported_output": "Actual plate can supply year information when present. Source combines model/manufacture year wording but does not define their equality or a serial algorithm. Model and manufacture year — Only for markets requiring model and manufacture year.",
+      "serial_scope_note": "English manual; date field conditional on market requirement",
+      "plate_location": "Machine identification plate on chassis end opposite ladder; VIN stamp shown on chassis side rails. Use Figure 5 for exact physical locations."
+    },
+    {
+      "id": "dingli-public-model-doc-search",
+      "manufacturer": "Dingli",
+      "models": [
+        "JCPT0807AC",
+        "JCPT0807HA",
+        "JCPT0807PA",
+        "S0807AC+",
+        "JCPT2825RT",
+        "JCPT2825DC",
+        "JCPT2825HRT"
+      ],
+      "source_url": "https://www.dingliglobal.com/services/download.jsp",
+      "document": "Dingli public model-document selector",
+      "revision": "See cited document",
+      "document_date": "Not established",
+      "pages": [],
+      "source_locator": "Model applicability and identification guidance",
+      "document_serial_scope": [
+        [
+          "Serial applicability not established; model-document search only"
+        ]
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [
+        "A model search is not a serial-date lookup.",
+        "No serial/year algorithm verified.",
+        "Do not infer YY/year or month-letter conventions from uncorroborated serial examples."
+      ],
+      "supported_output": "Parameter/specification document links only for tested exact model selections. Model search returned listed families.",
+      "serial_scope_note": "Global official English website",
+      "plate_location": "Not established"
+    },
+    {
+      "id": "sinoboom-0608me-all-identification",
+      "manufacturer": "Sinoboom",
+      "models": [
+        "0608ME All",
+        "1932ME All"
+      ],
+      "source_url": "https://sinoboom.us/wp-content/uploads/2024/10/1932MEAllOperationManual.pdf",
+      "document": "0608ME All / 1932ME All Operation Manual",
+      "revision": "A",
+      "document_date": "2024-01",
+      "pages": [
+        {
+          "pdf_page_1_based": 7
+        },
+        {
+          "pdf_page_1_based": 60
+        },
+        {
+          "pdf_page_1_based": 62
+        }
+      ],
+      "source_locator": "Model applicability and identification guidance",
+      "document_serial_scope": [
+        {
+          "models": [
+            "0608ME All",
+            "1932ME All"
+          ],
+          "from": "0108900100",
+          "through": "present as stated in Jan 2024 manual"
+        }
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [
+        "Not a year interval; do not extrapolate to 1932ME without All or another serial family."
+      ],
+      "serial_scope_note": "Region/standard: CSA, ANSI, CE metric, CE imperial, KCS",
+      "plate_location": "Chassis end panel directly above the access step, callout 25 on printed page 50. Separate machine serial decals are callout 26; do not substitute those for a dated whole-machine plate. Location visually verified.",
+      "supported_output": "Reviewed manual documents nameplate location and model/serial identity, but does not document an explicit serial-to-year rule or legible date label in its nameplate drawing. No exact year may be generated from this evidence."
+    },
+    {
+      "id": "sinoboom-1932me-poland-ce",
+      "manufacturer": "Sinoboom",
+      "models": [
+        "GTJZ0608ME",
+        "0608ME",
+        "1932ME"
+      ],
+      "source_url": "https://sinoboom.us/wp-content/uploads/2023/11/GTJZ0608MEOperationManual-PL-1.pdf",
+      "document": "GTJZ0608ME / 0608ME / 1932ME Operation Manual for Sinoboom Poland",
+      "revision": "A",
+      "document_date": "2022-05",
+      "pages": [
+        {
+          "pdf_page_1_based": 5
+        },
+        {
+          "pdf_page_1_based": 70
+        },
+        {
+          "pdf_page_1_based": 71
+        }
+      ],
+      "source_locator": "Model applicability and identification guidance",
+      "document_serial_scope": [
+        {
+          "models": [
+            "GTJZ0608ME",
+            "0608ME",
+            "1932ME"
+          ],
+          "from": "PL0106900100",
+          "through": "present as stated in May 2022 manual"
+        }
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [],
+      "serial_scope_note": "Region/standard: CE",
+      "plate_location": "Use applicable Chapter 10 standard-specific diagram. CE metric example: chassis end panel above access step, callout 25 on printed p10-2/PDF p70; separate serial labels callout 33.",
+      "supported_output": "Manual serial applicability and publication date do not establish a unit manufacturing date. No official serial-year mapping verified."
+    },
+    {
+      "id": "sinoboom-1932me-poland-ansi-csa",
+      "manufacturer": "Sinoboom",
+      "models": [
+        "GTJZ0608ME",
+        "0608ME",
+        "1932ME"
+      ],
+      "source_url": "https://sinoboom.us/wp-content/uploads/2023/11/GTJZ0608MEOperationManual-PL-1.pdf",
+      "document": "GTJZ0608ME / 0608ME / 1932ME Operation Manual for Sinoboom Poland",
+      "revision": "A",
+      "document_date": "2022-05",
+      "pages": [
+        {
+          "pdf_page_1_based": 5
+        }
+      ],
+      "source_locator": "Model applicability and identification guidance",
+      "document_serial_scope": [
+        {
+          "models": [
+            "GTJZ0608ME",
+            "0608ME",
+            "1932ME"
+          ],
+          "from": "PL0105600100",
+          "through": "present as stated in May 2022 manual"
+        }
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [],
+      "serial_scope_note": "Region/standard: ANSI/CSA",
+      "plate_location": "ANSI/CSA-specific plate diagram must be checked; CE callout and plate part are not transferred to this record.",
+      "supported_output": "Manual serial applicability and publication date do not establish a unit manufacturing date. No official serial-year mapping verified."
+    },
+    {
+      "id": "sinoboom-gtjz0408se-2020-scope",
+      "manufacturer": "Sinoboom",
+      "models": [
+        "GTJZ0408SE",
+        "1530SE"
+      ],
+      "source_url": "https://sinoboom.us/wp-content/uploads/2023/11/GTJZ0408ME_0608ME_0408SE_0608SE-Operation-Manual-A.pdf",
+      "document": "GTJZ0408SE / GTJZ0608SE / GTJZ0408ME / GTJZ0608ME Operation Manual",
+      "revision": "A",
+      "document_date": "2020-06",
+      "pages": [
+        {
+          "pdf_page_1_based": 5
+        }
+      ],
+      "source_locator": "Model applicability and identification guidance",
+      "document_serial_scope": [
+        {
+          "models": [
+            "GTJZ0408SE",
+            "1530SE"
+          ],
+          "from": "0105700104",
+          "through": "present as stated in Jun 2020 manual"
+        }
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [
+        "Use current public selector; later revisions supersede portions of the open-ended original interval."
+      ],
+      "serial_scope_note": "Region/standard: multi-standard manual; match the correct standard-specific Chapter 10 diagram",
+      "plate_location": "Use the exact model and standard-specific manual diagram.",
+      "supported_output": "From/present is manual applicability, not a manufacturing-year range. Jun 2020 is the manual issue date."
+    },
+    {
+      "id": "sinoboom-gtjz0608se-2020-scope",
+      "manufacturer": "Sinoboom",
+      "models": [
+        "GTJZ0608SE",
+        "1930SE"
+      ],
+      "source_url": "https://sinoboom.us/wp-content/uploads/2023/11/GTJZ0408ME_0608ME_0408SE_0608SE-Operation-Manual-A.pdf",
+      "document": "GTJZ0408SE / GTJZ0608SE / GTJZ0408ME / GTJZ0608ME Operation Manual",
+      "revision": "A",
+      "document_date": "2020-06",
+      "pages": [
+        {
+          "pdf_page_1_based": 5
+        }
+      ],
+      "source_locator": "Model applicability and identification guidance",
+      "document_serial_scope": [
+        {
+          "models": [
+            "GTJZ0608SE",
+            "1930SE"
+          ],
+          "from": "0105800218",
+          "through": "present as stated in Jun 2020 manual"
+        }
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [
+        "Use current public selector; later revisions supersede portions of the open-ended original interval."
+      ],
+      "serial_scope_note": "Region/standard: multi-standard manual; match the correct standard-specific Chapter 10 diagram",
+      "plate_location": "Use the exact model and standard-specific manual diagram.",
+      "supported_output": "From/present is manual applicability, not a manufacturing-year range. Jun 2020 is the manual issue date."
+    },
+    {
+      "id": "sinoboom-gtjz0408me-2020-scope",
+      "manufacturer": "Sinoboom",
+      "models": [
+        "GTJZ0408ME",
+        "1532ME"
+      ],
+      "source_url": "https://sinoboom.us/wp-content/uploads/2023/11/GTJZ0408ME_0608ME_0408SE_0608SE-Operation-Manual-A.pdf",
+      "document": "GTJZ0408SE / GTJZ0608SE / GTJZ0408ME / GTJZ0608ME Operation Manual",
+      "revision": "A",
+      "document_date": "2020-06",
+      "pages": [
+        {
+          "pdf_page_1_based": 5
+        }
+      ],
+      "source_locator": "Model applicability and identification guidance",
+      "document_serial_scope": [
+        {
+          "models": [
+            "GTJZ0408ME",
+            "1532ME"
+          ],
+          "from": "0105500104",
+          "through": "present as stated in Jun 2020 manual"
+        }
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [
+        "Use current public selector; later revisions supersede portions of the open-ended original interval."
+      ],
+      "serial_scope_note": "Region/standard: multi-standard manual; match the correct standard-specific Chapter 10 diagram",
+      "plate_location": "Use the exact model and standard-specific manual diagram.",
+      "supported_output": "From/present is manual applicability, not a manufacturing-year range. Jun 2020 is the manual issue date."
+    },
+    {
+      "id": "sinoboom-gtjz0608me-2020-scope",
+      "manufacturer": "Sinoboom",
+      "models": [
+        "GTJZ0608ME",
+        "1932ME"
+      ],
+      "source_url": "https://sinoboom.us/wp-content/uploads/2023/11/GTJZ0408ME_0608ME_0408SE_0608SE-Operation-Manual-A.pdf",
+      "document": "GTJZ0408SE / GTJZ0608SE / GTJZ0408ME / GTJZ0608ME Operation Manual",
+      "revision": "A",
+      "document_date": "2020-06",
+      "pages": [
+        {
+          "pdf_page_1_based": 5
+        }
+      ],
+      "source_locator": "Model applicability and identification guidance",
+      "document_serial_scope": [
+        {
+          "models": [
+            "GTJZ0608ME",
+            "1932ME"
+          ],
+          "from": "0105600104",
+          "through": "present as stated in Jun 2020 manual"
+        }
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [
+        "Use current public selector; later revisions supersede portions of the open-ended original interval.",
+        "GTJZ0608ME application table shows 0932ME; cover and public selector show 1932ME."
+      ],
+      "serial_scope_note": "Region/standard: multi-standard manual; match the correct standard-specific Chapter 10 diagram",
+      "plate_location": "Use the exact model and standard-specific manual diagram.",
+      "supported_output": "From/present is manual applicability, not a manufacturing-year range. Jun 2020 is the manual issue date."
+    },
+    {
+      "id": "lgmg-s0607eⅱ-manufacturing-year-plate",
+      "manufacturer": "LGMG",
+      "models": [
+        "S0607EⅡ"
+      ],
+      "source_url": "https://lgmgau.com.au/wp-content/uploads/2026/05/Slab-scissor-lifts-operation-manual-AS%E3%80%81NZS%EF%BC%88Second-generation%EF%BC%89.pdf",
+      "document": "S0607EⅡ / S0808EⅡ / S0812EⅡ / S1012EⅡ / S1212EⅡ / S1413EⅡ Operation Manual",
+      "revision": "Version 1, Printed 1",
+      "document_date": "2024-06",
+      "pages": [
+        {
+          "pdf_page_1_based": 53
+        },
+        {
+          "pdf_page_1_based": 55
+        }
+      ],
+      "source_locator": "Model applicability and identification guidance",
+      "document_serial_scope": [
+        {
+          "models": [
+            "S0607EⅡ"
+          ],
+          "from": "Not specified",
+          "through": "Not specified"
+        }
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [
+        "No published serial/PIN character-to-year mapping was verified in this review.",
+        "A missing or unreadable plate year remains unresolved; component dates, inspection dates, manual revision dates and web upload dates do not fill the gap.",
+        "Match exact model generation, region, and plate layout. Do not extend to ANSI/CE or -2 models without matching evidence."
+      ],
+      "serial_scope_note": "Region/standard: AS/NZS 1418.10; Australia/New Zealand manual",
+      "plate_location": "Chassis end panel shown in the model-specific decal diagram, callout 26. Use the diagram; no universal front/rear location is asserted.",
+      "supported_output": "Read Manufacturing Year directly on the matching whole-machine nameplate. Preserve full product identification/serial number independently."
+    },
+    {
+      "id": "lgmg-s0808eⅱ-manufacturing-year-plate",
+      "manufacturer": "LGMG",
+      "models": [
+        "S0808EⅡ"
+      ],
+      "source_url": "https://lgmgau.com.au/wp-content/uploads/2026/05/Slab-scissor-lifts-operation-manual-AS%E3%80%81NZS%EF%BC%88Second-generation%EF%BC%89.pdf",
+      "document": "S0607EⅡ / S0808EⅡ / S0812EⅡ / S1012EⅡ / S1212EⅡ / S1413EⅡ Operation Manual",
+      "revision": "Version 1, Printed 1",
+      "document_date": "2024-06",
+      "pages": [
+        {
+          "pdf_page_1_based": 56
+        },
+        {
+          "pdf_page_1_based": 58
+        }
+      ],
+      "source_locator": "Model applicability and identification guidance",
+      "document_serial_scope": [
+        {
+          "models": [
+            "S0808EⅡ"
+          ],
+          "from": "Not specified",
+          "through": "Not specified"
+        }
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [
+        "No published serial/PIN character-to-year mapping was verified in this review.",
+        "A missing or unreadable plate year remains unresolved; component dates, inspection dates, manual revision dates and web upload dates do not fill the gap.",
+        "Match exact model generation, region, and plate layout. Do not extend to ANSI/CE or -2 models without matching evidence."
+      ],
+      "serial_scope_note": "Region/standard: AS/NZS 1418.10; Australia/New Zealand manual",
+      "plate_location": "Chassis end panel shown in the model-specific decal diagram, callout 25. Use the diagram; no universal front/rear location is asserted.",
+      "supported_output": "Read Manufacturing Year directly on the matching whole-machine nameplate. Preserve full product identification/serial number independently."
+    },
+    {
+      "id": "lgmg-s0812eⅱ-manufacturing-year-plate",
+      "manufacturer": "LGMG",
+      "models": [
+        "S0812EⅡ",
+        "S1012EⅡ",
+        "S1212EⅡ"
+      ],
+      "source_url": "https://lgmgau.com.au/wp-content/uploads/2026/05/Slab-scissor-lifts-operation-manual-AS%E3%80%81NZS%EF%BC%88Second-generation%EF%BC%89.pdf",
+      "document": "S0607EⅡ / S0808EⅡ / S0812EⅡ / S1012EⅡ / S1212EⅡ / S1413EⅡ Operation Manual",
+      "revision": "Version 1, Printed 1",
+      "document_date": "2024-06",
+      "pages": [
+        {
+          "pdf_page_1_based": 59
+        },
+        {
+          "pdf_page_1_based": 61
+        }
+      ],
+      "source_locator": "Model applicability and identification guidance",
+      "document_serial_scope": [
+        {
+          "models": [
+            "S0812EⅡ",
+            "S1012EⅡ",
+            "S1212EⅡ"
+          ],
+          "from": "Not specified",
+          "through": "Not specified"
+        }
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [
+        "No published serial/PIN character-to-year mapping was verified in this review.",
+        "A missing or unreadable plate year remains unresolved; component dates, inspection dates, manual revision dates and web upload dates do not fill the gap.",
+        "Match exact model generation, region, and plate layout. Do not extend to ANSI/CE or -2 models without matching evidence."
+      ],
+      "serial_scope_note": "Region/standard: AS/NZS 1418.10; Australia/New Zealand manual",
+      "plate_location": "Chassis end panel shown in the model-specific decal diagram, callout 25. Use the diagram; no universal front/rear location is asserted.",
+      "supported_output": "Read Manufacturing Year directly on the matching whole-machine nameplate. Preserve full product identification/serial number independently."
+    },
+    {
+      "id": "lgmg-s1413eⅱ-manufacturing-year-plate",
+      "manufacturer": "LGMG",
+      "models": [
+        "S1413EⅡ"
+      ],
+      "source_url": "https://lgmgau.com.au/wp-content/uploads/2026/05/Slab-scissor-lifts-operation-manual-AS%E3%80%81NZS%EF%BC%88Second-generation%EF%BC%89.pdf",
+      "document": "S0607EⅡ / S0808EⅡ / S0812EⅡ / S1012EⅡ / S1212EⅡ / S1413EⅡ Operation Manual",
+      "revision": "Version 1, Printed 1",
+      "document_date": "2024-06",
+      "pages": [
+        {
+          "pdf_page_1_based": 62
+        },
+        {
+          "pdf_page_1_based": 64
+        }
+      ],
+      "source_locator": "Model applicability and identification guidance",
+      "document_serial_scope": [
+        {
+          "models": [
+            "S1413EⅡ"
+          ],
+          "from": "Not specified",
+          "through": "Not specified"
+        }
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [
+        "No published serial/PIN character-to-year mapping was verified in this review.",
+        "A missing or unreadable plate year remains unresolved; component dates, inspection dates, manual revision dates and web upload dates do not fill the gap.",
+        "Match exact model generation, region, and plate layout. Do not extend to ANSI/CE or -2 models without matching evidence."
+      ],
+      "serial_scope_note": "Region/standard: AS/NZS 1418.10; Australia/New Zealand manual",
+      "plate_location": "Chassis end panel shown in the model-specific decal diagram, callout 33. Use the diagram; no universal front/rear location is asserted.",
+      "supported_output": "Read Manufacturing Year directly on the matching whole-machine nameplate. Preserve full product identification/serial number independently."
+    },
+    {
+      "id": "almac-1090-light-2017",
+      "manufacturer": "Almac / AlmaCrawler",
+      "models": [
+        "BIBI 1090-BL LIGHT"
+      ],
+      "source_url": "https://www.hinowa.nl/wp-content/uploads/2023/04/1090-Engels-min.pdf",
+      "document": "ALMAC BiBi 1090-BL Light Use and Maintenance Manual, edition 00, 15/03/2017",
+      "revision": "See document and qualifications",
+      "document_date": "2017-03-15",
+      "pages": [
+        {
+          "pdf_page_1_based": 1
+        },
+        {
+          "pdf_page_1_based": 2
+        },
+        {
+          "pdf_page_1_based": 5
+        }
+      ],
+      "source_locator": "Model applicability and identification section",
+      "document_serial_scope": [
+        [
+          "No serial range specified in inspected identification section. Applies only to matching manual/version; no serial encoding verified."
+        ]
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [
+        "No serial-to-year algorithm or annual serial breakpoints found.",
+        "Exact plate locations and fields on EVO, ELC, HE and other BIBI variants require matching documentation.",
+        "No component-date-to-machine-year rule established."
+      ],
+      "supported_output": "Identification plate contains separate model, manufacturing-year and serial-number fields. Use the machine-specific year field; the manual illustration is not dated production evidence. A lower-base identification/serial label location is illustrated, near a chassis corner and lifting eye. Do not assert that the full data plate necessarily occupies this illustrated serial-label position.",
+      "serial_scope_note": "CE / European specification in English translation; no blanket worldwide applicability claimed Manufacturer-authored manual on a third-party equipment website, not an Almac domain. PDF cover, edition, model scope, and plate page inspected."
+    },
+    {
+      "id": "manitou-sc-647367",
+      "manufacturer": "Manitou",
+      "models": [
+        "100 SC-2",
+        "120 SC-2",
+        "140 SC"
+      ],
+      "source_url": "https://www.naboen.no/wp-content/uploads/2018/10/Brukerveiledning-Manitou-140-SC.pdf",
+      "document": "MANITOU 100 SC-2 / 120 SC-2 / 140 SC Norwegian operator manual, 647367 NO (24/07/2012)",
+      "revision": "See document and qualifications",
+      "document_date": "2012-07-24",
+      "pages": [
+        {
+          "pdf_page_1_based": 44
+        }
+      ],
+      "source_locator": "Model applicability and identification section",
+      "document_serial_scope": [
+        [
+          "No numeric serial range established; restrict to exact models/configurations covered by 647367 NO (24/07/2012)."
+        ]
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [
+        "No serial decoding rule or serial-year breakpoints verified.",
+        "Do not apply to unsuffixed SC models or new SE machines without matching documentation.",
+        "Do not substitute engine identification or engine build date for platform manufacture year."
+      ],
+      "supported_output": "Manufacturer plate is inside the engine compartment, left of the oil filter. Figure A has distinct manufacturing-year and model-year boxes, despite the adjacent text listing only manufacturing year. Engine number/model is identified separately in figure C; it is not the machine serial/year.",
+      "serial_scope_note": "Norwegian-language European/CE manual Manufacturer-authored manual mirrored by Norwegian rental company Naboen. Not an official Manitou-hosted download. Plate and location illustrations visually checked."
+    },
+    {
+      "id": "manitou-se-52779009",
+      "manufacturer": "Manitou",
+      "models": [
+        "SE 0808 S1",
+        "SE 1008 S1"
+      ],
+      "source_url": "https://www.key-tec.be/media/86/d8/45/1774002514/SE_0808_S1-Handleiding-EN_1774002514.pdf?ts=1792155629",
+      "document": "MANITOU SE 0808 S1 / SE 1008 S1 EU operator manual, 52779009EN-USM1 (D-01/2024)",
+      "revision": "See document and qualifications",
+      "document_date": "2024-01",
+      "pages": [
+        {
+          "pdf_page_1_based": 1
+        },
+        {
+          "pdf_page_1_based": 40
+        }
+      ],
+      "source_locator": "Model applicability and identification section",
+      "document_serial_scope": [
+        [
+          "No numeric serial range established. Series S1 only within the EU manual scope."
+        ]
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [
+        "North American SE 1932 / SE 2632 plate practices not verified by this EU manual.",
+        "No public serial-to-year decoder or production-year boundaries found.",
+        "Battery, motor, controller and document dates are not machine manufacture dates."
+      ],
+      "supported_output": "Manufacturer plate explicitly distinguishes manufacture year from model year. Figure 39 locates plate low on the chassis end panel beside/below ground-level controls; describe the pictured panel rather than guessing front/rear orientation. Serial number is a separate identifier, with no decoding instructions on this page.",
+      "serial_scope_note": "EUROPEAN UNION, explicitly on manual cover; EN-USM1 is a document language/code and does not make this a North American manual Manufacturer-authored manual linked as Manual from Key-Tec equipment-sales page; third-party host, not an official Manitou domain. Cover and page 40 verified in downloaded PDF."
+    },
+    {
+      "id": "almac-1490-2025",
+      "manufacturer": "Almac / AlmaCrawler",
+      "models": [
+        "BIBI 1490-BL PRiMO",
+        "BIBI 1490-BL EVO",
+        "BIBI 46-BL PRiMO",
+        "BIBI 46-BL EVO",
+        "ATHENA 1490-BL PRiMO",
+        "ATHENA 1490-BL EVO"
+      ],
+      "source_url": "https://www.dumarent.be/fpdf/000105_pdf_A4.php?depdf=ALMAC_BIBI+1490-BL_2025-09_NL.pdf&soortdoc=HL",
+      "document": "ALMAC BIBI 1490-BL / BIBI 46-BL / ATHENA 1490-BL Use and Maintenance, Dutch translation, edition 09/2025",
+      "revision": "See document and qualifications",
+      "document_date": "2025-09",
+      "pages": [
+        {
+          "pdf_page_1_based": 1
+        },
+        {
+          "pdf_page_1_based": 2
+        },
+        {
+          "pdf_page_1_based": 13
+        }
+      ],
+      "source_locator": "Model applicability and identification section",
+      "document_serial_scope": [
+        [
+          "No serial range or decoder established."
+        ]
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [
+        "Exact multilingual year label on small plate inset not transcribed as verified.",
+        "Model-year distinction not established from the inspected section.",
+        "Do not convert manual edition or battery labels into machine manufacture year."
+      ],
+      "supported_output": "Identification section directs use of plates on the platform and in the component compartment. Separate PRiMO/EVO drawings show the locations. The record area asks for model, serial number and year. Plate examples are illustrative and excluded from serial-year anchor data.",
+      "serial_scope_note": "Cover identifies BIBI 46-BL as US and ATHENA 1490-BL as AUS-NZL; Dutch translation also covers BIBI 1490-BL. Almac-branded manufacturer manual with Duma Rent header/watermark; Dutch translation of original instructions. Third-party rental-company host, not Almac domain. Cover and page 13 inspected."
+    },
+    {
+      "id": "boss-x-series-historical-notice-0",
+      "manufacturer": "BoSS",
+      "models": [
+        "X2"
+      ],
+      "source_url": "https://www.bossaccesstowers.com/news/x-series-update",
+      "document": "X-Series Update / Notification",
+      "revision": "See document and qualifications",
+      "document_date": "Not established",
+      "pages": [],
+      "source_locator": "Section 'Please check your BoSS X-Series Micro Powered Access machine', listed serial ranges and inclusive endpoints table; web text lines 21–37",
+      "document_serial_scope": [
+        {
+          "models": [
+            "X2"
+          ],
+          "from": "YMG 21000",
+          "through": "YMG 21228"
+        }
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [
+        "BoSS: The notice supplies no lower production-date bound and no exact manufacture year. Records must not be presented as 2012 machines.",
+        "BoSS: Do not infer dates for serials outside the four model-specific ranges or fill gaps by extrapolation.",
+        "BoSS: Upgrade completion labels concern the repair status. They do not change manufacture date or establish an exact year.",
+        "BoSS: The historical 2013 campaign and 27 October 2016 incident are event dates, not manufacturing dates."
+      ],
+      "serial_scope_note": "manufacturer/brand official website",
+      "supported_output": "For this exact model and inclusive serial range, the manufacturer notice states manufactured before November 2012. No exact year or lower date bound is established. This safety-related notice does not establish upgrade completion, safe condition or parts compatibility. Read the manufacturer notice.",
+      "production_date_upper_bound_exclusive": "2012-11-01",
+      "production_date_lower_bound": null,
+      "exact_manufacture_year": null
+    },
+    {
+      "id": "boss-x-series-historical-notice-1",
+      "manufacturer": "BoSS",
+      "models": [
+        "X3"
+      ],
+      "source_url": "https://www.bossaccesstowers.com/news/x-series-update",
+      "document": "X-Series Update / Notification",
+      "revision": "See document and qualifications",
+      "document_date": "Not established",
+      "pages": [],
+      "source_locator": "Section 'Please check your BoSS X-Series Micro Powered Access machine', listed serial ranges and inclusive endpoints table; web text lines 21–37",
+      "document_serial_scope": [
+        {
+          "models": [
+            "X3"
+          ],
+          "from": "YMG 11001",
+          "through": "YMG 11918"
+        }
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [
+        "BoSS: The notice supplies no lower production-date bound and no exact manufacture year. Records must not be presented as 2012 machines.",
+        "BoSS: Do not infer dates for serials outside the four model-specific ranges or fill gaps by extrapolation.",
+        "BoSS: Upgrade completion labels concern the repair status. They do not change manufacture date or establish an exact year.",
+        "BoSS: The historical 2013 campaign and 27 October 2016 incident are event dates, not manufacturing dates."
+      ],
+      "serial_scope_note": "manufacturer/brand official website",
+      "supported_output": "For this exact model and inclusive serial range, the manufacturer notice states manufactured before November 2012. No exact year or lower date bound is established. This safety-related notice does not establish upgrade completion, safe condition or parts compatibility. Read the manufacturer notice.",
+      "production_date_upper_bound_exclusive": "2012-11-01",
+      "production_date_lower_bound": null,
+      "exact_manufacture_year": null
+    },
+    {
+      "id": "boss-x-series-historical-notice-2",
+      "manufacturer": "BoSS",
+      "models": [
+        "X3X"
+      ],
+      "source_url": "https://www.bossaccesstowers.com/news/x-series-update",
+      "document": "X-Series Update / Notification",
+      "revision": "See document and qualifications",
+      "document_date": "Not established",
+      "pages": [],
+      "source_locator": "Section 'Please check your BoSS X-Series Micro Powered Access machine', listed serial ranges and inclusive endpoints table; web text lines 21–37",
+      "document_serial_scope": [
+        {
+          "models": [
+            "X3X"
+          ],
+          "from": "YMG 31001",
+          "through": "YMG 31238"
+        }
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [
+        "BoSS: The notice supplies no lower production-date bound and no exact manufacture year. Records must not be presented as 2012 machines.",
+        "BoSS: Do not infer dates for serials outside the four model-specific ranges or fill gaps by extrapolation.",
+        "BoSS: Upgrade completion labels concern the repair status. They do not change manufacture date or establish an exact year.",
+        "BoSS: The historical 2013 campaign and 27 October 2016 incident are event dates, not manufacturing dates."
+      ],
+      "serial_scope_note": "manufacturer/brand official website",
+      "supported_output": "For this exact model and inclusive serial range, the manufacturer notice states manufactured before November 2012. No exact year or lower date bound is established. This safety-related notice does not establish upgrade completion, safe condition or parts compatibility. Read the manufacturer notice.",
+      "production_date_upper_bound_exclusive": "2012-11-01",
+      "production_date_lower_bound": null,
+      "exact_manufacture_year": null
+    },
+    {
+      "id": "boss-x-series-historical-notice-3",
+      "manufacturer": "BoSS",
+      "models": [
+        "X3X"
+      ],
+      "source_url": "https://www.bossaccesstowers.com/news/x-series-update",
+      "document": "X-Series Update / Notification",
+      "revision": "See document and qualifications",
+      "document_date": "Not established",
+      "pages": [],
+      "source_locator": "Section 'Please check your BoSS X-Series Micro Powered Access machine', listed serial ranges and inclusive endpoints table; web text lines 21–37",
+      "document_serial_scope": [
+        {
+          "models": [
+            "X3X"
+          ],
+          "from": "YMG 32001",
+          "through": "YMG 32158"
+        }
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [
+        "BoSS: The notice supplies no lower production-date bound and no exact manufacture year. Records must not be presented as 2012 machines.",
+        "BoSS: Do not infer dates for serials outside the four model-specific ranges or fill gaps by extrapolation.",
+        "BoSS: Upgrade completion labels concern the repair status. They do not change manufacture date or establish an exact year.",
+        "BoSS: The historical 2013 campaign and 27 October 2016 incident are event dates, not manufacturing dates."
+      ],
+      "serial_scope_note": "manufacturer/brand official website",
+      "supported_output": "For this exact model and inclusive serial range, the manufacturer notice states manufactured before November 2012. No exact year or lower date bound is established. This safety-related notice does not establish upgrade completion, safe condition or parts compatibility. Read the manufacturer notice.",
+      "production_date_upper_bound_exclusive": "2012-11-01",
+      "production_date_lower_bound": null,
+      "exact_manufacture_year": null
+    },
+    {
+      "id": "aichi-gs439as-ce-4",
+      "manufacturer": "Aichi",
+      "models": [
+        "SV06ENS",
+        "SV06ENL",
+        "SV08ENL",
+        "SV08EWL",
+        "SV10EWL"
+      ],
+      "source_url": "https://www.aichi.eu/wp-content/uploads/2024/02/SV06ENS_SV06ENL_SV08ENL_SV08EWL_SV10EWL_CE_GS439As-1-1.pdf",
+      "document": "Operation Manual with Maintenance Information GS-439AS",
+      "revision": "GS-439AS",
+      "document_date": "January 2018",
+      "pages": [
+        {
+          "pdf_page_1_based": 2,
+          "printed_page": "unnumbered inside cover"
+        },
+        {
+          "pdf_page_1_based": 18,
+          "printed_page": "10"
+        },
+        {
+          "pdf_page_1_based": 24,
+          "printed_page": "16"
+        }
+      ],
+      "source_locator": "Model applicability and identification section",
+      "document_serial_scope": [
+        [
+          "after 779462 – Current"
+        ]
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [
+        "Aichi: The manual's January 2018 edition, 2017 copyright and 2017 declaration date are not individual-machine manufacture dates.",
+        "Aichi: A blank plate diagram establishes a field and where to inspect; it does not date a particular unit.",
+        "Aichi: Do not generalize these plate/model facts to all older Aichi scissors, ANSI models or boom platforms.",
+        "Aichi: No authoritative general serial-to-year algorithm was located in the reviewed official public material. Exact year stays unresolved without an actual plate value or manufacturer record.",
+        "Boundary inclusion for 779462 remains unresolved."
+      ],
+      "serial_scope_note": "CE / European manual Retain the manufacturer's wording; do not silently decide whether boundary serial 779462 is included. Current refers to manual applicability at publication, not a verified open-ended production date.",
+      "supported_output": "Read the populated YEAR OF MANUFACTURE field on the actual machine's original plate.",
+      "plate_location": "Chassis; see printed p.10 right-side/inset E diagram and printed p.16 Fig.4-1 item 28."
+    },
+    {
+      "id": "els-s-series-plate-year",
+      "manufacturer": "ELS Lift",
+      "models": [
+        "EL6-S",
+        "EL8-S"
+      ],
+      "source_url": "https://marketing.kunze-buehnen.com/hubfs/Part%20Manual_S%20Series%20%28913%20Serie%29_2022-12-05.pdf",
+      "document": "S Series Parts Manual, revision history September 2022",
+      "revision": "See document and qualifications",
+      "document_date": "Not established",
+      "pages": [
+        {
+          "pdf_page_1_based": 8
+        },
+        {
+          "pdf_page_1_based": 11
+        },
+        {
+          "pdf_page_1_based": 14
+        }
+      ],
+      "source_locator": "Model applicability and identification section",
+      "document_serial_scope": [
+        [
+          "Serial scope not established; match exact model, generation and region."
+        ]
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [
+        "No serial-to-year algorithm or unit anchor verified.",
+        "Illustration shows incomplete 20 prefix; not a unit year.",
+        "Exact serial applicability not supplied; verify matching plate/model generation.",
+        "Manufacturer PDF retrieval returned certificate verification gateway error; no certificate bypass performed. Distributor-authored hosting provenance retained."
+      ],
+      "supported_output": "Read matching actual whole-machine product plate; do not use separate serial-only label to invent a date.",
+      "serial_scope_note": "TR-EN illustrated plates; DE-EN and FR-EN listed variants not visually verified; Manufacturer-authored manual hosted by distributor Kunze; not manufacturer-hosted verification"
+    },
+    {
+      "id": "mantall-xe-ce-year-gap",
+      "manufacturer": "Mantall",
+      "models": [
+        "XE65N",
+        "XE80N",
+        "XE80C",
+        "XE80W",
+        "XE100C",
+        "XE100W",
+        "XE120W",
+        "XE140W",
+        "XE160W"
+      ],
+      "source_url": "https://www.nacelebudgetrent.com/_files/ugd/6ad82d_145119fe34e3494581c95c26a6188f39.pdf?index=true",
+      "document": "Self-Propelled Scissor Lift Operator Manual, Second Edition; cover copyright 2016; interior Version1",
+      "revision": "See document and qualifications",
+      "document_date": "Not established",
+      "pages": [
+        {
+          "pdf_page_1_based": 1
+        },
+        {
+          "pdf_page_1_based": 5
+        }
+      ],
+      "source_locator": "Model applicability and identification section",
+      "document_serial_scope": [
+        [
+          "Serial scope not established; match exact model, generation and region."
+        ]
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [
+        "2016 copyright is document metadata.",
+        "26 March 2014 is declaration date with blank serial, not actual manufacture-year evidence."
+      ],
+      "supported_output": "No verified serial-year algorithm or readable whole-machine manufacture-date field established in inspected manual.",
+      "serial_scope_note": "CE; Manufacturer-authored operator manual on rental-company mirror; official-host copy not verified"
+    },
+    {
+      "id": "mantall-public-catalog-gap",
+      "manufacturer": "Mantall",
+      "models": [
+        "XE80N",
+        "XE80C",
+        "XE100C",
+        "XE100RT",
+        "XE120RT",
+        "XE140RT"
+      ],
+      "source_url": "https://www.mantallawp.com/download",
+      "document": "Mantall official model catalogue",
+      "revision": "See document and qualifications",
+      "document_date": "Not established",
+      "pages": [],
+      "source_locator": "Model applicability and identification section",
+      "document_serial_scope": [
+        [
+          "Serial scope not established; match exact model, generation and region."
+        ]
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [
+        "Do not import third-party catalog year ranges as factory production intervals.",
+        "No inference from serial numerals in resale listings."
+      ],
+      "supported_output": "Public model specification downloads verified; no public manufacture-date lookup verified.",
+      "serial_scope_note": "Official global/Chinese catalog; Official manufacturer catalogue"
+    },
+    {
+      "id": "EUYEAR-AIRO-X-XS",
+      "manufacturer": "AIRO",
+      "models": [
+        "X8 EN",
+        "X10 EW",
+        "X10 EW WIND",
+        "X10 EN",
+        "X12 EW",
+        "X12 EW WIND",
+        "X12 EN",
+        "X14 EW",
+        "XS7 E RESTYLING",
+        "XS8 E RESTYLING LIGHT",
+        "XS8 E RESTYLING",
+        "XS9 E RESTYLING"
+      ],
+      "source_url": "https://www.uprent.it/public/file/X10EN-X12EN-X12EWRR2012-9296.pdf",
+      "document": "X/XS uso e manutenzione, 045.20.UEM-IT, 2012-09",
+      "revision": "See document and qualifications",
+      "document_date": "Not established",
+      "pages": [],
+      "source_locator": "Cover; p.10 section 1.8 and plate diagram; consult printed page labels when PDF numbering differs.",
+      "document_serial_scope": [
+        [
+          "No numeric serial limits stated in identification section."
+        ]
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [
+        "No interpretation of SF xx.xx.xx; 2012-09 is manual edition. Do not propagate to all AIRO models.",
+        "Manual dates do not date an individual machine."
+      ],
+      "supported_output": "Year field is separate from machine serial. The chassis stamp supplies identity if the plate is missing. Year field: ANNO / YEAR.",
+      "plate_location": "Base-chassis plate as shown in section 1.8; serial additionally stamped into chassis. Confirm position from model diagram, not assumed front/rear.",
+      "serial_scope_note": "EU/CE manual; Italian plate verified; third-party mirror of original manufacturer manual"
+    },
+    {
+      "id": "EUYEAR-IMER-IM47",
+      "manufacturer": "IMER Access",
+      "models": [
+        "IM 4746",
+        "IM 4752"
+      ],
+      "source_url": "https://imerusa.com/wp-content/uploads/2026/05/im_47_usa_ansi_r00-s.pdf",
+      "document": "IM 4746 / IM 4752 use and maintenance, MUM IM47 EN R00 06/2019",
+      "revision": "See document and qualifications",
+      "document_date": "Not established",
+      "pages": [],
+      "source_locator": "Cover; p.2; p.22 Identification; consult printed page labels when PDF numbering differs.",
+      "document_serial_scope": [
+        [
+          "No serial bounds stated in inspected manual."
+        ]
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [
+        "June 2019 revision and May 2026 hosting path are document metadata, not unit dates.",
+        "Manual dates do not date an individual machine."
+      ],
+      "supported_output": "Standard-model identification figure shows IM 4752 and separates manufacture year from serial number; manual covers IM 4746 and IM 4752. Year field: MANUFACTURING YEAR.",
+      "plate_location": "Metal identification plate fixed to chassis",
+      "serial_scope_note": "US ANSI A92.20/2018 manual; manufacturer"
+    },
+    {
+      "id": "EUYEAR-ITECO-IT122",
+      "manufacturer": "ITECO",
+      "models": [
+        "IT10122",
+        "IT12122"
+      ],
+      "source_url": "https://atermonas.com/wp-content/uploads/2023/10/MUM_IT122_GB_R03.pdf",
+      "document": "IT10122 / IT12122 operating and maintenance, MUM_IT122_GB_R03 06/2008",
+      "revision": "See document and qualifications",
+      "document_date": "Not established",
+      "pages": [],
+      "source_locator": "Cover; p.10; p.20 Identification; consult printed page labels when PDF numbering differs.",
+      "document_serial_scope": [
+        [
+          "No serial bounds stated."
+        ]
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [
+        "Do not replace historical ITECO manufacturer with IMER solely because IMER bought assets in 2009.",
+        "Manual dates do not date an individual machine."
+      ],
+      "supported_output": "Plate separately identifies model, serial (MATRICOLA), and construction year. Year field: ANNO DI COSTRUZIONE.",
+      "plate_location": "Metal plate fixed to truck/chassis",
+      "serial_scope_note": "CE plate; English 06/2008 manual; standard-model diagram; third-party mirror of original manufacturer manual"
+    },
+    {
+      "id": "EUYEAR-PB-S131",
+      "manufacturer": "PB Lifttechnik",
+      "models": [
+        "PB S131-19 E"
+      ],
+      "source_url": "https://www.malarlift.se/wp-content/uploads/2013/04/Operating-Instructions-PB-S131-19-E__E_.pdf",
+      "document": "PB S131-19 E TOP19 operating and maintenance instructions",
+      "revision": "See document and qualifications",
+      "document_date": "Not established",
+      "pages": [],
+      "source_locator": "Cover; pp.6,20,22; consult printed page labels when PDF numbering differs.",
+      "document_serial_scope": [
+        [
+          "Illustration 19132.***; edition footer 48/14/1115 is unresolved applicability metadata."
+        ]
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [
+        "Do not decode 19 as 2019. Body says S131-13 E while cover/plate say S131-19 E. Exact document fit requires review.",
+        "Edition and model-name conflicts recorded separately.",
+        "Cover and plate PB S131-19 E; machine-description body PB S131-13 E. Preserve raw discrepancy; require document-to-unit match; do not silently repair model name.",
+        "Edition 48/14/1115 explicitly labeled cw/year/from Serial.-No.; sample machine serial 19132.***. Store edition raw; do not make 1115 a calendar-year interval or invent missing prefix."
+      ],
+      "supported_output": "Separate year field shown as **.20** beside serial. Year field: Year of manufacturing.",
+      "plate_location": "Identification type plate; exact chassis location not specified on inspected page",
+      "serial_scope_note": "English original-manual translation; TOP19; third-party mirror of original manufacturer manual"
+    },
+    {
+      "id": "EUYEAR-HL-D25",
+      "manufacturer": "Holland Lift",
+      "models": [
+        "HL-190 D25 4WD/P/N",
+        "HL-220 D25 4WD/P/N",
+        "B-165DL25 4WD/P/N",
+        "B-195DL25 4WD/P/N"
+      ],
+      "source_url": "https://www.mateco.bg/uploads/products/operating_manual_file/1273_HL-190_220D25_B-165_195DL25_ENG_REV_0%20%28klein%29.pdf",
+      "document": "D25 operator manual, rev.0, 28/5/15",
+      "revision": "See document and qualifications",
+      "document_date": "Not established",
+      "pages": [],
+      "source_locator": "p.6 section 1.6.1 and plate image; consult printed page labels when PDF numbering differs.",
+      "document_serial_scope": [
+        [
+          "No serial-number bounds stated."
+        ]
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [
+        "No extrapolation to future HOLLAND LIFT by Sinoboom production; 2015 is manual date only.",
+        "Manual dates do not date an individual machine."
+      ],
+      "supported_output": "Plate image gives construction year separately from chassis number. Year field: Bouwjaar / Year of manufacture / Baujahr.",
+      "plate_location": "Bottom carriage, section 1.6.1",
+      "serial_scope_note": "Legacy English operator manual rev.0 28/5/15; third-party mirror of original manufacturer manual"
+    },
+    {
+      "id": "EUYEAR-HYBRID-S2",
+      "manufacturer": "Hy-Brid Lifts / Custom Equipment / AXCS",
+      "models": [
+        "HB-830",
+        "HB-830CE",
+        "HB-1230",
+        "HB-1230CE"
+      ],
+      "source_url": "https://www.hybridlifts.com/files/documents/parts_manuals/SUPO-686.pdf",
+      "document": "Series II parts manual SUPO-686 Rev A",
+      "revision": "See document and qualifications",
+      "document_date": "Not established",
+      "pages": [],
+      "source_locator": "Cover; printed pp.2–3, PDF page 2 spread; consult printed page labels when PDF numbering differs.",
+      "document_serial_scope": [
+        {
+          "models": [
+            "HB-830"
+          ],
+          "from": "D03-20000–D03-20003",
+          "through": "AXCS01; supported_manual_scope_only; SUPO-686 Rev A; preserve gaps and raw abbreviated CE endpoints."
+        },
+        {
+          "models": [
+            "HB-830CE"
+          ],
+          "from": "E03-20000-29999",
+          "through": "AXCS01; supported_manual_scope_only; SUPO-686 Rev A; preserve gaps and raw abbreviated CE endpoints."
+        },
+        {
+          "models": [
+            "HB-1230"
+          ],
+          "from": "D08-20001–D08-20043; D08-20046–D08-20063",
+          "through": "AXCS01; supported_manual_scope_only; SUPO-686 Rev A; preserve gaps and raw abbreviated CE endpoints."
+        },
+        {
+          "models": [
+            "HB-1230CE"
+          ],
+          "from": "E08-25001-25999",
+          "through": "AXCS01; supported_manual_scope_only; SUPO-686 Rev A; preserve gaps and raw abbreviated CE endpoints."
+        }
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [
+        "No rule equates D03 or D08 to calendar years; CE endpoints kept in raw shorthand.",
+        "Direct download returned 403. Raw CE endpoint shorthand retained. No year decoder."
+      ],
+      "supported_output": "Manual provides serial-plate location and narrow applicability. Year field: No manufacture-year field verified in this source.",
+      "plate_location": "Chassis behind lower controls, reached by opening lower control panel; duplicate reference on platform below manual box. Use qualified personnel and model safety instructions.",
+      "serial_scope_note": "ANSI/CSA and CE variants separated by exact manual/model; manufacturer Keep operation-manual and parts-index scopes separate; no unique routing across conflicting overlaps."
+    },
+    {
+      "id": "EUYEAR-AXCS-PS",
+      "manufacturer": "Hy-Brid Lifts / Custom Equipment / AXCS",
+      "models": [
+        "PS-1030",
+        "PS-1430",
+        "PS-1930"
+      ],
+      "source_url": "https://axcs.com/wp-content/uploads/2026/04/PS5.0-S-REV-G.pdf",
+      "document": "Pro Series operation and safety, PS5.0-S Rev G",
+      "revision": "See document and qualifications",
+      "document_date": "Not established",
+      "pages": [],
+      "source_locator": "pp.1–2,16–21,44; consult printed page labels when PDF numbering differs.",
+      "document_serial_scope": [
+        {
+          "models": [
+            "PS-1030"
+          ],
+          "from": "PS10-50001 -",
+          "through": "AXCS06; supported_manual_scope_only; PS5.0-S Rev G, p.2. CE units add CE-. No upper bound stated in this PDF."
+        },
+        {
+          "models": [
+            "PS-1430"
+          ],
+          "from": "PS14-50001 -",
+          "through": "AXCS06; supported_manual_scope_only; PS5.0-S Rev G, p.2. CE units add CE-. No upper bound stated in this PDF."
+        },
+        {
+          "models": [
+            "PS-1930"
+          ],
+          "from": "PS19-50001 -",
+          "through": "AXCS06; supported_manual_scope_only; PS5.0-S Rev G, p.2. CE units add CE-. No upper bound stated in this PDF."
+        },
+        {
+          "models": [
+            "PS-1030"
+          ],
+          "from": "D01-40001–D01-49999",
+          "through": "AXCS03; index_routing_only; Confirm exact PDF/equipment configuration before application."
+        },
+        {
+          "models": [
+            "PS-1030"
+          ],
+          "from": "PS10-50001–PS10-50081",
+          "through": "AXCS03; index_routing_only; Confirm exact PDF/equipment configuration before application."
+        },
+        {
+          "models": [
+            "PS-1030"
+          ],
+          "from": "PS10-50082–PS10-59999",
+          "through": "AXCS03; index_routing_only; Confirm exact PDF/equipment configuration before application."
+        },
+        {
+          "models": [
+            "PS-1430"
+          ],
+          "from": "D02-40001–D02-49999",
+          "through": "AXCS03; index_routing_only; Confirm exact PDF/equipment configuration before application."
+        },
+        {
+          "models": [
+            "PS-1430"
+          ],
+          "from": "PS14-50001–PS14-50862",
+          "through": "AXCS03; conflict_overlap; Live parts index; endpoint is a catalogue boundary, not an annual boundary. Overlap needs manufacturer clarification."
+        },
+        {
+          "models": [
+            "PS-1430"
+          ],
+          "from": "PS14-50861–PS14-59999",
+          "through": "AXCS03; conflict_overlap; Live parts index; endpoint is a catalogue boundary, not an annual boundary. Overlap needs manufacturer clarification."
+        },
+        {
+          "models": [
+            "PS-1930"
+          ],
+          "from": "PS19-50001–PS19-51953",
+          "through": "AXCS03; index_routing_only; Confirm exact PDF/equipment configuration before application."
+        },
+        {
+          "models": [
+            "PS-1930"
+          ],
+          "from": "PS19-51954–PS19-59999",
+          "through": "AXCS03; index_routing_only; Confirm exact PDF/equipment configuration before application."
+        }
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [
+        "PS10/14/19 are not established years. Parts overlap at PS14-50861/50862 prevents unique catalogue routing. No year-returning portal result tested.",
+        "Revision March 2023, copyright 2026, URL April 2026. None gives manufacture date. Direct download returned 403.",
+        "Two PS-1430 parts scopes overlap at PS14-50861 and PS14-50862. No unique automatic catalogue choice for either serial; seek exact-serial result or manufacturer clarification.",
+        "Page title identifies PS-1430; Shop Parts subsection says PS1930. Preserve conflict; parts-list routing requires confirmation, not a guessed rename.",
+        "Revision March 2023; copyright 2026; upload path 2026/04. Record distinct document metadata; none supplies unit manufacture year.",
+        "2026 announcement refers to initial QR introduction in 2021; About timeline places QR introduction in 2020. Exact introduction year unresolved and unnecessary for dating units."
+      ],
+      "supported_output": "Official manual explicitly describes CE- prefix; public portal routes exact serial to resources. Year field: No manufacture-year decoder established.",
+      "plate_location": "PS5.0-S Rev G model decal diagrams pp.16–21 identify serial decal as item 31; exact position needs visual check.",
+      "serial_scope_note": "ANSI/CSA/CE manual; CE- prefix retained; manufacturer Keep operation-manual and parts-index scopes separate; no unique routing across conflicting overlaps."
+    },
+    {
+      "id": "EUYEAR-AXCS-EL",
+      "manufacturer": "Hy-Brid Lifts / Custom Equipment / AXCS",
+      "models": [
+        "EL-1930e",
+        "EL-2632e"
+      ],
+      "source_url": "https://axcs.com/wp-content/uploads/2026/09/AXCS-EL-TE-Maint-Rev-05.pdf",
+      "document": "EL series maintenance, EL1.0TE-M",
+      "revision": "See document and qualifications",
+      "document_date": "Not established",
+      "pages": [],
+      "source_locator": "Cover; p.5; revision history; back cover; consult printed page labels when PDF numbering differs.",
+      "document_serial_scope": [
+        [
+          "No serial-date applicability bounds established."
+        ]
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [
+        "Manual footer, revision and copyright dates are not manufacture dates; QR rollout to EL was only planned in July 2026 announcement.",
+        "Body March 2025, back-cover revision June 2026, URL September 2026; no unit date rule.",
+        "Body footer March 2025; back-cover revision June 2026; upload path 2026/09. Keep distinct; not a machine date rule."
+      ],
+      "supported_output": "Manual requires model and serial for manufacturer assistance. Year field: Unverified.",
+      "plate_location": "Not established from inspected maintenance manual",
+      "serial_scope_note": "ANSI/SIA A92.20 maintenance manual; manufacturer"
+    },
+    {
+      "id": "four-brand-ZOOM-01",
+      "manufacturer": "Zoomlion Access",
+      "models": [
+        "ZS1414",
+        "ZS1212",
+        "ZS1012",
+        "ZS1008",
+        "ZS0812",
+        "ZS0808",
+        "ZS0608",
+        "ZS0607",
+        "ZS0507",
+        "ZS0407"
+      ],
+      "source_url": "https://global.zoomlion-access.com/en/core/control/common/down.jsp?filename=/upload/file/2026/04/07/6ff32510d6a34910921b58cd5766eb94.pdf&title=ZS0407-ZS1414%20Operation%20and%20Safety%20Manual",
+      "document": "ZS0407–ZS1414 Operation and Safety Manual; October 2025 Version C",
+      "revision": "See cited document",
+      "document_date": "Not established",
+      "pages": [
+        {
+          "pdf_page_1_based": 52
+        },
+        {
+          "pdf_page_1_based": 54
+        },
+        {
+          "pdf_page_1_based": 56
+        },
+        {
+          "pdf_page_1_based": 58
+        },
+        {
+          "pdf_page_1_based": 60
+        },
+        {
+          "pdf_page_1_based": 62
+        },
+        {
+          "pdf_page_1_based": 64
+        },
+        {
+          "pdf_page_1_based": 66
+        },
+        {
+          "pdf_page_1_based": 68
+        },
+        {
+          "pdf_page_1_based": 74
+        },
+        {
+          "pdf_page_1_based": 76
+        },
+        {
+          "pdf_page_1_based": 80
+        }
+      ],
+      "source_locator": "Exact manual cover/model scope and identification section; official_manufacturer_manual",
+      "document_serial_scope": [
+        [
+          "Serial applicability not established; match exact model, manual edition, region and plate layout."
+        ]
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [
+        "Scope is the series named on the cover and corresponding model decals; do not automatically map regional imperial aliases or every suffix.",
+        "The 2025 manual revision and 2026 website upload date are not machine manufacturing years.",
+        "A blank plate illustration validates the field, not any specific serial/year pair."
+      ],
+      "supported_output": "Common machine nameplate 00775609900401040 has separate Serial No. and Year Of Manufacture fields. Decal tables identify the common nameplate across the covered series. Plate artwork visually checked for ZS1012, ZS0812 and ZS0607 indoor; it is blank, so it supplies no individual year.",
+      "serial_scope_note": "official_manufacturer_manual; model scope only. No manufacture year inferred."
+    },
+    {
+      "id": "four-brand-ZOOM-04",
+      "manufacturer": "Zoomlion Access",
+      "models": [
+        "ZS5390RT"
+      ],
+      "source_url": "https://global.zoomlion-access.com/na/upload/file/2024/05/17/3aa4865fe48f4b399ae5f0e30d6276df.pdf",
+      "document": "ZS5390RT Operation and Safety Manual; January 2022 Version A",
+      "revision": "See cited document",
+      "document_date": "Not established",
+      "pages": [
+        {
+          "pdf_page_1_based": 45
+        },
+        {
+          "pdf_page_1_based": 46
+        }
+      ],
+      "source_locator": "Exact manual cover/model scope and identification section; official_manufacturer_manual",
+      "document_serial_scope": [
+        [
+          "Serial applicability not established; match exact model, manual edition, region and plate layout."
+        ]
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [],
+      "supported_output": "Table 3-1 lists nameplate 00775807000201110 as item 13, quantity 2; Figure 3-1 places item 13 on the chassis-side assembly. No readable manufacturing-date field or decoding rule established in this manual.",
+      "serial_scope_note": "official_manufacturer_manual; model scope only. No manufacture year inferred."
+    },
+    {
+      "id": "four-brand-ZOOM-05",
+      "manufacturer": "Zoomlion Access",
+      "models": [
+        "ZS1930E",
+        "ZS1530E"
+      ],
+      "source_url": "https://global.zoomlion-access.com/na/upload/file/2024/05/17/9b479e89b3934ce6bb24035e3024fffa.pdf",
+      "document": "ZS1930E / ZS1530E Operation and Safety Manual; October 2023 Version A",
+      "revision": "See cited document",
+      "document_date": "Not established",
+      "pages": [],
+      "source_locator": "Exact manual cover/model scope and identification section; official_manufacturer_manual",
+      "document_serial_scope": [
+        [
+          "Serial applicability not established; match exact model, manual edition, region and plate layout."
+        ]
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [],
+      "supported_output": "Official all-electric manual checked; no manufacture-year decoding instruction or explicit plate-date field verified. Decal section is PDF pages 46–55.",
+      "serial_scope_note": "official_manufacturer_manual; model scope only. No manufacture year inferred."
+    },
+    {
+      "id": "four-brand-ZOOM-06",
+      "manufacturer": "Zoomlion Access",
+      "models": [
+        "ZS2242C",
+        "ZS1532C"
+      ],
+      "source_url": "https://global.zoomlion-access.com/na/upload/file/2024/05/17/1093c6c88e3344e3840ff56338483d16.pdf",
+      "document": "ZS2242C / ZS1532C Operation and Safety Manual; May 2022 Version A",
+      "revision": "See cited document",
+      "document_date": "Not established",
+      "pages": [],
+      "source_locator": "Exact manual cover/model scope and identification section; official_manufacturer_manual",
+      "document_serial_scope": [
+        [
+          "Serial applicability not established; match exact model, manual edition, region and plate layout."
+        ]
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [],
+      "supported_output": "Official crawler-scissor manual checked; no manufacturing-year decoding rule or explicit plate-date field verified.",
+      "serial_scope_note": "official_manufacturer_manual; model scope only. No manufacture year inferred."
+    },
+    {
+      "id": "four-brand-ZOOM-07",
+      "manufacturer": "Zoomlion Access",
+      "models": [
+        "ZS2023ERT"
+      ],
+      "source_url": "https://global.zoomlion-access.com/en/core/control/common/down.jsp?filename=/upload/file/2026/04/07/0d5874d6fcdc4ccf8acb56f38802f4c9.pdf&title=ZS2023ERT%20Operation%20and%20safety%20manual",
+      "document": "ZS2023ERT Operation and Safety Manual; November 2024 Version A",
+      "revision": "See cited document",
+      "document_date": "Not established",
+      "pages": [],
+      "source_locator": "Exact manual cover/model scope and identification section; official_manufacturer_manual",
+      "document_serial_scope": [
+        [
+          "Serial applicability not established; match exact model, manual edition, region and plate layout."
+        ]
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [],
+      "supported_output": "Official current-catalog manual downloaded and text searched. No serial-year rule identified. Manufacture-date nameplate artwork is not validated for this source in this pass.",
+      "serial_scope_note": "official_manufacturer_manual; model scope only. No manufacture year inferred."
+    },
+    {
+      "id": "four-brand-ZOOM-08",
+      "manufacturer": "Zoomlion Access",
+      "models": [
+        "ZS1218ERT"
+      ],
+      "source_url": "https://global.zoomlion-access.com/en/core/control/common/down.jsp?filename=/upload/file/2026/04/07/708b9ee37867431da3d910ed65b3295a.pdf&title=ZS1218ERT%20Operation%20and%20Safety%20Manual",
+      "document": "ZS1218ERT Operation and Safety Manual; November 2023 Version B",
+      "revision": "See cited document",
+      "document_date": "Not established",
+      "pages": [],
+      "source_locator": "Exact manual cover/model scope and identification section; official_manufacturer_manual",
+      "document_serial_scope": [
+        [
+          "Serial applicability not established; match exact model, manual edition, region and plate layout."
+        ]
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [],
+      "supported_output": "Official current-catalog manual downloaded and text searched. No serial-year rule identified. Manufacture-date nameplate artwork is not validated for this source in this pass.",
+      "serial_scope_note": "official_manufacturer_manual; model scope only. No manufacture year inferred."
+    },
+    {
+      "id": "four-brand-ZOOM-09",
+      "manufacturer": "Zoomlion Access",
+      "models": [
+        "ZS1023RT",
+        "ZS1323RT",
+        "ZS1623RT"
+      ],
+      "source_url": "https://global.zoomlion-access.com/en/core/control/common/down.jsp?filename=/upload/file/2026/04/07/d73c63592deb422a876a617852b86c6e.pdf&title=ZS1023RT%20ZS1323RT%20ZS1623RT%20Operation%20and%20safety%20manual",
+      "document": "ZS1023RT / ZS1323RT / ZS1623RT Operation and Safety Manual; February 2025 Version A",
+      "revision": "See cited document",
+      "document_date": "Not established",
+      "pages": [],
+      "source_locator": "Exact manual cover/model scope and identification section; official_manufacturer_manual",
+      "document_serial_scope": [
+        [
+          "Serial applicability not established; match exact model, manual edition, region and plate layout."
+        ]
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [],
+      "supported_output": "Official current-catalog manual downloaded and text searched. No serial-year rule identified. Manufacture-date nameplate artwork is not validated for this source in this pass.",
+      "serial_scope_note": "official_manufacturer_manual; model scope only. No manufacture year inferred."
+    },
+    {
+      "id": "four-brand-ZOOM-10",
+      "manufacturer": "Zoomlion Access",
+      "models": [
+        "ZS1018RT",
+        "ZS1218RT"
+      ],
+      "source_url": "https://global.zoomlion-access.com/en/core/control/common/down.jsp?filename=/upload/file/2026/04/07/09d8efada1614f77a0e2872d14b00029.pdf&title=ZS1018RT%20ZS1218RT%20Operation%20and%20safety%20manual",
+      "document": "ZS1018RT / ZS1218RT Operation and Safety Manual; December 2024 Version B",
+      "revision": "See cited document",
+      "document_date": "Not established",
+      "pages": [],
+      "source_locator": "Exact manual cover/model scope and identification section; official_manufacturer_manual",
+      "document_serial_scope": [
+        [
+          "Serial applicability not established; match exact model, manual edition, region and plate layout."
+        ]
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [],
+      "supported_output": "Official current-catalog manual downloaded and text searched. No serial-year rule identified. Manufacture-date nameplate artwork is not validated for this source in this pass.",
+      "serial_scope_note": "official_manufacturer_manual; model scope only. No manufacture year inferred."
+    },
+    {
+      "id": "four-brand-NOBLE-01",
+      "manufacturer": "Noblelift Access",
+      "models": [
+        "SC05E",
+        "SC06E"
+      ],
+      "source_url": "https://cdn.hibuwebsites.com/16e5049557b64f3284d2e5720f46eb41/files/uploaded/SC1930E-OPERATOR-MANUAL-NOBLELIFT.pdf",
+      "document": "SC05E/SC06E Operation Safety and Maintenance Manual",
+      "revision": "03/2018; SC06E-SMS-001-EN",
+      "document_date": "Not established",
+      "pages": [
+        {
+          "pdf_page_1_based": 1
+        },
+        {
+          "pdf_page_1_based": 9
+        },
+        {
+          "pdf_page_1_based": 35
+        }
+      ],
+      "source_locator": "Exact manual cover/model scope and identification section; official_linked_manufacturer_manual",
+      "document_serial_scope": [
+        [
+          "Serial applicability not established; match exact model, manual edition, region and plate layout."
+        ]
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [
+        "Official download link label and PDF cover model names differ. Record both; imperial alias equivalence is not independently established.",
+        "Version date is document metadata, not a machine build date.",
+        "Official link label: SC1930E Li. PDF-cover identities above are retained without assuming regional alias equivalence."
+      ],
+      "supported_output": "Printed page 7 / PDF page 9 illustrates machine nameplate 602047520002 with separate model, serial and DATE OF MANUFACTURE fields. The date is blank. The chassis-side decal placement is diagrammed.",
+      "serial_scope_note": "official_linked_manufacturer_manual; model scope only. No manufacture year inferred."
+    },
+    {
+      "id": "four-brand-NOBLE-02",
+      "manufacturer": "Noblelift Access",
+      "models": [
+        "SC10H",
+        "SC12H",
+        "SC14H",
+        "SC16H",
+        "SC10E",
+        "SC12E",
+        "SC14E",
+        "SC16E",
+        "SC08HN",
+        "SC10HN",
+        "SC08EN",
+        "SC10EN"
+      ],
+      "source_url": "https://cdn.hibuwebsites.com/16e5049557b64f3284d2e5720f46eb41/files/uploaded/2632EN-SC3345E-SC3945E-OPERATOR-MANUAL-NOBLELIFT.pdf",
+      "document": "SC H/E/HN/EN Operation Safety and Maintenance Manual",
+      "revision": "07/2018; SC-SMS-003-EN",
+      "document_date": "Not established",
+      "pages": [
+        {
+          "pdf_page_1_based": 1
+        },
+        {
+          "pdf_page_1_based": 9
+        },
+        {
+          "pdf_page_1_based": 35
+        }
+      ],
+      "source_locator": "Exact manual cover/model scope and identification section; official_linked_manufacturer_manual",
+      "document_serial_scope": [
+        [
+          "Serial applicability not established; match exact model, manual edition, region and plate layout."
+        ]
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [
+        "Official download link label and PDF cover model names differ. Record both; imperial alias equivalence is not independently established.",
+        "Version date is document metadata, not a machine build date.",
+        "Official link label: SC2032-2632HN & SC2645H-3945H. PDF-cover identities above are retained without assuming regional alias equivalence."
+      ],
+      "supported_output": "Printed page 7 / PDF page 9 illustrates machine nameplate 602047520002 with separate model, serial and DATE OF MANUFACTURE fields. The date is blank. The chassis-side decal placement is diagrammed.",
+      "serial_scope_note": "official_linked_manufacturer_manual; model scope only. No manufacture year inferred."
+    },
+    {
+      "id": "four-brand-NOBLE-03",
+      "manufacturer": "Noblelift Access",
+      "models": [
+        "SC08HC-Li",
+        "SC08EC-Li",
+        "SC08HC",
+        "SC08EC"
+      ],
+      "source_url": "https://down.noblelift.com/afterSale/sales-public/2026/01/14/a0e8ddd659264f79bf07ca3e52c85f4e(-)SC-HC-EC系列操作手册-英文版-V00-中性-SC08EC-E独本.pdf",
+      "document": "SC08HC/SC08EC New Generation Operation Safety and Maintenance Manual; 10/2025",
+      "revision": "10/2025; SC08EC(New Generation)-SMS-000-EN",
+      "document_date": "Not established",
+      "pages": [
+        {
+          "pdf_page_1_based": 1
+        },
+        {
+          "pdf_page_1_based": 9
+        },
+        {
+          "pdf_page_1_based": 38
+        }
+      ],
+      "source_locator": "Exact manual cover/model scope and identification section; official_manufacturer_manual",
+      "document_serial_scope": [
+        [
+          "Serial applicability not established; match exact model, manual edition, region and plate layout."
+        ]
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [
+        "New Generation is an explicit model scope, not proof of a manufacturing-year range.",
+        "Nameplate part references disagree within the source: page 7 callout 602047520022, plate artwork footer 602047520004, inspection list page 36/PDF38 lists 602047520007. Leave replacement-part applicability unresolved."
+      ],
+      "supported_output": "Printed page 7 / PDF page 9 illustrates a separate DATE OF MANUFACTURE field alongside model and serial. The blank plate demonstrates direct date reading, not serial decoding.",
+      "serial_scope_note": "official_manufacturer_manual; model scope only. No manufacture year inferred. New Generation only; replacement plate part numbers conflict."
+    },
+    {
+      "id": "four-brand-xcmg-xg0807dcw-manual-date-field",
+      "manufacturer": "XCMG",
+      "models": [
+        "XG0807DCW"
+      ],
+      "source_url": "https://advancequip.co.nz/wp-content/uploads/2025/08/XCMG-XG0807DCW-Electric-Scissor-Lift_Operators-Manual.pdf",
+      "document": "Operation and Safety Manual of MEWP XG0807DCW",
+      "revision": "See cited document",
+      "document_date": "Not established",
+      "pages": [
+        {
+          "pdf_page_1_based": 3
+        },
+        {
+          "pdf_page_1_based": 63
+        },
+        {
+          "pdf_page_1_based": 65
+        }
+      ],
+      "source_locator": "Exact manual cover/model scope and identification section; manufacturer_authored_manual_mirrored",
+      "document_serial_scope": [
+        [
+          "Serial applicability not established; match exact model, manual edition, region and plate layout."
+        ]
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [
+        "Blank record table is not itself a populated nameplate.",
+        "October 2019 first-version date is document metadata, not a machine build year.",
+        "No model-scoped serial date encoding or dated serial range found."
+      ],
+      "supported_output": "PDF page 3 has a blank machine-specific record table with PIN, Engine No. and Manufacture date (Month Year). This establishes a separate manufacture-date recording field, not a serial-number decoding method.",
+      "serial_scope_note": "manufacturer_authored_manual_mirrored; model scope only. No manufacture year inferred.",
+      "plate_location": "Figure 5-7, printed 5-17 / PDF 63, shows item 7 inside hydraulic tray. PDF 65 identifies item 7 as general machine nameplate for scissor work platform, material 130004089. Nameplate date fields are not legible in the schematic."
+    },
+    {
+      "id": "four-brand-xcmg-xg0807ac-dutch-date-field",
+      "manufacturer": "XCMG",
+      "models": [
+        "XG0807AC"
+      ],
+      "source_url": "https://www.safetylift.nl/_files/ugd/f46aa8_af8a8d9c1594415cb4f8b8f1560df6bf.pdf",
+      "document": "XG0807AC Bedienings- en veiligheidshandleiding",
+      "revision": "See cited document",
+      "document_date": "Not established",
+      "pages": [
+        {
+          "pdf_page_1_based": 3
+        }
+      ],
+      "source_locator": "Exact manual cover/model scope and identification section; manufacturer_authored_manual_mirrored",
+      "document_serial_scope": [
+        [
+          "Serial applicability not established; match exact model, manual edition, region and plate layout."
+        ]
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [
+        "Dutch translated manual is hosted by Safety Lift, not an XCMG-controlled domain.",
+        "Blank record form does not establish a universal nameplate layout or any serial code."
+      ],
+      "supported_output": "PDF page 3 has separate blank PIN/factory-number and manufacture-date month/year fields.",
+      "serial_scope_note": "manufacturer_authored_manual_mirrored; model scope only. No manufacture year inferred."
+    },
+    {
+      "id": "four-brand-xcmg-xg0807ac-portuguese-date-field",
+      "manufacturer": "XCMG",
+      "models": [
+        "XG0807AC"
+      ],
+      "source_url": "https://www.rgpplataformas.com.br/docs/Manual_XCMG_XG0807AC.pdf",
+      "document": "Manual de Operação e Segurança para Plataforma Móvel de Elevação",
+      "revision": "See cited document",
+      "document_date": "Not established",
+      "pages": [
+        {
+          "pdf_page_1_based": 1
+        },
+        {
+          "pdf_page_1_based": 3
+        },
+        {
+          "pdf_page_1_based": 11
+        }
+      ],
+      "source_locator": "Exact manual cover/model scope and identification section; manufacturer_authored_manual_mirrored",
+      "document_serial_scope": [
+        [
+          "Serial applicability not established; match exact model, manual edition, region and plate layout."
+        ]
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [
+        "Do not infer VIN year encoding from the label VIN.",
+        "June 2021 initial publication and July 2024 revision are not manufacture dates."
+      ],
+      "supported_output": "PDF page 3 shows separate vehicle identification (VIN), engine-number and manufacture-date year/month blank fields. Cover also names XG0807FA, but the inspected machine record and body identify XG0807AC; do not broaden this record to FA without further checks.",
+      "serial_scope_note": "manufacturer_authored_manual_mirrored; model scope only. No manufacture year inferred."
+    },
+    {
+      "id": "four-brand-xcmg-na-resource-brochures",
+      "manufacturer": "XCMG",
+      "models": [
+        "XG1930AC",
+        "XG2632AC",
+        "XG3246AC",
+        "XG4047AC"
+      ],
+      "source_url": "https://xcmg-usa.com/resources/",
+      "document": "XCMG North America Resources",
+      "revision": "See cited document",
+      "document_date": "Not established",
+      "pages": [],
+      "source_locator": "Exact manual cover/model scope and identification section; official_public_model_resources",
+      "document_serial_scope": [
+        [
+          "Serial applicability not established; match exact model, manual edition, region and plate layout."
+        ]
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [],
+      "supported_output": "The four inspected scissor-lift downloads are two-page product brochures. They contain specifications and version labels, not manufacturing-date code instructions.",
+      "serial_scope_note": "official_public_model_resources; model scope only. No manufacture year inferred."
+    },
+    {
+      "id": "four-brand-sany-scissor-official-models",
+      "manufacturer": "SANY",
+      "models": [
+        "SPS0407DC",
+        "SPS0608DC",
+        "SPS0608HD",
+        "SPS0808HA",
+        "SPS1012HA",
+        "SPS1212HA",
+        "SPS1414HA"
+      ],
+      "source_url": "https://www.sanyglobal.com/product/aerial_work_platform/scissorlift1/200/",
+      "document": "Scissor Lift | SANY Group",
+      "revision": "See cited document",
+      "document_date": "Not established",
+      "pages": [],
+      "source_locator": "Exact manual cover/model scope and identification section; official_public_model_catalog",
+      "document_serial_scope": [
+        [
+          "Serial applicability not established; match exact model, manual edition, region and plate layout."
+        ]
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [],
+      "supported_output": "Official product catalog identifies the target scissor-lift models, but contains no manufacturing-date encoding, populated nameplate, or serial-year lookup.",
+      "serial_scope_note": "official_public_model_catalog; model scope only. No manufacture year inferred."
+    },
+    {
+      "id": "four-brand-sany-official-awp-brochure",
+      "manufacturer": "SANY",
+      "models": [
+        "SPS0407DC",
+        "SPS0608DC",
+        "SPS0608HD",
+        "SPS0808HA",
+        "SPS1012HA",
+        "SPS1212HA",
+        "SPS1414HA",
+        "SPS1530DC",
+        "SPS1832DC",
+        "SPS1932HD",
+        "SPS2632HA",
+        "SPS3246HA",
+        "SPS4046HA"
+      ],
+      "source_url": "https://sanyglobal-img.sany.com.cn/prod/20250414/%E5%9B%BD%E9%99%85%E9%AB%98%E6%9C%BA%E7%94%BB%E5%86%8C20250411%E5%8D%B0%E5%88%B7%E7%89%88_110731.pdf",
+      "document": "SANY Aerial Work Platform brochure, April 2025",
+      "revision": "See cited document",
+      "document_date": "Not established",
+      "pages": [
+        {
+          "pdf_page_1_based": 3
+        },
+        {
+          "pdf_page_1_based": 4
+        },
+        {
+          "pdf_page_1_based": 5
+        }
+      ],
+      "source_locator": "Exact manual cover/model scope and identification section; official_public_brochure",
+      "document_serial_scope": [
+        [
+          "Serial applicability not established; match exact model, manual edition, region and plate layout."
+        ]
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "ambiguities": [
+        "Copyright version April 2025 is not any machine manufacture date.",
+        "Website specs can differ from brochure; not reconciled because outside manufacture-date task."
+      ],
+      "supported_output": "Downloaded 10-page official PDF. Scissor spreads are PDF pages 3-5. These contain specifications, model aliases and a brochure copyright version, with no serial/year decoding instructions or manufacture-date plate explanation.",
+      "serial_scope_note": "official_public_brochure; model scope only. No manufacture year inferred. Manufacturer brochure explicitly pairs these regional names; entries are identity strings, not independent designs."
     }
   ]
 }

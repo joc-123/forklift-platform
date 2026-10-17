@@ -1,0 +1,436 @@
+{
+  "schema_version": 1,
+  "scope": "Genie scissor actual year anchors, historical serial formats, conflicts and lookup-access evidence; non-exhaustive",
+  "records": [
+    {
+      "id": "actual-plate-gs90f-54033",
+      "kind": "exact_unit_manufacture_year",
+      "models": [
+        "GS-5390"
+      ],
+      "listing_model": "GS-5390 RT",
+      "serial": "GS90F-54033",
+      "manufacture_year": 2017,
+      "manufacture_date": null,
+      "year_label": "Year of Manufacture",
+      "source_url": "https://used.genielift.com/awpUEQpdfListing?unitId=1169168%2AUEQ",
+      "supporting_url": "https://used.genielift.com/ueq_inventorydetail?isCertified=false&unitId=1169168%2AUEQ",
+      "pdf_page_1_based": 11,
+      "evidence": "Readable photograph of actual machine serial plate; serial, model and manufacture year visually checked. Listing page 1 independently pairs same serial with generic Year 2017.",
+      "verification": "Official Genie-hosted used-unit listing; machine plate photograph, not a generic manual illustration.",
+      "source_sha256": "8a6cbade1656788705144aec7d500cbd9be6368118f357d00be4780dba5234b1",
+      "allowed_use": "Exact serial match only, with source provenance; no interpolation to adjacent serials or all GS90F machines.",
+      "limitations": [
+        "This is a listing photograph, not an independently authenticated factory production record.",
+        "No month/day supplied; no production start/end dates inferred."
+      ],
+      "verified_on": "2026-10-17",
+      "universal_decoder": false
+    },
+    {
+      "id": "genie-96316-older-slab-format",
+      "kind": "scoped_model_year_format",
+      "models": [
+        "GS-1530",
+        "GS-1532",
+        "GS-1930",
+        "GS-1932",
+        "GS-2032",
+        "GS-2632",
+        "GS-2046",
+        "GS-2646",
+        "GS-3246"
+      ],
+      "source_url": "https://manuals.genielift.com/Parts%20And%20Service%20Manuals/data/Service/Scissors/96316.pdf",
+      "document": "96316 Rev E4, June 2009",
+      "pages": [
+        {
+          "pdf_page_1_based": 1,
+          "printed_page": "cover"
+        },
+        {
+          "pdf_page_1_based": 3,
+          "printed_page": "iii"
+        }
+      ],
+      "serial_applicability": [
+        {
+          "models": [
+            "GS-1530",
+            "GS-1532",
+            "GS-1930",
+            "GS-1932"
+          ],
+          "from": "GS3003-60000",
+          "through": "GS3005-75999"
+        },
+        {
+          "models": [
+            "GS-2032",
+            "GS-2632"
+          ],
+          "from": "GS3204-60000",
+          "through": "GS3205-75406"
+        },
+        {
+          "models": [
+            "GS-2046",
+            "GS-2646",
+            "GS-3246"
+          ],
+          "from": "GS4604-60000",
+          "through": "GS4605-75437"
+        }
+      ],
+      "example": "GS3005-12345",
+      "segments": [
+        {
+          "positions_1_based": [
+            1,
+            4
+          ],
+          "meaning": "model family",
+          "example": "GS30"
+        },
+        {
+          "positions_1_based": [
+            5,
+            6
+          ],
+          "meaning": "model year",
+          "example": "05"
+        },
+        {
+          "positions_1_based": [
+            8,
+            12
+          ],
+          "meaning": "sequence",
+          "example": "12345"
+        }
+      ],
+      "example_model_year": 2005,
+      "manufacture_year": null,
+      "evidence": "Legend explicitly labels 05 as model year; example plate separately shows Manufacture date 04/12/05. No facility character in this older format.",
+      "limitations": [
+        "Model-year format only; not an actual machine-year record.",
+        "Illustrative sequence 12345 lies outside cover applicability.",
+        "No complete century/pivot table; date month/day ordering is not defined on this page.",
+        "Cover endpoints do not create complete manufacture-year boundaries."
+      ],
+      "verification": "Official PDF downloaded; legend visually checked.",
+      "verified_on": "2026-10-17",
+      "universal_decoder": false
+    },
+    {
+      "id": "genie-97385-format-example-conflict",
+      "kind": "source_conflict_hold",
+      "models": [
+        "GS-1530",
+        "GS-1532",
+        "GS-1930",
+        "GS-1932",
+        "GS-2032",
+        "GS-2632",
+        "GS-2046",
+        "GS-2646",
+        "GS-3246",
+        "GS-3232"
+      ],
+      "source_url": "https://manuals.genielift.com/Parts%20And%20Service%20Manuals/data/Service/Scissors/97385.pdf",
+      "document": "97385 Rev E10, February 2012",
+      "pages": [
+        {
+          "pdf_page_1_based": 1,
+          "printed_page": "cover"
+        },
+        {
+          "pdf_page_1_based": 3,
+          "printed_page": "iii"
+        }
+      ],
+      "serial_applicability": [
+        {
+          "models": [
+            "GS-1530",
+            "GS-1532",
+            "GS-1930",
+            "GS-1932"
+          ],
+          "from": "GS3005A-76000",
+          "through": "GS3011A-109999"
+        },
+        {
+          "models": [
+            "GS-1530",
+            "GS-1532",
+            "GS-1930",
+            "GS-1932"
+          ],
+          "from": "GS3005B-76000",
+          "through": "GS3009B-98941"
+        },
+        {
+          "models": [
+            "GS-1530",
+            "GS-1532",
+            "GS-1930",
+            "GS-1932"
+          ],
+          "from": "GS3008C-101",
+          "through": "GS3011C-9999"
+        },
+        {
+          "models": [
+            "GS-2032",
+            "GS-2632",
+            "GS-3232"
+          ],
+          "from": "GS3205-75407",
+          "through": "GS3209-94602"
+        },
+        {
+          "models": [
+            "GS-2032",
+            "GS-2632",
+            "GS-3232"
+          ],
+          "from": "GS3209A-94603",
+          "through": "GS3212A-109999"
+        },
+        {
+          "models": [
+            "GS-2032",
+            "GS-2632",
+            "GS-3232"
+          ],
+          "from": "GS3205B-76000",
+          "through": "GS3209B-98941"
+        },
+        {
+          "models": [
+            "GS-2032",
+            "GS-2632",
+            "GS-3232"
+          ],
+          "from": "GS3208C-101",
+          "through": "GS3212C-9999"
+        },
+        {
+          "models": [
+            "GS-2046",
+            "GS-2646",
+            "GS-3246"
+          ],
+          "from": "GS4605-75438",
+          "through": "GS4609-95192"
+        },
+        {
+          "models": [
+            "GS-2046",
+            "GS-2646",
+            "GS-3246"
+          ],
+          "from": "GS4609A-95193",
+          "through": "GS4611A-109999"
+        },
+        {
+          "models": [
+            "GS-2046",
+            "GS-2646",
+            "GS-3246"
+          ],
+          "from": "GS4608C-101",
+          "through": "GS4612C-9999"
+        }
+      ],
+      "example": "GS3005A-12345",
+      "manufacture_year": null,
+      "evidence": "Diagram labels GS30=model, 05=model year, A=facility (used for models manufactured at multiple facilities), remainder=sequence. Example plate instead prints model year 2011 and manufacture date 04/12/2005.",
+      "limitations": [
+        "Internally inconsistent illustrative plate; quarantine the example and do not turn it into a dated unit record.",
+        "Facility letter is not a year/design-revision code.",
+        "Cover grouped ranges are manual applicability, not proof every individual model exists throughout each interval."
+      ],
+      "verification": "Official legend visually checked.",
+      "verified_on": "2026-10-17",
+      "universal_decoder": false
+    },
+    {
+      "id": "genie-early-gs30-gap",
+      "kind": "historical_serial_year_gap",
+      "models": [
+        "GS-1530",
+        "GS-1930"
+      ],
+      "sources": [
+        {
+          "url": "https://manuals.genielift.com/Parts%20And%20Service%20Manuals/data/Service/Scissors/39528.pdf",
+          "scope": "Before serial 17408",
+          "document": "39528 Rev C2, first edition third printing",
+          "pages": [
+            1,
+            2
+          ]
+        },
+        {
+          "url": "https://manuals.genielift.com/Parts%20And%20Service%20Manuals/data/Service/Scissors/72876.pdf",
+          "scope": "17408 through 59999",
+          "document": "72876, April 2003",
+          "pages": [
+            1,
+            2
+          ]
+        }
+      ],
+      "manufacture_year": null,
+      "evidence": "Official manuals segment these early serial sequences but no manufacture-year mapping was established in the inspected sources.",
+      "limitations": [
+        "1997 first printing, 1999 third printing and 2003 revision are document events, not machine manufacture years.",
+        "Do not create annual serial boundaries from revision dates."
+      ],
+      "verified_on": "2026-10-17",
+      "universal_decoder": false
+    },
+    {
+      "id": "genie-scissor-launch-1997",
+      "kind": "category_launch_event",
+      "models": [],
+      "source_url": "https://www.genielift.com/en/about-genie/our-story/",
+      "event_year": 1997,
+      "event_type": "Scissor-lift category launch",
+      "manufacture_year": null,
+      "evidence": "Manufacturer history explicitly dates its scissor-lift launch to 1997.",
+      "limitations": [
+        "Category-level launch only; photo alt text GS-2646 does not establish all model production intervals.",
+        "No individual unit date derived."
+      ],
+      "verified_on": "2026-10-17",
+      "universal_decoder": false
+    },
+    {
+      "id": "listing-year-gs3016p-157468",
+      "kind": "exact_unit_listing_year_only",
+      "models": [
+        "GS-1930"
+      ],
+      "serial": "GS3016P-157468",
+      "listing_year": 2016,
+      "manufacture_year": null,
+      "source_url": "https://used.genielift.com/awpUEQpdfListing?unitId=1171097%2AUEQ",
+      "pdf_page_1_based": 1,
+      "evidence": "Official listing pairs this serial with generic Year field.",
+      "limitations": [
+        "Year is not explicitly defined as manufacture year; do not silently populate manufacture_year.",
+        "No legible corroborating manufacture-date plate obtained in this pass.",
+        "No neighboring serial-range inference."
+      ],
+      "verified_on": "2026-10-17",
+      "universal_decoder": false
+    },
+    {
+      "id": "listing-year-gs3014a-137721",
+      "kind": "exact_unit_listing_year_only",
+      "models": [
+        "GS-1930"
+      ],
+      "serial": "GS3014A-137721",
+      "listing_year": 2014,
+      "manufacture_year": null,
+      "source_url": "https://used.genielift.com/awpUEQpdfListing?unitId=1153813%2AUEQ",
+      "pdf_page_1_based": 1,
+      "evidence": "Official listing pairs this serial with generic Year field.",
+      "limitations": [
+        "Year is not explicitly defined as manufacture year; do not silently populate manufacture_year.",
+        "No legible corroborating manufacture-date plate obtained in this pass.",
+        "No neighboring serial-range inference."
+      ],
+      "verified_on": "2026-10-17",
+      "universal_decoder": false
+    }
+  ],
+  "lookup_routes": [
+    {
+      "id": "genie-smart-parts-public-lookup",
+      "manufacturer": "Genie",
+      "route_type": "parts_lookup",
+      "source_url": "https://www.genielift.com/en/support/parts",
+      "tool_url": "https://partsbook.terex.com/awp/catalog/app?customstart=1&forcerestart=true&language=en&s_knoten_top=0&s_ver_top=",
+      "source_title": "Parts | Genie",
+      "checked_at_utc": "2026-10-17",
+      "access_status": "public_verified",
+      "access_evidence": "Official Genie Parts page links Serial Number Smart Parts Lookup System to partsbook.terex.com. The linked application opened in the cloud browser without login. Its Serial Number tab visibly provided Search for: Serial No., a Value field, and search-result headers Serial number and Description.",
+      "manufacture_date_output_status": "unverified",
+      "manufacture_date_output_evidence": "No serial number was submitted and no machine result was examined. No manufacture-date field was visible on the empty search form. This proves public parts lookup availability, not date-returning capability.",
+      "classification_limit": "Do not catalog as a verified public manufacture-date lookup."
+    },
+    {
+      "id": "genie-unit-configuration-account-route",
+      "manufacturer": "Genie",
+      "route_type": "unit_configuration",
+      "source_url": "https://www.genielift.com/en/aerialpros/service-minute-quarterly-mewp-bulletins",
+      "additional_source_urls": [
+        "https://www.genielift.com/en/aerialpros/gogenielift"
+      ],
+      "tool_url": "https://www.gogenielift.com/",
+      "observed_redirect_origin": "https://my.genielift.com",
+      "source_title": "Service Minute: Check Your MEWPs Quarterly for Open Bulletins and Owner Registration",
+      "source_publication_date": "2019-08-16",
+      "checked_at_utc": "2026-10-17",
+      "access_status": "account_required_documented_current_ui_not_observed",
+      "access_evidence": "Official 2019 instructions for Asia, North America and Latin America direct users to Customer Login or Request New Access before selecting Unit Configuration and entering a serial. The official May 24, 2018 GoGenieLift article separately describes account login and Unit Configurator functionality.",
+      "documented_output": [
+        "machine configuration",
+        "specifications",
+        "parts/service/operator manuals",
+        "open service bulletins",
+        "component descriptions",
+        "parts lookup"
+      ],
+      "manufacture_date_output_status": "unverified",
+      "manufacture_date_output_evidence": "The reviewed official public descriptions do not expressly document a manufacture-date output field; no authenticated machine result was examined.",
+      "classification_limit": "Treat account requirement as supported by official public documentation. Do not claim current portal UI or manufacture-date output was verified."
+    },
+    {
+      "id": "genie-emear-public-safety-lookup",
+      "manufacturer": "Genie",
+      "route_type": "safety_bulletin_lookup",
+      "source_url": "https://www.genielift.com/en-gb/support/safety",
+      "tool_url": "https://www.genielift.com/en-gb/support/safety",
+      "source_title": "Aerial Lift Safety | Genie",
+      "checked_at_utc": "2026-10-17",
+      "access_status": "public_form_verified",
+      "access_evidence": "The public official page displays a Serial number input and Submit control. The accompanying description says the lookup shows open bulletin reference numbers relevant to the entered machine serial.",
+      "documented_output": [
+        "open safety-notice and campaign-bulletin reference numbers"
+      ],
+      "manufacture_date_output_status": "unverified",
+      "manufacture_date_output_evidence": "The page describes bulletin output, not manufacture-date retrieval. No serial number was submitted.",
+      "classification_limit": "Public safety lookup is not evidence of a public manufacture-date lookup."
+    }
+  ],
+  "global_constraints": [
+    "No manufacturing-year interpolation between isolated serial anchors.",
+    "Model year and manufacture year are different fields.",
+    "Illustrative manual plates are not real dated units.",
+    "Publication/revision dates are not production years.",
+    "No contact with manufacturers or account login performed."
+  ],
+  "additional_cautions": [
+    {
+      "id": "genie-gs69f-physical-date-plate-example",
+      "manufacturer": "Genie",
+      "route_type": "physical_manufacturer_plate_reference",
+      "source_url": "https://manuals.genielift.com/parts%20and%20service%20manuals/data/Parts/Scissors/1286238GT.pdf",
+      "source_title": "GS-2669RT, GS-3369RT, GS-4069RT Parts Manual, Part No. 1286238GT, Rev B4",
+      "source_publication_date": "2025-08",
+      "source_page": 3,
+      "checked_at_utc": "2026-10-17",
+      "access_status": "public_document_verified",
+      "evidence": "The illustrative GS-3369 plate shows serial GS69F-12345 with Model year 2012 and Manufacture date 02/19/12. The serial legend identifies GS69 as model, F as facility code, and 12345 as sequence number; no year segment is labeled.",
+      "evidence_type": "illustrative_example_not_actual_unit",
+      "date_output_status": "physical_plate_date_fields_documented",
+      "classification_limit": "Do not import this sample as an actual dated serial record. Do not infer F means 2012. The manual publication date is not a machine manufacture date."
+    }
+  ]
+}

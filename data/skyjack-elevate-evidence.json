@@ -1,0 +1,9 @@
+{
+  "source_id": "elevatelive-app-3c3023cf",
+  "source_file_sha256": "41673a6ef1ea7a1b5cc80906169c7a7e57006b0830acfe8d4c41a65a84707478",
+  "english_label": "Production Year:",
+  "component_module": 9231,
+  "code_excerpt": "O = machineInfo.in_service_date; j = machineInfo.shipped_on; y = value => new Date(value).getFullYear(); displayed value = y(O)||y(j)",
+  "analysis": "O is machineInfo.in_service_date; j is machineInfo.shipped_on; y returns new Date(value).getFullYear(); displayed value is y(O)||y(j).",
+  "excerpt_kind": "Readable field mapping from inspected module, not verbatim source"
+}

@@ -1,0 +1,184 @@
+{
+  "research_date": "2026-10-17",
+  "purpose": "Forklift IQ scissor-lift year-identification reference verification",
+  "sources": [
+    {
+      "source_id": "boss-x-series-historical-notice",
+      "authority": "manufacturer/brand official website",
+      "publisher": "BoSS Access Towers",
+      "title": "X-Series Update / Notification",
+      "url": "https://www.bossaccesstowers.com/news/x-series-update",
+      "accessed_date": "2026-10-17",
+      "publication_date": null,
+      "citation": "Section 'Please check your BoSS X-Series Micro Powered Access machine', listed serial ranges and inclusive endpoints table; web text lines 21–37",
+      "exact_date_phrase": "manufactured before November 2012",
+      "verified": true
+    },
+    {
+      "source_id": "aichi-gs439as-ce",
+      "authority": "manufacturer official manual hosted by Aichi Europe",
+      "publisher": "Aichi Corporation / Aichi Sales Office",
+      "title": "Operation Manual with Maintenance Information GS-439AS",
+      "url": "https://www.aichi.eu/wp-content/uploads/2024/02/SV06ENS_SV06ENL_SV08ENL_SV08EWL_SV10EWL_CE_GS439As-1-1.pdf",
+      "accessed_date": "2026-10-17",
+      "document_edition": "January 2018",
+      "citations": [
+        {
+          "pdf_page": 2,
+          "printed_page": "unnumbered inside cover",
+          "detail": "Models, commercial names and serial-number applicability"
+        },
+        {
+          "pdf_page": 18,
+          "printed_page": 10,
+          "detail": "Chapter 2 – Decals; item 21, serial number plate 493-0000064, with explicit manufacture-year field"
+        },
+        {
+          "pdf_page": 24,
+          "printed_page": 16,
+          "detail": "Chapter 4, Fig. 4-1, item 28 locates serial-number plate on chassis; representative illustration SV08ENL"
+        }
+      ],
+      "official_linking_page": "https://www.aichi.eu/de/service-support/downloads/",
+      "sha256": "6a8b0075fe184749d1a3d8fb702728a0e3d127b6cca4377b305ffa0e13b49c1c",
+      "verified": true,
+      "verification_method": "Primary PDF downloaded, text extracted, plate artwork rendered and visually inspected"
+    }
+  ],
+  "records": [
+    {
+      "manufacturer": "BoSS",
+      "equipment_category": "push-around micro scissor access platform",
+      "model": "X2",
+      "record_type": "manufacture_date_upper_bound",
+      "serial_prefix": "YMG",
+      "serial_start": 21000,
+      "serial_end": 21228,
+      "serial_start_inclusive": true,
+      "serial_end_inclusive": true,
+      "production_date_lower_bound": null,
+      "production_date_upper_bound_exclusive": "2012-11-01",
+      "date_precision": "month-level exclusive upper cutoff; normalization of before November 2012",
+      "exact_manufacture_year": null,
+      "source_id": "boss-x-series-historical-notice",
+      "product_advice_note": "QB0014/13-A",
+      "verification_status": "verified_primary_source"
+    },
+    {
+      "manufacturer": "BoSS",
+      "equipment_category": "push-around micro scissor access platform",
+      "model": "X3",
+      "record_type": "manufacture_date_upper_bound",
+      "serial_prefix": "YMG",
+      "serial_start": 11001,
+      "serial_end": 11918,
+      "serial_start_inclusive": true,
+      "serial_end_inclusive": true,
+      "production_date_lower_bound": null,
+      "production_date_upper_bound_exclusive": "2012-11-01",
+      "date_precision": "month-level exclusive upper cutoff; normalization of before November 2012",
+      "exact_manufacture_year": null,
+      "source_id": "boss-x-series-historical-notice",
+      "product_advice_note": "QB0014/13-A",
+      "verification_status": "verified_primary_source"
+    },
+    {
+      "manufacturer": "BoSS",
+      "equipment_category": "push-around micro scissor access platform",
+      "model": "X3X",
+      "record_type": "manufacture_date_upper_bound",
+      "serial_prefix": "YMG",
+      "serial_start": 31001,
+      "serial_end": 31238,
+      "serial_start_inclusive": true,
+      "serial_end_inclusive": true,
+      "production_date_lower_bound": null,
+      "production_date_upper_bound_exclusive": "2012-11-01",
+      "date_precision": "month-level exclusive upper cutoff; normalization of before November 2012",
+      "exact_manufacture_year": null,
+      "source_id": "boss-x-series-historical-notice",
+      "product_advice_note": "QB0014/13-A",
+      "verification_status": "verified_primary_source"
+    },
+    {
+      "manufacturer": "BoSS",
+      "equipment_category": "push-around micro scissor access platform",
+      "model": "X3X",
+      "record_type": "manufacture_date_upper_bound",
+      "serial_prefix": "YMG",
+      "serial_start": 32001,
+      "serial_end": 32158,
+      "serial_start_inclusive": true,
+      "serial_end_inclusive": true,
+      "production_date_lower_bound": null,
+      "production_date_upper_bound_exclusive": "2012-11-01",
+      "date_precision": "month-level exclusive upper cutoff; normalization of before November 2012",
+      "exact_manufacture_year": null,
+      "source_id": "boss-x-series-historical-notice",
+      "product_advice_note": "QB0014/13-B",
+      "verification_status": "verified_primary_source"
+    },
+    {
+      "manufacturer": "Aichi",
+      "equipment_category": "self-propelled vertical scissor platform",
+      "record_type": "read_manufacture_year_from_plate",
+      "models": [
+        "SV06ENS",
+        "SV06ENL",
+        "SV08ENL",
+        "SV08EWL",
+        "SV10EWL"
+      ],
+      "model_codes": [
+        "SV06E1NS",
+        "SV06E1NL",
+        "SV08E1NL",
+        "SV08E1WL",
+        "SV10E1WL"
+      ],
+      "market_standard_scope": "CE / European manual",
+      "serial_scope_as_printed": "after 779462 – Current",
+      "serial_lower_boundary_inclusive": null,
+      "serial_scope_note": "Retain the manufacturer's wording; do not silently decide whether boundary serial 779462 is included. Current refers to manual applicability at publication, not a verified open-ended production date.",
+      "verified_plate_fields": [
+        "MODEL CODE",
+        "SERIAL NUMBER",
+        "YEAR OF MANUFACTURE"
+      ],
+      "plate_part_number": "493-0000064",
+      "plate_location": "Chassis; see printed p.10 right-side/inset E diagram and printed p.16 Fig.4-1 item 28.",
+      "determination_method": "Read the populated YEAR OF MANUFACTURE field on the actual machine's original plate.",
+      "exact_manufacture_year": null,
+      "public_serial_year_decoder_found": false,
+      "source_id": "aichi-gs439as-ce",
+      "verification_status": "verified_primary_source_visual"
+    }
+  ],
+  "interpretation_limits": [
+    "BoSS: The notice supplies no lower production-date bound and no exact manufacture year. Records must not be presented as 2012 machines.",
+    "BoSS: Do not infer dates for serials outside the four model-specific ranges or fill gaps by extrapolation.",
+    "BoSS: Upgrade completion labels concern the repair status. They do not change manufacture date or establish an exact year.",
+    "BoSS: The historical 2013 campaign and 27 October 2016 incident are event dates, not manufacturing dates.",
+    "Aichi: The manual's January 2018 edition, 2017 copyright and 2017 declaration date are not individual-machine manufacture dates.",
+    "Aichi: A blank plate diagram establishes a field and where to inspect; it does not date a particular unit.",
+    "Aichi: Do not generalize these plate/model facts to all older Aichi scissors, ANSI models or boom platforms.",
+    "Aichi: No authoritative general serial-to-year algorithm was located in the reviewed official public material. Exact year stays unresolved without an actual plate value or manufacturer record."
+  ],
+  "additional_reviewed_material": [
+    {
+      "url": "https://www.aichi.eu/wp-content/uploads/2024/02/English-SV-E-serie-2020.pdf",
+      "finding": "Alternate official file also shows the manufacture-year plate field. Filename includes 2020, while inner edition still states January 2018; therefore filename/upload dates must not date units."
+    },
+    {
+      "url": "https://www.bossaccesstowers.com/docs/librariesprovider11/archive-documents/boss-userguide-x-series-2011.pdf?sfvrsn=848d9716_2",
+      "finding": "Official archived September 2011 manual gives model-specific design-change serial thresholds, but these are not calendar-year decoding rules. Its p.1 excludes X3 YMG 11001–11300 from that manual's operational applicability; this does not invalidate those serials in the separate historical notice.",
+      "status": "Read through web tool; direct download returned HTML rather than PDF. No plate-year field from this manual relied upon."
+    }
+  ],
+  "unknowns": [
+    "Exact manufacturing years for the four BoSS batches",
+    "Aichi serial-to-year decoding algorithm",
+    "Aichi plate-field applicability outside the five listed CE model codes and stated manual serial scope",
+    "Whether serial 779462 itself is covered by Aichi's wording 'after 779462'"
+  ]
+}

@@ -1,0 +1,258 @@
+{
+  "task": "Forklift IQ scissor-lift manufacturing-year reference research",
+  "checked_at": "2026-10-17",
+  "status": "research_complete_for_assigned_pass",
+  "summary": "Exact-model plate-reading guidance verified. No serial decoder or production-year anchors authorized by this evidence. All substantive manuals are manufacturer-authored documents on third-party hosts; none should be labeled official-domain hosted.",
+  "sources": [
+    {
+      "id": "almac-1090-light-2017",
+      "title": "ALMAC BiBi 1090-BL Light Use and Maintenance Manual, edition 00, 15/03/2017",
+      "url": "https://www.hinowa.nl/wp-content/uploads/2023/04/1090-Engels-min.pdf",
+      "author": "ALMAC s.r.l.",
+      "host": "hinowa.nl",
+      "provenance": "Manufacturer-authored manual on a third-party equipment website, not an Almac domain. PDF cover, edition, model scope, and plate page inspected.",
+      "local_file": "almac-bibi1090-light.pdf",
+      "sha256": "b015e83e5a7fbaddaeb3f0d92f812dc2d84003b046426692515911ed75fcd10a",
+      "bytes": 7710260
+    },
+    {
+      "id": "manitou-sc-647367",
+      "title": "MANITOU 100 SC-2 / 120 SC-2 / 140 SC Norwegian operator manual, 647367 NO (24/07/2012)",
+      "url": "https://www.naboen.no/wp-content/uploads/2018/10/Brukerveiledning-Manitou-140-SC.pdf",
+      "author": "MANITOU BF",
+      "host": "naboen.no",
+      "provenance": "Manufacturer-authored manual mirrored by Norwegian rental company Naboen. Not an official Manitou-hosted download. Plate and location illustrations visually checked.",
+      "local_file": "manitou-sc-647367.pdf",
+      "sha256": "97982a2856d3769e97a4d7a5ac33c4fc964259161ec78b33759d9be3b7b22c3e",
+      "bytes": 4739675
+    },
+    {
+      "id": "manitou-se-52779009",
+      "title": "MANITOU SE 0808 S1 / SE 1008 S1 EU operator manual, 52779009EN-USM1 (D-01/2024)",
+      "url": "https://www.key-tec.be/media/86/d8/45/1774002514/SE_0808_S1-Handleiding-EN_1774002514.pdf?ts=1792155629",
+      "landing_page": "https://www.key-tec.be/en/se-0808-sales",
+      "secondary_mirror": "https://www.manualslib.com/manual/4597476/Manitou-Se-0808-S1.html?page=40",
+      "author": "MANITOU Group",
+      "host": "key-tec.be",
+      "provenance": "Manufacturer-authored manual linked as Manual from Key-Tec equipment-sales page; third-party host, not an official Manitou domain. Cover and page 40 verified in downloaded PDF.",
+      "local_file": "manitou-se-0808-s1.pdf",
+      "sha256": "195d940feb659dc185a19ced8f7d8bf21038f246932fb1caa6d3c4273942d880",
+      "bytes": 41738752
+    },
+    {
+      "id": "almac-1490-2025",
+      "title": "ALMAC BIBI 1490-BL / BIBI 46-BL / ATHENA 1490-BL Use and Maintenance, Dutch translation, edition 09/2025",
+      "url": "https://www.dumarent.be/fpdf/000105_pdf_A4.php?depdf=ALMAC_BIBI+1490-BL_2025-09_NL.pdf&soortdoc=HL",
+      "landing_page": "https://www.dumarent.be/en/rent/hydraulic-platforms-and-scissor-lifts/scissor-lifts/almac-bibi1490-bl-evo",
+      "author": "ALMAC S.p.A.",
+      "host": "dumarent.be",
+      "provenance": "Almac-branded manufacturer manual with Duma Rent header/watermark; Dutch translation of original instructions. Third-party rental-company host, not Almac domain. Cover and page 13 inspected.",
+      "local_file": "almac-bibi1490-2025.pdf",
+      "sha256": "baa0d39888032d91015bba31e73785d018dff8c0b1f82c43d0a707ad5aba8bdb",
+      "bytes": 5854915
+    }
+  ],
+  "records": [
+    {
+      "manufacturer": "Almac / AlmaCrawler",
+      "models": [
+        "BIBI 1090-BL LIGHT"
+      ],
+      "region": "CE / European specification in English translation; no blanket worldwide applicability claimed",
+      "serial_scope": "No serial range specified in inspected identification section. Applies only to matching manual/version; no serial encoding verified.",
+      "evidence_class": "manufacturer_plate_direct_year_field",
+      "source_id": "almac-1090-light-2017",
+      "page_cites": [
+        {
+          "printed_page": "1-2",
+          "pdf_pages": [
+            1,
+            2
+          ],
+          "purpose": "exact model and document edition"
+        },
+        {
+          "printed_page": "5",
+          "pdf_pages": [
+            5
+          ],
+          "section": "1.5 MEWP identification data",
+          "purpose": "plate year field and base location illustration"
+        }
+      ],
+      "verified_findings": [
+        "Identification plate contains separate model, manufacturing-year and serial-number fields.",
+        "Use the machine-specific year field; the manual illustration is not dated production evidence.",
+        "A lower-base identification/serial label location is illustrated, near a chassis corner and lifting eye. Do not assert that the full data plate necessarily occupies this illustrated serial-label position."
+      ],
+      "exact_year_field": "ANNO FAB. / YEAR MFD",
+      "manufacturing_year_source": "machine identification plate",
+      "model_year_source": null,
+      "document_date": "2017-03-15",
+      "component_date_warning": "No component-date-to-machine-year rule established.",
+      "serial_year_anchors": [],
+      "confidence": "high for field existence; no decoder confidence",
+      "unresolved": [
+        "No serial-to-year algorithm or annual serial breakpoints found.",
+        "Exact plate locations and fields on EVO, ELC, HE and other BIBI variants require matching documentation."
+      ]
+    },
+    {
+      "manufacturer": "Manitou",
+      "models": [
+        "100 SC-2",
+        "120 SC-2",
+        "140 SC"
+      ],
+      "region": "Norwegian-language European/CE manual",
+      "serial_scope": "No numeric serial range established; restrict to exact models/configurations covered by 647367 NO (24/07/2012).",
+      "evidence_class": "manufacturer_plate_direct_year_field",
+      "source_id": "manitou-sc-647367",
+      "page_cites": [
+        {
+          "printed_page": "2-10",
+          "pdf_pages": [
+            44
+          ],
+          "section": "Platform identification, figures A-C",
+          "purpose": "year fields, plate location, separate engine identification"
+        }
+      ],
+      "verified_findings": [
+        "Manufacturer plate is inside the engine compartment, left of the oil filter.",
+        "Figure A has distinct manufacturing-year and model-year boxes, despite the adjacent text listing only manufacturing year.",
+        "Engine number/model is identified separately in figure C; it is not the machine serial/year."
+      ],
+      "exact_year_fields": [
+        "Year of Manufacture",
+        "Year of Model"
+      ],
+      "manufacturing_year_source": "machine manufacturer plate",
+      "model_year_source": "separate plate field",
+      "document_date": "2012-07-24",
+      "component_date_warning": "Do not substitute engine identification or engine build date for platform manufacture year.",
+      "serial_year_anchors": [],
+      "confidence": "high; plate and location image inspected",
+      "unresolved": [
+        "No serial decoding rule or serial-year breakpoints verified.",
+        "Do not apply to unsuffixed SC models or new SE machines without matching documentation."
+      ]
+    },
+    {
+      "manufacturer": "Manitou",
+      "models": [
+        "SE 0808 S1",
+        "SE 1008 S1"
+      ],
+      "region": "EUROPEAN UNION, explicitly on manual cover; EN-USM1 is a document language/code and does not make this a North American manual",
+      "serial_scope": "No numeric serial range established. Series S1 only within the EU manual scope.",
+      "evidence_class": "manufacturer_plate_direct_year_field",
+      "source_id": "manitou-se-52779009",
+      "page_cites": [
+        {
+          "printed_page": "1",
+          "pdf_pages": [
+            1
+          ],
+          "purpose": "models, EU scope and edition"
+        },
+        {
+          "printed_page": "40",
+          "pdf_pages": [
+            40
+          ],
+          "section": "2.1.1 Manufacturer plate, figure 39",
+          "purpose": "separate year fields and illustrated location"
+        }
+      ],
+      "verified_findings": [
+        "Manufacturer plate explicitly distinguishes manufacture year from model year.",
+        "Figure 39 locates plate low on the chassis end panel beside/below ground-level controls; describe the pictured panel rather than guessing front/rear orientation.",
+        "Serial number is a separate identifier, with no decoding instructions on this page."
+      ],
+      "exact_year_fields": [
+        "Year of manufacture",
+        "Model year"
+      ],
+      "manufacturing_year_source": "machine manufacturer plate",
+      "model_year_source": "separate plate field",
+      "document_date": "2024-01",
+      "document_revision": "D",
+      "component_date_warning": "Battery, motor, controller and document dates are not machine manufacture dates.",
+      "serial_year_anchors": [],
+      "confidence": "high; cover and plate page visually inspected",
+      "unresolved": [
+        "North American SE 1932 / SE 2632 plate practices not verified by this EU manual.",
+        "No public serial-to-year decoder or production-year boundaries found."
+      ]
+    },
+    {
+      "manufacturer": "Almac / AlmaCrawler",
+      "models": [
+        "BIBI 1490-BL PRiMO",
+        "BIBI 1490-BL EVO",
+        "BIBI 46-BL PRiMO",
+        "BIBI 46-BL EVO",
+        "ATHENA 1490-BL PRiMO",
+        "ATHENA 1490-BL EVO"
+      ],
+      "region": "Cover identifies BIBI 46-BL as US and ATHENA 1490-BL as AUS-NZL; Dutch translation also covers BIBI 1490-BL.",
+      "serial_scope": "No serial range or decoder established.",
+      "evidence_class": "manufacturer_identification_location_support",
+      "source_id": "almac-1490-2025",
+      "page_cites": [
+        {
+          "printed_page": "1-2",
+          "pdf_pages": [
+            1,
+            2
+          ],
+          "purpose": "model/region scope and edition"
+        },
+        {
+          "printed_page": "13",
+          "pdf_pages": [
+            13
+          ],
+          "section": "1.6 Identification, figure 1",
+          "purpose": "identification plate locations and recording model/serial/year"
+        }
+      ],
+      "verified_findings": [
+        "Identification section directs use of plates on the platform and in the component compartment. Separate PRiMO/EVO drawings show the locations.",
+        "The record area asks for model, serial number and year. Plate examples are illustrative and excluded from serial-year anchor data."
+      ],
+      "exact_year_field_in_record_area": "JAAR",
+      "manufacturing_year_source": "Needs legible machine plate; this source supports location and a year field, not a serial-derived year",
+      "model_year_source": null,
+      "document_date": "2025-09",
+      "component_date_warning": "Do not convert manual edition or battery labels into machine manufacture year.",
+      "serial_year_anchors": [],
+      "confidence": "high for locations/model scope; year-field semantics limited to readable section text",
+      "unresolved": [
+        "Exact multilingual year label on small plate inset not transcribed as verified.",
+        "Model-year distinction not established from the inspected section."
+      ]
+    }
+  ],
+  "excluded_or_unresolved": [
+    {
+      "item": "ALMAC BIBI 850-HE manual on dalehire.com",
+      "url": "https://www.dalehire.com/static/products/files/bibi-850-he-user-manual-5f9366ad72948496105294.pdf",
+      "reason": "Search-index text found plate example and 2016 manual revisions, but full retrieval failed (403). Not promoted to verified record or serial-year evidence."
+    },
+    {
+      "item": "GTAccess links labeled Almac Operators Manual",
+      "reason": "Links actually returned product datasheets, not operator manuals. Not used for year-identification claims."
+    },
+    {
+      "item": "Marketplace serial/year claims",
+      "reason": "Not used as primary manufacturing-year evidence."
+    },
+    {
+      "item": "Manual edition dates / source upload directories / illustration years",
+      "reason": "Document or sample dates are not production-year boundaries."
+    }
+  ],
+  "catalog_recommendation": "Add records as exact-model plate-reading references, with explicit third-party-host provenance. Leave brand-level serial decoding unresolved; do not fill year ranges from these manuals."
+}

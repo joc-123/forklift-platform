@@ -44,7 +44,7 @@
     if (!data || data.schema_version !== 1 || !Array.isArray(data.records)) throw new Error('Invalid identification evidence');
     const ids = new Set();
     for (const r of data.records) {
-      if (!r || !text(r.id) || ids.has(r.id) || !text(r.manufacturer) || !Array.isArray(r.models) || !r.models.length || !r.models.every(text) || !https(r.source_url) || (r.pdf_url && !https(r.pdf_url)) || !text(r.document) || !text(r.revision) || !text(r.document_date) || r.automatic_manufacture_year_decode_allowed !== false || !Array.isArray(r.pages) || !r.pages.length || !r.pages.every(p => Number.isInteger(p.pdf_page_1_based) && p.pdf_page_1_based > 0) || !Array.isArray(r.ambiguities) || !r.ambiguities.every(text) || !text(r.supported_output || r.supported_use)) throw new Error('Invalid identification record');
+      if (!r || !text(r.id) || ids.has(r.id) || !text(r.manufacturer) || !Array.isArray(r.models) || !r.models.length || !r.models.every(text) || !https(r.source_url) || (r.pdf_url && !https(r.pdf_url)) || !text(r.document) || !text(r.revision) || !text(r.document_date) || r.automatic_manufacture_year_decode_allowed !== false || !Array.isArray(r.pages) || (!r.pages.length && !text(r.source_locator)) || !r.pages.every(p => Number.isInteger(p.pdf_page_1_based) && p.pdf_page_1_based > 0) || !Array.isArray(r.ambiguities) || !r.ambiguities.every(text) || !text(r.supported_output || r.supported_use)) throw new Error('Invalid identification record');
       if (!Array.isArray(r.document_serial_scope || r.serial_applicability)) throw new Error('Missing document scope');
       ids.add(r.id);
     }
@@ -76,6 +76,8 @@
           if (r.manufacture_date_evidence) guide.append(node('p', r.manufacture_date_evidence));
           for (const item of r.evidence || []) guide.append(node('p', item.field_label + ': ' + item.location));
           guide.append(node('p', 'Document: ' + r.document + ', revision ' + r.revision + ', dated ' + r.document_date + '. This is a document date, not this machine’s year.'));
+          if (r.source_locator) guide.append(node('p', 'Source section: ' + r.source_locator));
+          if (!r.pages.length) guide.append(link('Open source document', r.source_url));
           for (const page of r.pages) guide.append(node('p'), link('PDF page ' + page.pdf_page_1_based + (page.printed_page ? ' (printed ' + page.printed_page + ')' : ''), (r.pdf_url || r.source_url) + '#page=' + page.pdf_page_1_based));
           guide.append(node('p', 'Document serial scope — match your exact model and serial before using this guidance:'));
           for (const scope of r.document_serial_scope || r.serial_applicability) {
@@ -93,12 +95,13 @@
       const rows = discovery.filter(r => (!get('brand').value || r.brand === get('brand').value) && (!q || (r.brand + ' ' + r.verified_examples).toLowerCase().includes(q)));
       for (const row of rows) {
         const item = node('details'); item.append(node('summary', row.brand + ' — ' + row.identity_classification));
+        if (row.status_evidence) item.append(node('p', row.status_evidence));
         item.append(node('p', 'Research model examples: ' + row.verified_examples), node('p', 'Year evidence lead: ' + row.year_identification_evidence), link('Source reference', row.official_source_url));
         if (row.supporting_source_url) item.append(node('p'), link('Supporting reference', row.supporting_source_url));
         item.append(node('p', 'Production years: not established. Discovery reference only; not a serial-year decoder.'));
         get('directory').append(item);
       }
-      get('status').textContent = visible.length + ' verified model identities · ' + rows.length + ' brand/group discovery entries. ' + (visible.length ? 'Years remain unknown.' : 'No verified model matches. Try another search or check the discovery references below.');
+      get('status').textContent = visible.length + ' verified model identities · ' + rows.length + ' brand/group discovery entries. ' + (visible.length ? 'Catalogue production years remain unknown.' : 'No verified model matches. Try another search or check the discovery references below.');
     }
     async function load() {
       const version = ++generation;

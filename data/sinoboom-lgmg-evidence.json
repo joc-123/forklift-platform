@@ -1,0 +1,592 @@
+{
+  "schema_version": 1,
+  "research_topic": "Official Sinoboom and LGMG scissor-lift manufacture-year identification",
+  "reviewed_utc": "2026-10-17T01:40:00Z",
+  "summary": {
+    "confirmed_date_rules": [],
+    "confirmed_direct_plate_year_method": [
+      "LGMG AS/NZS Gen2 slab-scissor models listed in records"
+    ],
+    "sinoboom_result": "Official model/serial-specific plate locations and manual selector verified; exact manufacturing-year decode remains unresolved.",
+    "no_contact_or_login": "No manufacturer contacted, no account used, no account creation, no private machine serial transmitted."
+  },
+  "records": [
+    {
+      "record_id": "sinoboom-0608me-all-identification",
+      "brand": "Sinoboom",
+      "equipment_type": "scissor lift",
+      "model": "0608ME All",
+      "trade_names": [
+        "0608ME All",
+        "1932ME All"
+      ],
+      "region_or_standard": [
+        "CSA",
+        "ANSI",
+        "CE metric",
+        "CE imperial",
+        "KCS"
+      ],
+      "serial_applicability": {
+        "start": "0108900100",
+        "end": "present as stated in Jan 2024 manual",
+        "scope_warning": "Not a year interval; do not extrapolate to 1932ME without All or another serial family."
+      },
+      "identification": {
+        "primary_identifier": "model and serial number from whole-machine nameplate",
+        "plate_location": "Chassis end panel directly above the access step, callout 25 on printed page 50. Separate machine serial decals are callout 26; do not substitute those for a dated whole-machine plate. Location visually verified.",
+        "plate_parts_by_standard": {
+          "CSA": "101016103010",
+          "ANSI": "101016103010",
+          "CE metric": "101079103032",
+          "CE imperial": "101079103032",
+          "KCS": "101015100026"
+        }
+      },
+      "year_identification": {
+        "status": "unresolved",
+        "verified_serial_year_rule": null,
+        "verified_plate_date_label": null,
+        "reason": "Reviewed manual documents nameplate location and model/serial identity, but does not document an explicit serial-to-year rule or legible date label in its nameplate drawing. No exact year may be generated from this evidence."
+      },
+      "sources": [
+        "sinoboom-all-2024",
+        "sinoboom-manual-selector"
+      ],
+      "confidence": "high for model/serial scope and plate location; no year determination"
+    },
+    {
+      "record_id": "sinoboom-1932me-poland-ce",
+      "brand": "Sinoboom",
+      "equipment_type": "scissor lift",
+      "model": "GTJZ0608ME",
+      "trade_names": [
+        "0608ME",
+        "1932ME"
+      ],
+      "manufacturing_context": "Manual explicitly titled for Sinoboom Poland; this is not a general PL-prefix decode rule.",
+      "region_or_standard": [
+        "CE"
+      ],
+      "serial_applicability": {
+        "start": "PL0106900100",
+        "end": "present as stated in May 2022 manual"
+      },
+      "identification": {
+        "primary_identifier": "model and serial number from whole-machine nameplate",
+        "plate_location": "Use applicable Chapter 10 standard-specific diagram. CE metric example: chassis end panel above access step, callout 25 on printed p10-2/PDF p70; separate serial labels callout 33.",
+        "verified_ce_plate_part": "101048103040"
+      },
+      "year_identification": {
+        "status": "unresolved",
+        "verified_serial_year_rule": null,
+        "verified_plate_date_label": null,
+        "reason": "Manual serial applicability and publication date do not establish a unit manufacturing date. No official serial-year mapping verified."
+      },
+      "sources": [
+        "sinoboom-pl-2022",
+        "sinoboom-manual-selector"
+      ],
+      "confidence": "high for applicability; year unknown"
+    },
+    {
+      "record_id": "sinoboom-1932me-poland-ansi-csa",
+      "brand": "Sinoboom",
+      "equipment_type": "scissor lift",
+      "model": "GTJZ0608ME",
+      "trade_names": [
+        "0608ME",
+        "1932ME"
+      ],
+      "manufacturing_context": "Manual explicitly titled for Sinoboom Poland; this is not a general PL-prefix decode rule.",
+      "region_or_standard": [
+        "ANSI/CSA"
+      ],
+      "serial_applicability": {
+        "start": "PL0105600100",
+        "end": "present as stated in May 2022 manual"
+      },
+      "identification": {
+        "primary_identifier": "model and serial number from whole-machine nameplate",
+        "plate_location": "ANSI/CSA-specific plate diagram must be checked; CE callout and plate part are not transferred to this record."
+      },
+      "year_identification": {
+        "status": "unresolved",
+        "verified_serial_year_rule": null,
+        "verified_plate_date_label": null,
+        "reason": "Manual serial applicability and publication date do not establish a unit manufacturing date. No official serial-year mapping verified."
+      },
+      "sources": [
+        "sinoboom-pl-2022",
+        "sinoboom-manual-selector"
+      ],
+      "confidence": "high for applicability; year unknown"
+    },
+    {
+      "record_id": "sinoboom-gtjz0408se-2020-scope",
+      "brand": "Sinoboom",
+      "equipment_type": "scissor lift",
+      "model": "GTJZ0408SE",
+      "trade_names": [
+        "1530SE"
+      ],
+      "region_or_standard": "multi-standard manual; match the correct standard-specific Chapter 10 diagram",
+      "serial_applicability": {
+        "start": "0105700104",
+        "end": "present as stated in Jun 2020 manual",
+        "current_manual_selection": "Use current public selector; later revisions supersede portions of the open-ended original interval."
+      },
+      "year_identification": {
+        "status": "unresolved",
+        "verified_serial_year_rule": null,
+        "reason": "From/present is manual applicability, not a manufacturing-year range. Jun 2020 is the manual issue date."
+      },
+      "source_discrepancy": null,
+      "sources": [
+        "sinoboom-a-2020",
+        "sinoboom-manual-selector"
+      ]
+    },
+    {
+      "record_id": "sinoboom-gtjz0608se-2020-scope",
+      "brand": "Sinoboom",
+      "equipment_type": "scissor lift",
+      "model": "GTJZ0608SE",
+      "trade_names": [
+        "1930SE"
+      ],
+      "region_or_standard": "multi-standard manual; match the correct standard-specific Chapter 10 diagram",
+      "serial_applicability": {
+        "start": "0105800218",
+        "end": "present as stated in Jun 2020 manual",
+        "current_manual_selection": "Use current public selector; later revisions supersede portions of the open-ended original interval."
+      },
+      "year_identification": {
+        "status": "unresolved",
+        "verified_serial_year_rule": null,
+        "reason": "From/present is manual applicability, not a manufacturing-year range. Jun 2020 is the manual issue date."
+      },
+      "source_discrepancy": null,
+      "sources": [
+        "sinoboom-a-2020",
+        "sinoboom-manual-selector"
+      ]
+    },
+    {
+      "record_id": "sinoboom-gtjz0408me-2020-scope",
+      "brand": "Sinoboom",
+      "equipment_type": "scissor lift",
+      "model": "GTJZ0408ME",
+      "trade_names": [
+        "1532ME"
+      ],
+      "region_or_standard": "multi-standard manual; match the correct standard-specific Chapter 10 diagram",
+      "serial_applicability": {
+        "start": "0105500104",
+        "end": "present as stated in Jun 2020 manual",
+        "current_manual_selection": "Use current public selector; later revisions supersede portions of the open-ended original interval."
+      },
+      "year_identification": {
+        "status": "unresolved",
+        "verified_serial_year_rule": null,
+        "reason": "From/present is manual applicability, not a manufacturing-year range. Jun 2020 is the manual issue date."
+      },
+      "source_discrepancy": null,
+      "sources": [
+        "sinoboom-a-2020",
+        "sinoboom-manual-selector"
+      ]
+    },
+    {
+      "record_id": "sinoboom-gtjz0608me-2020-scope",
+      "brand": "Sinoboom",
+      "equipment_type": "scissor lift",
+      "model": "GTJZ0608ME",
+      "trade_names": [
+        "1932ME"
+      ],
+      "region_or_standard": "multi-standard manual; match the correct standard-specific Chapter 10 diagram",
+      "serial_applicability": {
+        "start": "0105600104",
+        "end": "present as stated in Jun 2020 manual",
+        "current_manual_selection": "Use current public selector; later revisions supersede portions of the open-ended original interval."
+      },
+      "year_identification": {
+        "status": "unresolved",
+        "verified_serial_year_rule": null,
+        "reason": "From/present is manual applicability, not a manufacturing-year range. Jun 2020 is the manual issue date."
+      },
+      "source_discrepancy": "GTJZ0608ME application table shows 0932ME; cover and public selector show 1932ME.",
+      "sources": [
+        "sinoboom-a-2020",
+        "sinoboom-manual-selector"
+      ]
+    },
+    {
+      "record_id": "lgmg-s0607eⅱ-manufacturing-year-plate",
+      "brand": "LGMG",
+      "manufacturer": "Lingong Heavy Machinery Co., Ltd.",
+      "equipment_type": "scissor lift",
+      "models": [
+        "S0607EⅡ"
+      ],
+      "region_or_standard": "AS/NZS 1418.10; Australia/New Zealand manual",
+      "serial_applicability": {
+        "status": "not specified in reviewed manual",
+        "start": null,
+        "end": null,
+        "scope_warning": "Match exact model generation, region, and plate layout. Do not extend to ANSI/CE or -2 models without matching evidence."
+      },
+      "identification": {
+        "primary_identifier": "Whole-machine nameplate with product identification number and separate Manufacturing Year field",
+        "plate_location": "Chassis end panel shown in the model-specific decal diagram, callout 26. Use the diagram; no universal front/rear location is asserted.",
+        "plate_part_number": "2534003675",
+        "diagram_pdf_page": 53,
+        "diagram_printed_page": "45",
+        "decal_list_pdf_page": 54,
+        "plate_illustration_pdf_page": 55,
+        "plate_illustration_printed_page": "47"
+      },
+      "year_identification": {
+        "status": "verified_direct_plate_method",
+        "date_field_exact_label": "Manufacturing Year",
+        "meaning": "whole-machine manufacturing year",
+        "precision": "year only; no month/day supported by this field",
+        "method": "Read Manufacturing Year directly on the matching whole-machine nameplate. Preserve full product identification/serial number independently.",
+        "verified_serial_year_rule": null,
+        "model_year_rule": null,
+        "uncertainties": [
+          "No published serial/PIN character-to-year mapping was verified in this review.",
+          "A missing or unreadable plate year remains unresolved; component dates, inspection dates, manual revision dates and web upload dates do not fill the gap."
+        ]
+      },
+      "sources": [
+        "lgmg-gen2-au-2024",
+        "lgmg-downloads"
+      ],
+      "confidence": "high for direct Manufacturing Year field and model-specific diagram references"
+    },
+    {
+      "record_id": "lgmg-s0808eⅱ-manufacturing-year-plate",
+      "brand": "LGMG",
+      "manufacturer": "Lingong Heavy Machinery Co., Ltd.",
+      "equipment_type": "scissor lift",
+      "models": [
+        "S0808EⅡ"
+      ],
+      "region_or_standard": "AS/NZS 1418.10; Australia/New Zealand manual",
+      "serial_applicability": {
+        "status": "not specified in reviewed manual",
+        "start": null,
+        "end": null,
+        "scope_warning": "Match exact model generation, region, and plate layout. Do not extend to ANSI/CE or -2 models without matching evidence."
+      },
+      "identification": {
+        "primary_identifier": "Whole-machine nameplate with product identification number and separate Manufacturing Year field",
+        "plate_location": "Chassis end panel shown in the model-specific decal diagram, callout 25. Use the diagram; no universal front/rear location is asserted.",
+        "plate_part_number": "2534003309",
+        "diagram_pdf_page": 56,
+        "diagram_printed_page": "48",
+        "decal_list_pdf_page": 57,
+        "plate_illustration_pdf_page": 58,
+        "plate_illustration_printed_page": "50"
+      },
+      "year_identification": {
+        "status": "verified_direct_plate_method",
+        "date_field_exact_label": "Manufacturing Year",
+        "meaning": "whole-machine manufacturing year",
+        "precision": "year only; no month/day supported by this field",
+        "method": "Read Manufacturing Year directly on the matching whole-machine nameplate. Preserve full product identification/serial number independently.",
+        "verified_serial_year_rule": null,
+        "model_year_rule": null,
+        "uncertainties": [
+          "No published serial/PIN character-to-year mapping was verified in this review.",
+          "A missing or unreadable plate year remains unresolved; component dates, inspection dates, manual revision dates and web upload dates do not fill the gap."
+        ]
+      },
+      "sources": [
+        "lgmg-gen2-au-2024",
+        "lgmg-downloads"
+      ],
+      "confidence": "high for direct Manufacturing Year field and model-specific diagram references"
+    },
+    {
+      "record_id": "lgmg-s0812eⅱ-manufacturing-year-plate",
+      "brand": "LGMG",
+      "manufacturer": "Lingong Heavy Machinery Co., Ltd.",
+      "equipment_type": "scissor lift",
+      "models": [
+        "S0812EⅡ",
+        "S1012EⅡ",
+        "S1212EⅡ"
+      ],
+      "region_or_standard": "AS/NZS 1418.10; Australia/New Zealand manual",
+      "serial_applicability": {
+        "status": "not specified in reviewed manual",
+        "start": null,
+        "end": null,
+        "scope_warning": "Match exact model generation, region, and plate layout. Do not extend to ANSI/CE or -2 models without matching evidence."
+      },
+      "identification": {
+        "primary_identifier": "Whole-machine nameplate with product identification number and separate Manufacturing Year field",
+        "plate_location": "Chassis end panel shown in the model-specific decal diagram, callout 25. Use the diagram; no universal front/rear location is asserted.",
+        "plate_part_number": "2534003309",
+        "diagram_pdf_page": 59,
+        "diagram_printed_page": "51",
+        "decal_list_pdf_page": 60,
+        "plate_illustration_pdf_page": 61,
+        "plate_illustration_printed_page": "53"
+      },
+      "year_identification": {
+        "status": "verified_direct_plate_method",
+        "date_field_exact_label": "Manufacturing Year",
+        "meaning": "whole-machine manufacturing year",
+        "precision": "year only; no month/day supported by this field",
+        "method": "Read Manufacturing Year directly on the matching whole-machine nameplate. Preserve full product identification/serial number independently.",
+        "verified_serial_year_rule": null,
+        "model_year_rule": null,
+        "uncertainties": [
+          "No published serial/PIN character-to-year mapping was verified in this review.",
+          "A missing or unreadable plate year remains unresolved; component dates, inspection dates, manual revision dates and web upload dates do not fill the gap."
+        ]
+      },
+      "sources": [
+        "lgmg-gen2-au-2024",
+        "lgmg-downloads"
+      ],
+      "confidence": "high for direct Manufacturing Year field and model-specific diagram references"
+    },
+    {
+      "record_id": "lgmg-s1413eⅱ-manufacturing-year-plate",
+      "brand": "LGMG",
+      "manufacturer": "Lingong Heavy Machinery Co., Ltd.",
+      "equipment_type": "scissor lift",
+      "models": [
+        "S1413EⅡ"
+      ],
+      "region_or_standard": "AS/NZS 1418.10; Australia/New Zealand manual",
+      "serial_applicability": {
+        "status": "not specified in reviewed manual",
+        "start": null,
+        "end": null,
+        "scope_warning": "Match exact model generation, region, and plate layout. Do not extend to ANSI/CE or -2 models without matching evidence."
+      },
+      "identification": {
+        "primary_identifier": "Whole-machine nameplate with product identification number and separate Manufacturing Year field",
+        "plate_location": "Chassis end panel shown in the model-specific decal diagram, callout 33. Use the diagram; no universal front/rear location is asserted.",
+        "plate_part_number": "2534003390",
+        "diagram_pdf_page": 62,
+        "diagram_printed_page": "54",
+        "decal_list_pdf_page": 63,
+        "plate_illustration_pdf_page": 64,
+        "plate_illustration_printed_page": "56"
+      },
+      "year_identification": {
+        "status": "verified_direct_plate_method",
+        "date_field_exact_label": "Manufacturing Year",
+        "meaning": "whole-machine manufacturing year",
+        "precision": "year only; no month/day supported by this field",
+        "method": "Read Manufacturing Year directly on the matching whole-machine nameplate. Preserve full product identification/serial number independently.",
+        "verified_serial_year_rule": null,
+        "model_year_rule": null,
+        "uncertainties": [
+          "No published serial/PIN character-to-year mapping was verified in this review.",
+          "A missing or unreadable plate year remains unresolved; component dates, inspection dates, manual revision dates and web upload dates do not fill the gap."
+        ]
+      },
+      "sources": [
+        "lgmg-gen2-au-2024",
+        "lgmg-downloads"
+      ],
+      "confidence": "high for direct Manufacturing Year field and model-specific diagram references"
+    }
+  ],
+  "public_tools": [
+    {
+      "brand": "Sinoboom",
+      "tool": "Manual Download",
+      "url": "https://sinoboom.us/manual-download/",
+      "access": "public, verified",
+      "purpose": "Model and serial-range manual selection",
+      "manufacturing_year_output": "not verified; do not present as year decoder"
+    },
+    {
+      "brand": "Sinoboom",
+      "tool": "Warranty Bulletins serial search",
+      "url": "https://sinoboom.us/warranty/",
+      "access": "public page, verified",
+      "purpose": "Safety/service alerts",
+      "manufacturing_year_output": "not a year decoder"
+    },
+    {
+      "brand": "Sinoboom",
+      "tool": "SMS",
+      "url": "https://sms.sinoboom.com.cn/",
+      "access": "login-based as stated on official warranty page; not entered",
+      "purpose": "Service management/warranty",
+      "manufacturing_year_output": "not inspected"
+    },
+    {
+      "brand": "LGMG",
+      "tool": "Australia downloads",
+      "url": "https://lgmgau.com.au/downloads",
+      "access": "public, verified",
+      "purpose": "Operation and maintenance manuals"
+    },
+    {
+      "brand": "LGMG",
+      "tool": "Serial Number Query",
+      "url": "https://www.lgmglifts.com/support/hot-search2.htm",
+      "access": "public entry page verified; no serial query submitted",
+      "purpose": "Parts information by PIN",
+      "manufacturing_year_output": "not verified"
+    },
+    {
+      "brand": "LGMG",
+      "tool": "Product Series",
+      "url": "https://www.lgmglifts.com/support/hot-search1.htm",
+      "access": "Public model/region selection verified without authentication; deeper linked EPC not fully verified",
+      "purpose": "Parts catalog selection by classification, series, standard and model",
+      "manufacturing_year_output": "not verified"
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "sinoboom-manual-selector",
+      "title": "Sinoboom North America Manual Download",
+      "url": "https://sinoboom.us/manual-download/",
+      "authority": "manufacturer or manufacturer subsidiary",
+      "accessed_utc": "2026-10-17",
+      "public_access": "yes, no login used",
+      "notes": "Public model and serial-range links to manuals. Serial intervals select manuals; no manufacturing-date output documented."
+    },
+    {
+      "source_id": "sinoboom-all-2024",
+      "title": "0608ME All / 1932ME All Operation Manual",
+      "url": "https://sinoboom.us/wp-content/uploads/2024/10/1932MEAllOperationManual.pdf",
+      "authority": "manufacturer or manufacturer subsidiary",
+      "accessed_utc": "2026-10-17",
+      "public_access": "yes, no login used",
+      "document_number": "501089100002-EN",
+      "revision": "A",
+      "document_date": "2024-01",
+      "relevant_pages": {
+        "applicability_pdf": 7,
+        "location_pdf": 60,
+        "location_printed": "50",
+        "plate_part_numbers_pdf": 62,
+        "plate_part_numbers_printed": "52"
+      },
+      "sha256": "d3eeee2edabcea763556e1430892768baf915c34688e22087780f7d52ed0a882"
+    },
+    {
+      "source_id": "sinoboom-pl-2022",
+      "title": "GTJZ0608ME / 0608ME / 1932ME Operation Manual for Sinoboom Poland",
+      "url": "https://sinoboom.us/wp-content/uploads/2023/11/GTJZ0608MEOperationManual-PL-1.pdf",
+      "authority": "manufacturer or manufacturer subsidiary",
+      "accessed_utc": "2026-10-17",
+      "public_access": "yes, no login used",
+      "document_number": "PL501056100002",
+      "revision": "A",
+      "document_date": "2022-05",
+      "relevant_pages": {
+        "applicability_pdf": 5,
+        "ce_metric_location_pdf": 70,
+        "ce_metric_location_printed": "10-2",
+        "ce_metric_parts_pdf": 71,
+        "ce_metric_parts_printed": "10-3"
+      },
+      "sha256": "da79ee793621a6e9c2568c9678cbea9bb6c3b11f995b1b7c4b88641b15cce491"
+    },
+    {
+      "source_id": "sinoboom-a-2020",
+      "title": "GTJZ0408SE / GTJZ0608SE / GTJZ0408ME / GTJZ0608ME Operation Manual",
+      "url": "https://sinoboom.us/wp-content/uploads/2023/11/GTJZ0408ME_0608ME_0408SE_0608SE-Operation-Manual-A.pdf",
+      "authority": "manufacturer or manufacturer subsidiary",
+      "accessed_utc": "2026-10-17",
+      "public_access": "yes, no login used",
+      "document_number": "501055100002",
+      "revision": "A",
+      "document_date": "2020-06",
+      "relevant_pages": {
+        "applicability_pdf": 5,
+        "location_example_pdf": 64,
+        "location_example_printed": "10-4"
+      },
+      "notes": "Application table appears to print 0932ME for GTJZ0608ME although cover and public selector say 1932ME. Preserve as source discrepancy; do not silently treat as a different model.",
+      "sha256": "dd92521ba915c5943183bd6499500c25583fb93aed0c29e3bc80df16082db5cd"
+    },
+    {
+      "source_id": "sinoboom-warranty",
+      "title": "Sinoboom North America Warranty",
+      "url": "https://sinoboom.us/warranty/",
+      "authority": "manufacturer or manufacturer subsidiary",
+      "accessed_utc": "2026-10-17",
+      "public_access": "yes, no login used",
+      "notes": "Public page labels serial search as Bulletins / alerts, and identifies SMS Login with instructions for portal login creation. SMS was not entered; not a public year decoder."
+    },
+    {
+      "source_id": "lgmg-downloads",
+      "title": "LGMG Australia Downloads",
+      "url": "https://lgmgau.com.au/downloads",
+      "authority": "manufacturer or manufacturer subsidiary",
+      "accessed_utc": "2026-10-17",
+      "public_access": "yes, no login used",
+      "notes": "LGMG Australian subsidiary publishes operation manuals and links model and serial-number parts searches."
+    },
+    {
+      "source_id": "lgmg-gen2-au-2024",
+      "title": "S0607EⅡ / S0808EⅡ / S0812EⅡ / S1012EⅡ / S1212EⅡ / S1413EⅡ Operation Manual",
+      "url": "https://lgmgau.com.au/wp-content/uploads/2026/05/Slab-scissor-lifts-operation-manual-AS%E3%80%81NZS%EF%BC%88Second-generation%EF%BC%89.pdf",
+      "authority": "manufacturer or manufacturer subsidiary",
+      "accessed_utc": "2026-10-17",
+      "public_access": "yes, no login used",
+      "document_number": "OM-2537050417",
+      "revision": "Version 1, Printed 1",
+      "document_date": "2024-06",
+      "region_standard": "AS/NZS 1418.10",
+      "relevant_pages": {
+        "cover_pdf": 1,
+        "revision_pdf": 2,
+        "s0607e_location_pdf": 53,
+        "s0607e_location_printed": "45",
+        "s0607e_parts_pdf": 54,
+        "s0607e_plate_pdf": 55,
+        "s0607e_plate_printed": "47",
+        "s0808e_location_pdf": 56,
+        "s0808e_plate_pdf": 58,
+        "s0812e_s1012e_s1212e_location_pdf": 59,
+        "s0812e_s1012e_s1212e_plate_pdf": 61,
+        "s1413e_location_pdf": 62,
+        "s1413e_plate_pdf": 64
+      },
+      "notes": "Manufacturing Year read visually from plate illustrations. Upload-path date 2026/05 differs from document revision date 2024-06; neither is machine build year.",
+      "sha256": "b2e45dfa1510388a3f400724077699c2057765c66dac0d91d58a16946dff2436"
+    },
+    {
+      "source_id": "lgmg-public-serial-parts",
+      "title": "LGMG Serial Number Query",
+      "url": "https://www.lgmglifts.com/support/hot-search2.htm",
+      "authority": "manufacturer or manufacturer subsidiary",
+      "accessed_utc": "2026-10-17",
+      "public_access": "yes, no login used",
+      "notes": "Public entry has PIN input; result headings Number, Model, Description, View More. No manufacturing-year field or year decode rule verified. No private serial submitted."
+    },
+    {
+      "source_id": "lgmg-public-model-parts",
+      "title": "LGMG Product Series parts search",
+      "url": "https://www.lgmglifts.com/support/hot-search1.htm",
+      "authority": "manufacturer or manufacturer subsidiary",
+      "accessed_utc": "2026-10-17",
+      "public_access": "yes, no login used",
+      "notes": "Public model/standard selector successfully returned CE S0607E parts-catalog ranges without authentication. Deeper linked EPC application is JavaScript-rendered and was not fully tested. Do not label whole EPC public or account-only solely from this test."
+    }
+  ],
+  "research_limitations": [
+    "No universal brand-wide decoder is established for either manufacturer.",
+    "Some Sinoboom PDF downloads exceeded the web reader size limit; exact official URLs were downloaded successfully and locally rendered for verification.",
+    "LGMG North America Gen1 operation manual at https://www.lgmgna.com/wp-content/uploads/2022/12/Slab-scissor-Gen1-Operation-Safety-Manual-2022-09-30.pdf returned HTTP 403. Search snippets were not treated as sufficient plate/decoder evidence.",
+    "Marketplace serial/year pairings and third-party manual mirrors were excluded as date-rule evidence.",
+    "LGMG publicly linked EPC returned a JavaScript application shell; no login attempted and no claim is made about full catalog access requirements."
+  ]
+}

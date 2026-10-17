@@ -1,0 +1,112 @@
+{
+  "verified_on": "2026-10-17",
+  "records": [
+    {
+      "id": "els-s-series-plate-year",
+      "brand": "ELS Lift",
+      "models": [
+        "EL6-S",
+        "EL8-S"
+      ],
+      "region": "TR-EN illustrated plates; DE-EN and FR-EN listed variants not visually verified",
+      "serial_scope": null,
+      "source_url": "https://marketing.kunze-buehnen.com/hubfs/Part%20Manual_S%20Series%20%28913%20Serie%29_2022-12-05.pdf",
+      "source_type": "Manufacturer-authored manual hosted by distributor Kunze; not manufacturer-hosted verification",
+      "document": "S Series Parts Manual, revision history September 2022",
+      "pages": [
+        {
+          "pdf": 8,
+          "printed": "5",
+          "evidence": "Location diagram callout30 on chassis end, distinct from callout36 serial-only plate."
+        },
+        {
+          "pdf": 11,
+          "printed": "8",
+          "evidence": "Product plate illustrations 413100005 EL6-S and 413100007 EL8-S show Year of Manufacture and Serial Number separately."
+        },
+        {
+          "pdf": 14,
+          "printed": "11",
+          "evidence": "Part table identifies language variants and separate serial-only plates."
+        }
+      ],
+      "date_field": "Year of Manufacture",
+      "supported_method": "Read matching actual whole-machine product plate; do not use separate serial-only label to invent a date.",
+      "serial_decoder": null,
+      "manufacture_year": null,
+      "limitations": [
+        "No serial-to-year algorithm or unit anchor verified.",
+        "Illustration shows incomplete 20 prefix; not a unit year.",
+        "Exact serial applicability not supplied; verify matching plate/model generation.",
+        "Manufacturer PDF retrieval returned certificate verification gateway error; no certificate bypass performed. Distributor-authored hosting provenance retained."
+      ],
+      "sha256": "0e153ddb32a3383a52612b388418365db551fb7444ff28c54d1e694a21d87401"
+    },
+    {
+      "id": "mantall-xe-ce-year-gap",
+      "brand": "Mantall",
+      "models": [
+        "XE65N",
+        "XE80N",
+        "XE80C",
+        "XE80W",
+        "XE100C",
+        "XE100W",
+        "XE120W",
+        "XE140W",
+        "XE160W"
+      ],
+      "region": "CE",
+      "serial_scope": null,
+      "source_url": "https://www.nacelebudgetrent.com/_files/ugd/6ad82d_145119fe34e3494581c95c26a6188f39.pdf?index=true",
+      "source_type": "Manufacturer-authored operator manual on rental-company mirror; official-host copy not verified",
+      "document": "Self-Propelled Scissor Lift Operator Manual, Second Edition; cover copyright 2016; interior Version1",
+      "pages": [
+        {
+          "pdf": 1,
+          "evidence": "Exact model scope and edition"
+        },
+        {
+          "pdf": 5,
+          "printed": "5",
+          "evidence": "Illustrative declaration includes serial-number blank and declaration date 26 March 2014."
+        }
+      ],
+      "serial_decoder": null,
+      "manufacture_year": null,
+      "date_field": null,
+      "finding": "No verified serial-year algorithm or readable whole-machine manufacture-date field established in inspected manual.",
+      "excluded_dates": [
+        "2016 copyright is document metadata.",
+        "26 March 2014 is declaration date with blank serial, not actual manufacture-year evidence."
+      ],
+      "sha256": "e8c681ac885ed56f1b582c3c87a6ac5a92101defcb98370247f4e9924f63a07b"
+    },
+    {
+      "id": "mantall-public-catalog-gap",
+      "brand": "Mantall",
+      "models": [
+        "XE80N",
+        "XE80C",
+        "XE100C",
+        "XE100RT",
+        "XE120RT",
+        "XE140RT"
+      ],
+      "region": "Official global/Chinese catalog",
+      "sources": [
+        "https://www.mantallawp.com/download",
+        "https://mantall.com/products/showproduct.php?id=130",
+        "https://www.mantall.com/products/showproduct.php?id=129",
+        "https://www.mantall.com/products/showproduct.php?id=124"
+      ],
+      "finding": "Public model specification downloads verified; no public manufacture-date lookup verified.",
+      "serial_decoder": null,
+      "manufacture_year": null,
+      "limitations": [
+        "Do not import third-party catalog year ranges as factory production intervals.",
+        "No inference from serial numerals in resale listings."
+      ]
+    }
+  ]
+}

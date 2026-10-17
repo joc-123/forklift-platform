@@ -1,0 +1,66 @@
+[
+  {
+    "case": "hybrid_d08_prefix",
+    "model": "HB-1230",
+    "serial": "D08-20046",
+    "expected_year": null,
+    "expected": "SUPO-686 Rev A manual scope includes this serial; 08 is not an established year code."
+  },
+  {
+    "case": "hybrid_gap",
+    "model": "HB-1230",
+    "serial": "D08-20044",
+    "expected_year": null,
+    "expected": "Not in stated SUPO-686 Rev A ranges; preserve gap."
+  },
+  {
+    "case": "axcs_overlap_low",
+    "model": "PS-1430",
+    "serial": "PS14-50861",
+    "expected_year": null,
+    "expected": "Parts catalogue ambiguity; no unique automatic routing."
+  },
+  {
+    "case": "axcs_overlap_high",
+    "model": "PS-1430",
+    "serial": "PS14-50862",
+    "expected_year": null,
+    "expected": "Parts catalogue ambiguity; no unique automatic routing."
+  },
+  {
+    "case": "axcs_ce_prefix",
+    "model": "PS-1430",
+    "serial": "CE-PS14-50863",
+    "expected_year": null,
+    "expected": "Retain CE-; use exact CE applicability. Prefix is not a year code."
+  },
+  {
+    "case": "pb_prefix",
+    "model": "PB S131-19 E",
+    "serial": "19132.123",
+    "expected_year": null,
+    "expected": "Do not infer 2019; read separate year field; resolve document model conflict."
+  },
+  {
+    "case": "holland_manual_date",
+    "model": "HL-190 D25 4WD/P/N",
+    "manual_date": "2015-05-28",
+    "expected_year": null,
+    "expected": "Manual revision cannot date unit; need bottom-carriage plate."
+  },
+  {
+    "case": "holland_restart_plan",
+    "brand": "HOLLAND LIFT by Sinoboom",
+    "planned_production": "Q1 2026",
+    "expected_actual_restart": null,
+    "expected": "Forward-looking plan is not completion evidence."
+  },
+  {
+    "case": "imer_host_path",
+    "model": "IM 4752",
+    "url_folder": "2026/05",
+    "manual_revision": "06/2019",
+    "expected_year": null,
+    "expected": "Neither URL folder nor manual date identifies unit year."
+  }
+]

@@ -554,18 +554,19 @@
     },
     {
       "brand": "Holland Lift",
-      "identity_classification": "Historical manufacturer; no current production successor verified",
+      "identity_classification": "Historical manufacturer; brand and IP acquired by Sinoboom",
       "source_market": "Netherlands / Europe",
       "verified_examples": "HL-220 E25 / Combistar",
-      "official_source_url": "https://uitspraken.rechtspraak.nl/details?id=ECLI%3ANL%3ARBNHO%3A2025%3A13819",
-      "status_evidence": "Court records dissolution 2023-08-22 and bankruptcy 2024-04-09; product brochure preserved externally",
-      "year_identification_evidence": "Year decoder and exact model production bounds unknown; corporate closure dates not unit years",
+      "official_source_url": "https://www.sinoboom.com/content/details_34_986.html",
+      "status_evidence": "Sinoboom announced brand/IP acquisition on 2025-04-07 and planned first production in Poznan during Q1 2026 as HOLLAND LIFT by Sinoboom. Actual resumed production has not been verified. Prior company closure and acquired brand lineage are distinct.",
+      "year_identification_evidence": "Legacy serial rules remain separate from any new production. Acquisition and planned production dates do not establish model production bounds or individual manufacture years.",
       "supporting_source_url": "https://cdn.cranemarket.com/specifications/holland-lift-scissor-lifts-spec-d628bf.pdf",
       "verified_on": "2026-10-17",
       "production_start_year": null,
       "production_end_year": null,
       "universal_serial_year_decoder_verified": false,
-      "model_evidence_provenance": "Original manufacturer brochure externally preserved by CraneMarket; court is primary for corporate status only"
+      "model_evidence_provenance": "Original manufacturer brochure externally preserved by CraneMarket; court is primary for corporate status only",
+      "prior_corporate_status_source_url": "https://uitspraken.rechtspraak.nl/details?id=ECLI%3ANL%3ARBNHO%3A2025%3A13819"
     }
   ]
 }

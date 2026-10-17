@@ -1,0 +1,476 @@
+{
+  "project": "Forklift IQ",
+  "subject": "Scissor-lift manufacture-year identification",
+  "verified_on": "2026-10-17",
+  "scope": [
+    "Snorkel",
+    "UpRight",
+    "Haulotte",
+    "MEC"
+  ],
+  "summary": "One manufacturer-documented serial date layout; plate-based or manufacturer-confirmed dating for other covered units. No universal decoder verified for all four brands.",
+  "rules": [
+    {
+      "id": "SNK-FORMAT-01",
+      "brand": "Snorkel",
+      "method": "manufacturer_documented_serial_date_format",
+      "models": [
+        "S3370RT example; other Snorkel units only where the same documented serial layout is established"
+      ],
+      "region": "Manufacturer article includes UK, USA, New Zealand and China plant codes",
+      "serial_scope": "MODEL-PP-YYMMNNNNN example layout; legacy applicability and adoption date unspecified",
+      "date_kind": "manufacture_month_and_year",
+      "rule": "The four-digit date segment is YYMM. Published example S3370RT-07-170300298 maps 1703 to March 2017; 00298 is the unit sequence.",
+      "source_ids": [
+        "SNK-001"
+      ],
+      "confidence": "confirmed_documented_format",
+      "automatic_year_assignment": "Only after exact format/model match and unambiguous century; compare with plate date.",
+      "limitations": "Do not apply to numeric-only/other legacy serials or UpRight. Prose mentions three dashes, but its printed example contains two. No general start/end-year table is supplied."
+    },
+    {
+      "id": "SNK-PLATE-01",
+      "brand": "Snorkel",
+      "method": "read_machine_nameplate",
+      "models": [
+        "Electric slab scissors",
+        "Rough-terrain scissors"
+      ],
+      "region": "General manufacturer guidance",
+      "serial_scope": "Exact model location must be checked",
+      "date_kind": "manufacture_month_and_year",
+      "rule": "Read the explicit manufacture-date field. General plate location: slab scissors below entry doors/behind steps; rough-terrain scissors on cabinet near ground controls.",
+      "source_ids": [
+        "SNK-001",
+        "SNK-002"
+      ],
+      "confidence": "confirmed_guidance",
+      "automatic_year_assignment": "From legible original plate only.",
+      "limitations": "Do not substitute warranty, shipping, inspection or manual dates."
+    },
+    {
+      "id": "UPR-X26N-01",
+      "brand": "UpRight",
+      "method": "locate_identity_then_manufacturer_confirmation",
+      "models": [
+        "X26N / X26 Narrow"
+      ],
+      "region": "English manufacturer manual; distributor index describes ANSI and CE",
+      "serial_scope": "Boundary disputed: index/filename 51119+ versus visible cover 5119+",
+      "date_kind": "unresolved",
+      "rule": "Plate is at rear of chassis. Backup serial stamp is on chassis top above front axle pivot. Obtain exact model and serial, then request date evidence through successor support if the plate lacks a usable date.",
+      "source_ids": [
+        "UPR-001",
+        "UPR-002"
+      ],
+      "confidence": "confirmed_identity_locations; unresolved_boundary",
+      "automatic_year_assignment": false,
+      "limitations": "Image review confirms a source conflict, not just OCR. Do not silently correct the cover or map Feb10 to machine year. No universal decoder verified."
+    },
+    {
+      "id": "MEC-SE-01",
+      "brand": "MEC",
+      "method": "read_machine_nameplate",
+      "models": [
+        "1930SE",
+        "2632SE",
+        "3346SE",
+        "4046SE",
+        "4555SE"
+      ],
+      "region": "ANSI A92.6 / CSA edition",
+      "serial_scope": "See separate manual-applicability records; preserve index/cover differences",
+      "date_kind": "manufacture_month_and_year; separate_model_year",
+      "rule": "MFG DATE records manufacture month/year. MODEL YEAR is a separate machine-model-year value. Store both independently if visible.",
+      "source_ids": [
+        "MEC-001",
+        "MEC-002"
+      ],
+      "confidence": "confirmed",
+      "automatic_year_assignment": "From legible plate data, not a serial prefix.",
+      "limitations": "Serial ranges select manuals; they are not annual production ranges. A 2016 manual date does not date every covered machine."
+    },
+    {
+      "id": "MEC-NANO-01",
+      "brand": "MEC",
+      "method": "read_machine_nameplate",
+      "models": [
+        "Nano10-XD"
+      ],
+      "region": "ANSI A92.20-2020 / CSA B354.6-2019",
+      "serial_scope": "Manual cover 18000019-Up; website index 18000000-current",
+      "date_kind": "manufacture_month_and_year",
+      "rule": "Read MFG DATE on the original serial plate.",
+      "source_ids": [
+        "MEC-001",
+        "MEC-003"
+      ],
+      "confidence": "confirmed_plate_field; applicability_discrepancy",
+      "automatic_year_assignment": "From legible plate data only.",
+      "limitations": "Keep serials 18000000-18000018 unresolved for this manual. March 2025 is its revision, not unit year; first two serial digits are not verified as year."
+    },
+    {
+      "id": "MEC-MICRO19-01",
+      "brand": "MEC",
+      "method": "read_machine_nameplate",
+      "models": [
+        "Micro 19"
+      ],
+      "region": "Legacy ANSI A92.6 manual",
+      "serial_scope": "Current index routes 16900000-16910999 to 94553-A92.6; 16911000+ to newer manual",
+      "date_kind": "manufacture_month_and_year; separate_model_year",
+      "rule": "MFG DATE and MODEL YEAR are distinct fields on the serial plate.",
+      "source_ids": [
+        "MEC-001",
+        "MEC-004"
+      ],
+      "confidence": "confirmed",
+      "automatic_year_assignment": "From legible plate data only.",
+      "limitations": "September 2017 is publication metadata. The 169 prefix is not established as a manufacture-year code."
+    },
+    {
+      "id": "MEC-SUPPORT-01",
+      "brand": "MEC",
+      "method": "manufacturer_product_support",
+      "models": [
+        "MEC scissor models"
+      ],
+      "region": "USA support",
+      "serial_scope": "Exact model and full serial required",
+      "date_kind": "manufacturer_confirmation_required",
+      "rule": "Select the exact model/serial manual first; ask MEC Product Support for manufacture-date confirmation when no plate date survives. The official index lists Product Support at +1 559 710 2373.",
+      "source_ids": [
+        "MEC-001"
+      ],
+      "confidence": "confirmed_support_route",
+      "automatic_year_assignment": false,
+      "limitations": "No public serial-to-year response or universal formula was verified. No contact was made."
+    },
+    {
+      "id": "HAU-COMPACT-01",
+      "brand": "Haulotte",
+      "method": "read_machine_nameplate",
+      "models": [
+        "COMPACT 8",
+        "COMPACT 8W",
+        "COMPACT 10N",
+        "COMPACT 10",
+        "COMPACT 12"
+      ],
+      "region": "Historical CE / GB-language manual",
+      "serial_scope": "No serial applicability boundary established in this edition",
+      "date_kind": "manufacture_year",
+      "rule": "Read YEAR OF MANUFACTURE on the machine plate. This edition locates the plate at the back-right of the chassis and instructs users to identify the machine by type and serial.",
+      "source_ids": [
+        "HAU-001"
+      ],
+      "confidence": "confirmed_model_specific_plate_guidance",
+      "automatic_year_assignment": "From legible plate value only.",
+      "limitations": "October 2005 is the manual issue date. Do not extend its location or specification details to the 2022 redesigned Compact family without checking that family manual."
+    },
+    {
+      "id": "HAU-ETI-01",
+      "brand": "Haulotte",
+      "method": "manufacturer_serial_document_lookup",
+      "models": [
+        "Haulotte models supported by ETI Lite"
+      ],
+      "region": "Manufacturer service; multinational / multilingual",
+      "serial_scope": "Full serial or exact model; QR label can direct to relevant library",
+      "date_kind": "unresolved_until_actual_machine_evidence",
+      "rule": "Use https://www.haulotte-service.com/Front-ETI/en to locate matching operator, service and parts documents. Machine QR labels are near lower controls and in manuals.",
+      "source_ids": [
+        "HAU-002",
+        "HAU-003",
+        "HAU-004"
+      ],
+      "confidence": "confirmed_documentation_lookup_service",
+      "automatic_year_assignment": false,
+      "limitations": "Portal shell and official documentation were verified; a returned manufacture date was not. Serial lookup of documents is not proof that a year decoder exists."
+    },
+    {
+      "id": "HAU-LISTING-HOLD-01",
+      "brand": "Haulotte",
+      "method": "single_machine_listing_candidate",
+      "models": [
+        "COMPACT 12"
+      ],
+      "region": "China unit; CE listing",
+      "serial_scope": "2089762 appears in title, not in a separately labeled serial field",
+      "date_kind": "advertised_manufacture_year",
+      "rule": "The manufacturer used-equipment listing states manufacture year 2021 for this titled unit.",
+      "source_ids": [
+        "HAU-005"
+      ],
+      "confidence": "limited_title_identifier",
+      "automatic_year_assignment": false,
+      "limitations": "Not a verified decoder record. Confirm identifier from original plate or explicit factory record. Never interpolate annual ranges from isolated advertisements."
+    }
+  ],
+  "manual_applicability_only": [
+    {
+      "brand": "MEC",
+      "model": "1930SE",
+      "source_id": "MEC-002",
+      "manual": "94119 A92.6",
+      "cover_range": "16400000-Up",
+      "index_range": "16400000-16402099",
+      "year_mapping": false
+    },
+    {
+      "brand": "MEC",
+      "model": "2632SE",
+      "source_id": "MEC-002",
+      "manual": "94119 A92.6",
+      "cover_range": "16500000-Up",
+      "index_range": "16500000-16500899",
+      "year_mapping": false
+    },
+    {
+      "brand": "MEC",
+      "model": "3346SE",
+      "source_id": "MEC-002",
+      "manual": "94119 A92.6",
+      "cover_range": "16600000-Up",
+      "index_range": "16600000-16600599",
+      "year_mapping": false
+    },
+    {
+      "brand": "MEC",
+      "model": "4046SE",
+      "source_id": "MEC-002",
+      "manual": "94119 A92.6",
+      "cover_range": "16700000-Up",
+      "index_range": "16700000-16701299",
+      "year_mapping": false
+    },
+    {
+      "brand": "MEC",
+      "model": "4555SE",
+      "source_id": "MEC-002",
+      "manual": "94119 A92.6",
+      "cover_range": "16800001-Up",
+      "index_range": "16800000-16801399",
+      "year_mapping": false
+    },
+    {
+      "brand": "MEC",
+      "model": "Nano10-XD",
+      "source_id": "MEC-003",
+      "manual": "96250 A92.20",
+      "cover_range": "18000019-Up",
+      "index_range": "18000000-current",
+      "year_mapping": false
+    },
+    {
+      "brand": "MEC",
+      "model": "Micro19",
+      "source_id": "MEC-004",
+      "manual": "94553 A92.6",
+      "cover_range": "16900000-Up",
+      "index_range": "16900000-16910999",
+      "year_mapping": false
+    },
+    {
+      "brand": "UpRight",
+      "model": "X26N",
+      "source_id": "UPR-002",
+      "manual": "508244-005",
+      "cover_range": "5119+ (visually confirmed)",
+      "index_range": "51119+ (successor and distributor index)",
+      "year_mapping": false
+    }
+  ],
+  "sources": [
+    {
+      "id": "SNK-001",
+      "brand": "Snorkel",
+      "title": "How To Read Snorkel Serial Plates",
+      "url": "https://snorkellifts.com/the-toolbox/how-to-read-snorkel-serial-plates/",
+      "provenance": "Manufacturer website",
+      "document_date": "2020-08-08",
+      "locator": "SERIAL NUMBER; LOCATING THE SERIAL PLATE",
+      "local_file": null,
+      "access_note": "Full article text verified through web retrieval. Direct local HTTP request redirected to the UK homepage; that homepage is not article evidence.",
+      "verified_on": "2026-10-17",
+      "local_source_sha256": null,
+      "local_source_bytes": null
+    },
+    {
+      "id": "SNK-002",
+      "brand": "Snorkel",
+      "title": "The Platform",
+      "url": "https://theplatform.snorkellifts.com/",
+      "provenance": "Manufacturer technical-publications entry point",
+      "document_date": null,
+      "locator": "Browse Technical Manuals",
+      "local_file": null,
+      "access_note": "Current page verified. Technical-manual link opens Documoto; no account created or login performed.",
+      "verified_on": "2026-10-17",
+      "local_source_sha256": null,
+      "local_source_bytes": null
+    },
+    {
+      "id": "UPR-001",
+      "brand": "UpRight",
+      "title": "Snorkel Japan UpRight support archive",
+      "url": "https://www.snorkeljp.com/service-support/upright/",
+      "provenance": "Successor support archive",
+      "document_date": null,
+      "locator": "X-series / X26N section",
+      "local_file": "snorkel-japan-upright.html",
+      "access_note": "Index is readable; download link leads to a contact/download-request form. No submission made.",
+      "verified_on": "2026-10-17",
+      "local_source_sha256": "1875c411dceaf3a6198a62f1918873d93681a5b7df96a836a61e84119fe9b7f5",
+      "local_source_bytes": 44293
+    },
+    {
+      "id": "UPR-002",
+      "brand": "UpRight",
+      "title": "X26N Service & Parts Manual 508244-005",
+      "url": "https://www.epartsplus.com/media/pdf/documentations/upright/service-parts-manuals/508244-005_X-26-N_sn51119%2B_C.PS.zip",
+      "provenance": "Original manufacturer manual, externally hosted by Equipment Parts Plus",
+      "document_date": "2010-02",
+      "locator": "PDF page 1 cover and PDF page 3 identification",
+      "local_file": "upright-x26n-eparts.pdf",
+      "access_note": "Downloaded distributor ZIP; original PDF rendered and visually checked. Index: https://www.epartsplus.com/documentation/upright/service-parts-manuals/",
+      "verified_on": "2026-10-17",
+      "local_source_sha256": "8f65ab6cf43f1af51310661d3ce7b17d24cfcf5c40bf5db54d01c702f2370e10",
+      "local_source_bytes": 10689843
+    },
+    {
+      "id": "MEC-001",
+      "brand": "MEC",
+      "title": "Manuals & Schematics",
+      "url": "https://www.mecawp.com/support/manuals-schematics/",
+      "provenance": "Manufacturer website",
+      "document_date": null,
+      "locator": "Slab Scissor Lifts table",
+      "local_file": "mec-manuals.html",
+      "access_note": "Current index verified; serial applicability differs from some linked manual covers.",
+      "verified_on": "2026-10-17",
+      "local_source_sha256": "368726d22c7b1fefc709e60c33e7a74a74ae0492285e81528c471a794017f7d5",
+      "local_source_bytes": 236505
+    },
+    {
+      "id": "MEC-002",
+      "brand": "MEC",
+      "title": "SE Series Slab Scissors Operator Manual 94119",
+      "url": "https://www.mecawp.com/wp-content/uploads/2020/01/94119-A92.6.pdf",
+      "provenance": "Manufacturer-authored and manufacturer-hosted manual",
+      "document_date": "2016-06-01",
+      "locator": "Cover; printed page 40 (PDF page 42)",
+      "local_file": "mec-94119-se.pdf",
+      "access_note": "Downloaded; nameplate page visually checked.",
+      "verified_on": "2026-10-17",
+      "local_source_sha256": "7ec827ad90436fec56c660e95b639d4fad039360942574e8b42adf49e16bdac5",
+      "local_source_bytes": 7708506
+    },
+    {
+      "id": "MEC-003",
+      "brand": "MEC",
+      "title": "Nano10-XD Operator Manual 96250",
+      "url": "https://www.mecawp.com/wp-content/uploads/2022/02/96250-A92.20.pdf",
+      "provenance": "Manufacturer-authored and manufacturer-hosted manual",
+      "document_date": "2025-03",
+      "locator": "Cover; printed page 36 (PDF page 39)",
+      "local_file": "mec-96250-nano10-xd.pdf",
+      "access_note": "Downloaded; cover and nameplate page rendered and checked.",
+      "verified_on": "2026-10-17",
+      "local_source_sha256": "0280bc8a26774a49fe324a646d60a13ffab2e1421a613acec0ea89bca74d65fe",
+      "local_source_bytes": 3761245
+    },
+    {
+      "id": "MEC-004",
+      "brand": "MEC",
+      "title": "Micro 19 Operator Manual 94553r1",
+      "url": "https://www.mecawp.com/wp-content/uploads/2020/06/94553-A92.6.pdf",
+      "provenance": "Manufacturer-authored and manufacturer-hosted manual",
+      "document_date": "2017-09",
+      "locator": "Cover; printed page 29",
+      "local_file": "mec-94553-micro19.pdf",
+      "access_note": "PDF content verified; MFG DATE and MODEL YEAR are separate fields.",
+      "verified_on": "2026-10-17",
+      "local_source_sha256": "96328a23442c239f9ddcf6c0d7c4a0ebe6b2a3963f38e52dbd42460d2c1a8b77",
+      "local_source_bytes": 6023380
+    },
+    {
+      "id": "HAU-001",
+      "brand": "Haulotte",
+      "title": "COMPACT 8, 8W, 10N, 10 and 12 Operating and Maintenance Instructions, 242 032 6060",
+      "url": "https://www.jms.co.uk/wp-content/uploads/resources/Haulotte_compact_8_10_12.pdf",
+      "provenance": "Original manufacturer manual, externally hosted by JMS",
+      "document_date": "2005-10",
+      "locator": "Printed page 7 (PDF page 21), section 2.1",
+      "local_file": "haulotte-compact-8-10-12.pdf",
+      "access_note": "Downloaded public PDF and visually checked. Search/open tool alone returned 403; independent download already in progress succeeded. CE / GB-language edition, cover E 10.05 Ind. A GB.",
+      "verified_on": "2026-10-17",
+      "local_source_sha256": "8754c4c50eab7c142e6ba80b6dd2252383586e7c4f08253edcfc61621af5731d",
+      "local_source_bytes": 3089625
+    },
+    {
+      "id": "HAU-002",
+      "brand": "Haulotte",
+      "title": "Haulotte launches ETI LITE",
+      "url": "https://www.haulotte.com/en/haulotte-launches-eti-lite-online-library-accessible-machines",
+      "provenance": "Manufacturer website",
+      "document_date": "2020-07-06",
+      "locator": "Article body",
+      "local_file": "haulotte-eti-announcement.html",
+      "access_note": "Public manufacturer article verified.",
+      "verified_on": "2026-10-17",
+      "local_source_sha256": "2995684b5f27bb0c5172de1f3c8143e145f9741c19dba786face12adee7b15f9",
+      "local_source_bytes": 107224
+    },
+    {
+      "id": "HAU-003",
+      "brand": "Haulotte",
+      "title": "Book a field Service technician / Troubleshoot solutions",
+      "url": "https://www.haulotte.co.uk/en_GB/troubleshooting",
+      "provenance": "Manufacturer regional website",
+      "document_date": null,
+      "locator": "ETI Lite official website",
+      "local_file": "haulotte-troubleshooting.html",
+      "access_note": "Verified link to https://www.haulotte-service.com/Front-ETI/en . Portal shell loads; serial lookup response not tested without a target unit.",
+      "verified_on": "2026-10-17",
+      "local_source_sha256": "509a5c80034dcf6eaec3c64baa66c8bc968e4915a6f6d9fa5adb7ba34eb8b9a7",
+      "local_source_bytes": 150926
+    },
+    {
+      "id": "HAU-004",
+      "brand": "Haulotte",
+      "title": "E-technical information",
+      "url": "https://haulotte-community.haulotte.com/a/e-technical-information/",
+      "provenance": "Manufacturer website",
+      "document_date": "2020-04-17",
+      "locator": "Technical-document categories and serial search description",
+      "local_file": null,
+      "access_note": "Documentation lookup verified as an offered service; manufacture-year response not established. Login not attempted.",
+      "verified_on": "2026-10-17",
+      "local_source_sha256": null,
+      "local_source_bytes": null
+    },
+    {
+      "id": "HAU-005",
+      "brand": "Haulotte",
+      "title": "Haulotte COMPACT 12 - 2089762 used-equipment listing",
+      "url": "https://used-equipement.haulotte.com/haulotte/uk/construction/scissor-lifts/haulotte-compact-12-2089762/165744e2-d6f8-4bb6-8e22-52ff28961239.html",
+      "provenance": "Manufacturer used-equipment website",
+      "document_date": null,
+      "locator": "Title; Year of manufacture field",
+      "local_file": null,
+      "access_note": "Year 2021 appears in an explicit manufacture-year field. Number 2089762 appears in the title, without a separately labeled serial field; do not promote to a verified serial/year pair.",
+      "verified_on": "2026-10-17",
+      "local_source_sha256": null,
+      "local_source_bytes": null
+    }
+  ],
+  "guardrails": [
+    "Never infer a unit year from manual issue/revision/upload dates.",
+    "Store manufacture_year separately from model_year, first_sale_year, model_launch_year and warranty_start_date.",
+    "Do not treat manual serial breaks as annual production breaks.",
+    "Match brand, model, serial layout and market/standard before using a rule.",
+    "Preserve unresolved source conflicts; retain null rather than force a year.",
+    "No manufacturer outreach, login, account creation or production-data changes occurred in this research."
+  ]
+}

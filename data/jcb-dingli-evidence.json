@@ -1,0 +1,252 @@
+{
+  "verified_on": "2026-10-17",
+  "records": [
+    {
+      "id": "jcb-electric-drive",
+      "manufacturer": "JCB",
+      "models": [
+        "S1932E EDRV",
+        "S2632E EDRV",
+        "S2646E EDRV",
+        "S3246E EDRV",
+        "S4046E EDRV",
+        "S4550E EDRV"
+      ],
+      "region": "English manual; date field conditional on market requirement",
+      "model_serial_scope": [
+        {
+          "model": "S1932E EDRV",
+          "vin_prefixes": [
+            "RAJA0151",
+            "RAJA0B51"
+          ]
+        },
+        {
+          "model": "S2632E EDRV",
+          "vin_prefixes": [
+            "RAJA0452",
+            "RAJA0E52"
+          ]
+        },
+        {
+          "model": "S2646E EDRV",
+          "vin_prefixes": [
+            "RAJA0552",
+            "RAJA0F52"
+          ]
+        },
+        {
+          "model": "S3246E EDRV",
+          "vin_prefixes": [
+            "RAJA0653",
+            "RAJA0G53"
+          ]
+        },
+        {
+          "model": "S4046E EDRV",
+          "vin_prefixes": [
+            "RAJA0753",
+            "RAJA0H53"
+          ]
+        },
+        {
+          "model": "S4550E EDRV",
+          "vin_prefixes": [
+            "RAJA0854",
+            "RAJA0J54"
+          ]
+        }
+      ],
+      "serial_range": null,
+      "source_url": "https://www.jcb.com/globalassets/digizuite/73912-electric-drive-scissors-om-1-1/",
+      "document": "EN9841/9167 Issue 5, July 2024",
+      "source_pages": {
+        "model_prefix_table": {
+          "pdf_page": 11,
+          "printed_page": 1
+        },
+        "plate_figure5_6_table2": {
+          "pdf_page": 19,
+          "printed_page": 9
+        }
+      },
+      "plate_field_raw": "Model and manufacture year",
+      "plate_field_callout": "E",
+      "plate_field_condition": "Only for markets requiring model and manufacture year",
+      "pin_field": "C: PIN (Product Identification Number), ISO 10261",
+      "location": "Machine identification plate on chassis end opposite ladder; VIN stamp shown on chassis side rails. Use Figure 5 for exact physical locations.",
+      "date_decode_supported": false,
+      "model_year": null,
+      "manufacture_year": null,
+      "meaning": "Actual plate can supply year information when present. Source combines model/manufacture year wording but does not define their equality or a serial algorithm.",
+      "excluded_inferences": [
+        "No tenth-character year rule established.",
+        "VIN prefix identifies model applicability, not manufacture year.",
+        "Do not transfer RAJ-prefix applicability to older CSZ serials.",
+        "Document issue and export watermark dates are not machine dates."
+      ],
+      "verification": "Official PDF downloaded; plate diagram visually checked; model prefix table transcribed.",
+      "sha256": "19b1a7fb66c79d31bb7f050994e7323fe5f1b303b88c2b618d8890e0f3f1eda0"
+    },
+    {
+      "id": "jcb-hydraulic-drive",
+      "manufacturer": "JCB",
+      "models": [
+        "S1530E",
+        "S1930E",
+        "S2032E",
+        "S2632E",
+        "S2646E",
+        "S3246E",
+        "S4046E",
+        "S4550E"
+      ],
+      "region": "English manual; date field conditional on market requirement",
+      "model_serial_scope": [
+        {
+          "model": "S1530E",
+          "vin_prefixes": [
+            "RAJA0001"
+          ]
+        },
+        {
+          "model": "S1930E",
+          "vin_prefixes": [
+            "RAJA0101"
+          ]
+        },
+        {
+          "model": "S2032E",
+          "vin_prefixes": [
+            "RAJA0202"
+          ]
+        },
+        {
+          "model": "S2632E",
+          "vin_prefixes": [
+            "RAJA0402"
+          ]
+        },
+        {
+          "model": "S2646E",
+          "vin_prefixes": [
+            "RAJA0502"
+          ]
+        },
+        {
+          "model": "S3246E",
+          "vin_prefixes": [
+            "RAJA0603"
+          ]
+        },
+        {
+          "model": "S4046E",
+          "vin_prefixes": [
+            "RAJA0713"
+          ]
+        },
+        {
+          "model": "S4550E",
+          "vin_prefixes": [
+            "RAJA0814"
+          ]
+        }
+      ],
+      "serial_range": null,
+      "source_url": "https://www.jcb.com/globalassets/digizuite/78775-hd-om-v1/",
+      "document": "EN9831/9700 Issue 7, October 2021",
+      "source_pages": {
+        "model_prefix_table": {
+          "pdf_page": 9,
+          "printed_page": 1
+        },
+        "plate_figure5_6_table2": {
+          "pdf_page": 17,
+          "printed_page": 9
+        }
+      },
+      "plate_field_raw": "Model and manufacture year",
+      "plate_field_callout": "E",
+      "plate_field_condition": "Only for markets requiring model and manufacture year",
+      "pin_field": "C: PIN (Product Identification Number), ISO 10261",
+      "location": "Machine identification plate on chassis end opposite ladder; VIN stamp shown on chassis side rails. Use Figure 5 for exact physical locations.",
+      "date_decode_supported": false,
+      "model_year": null,
+      "manufacture_year": null,
+      "meaning": "Actual plate can supply year information when present. Source combines model/manufacture year wording but does not define their equality or a serial algorithm.",
+      "excluded_inferences": [
+        "No tenth-character year rule established.",
+        "VIN prefix identifies model applicability, not manufacture year.",
+        "Do not transfer RAJ-prefix applicability to older CSZ serials.",
+        "Document issue and export watermark dates are not machine dates."
+      ],
+      "verification": "Official PDF downloaded; plate diagram visually checked; model prefix table transcribed.",
+      "sha256": "70b2823a8cdea7b295bacc4988fb8c414be8b6fa6e0fc0259c440a7f9cac5bec"
+    },
+    {
+      "id": "dingli-public-model-doc-search",
+      "manufacturer": "Dingli",
+      "models": [
+        "JCPT0807AC",
+        "JCPT0807HA",
+        "JCPT0807PA",
+        "S0807AC+",
+        "JCPT2825RT",
+        "JCPT2825DC",
+        "JCPT2825HRT"
+      ],
+      "region": "Global official English website",
+      "source_url": "https://www.dingliglobal.com/services/download.jsp",
+      "lookup_type": "Public model-based document search",
+      "access": "public_verified",
+      "tested_models": [
+        "JCPT0807AC",
+        "JCPT2825RT"
+      ],
+      "observed_output": "Parameter/specification document links only for tested exact model selections. Model search returned listed families.",
+      "serial_year_rule": null,
+      "manufacture_date_output": "not_verified",
+      "date_decode_supported": false,
+      "limitations": [
+        "A model search is not a serial-date lookup.",
+        "No serial/year algorithm verified.",
+        "Do not infer YY/year or month-letter conventions from uncorroborated serial examples."
+      ]
+    },
+    {
+      "id": "dingli-jcpt2825rt-3225rt-mirror-gap",
+      "manufacturer": "Dingli",
+      "models": [
+        "JCPT2825RT",
+        "JCPT3225RT"
+      ],
+      "region": "English manual; specific market not established",
+      "source_url": "https://gtmpoweredaccess.co.uk/media/dignli-jcpt2825-3225rt-gtm-operator-manual.pdf",
+      "source_status": "Manufacturer-authored manual on distributor mirror; official-host copy not verified",
+      "document": "SM012110141 Rev1.1",
+      "document_dates_raw": [
+        "July 2022 Printing",
+        "Revision history Rev1.1 2022-08"
+      ],
+      "date_decode_supported": false,
+      "finding": "No whole-machine serial-to-year mapping or explicit machine manufacture-date field established in inspected text. Weight references serial label.",
+      "limitations": [
+        "Document printing/revision discrepancy is not unit dating evidence.",
+        "Do not use publication date as production year.",
+        "Mirror provenance lower than official-host verification; no automatic date import."
+      ]
+    }
+  ],
+  "lookup_routes": [
+    {
+      "id": "jcb-servicepro-documents",
+      "source_url": "https://www.jcbpublications.com/FAQ",
+      "tool_url": "https://servicepro.jcb.com",
+      "access": "Official FAQ documents account login; portal not entered",
+      "input": "17-character VIN or 7-character serial",
+      "documented_output": "Related technical publications; online operator manuals can be viewed without charge",
+      "date_output": "not_verified",
+      "limitation": "No-cost manual access does not prove login-free date lookup."
+    }
+  ]
+}

@@ -1,0 +1,813 @@
+{
+  "schema_version": "1.0",
+  "project": "Forklift IQ",
+  "scope": "Zoomlion, XCMG, SANY and Noblelift personnel scissor lifts; manufacture-date identification",
+  "checked_at": "2026-10-17",
+  "result": "No reusable serial-to-manufacture-year decoder or dated serial range approved. Direct machine-plate date fields and authenticated service leads are recorded at their supported scope.",
+  "approved_decoding_rules": [],
+  "approved_dated_serial_ranges": [],
+  "approved_serial_year_observations": [],
+  "brand_dispositions": {
+    "Zoomlion": {
+      "status": "direct_nameplate_year_supported_for_scoped_electric_series",
+      "source_ids": [
+        "ZOOM-01"
+      ],
+      "approved_serial_decoder": null,
+      "dated_serial_ranges": [],
+      "unresolved": [
+        "Serial-character date rules",
+        "Per-unit serial/year samples",
+        "Every suffix and regional alias",
+        "Date-field layouts for current RT, ERT, crawler and all-electric E-series"
+      ]
+    },
+    "Noblelift": {
+      "status": "direct_nameplate_date_supported_for_scoped_manuals",
+      "source_ids": [
+        "NOBLE-01",
+        "NOBLE-02",
+        "NOBLE-03"
+      ],
+      "approved_serial_decoder": null,
+      "dated_serial_ranges": [],
+      "unresolved": [
+        "Serial-character date rules",
+        "Imperial/manual-cover alias reconciliation",
+        "New Generation plate part-number inconsistency",
+        "Per-unit serial/year samples"
+      ]
+    },
+    "XCMG": {
+      "status": "separate_manufacture_month_year_record_fields_supported",
+      "source_ids": [
+        "xcmg-xg0807dcw-manual-date-field",
+        "xcmg-xg0807ac-dutch-date-field",
+        "xcmg-xg0807ac-portuguese-date-field"
+      ],
+      "approved_serial_decoder": null,
+      "dated_serial_ranges": [],
+      "unresolved": [
+        "Serial-character date rules",
+        "Public manufacture-date lookup",
+        "Scissor-specific authenticated coverage/output",
+        "Unverified XG1930AC plate-photo lead"
+      ]
+    },
+    "SANY": {
+      "status": "manufacture_year_method_unresolved",
+      "source_ids": [
+        "sany-scissor-official-models",
+        "sany-official-awp-brochure",
+        "sany-gcp-serial-binding",
+        "sany-mysany-route"
+      ],
+      "approved_serial_decoder": null,
+      "dated_serial_ranges": [],
+      "unresolved": [
+        "Scissor nameplate manufacture-date field",
+        "Serial-character date rules",
+        "Scissor-specific authenticated coverage/output",
+        "Public manufacture-date lookup"
+      ]
+    }
+  },
+  "sources": [
+    {
+      "id": "ZOOM-01",
+      "brand": "Zoomlion",
+      "url": "https://global.zoomlion-access.com/en/core/control/common/down.jsp?filename=/upload/file/2026/04/07/6ff32510d6a34910921b58cd5766eb94.pdf&title=ZS0407-ZS1414%20Operation%20and%20Safety%20Manual",
+      "title": "ZS0407–ZS1414 Operation and Safety Manual; October 2025 Version C",
+      "model_scope": [
+        "ZS1414",
+        "ZS1212",
+        "ZS1012",
+        "ZS1008",
+        "ZS0812",
+        "ZS0808",
+        "ZS0608",
+        "ZS0607",
+        "ZS0507",
+        "ZS0407"
+      ],
+      "finding": "Common machine nameplate 00775609900401040 has separate Serial No. and Year Of Manufacture fields. Decal tables identify the common nameplate across the covered series. Plate artwork visually checked for ZS1012, ZS0812 and ZS0607 indoor; it is blank, so it supplies no individual year.",
+      "confidence": "high",
+      "checked_at": "2026-10-17",
+      "evidence_type": "official_manufacturer_manual",
+      "pdf_pages": [
+        52,
+        54,
+        56,
+        58,
+        60,
+        62,
+        64,
+        66,
+        68,
+        74,
+        76,
+        80
+      ],
+      "printed_pages": [
+        "3-14 through 3-30 (alternating tables)",
+        "3-36",
+        "3-38",
+        "3-42"
+      ],
+      "local_file": "sources/zoomlion-electric-current-op.pdf",
+      "date_semantics": "manufacture_year",
+      "date_field": "Year Of Manufacture",
+      "serial_scope": null,
+      "decoder": null,
+      "manufacture_year": null,
+      "limitations": [
+        "Scope is the series named on the cover and corresponding model decals; do not automatically map regional imperial aliases or every suffix.",
+        "The 2025 manual revision and 2026 website upload date are not machine manufacturing years.",
+        "A blank plate illustration validates the field, not any specific serial/year pair."
+      ]
+    },
+    {
+      "id": "ZOOM-02",
+      "brand": "Zoomlion",
+      "url": "https://global.zoomlion-access.com/en/core/control/common/down.jsp?filename=/upload/file/2026/04/07/36f6060b62e34cfeac8388cc092ac4d8.pdf&title=ZS0407-ZS1414%20Service%20and%20Maintenance%20Manual",
+      "title": "ZS0407–ZS1414 Service and Maintenance Manual; April 2025 Version C",
+      "model_scope": [
+        "ZS1414",
+        "ZS1212",
+        "ZS1012",
+        "ZS1008",
+        "ZS0812",
+        "ZS0808",
+        "ZS0608",
+        "ZS0607",
+        "ZS0507",
+        "ZS0407"
+      ],
+      "finding": "No serial-year mapping was identified in this checked manual. Its manufacturing-date discussion at PDF page 99 is about hydraulic hoses and must not be used as the machine date.",
+      "confidence": "high",
+      "checked_at": "2026-10-17",
+      "evidence_type": "official_manufacturer_manual",
+      "local_file": "sources/zoomlion-electric-current-service.pdf",
+      "exclusion": "component_date"
+    },
+    {
+      "id": "ZOOM-03",
+      "brand": "Zoomlion",
+      "url": "https://www.mateco.bg/uploads/products/operating_manual_file/1822_Scissor%20Lift%20-%20Operation%20Manual%20%28Version%20I%29.pdf",
+      "title": "Electric scissor Operation and Safety Manual; June 2023 Version I",
+      "model_scope": [
+        "ZS1414",
+        "ZS1212",
+        "ZS1012",
+        "ZS0812",
+        "ZS0808",
+        "ZS0608",
+        "ZS0607",
+        "ZS0507",
+        "ZS0407"
+      ],
+      "finding": "Earlier OEM-authored mirror also illustrates a separate Year Of Manufacture field in ZS0607 indoor decal 28. This corroborates historical plate artwork; no serial-year rule.",
+      "confidence": "high_content_medium_host_provenance",
+      "checked_at": "2026-10-17",
+      "evidence_type": "manufacturer_authored_manual_mirrored",
+      "pdf_pages": [
+        74
+      ],
+      "printed_pages": [
+        "3-36"
+      ],
+      "local_file": "sources/zoomlion-electric-version-i.pdf"
+    },
+    {
+      "id": "ZOOM-04",
+      "brand": "Zoomlion",
+      "url": "https://global.zoomlion-access.com/na/upload/file/2024/05/17/3aa4865fe48f4b399ae5f0e30d6276df.pdf",
+      "title": "ZS5390RT Operation and Safety Manual; January 2022 Version A",
+      "model_scope": [
+        "ZS5390RT"
+      ],
+      "finding": "Table 3-1 lists nameplate 00775807000201110 as item 13, quantity 2; Figure 3-1 places item 13 on the chassis-side assembly. No readable manufacturing-date field or decoding rule established in this manual.",
+      "confidence": "high",
+      "checked_at": "2026-10-17",
+      "evidence_type": "official_manufacturer_manual",
+      "pdf_pages": [
+        45,
+        46
+      ],
+      "printed_pages": [
+        "3-11",
+        "3-12"
+      ],
+      "local_file": "sources/zoomlion-op-3aa4.pdf",
+      "date_field": null
+    },
+    {
+      "id": "ZOOM-05",
+      "brand": "Zoomlion",
+      "url": "https://global.zoomlion-access.com/na/upload/file/2024/05/17/9b479e89b3934ce6bb24035e3024fffa.pdf",
+      "title": "ZS1930E / ZS1530E Operation and Safety Manual; October 2023 Version A",
+      "model_scope": [
+        "ZS1930E",
+        "ZS1530E"
+      ],
+      "finding": "Official all-electric manual checked; no manufacture-year decoding instruction or explicit plate-date field verified. Decal section is PDF pages 46–55.",
+      "confidence": "high",
+      "checked_at": "2026-10-17",
+      "evidence_type": "official_manufacturer_manual",
+      "local_file": "sources/zoomlion-zs1930e.pdf",
+      "date_field": null
+    },
+    {
+      "id": "ZOOM-06",
+      "brand": "Zoomlion",
+      "url": "https://global.zoomlion-access.com/na/upload/file/2024/05/17/1093c6c88e3344e3840ff56338483d16.pdf",
+      "title": "ZS2242C / ZS1532C Operation and Safety Manual; May 2022 Version A",
+      "model_scope": [
+        "ZS2242C",
+        "ZS1532C"
+      ],
+      "finding": "Official crawler-scissor manual checked; no manufacturing-year decoding rule or explicit plate-date field verified.",
+      "confidence": "high",
+      "checked_at": "2026-10-17",
+      "evidence_type": "official_manufacturer_manual",
+      "local_file": "sources/zoomlion-op-1093.pdf",
+      "date_field": null
+    },
+    {
+      "id": "ZOOM-07",
+      "brand": "Zoomlion",
+      "url": "https://global.zoomlion-access.com/en/core/control/common/down.jsp?filename=/upload/file/2026/04/07/0d5874d6fcdc4ccf8acb56f38802f4c9.pdf&title=ZS2023ERT%20Operation%20and%20safety%20manual",
+      "title": "ZS2023ERT Operation and Safety Manual; November 2024 Version A",
+      "model_scope": [
+        "ZS2023ERT"
+      ],
+      "finding": "Official current-catalog manual downloaded and text searched. No serial-year rule identified. Manufacture-date nameplate artwork is not validated for this source in this pass.",
+      "confidence": "high_source_identity_no_date_rule_claim",
+      "checked_at": "2026-10-17",
+      "evidence_type": "official_manufacturer_manual",
+      "local_file": "sources/zoomlion-zs2023ert.pdf",
+      "date_field": null,
+      "review_level": "cover_and_text_search"
+    },
+    {
+      "id": "ZOOM-08",
+      "brand": "Zoomlion",
+      "url": "https://global.zoomlion-access.com/en/core/control/common/down.jsp?filename=/upload/file/2026/04/07/708b9ee37867431da3d910ed65b3295a.pdf&title=ZS1218ERT%20Operation%20and%20Safety%20Manual",
+      "title": "ZS1218ERT Operation and Safety Manual; November 2023 Version B",
+      "model_scope": [
+        "ZS1218ERT"
+      ],
+      "finding": "Official current-catalog manual downloaded and text searched. No serial-year rule identified. Manufacture-date nameplate artwork is not validated for this source in this pass.",
+      "confidence": "high_source_identity_no_date_rule_claim",
+      "checked_at": "2026-10-17",
+      "evidence_type": "official_manufacturer_manual",
+      "local_file": "sources/zoomlion-zs1218ert.pdf",
+      "date_field": null,
+      "review_level": "cover_and_text_search"
+    },
+    {
+      "id": "ZOOM-09",
+      "brand": "Zoomlion",
+      "url": "https://global.zoomlion-access.com/en/core/control/common/down.jsp?filename=/upload/file/2026/04/07/d73c63592deb422a876a617852b86c6e.pdf&title=ZS1023RT%20ZS1323RT%20ZS1623RT%20Operation%20and%20safety%20manual",
+      "title": "ZS1023RT / ZS1323RT / ZS1623RT Operation and Safety Manual; February 2025 Version A",
+      "model_scope": [
+        "ZS1023RT",
+        "ZS1323RT",
+        "ZS1623RT"
+      ],
+      "finding": "Official current-catalog manual downloaded and text searched. No serial-year rule identified. Manufacture-date nameplate artwork is not validated for this source in this pass.",
+      "confidence": "high_source_identity_no_date_rule_claim",
+      "checked_at": "2026-10-17",
+      "evidence_type": "official_manufacturer_manual",
+      "local_file": "sources/zoomlion-rt-large.pdf",
+      "date_field": null,
+      "review_level": "cover_and_text_search"
+    },
+    {
+      "id": "ZOOM-10",
+      "brand": "Zoomlion",
+      "url": "https://global.zoomlion-access.com/en/core/control/common/down.jsp?filename=/upload/file/2026/04/07/09d8efada1614f77a0e2872d14b00029.pdf&title=ZS1018RT%20ZS1218RT%20Operation%20and%20safety%20manual",
+      "title": "ZS1018RT / ZS1218RT Operation and Safety Manual; December 2024 Version B",
+      "model_scope": [
+        "ZS1018RT",
+        "ZS1218RT"
+      ],
+      "finding": "Official current-catalog manual downloaded and text searched. No serial-year rule identified. Manufacture-date nameplate artwork is not validated for this source in this pass.",
+      "confidence": "high_source_identity_no_date_rule_claim",
+      "checked_at": "2026-10-17",
+      "evidence_type": "official_manufacturer_manual",
+      "local_file": "sources/zoomlion-rt-small.pdf",
+      "date_field": null,
+      "review_level": "cover_and_text_search"
+    },
+    {
+      "id": "ZOOM-11",
+      "brand": "Zoomlion",
+      "url": "https://global.zoomlion-access.com/en/service/manuals.htm",
+      "title": "Zoomlion public global manuals catalog",
+      "model_scope": [
+        "ZS1414",
+        "ZS1212",
+        "ZS1012",
+        "ZS1008",
+        "ZS0812",
+        "ZS0808",
+        "ZS0608",
+        "ZS0607",
+        "ZS0507",
+        "ZS0407",
+        "ZS2023ERT",
+        "ZS1218ERT",
+        "ZS1023RT",
+        "ZS1323RT",
+        "ZS1623RT",
+        "ZS1018RT",
+        "ZS1218RT"
+      ],
+      "finding": "Read-only cloud-browser navigation: select English, expand Scissor Lifts, select Electric or Rough Terrain. Public model-based downloads work without sign-in. It is not a serial-to-year lookup.",
+      "confidence": "high",
+      "checked_at": "2026-10-17",
+      "evidence_type": "official_public_catalog",
+      "public_access": true
+    },
+    {
+      "id": "ZOOM-12",
+      "brand": "Zoomlion",
+      "url": "https://myzoomlion.com/auth/login",
+      "title": "MyZoomlion parts link",
+      "model_scope": [],
+      "finding": "Current official global site links Parts to this login URL. Opening it returned HTTP 502 / connection refused in the cloud browser. Authentication behavior, scissor coverage and manufacture-date output remain unverified.",
+      "confidence": "high",
+      "checked_at": "2026-10-17",
+      "evidence_type": "official_link_access_observation",
+      "public_access": "unverified_service_error",
+      "discovery_url": "https://global.zoomlion-access.com/en/service/manuals.htm",
+      "access_observed": "502 Bad Gateway",
+      "limitations": [
+        "The older North America Parts link https://parts.zoomlion-access.com/#/login also returned 502. Do not label either service a verified manufacture-date lookup."
+      ]
+    },
+    {
+      "id": "NOBLE-01",
+      "brand": "Noblelift",
+      "url": "https://cdn.hibuwebsites.com/16e5049557b64f3284d2e5720f46eb41/files/uploaded/SC1930E-OPERATOR-MANUAL-NOBLELIFT.pdf",
+      "title": "SC05E/SC06E Operation Safety and Maintenance Manual",
+      "model_scope": [
+        "SC05E",
+        "SC06E"
+      ],
+      "finding": "Printed page 7 / PDF page 9 illustrates machine nameplate 602047520002 with separate model, serial and DATE OF MANUFACTURE fields. The date is blank. The chassis-side decal placement is diagrammed.",
+      "confidence": "high",
+      "checked_at": "2026-10-17",
+      "evidence_type": "official_linked_manufacturer_manual",
+      "pdf_pages": [
+        1,
+        9,
+        35
+      ],
+      "printed_pages": [
+        "cover",
+        "7",
+        "33"
+      ],
+      "date_field": "DATE OF MANUFACTURE",
+      "date_semantics": "manufacture_date",
+      "serial_scope": null,
+      "manufacture_year": null,
+      "decoder": null,
+      "local_file": "sources/noblelift-sc1930e.pdf",
+      "document_version": "03/2018; SC06E-SMS-001-EN",
+      "discovery_url": "https://www.nobleliftna.com/resources",
+      "official_link_label": "SC1930E Li",
+      "limitations": [
+        "Official download link label and PDF cover model names differ. Record both; imperial alias equivalence is not independently established.",
+        "Version date is document metadata, not a machine build date."
+      ]
+    },
+    {
+      "id": "NOBLE-02",
+      "brand": "Noblelift",
+      "url": "https://cdn.hibuwebsites.com/16e5049557b64f3284d2e5720f46eb41/files/uploaded/2632EN-SC3345E-SC3945E-OPERATOR-MANUAL-NOBLELIFT.pdf",
+      "title": "SC H/E/HN/EN Operation Safety and Maintenance Manual",
+      "model_scope": [
+        "SC10H",
+        "SC12H",
+        "SC14H",
+        "SC16H",
+        "SC10E",
+        "SC12E",
+        "SC14E",
+        "SC16E",
+        "SC08HN",
+        "SC10HN",
+        "SC08EN",
+        "SC10EN"
+      ],
+      "finding": "Printed page 7 / PDF page 9 illustrates machine nameplate 602047520002 with separate model, serial and DATE OF MANUFACTURE fields. The date is blank. The chassis-side decal placement is diagrammed.",
+      "confidence": "high",
+      "checked_at": "2026-10-17",
+      "evidence_type": "official_linked_manufacturer_manual",
+      "pdf_pages": [
+        1,
+        9,
+        35
+      ],
+      "printed_pages": [
+        "cover",
+        "7",
+        "33"
+      ],
+      "date_field": "DATE OF MANUFACTURE",
+      "date_semantics": "manufacture_date",
+      "serial_scope": null,
+      "manufacture_year": null,
+      "decoder": null,
+      "local_file": "sources/noblelift-sc-large.pdf",
+      "document_version": "07/2018; SC-SMS-003-EN",
+      "discovery_url": "https://www.nobleliftna.com/resources",
+      "official_link_label": "SC2032-2632HN & SC2645H-3945H",
+      "limitations": [
+        "Official download link label and PDF cover model names differ. Record both; imperial alias equivalence is not independently established.",
+        "Version date is document metadata, not a machine build date."
+      ]
+    },
+    {
+      "id": "NOBLE-03",
+      "brand": "Noblelift",
+      "url": "https://down.noblelift.com/afterSale/sales-public/2026/01/14/a0e8ddd659264f79bf07ca3e52c85f4e(-)SC-HC-EC系列操作手册-英文版-V00-中性-SC08EC-E独本.pdf",
+      "title": "SC08HC/SC08EC New Generation Operation Safety and Maintenance Manual; 10/2025",
+      "model_scope": [
+        "SC08HC-Li",
+        "SC08EC-Li",
+        "SC08HC",
+        "SC08EC"
+      ],
+      "finding": "Printed page 7 / PDF page 9 illustrates a separate DATE OF MANUFACTURE field alongside model and serial. The blank plate demonstrates direct date reading, not serial decoding.",
+      "confidence": "high",
+      "checked_at": "2026-10-17",
+      "evidence_type": "official_manufacturer_manual",
+      "pdf_pages": [
+        1,
+        9,
+        38
+      ],
+      "date_field": "DATE OF MANUFACTURE",
+      "date_semantics": "manufacture_date",
+      "serial_scope": null,
+      "manufacture_year": null,
+      "decoder": null,
+      "local_file": "sources/noblelift-sc08ec-new.pdf",
+      "discovery_url": "https://support.noblelift.com/#/pages/index/high",
+      "document_version": "10/2025; SC08EC(New Generation)-SMS-000-EN",
+      "limitations": [
+        "New Generation is an explicit model scope, not proof of a manufacturing-year range.",
+        "Nameplate part references disagree within the source: page 7 callout 602047520022, plate artwork footer 602047520004, inspection list page 36/PDF38 lists 602047520007. Leave replacement-part applicability unresolved."
+      ]
+    },
+    {
+      "id": "NOBLE-04",
+      "brand": "Noblelift",
+      "url": "https://support.noblelift.com/#/pages/index/high",
+      "title": "Noblelift public support Document Center",
+      "model_scope": [
+        "SC05E",
+        "SC06E",
+        "SC10H",
+        "SC12H",
+        "SC14H",
+        "SC16H",
+        "SC10E",
+        "SC12E",
+        "SC14E",
+        "SC16E",
+        "SC08HN",
+        "SC10HN",
+        "SC08EN",
+        "SC10EN",
+        "SC08HC",
+        "SC08HC-Li",
+        "SC08EC",
+        "SC08EC-Li"
+      ],
+      "finding": "Cloud-browser path Mobile Elevating Working Platform → English → After-Sales Doc → Scissor lift → SC08EC SC08EC-Li exposed manuals and a working PDF preview without login. The visible file release dates are publication metadata. No public serial-to-year search verified.",
+      "confidence": "high",
+      "checked_at": "2026-10-17",
+      "evidence_type": "official_public_catalog",
+      "public_access": true
+    },
+    {
+      "id": "NOBLE-05",
+      "brand": "Noblelift",
+      "url": "https://www.nobleliftna.com/resources",
+      "title": "Noblelift North America Resources",
+      "model_scope": [],
+      "finding": "Public official resources page links the two 2018 manuals and labels them with North American model names. Parent global Noblelift site links this regional site.",
+      "confidence": "high",
+      "checked_at": "2026-10-17",
+      "evidence_type": "official_public_catalog",
+      "public_access": true,
+      "discovery_url": "https://www.noblelift.com/sc/index.aspx"
+    },
+    {
+      "id": "xcmg-xg0807dcw-manual-date-field",
+      "brand": "XCMG",
+      "evidence_type": "manufacturer_authored_manual_mirrored",
+      "url": "https://advancequip.co.nz/wp-content/uploads/2025/08/XCMG-XG0807DCW-Electric-Scissor-Lift_Operators-Manual.pdf",
+      "title": "Operation and Safety Manual of MEWP XG0807DCW",
+      "model_scope": [
+        "XG0807DCW"
+      ],
+      "finding": "PDF page 3 has a blank machine-specific record table with PIN, Engine No. and Manufacture date (Month Year). This establishes a separate manufacture-date recording field, not a serial-number decoding method.",
+      "confidence": "high_for_visible_content_medium_for_mirror_provenance",
+      "recommended_catalog_action": "Add model-scoped supporting source only; do not activate serial-year decoder.",
+      "checked_at": "2026-10-17T01:43:00Z",
+      "pages": [
+        3,
+        63,
+        65
+      ],
+      "verified_visually": true,
+      "local_files": [
+        "xcmg-sany/XG0807DCW-Operators-Manual.pdf",
+        "xcmg-sany/XG0807DCW-page-03.png",
+        "xcmg-sany/XG0807DCW-labels-63.png"
+      ],
+      "nameplate_location": "Figure 5-7, printed 5-17 / PDF 63, shows item 7 inside hydraulic tray. PDF 65 identifies item 7 as general machine nameplate for scissor work platform, material 130004089. Nameplate date fields are not legible in the schematic.",
+      "limitations": [
+        "Blank record table is not itself a populated nameplate.",
+        "October 2019 first-version date is document metadata, not a machine build year.",
+        "No model-scoped serial date encoding or dated serial range found."
+      ]
+    },
+    {
+      "id": "xcmg-xg0807ac-dutch-date-field",
+      "brand": "XCMG",
+      "evidence_type": "manufacturer_authored_manual_mirrored",
+      "url": "https://www.safetylift.nl/_files/ugd/f46aa8_af8a8d9c1594415cb4f8b8f1560df6bf.pdf",
+      "title": "XG0807AC Bedienings- en veiligheidshandleiding",
+      "model_scope": [
+        "XG0807AC"
+      ],
+      "finding": "PDF page 3 has separate blank PIN/factory-number and manufacture-date month/year fields.",
+      "confidence": "high_for_visible_content_medium_for_mirror_provenance",
+      "recommended_catalog_action": "Add model-scoped documentation source; no decoder.",
+      "checked_at": "2026-10-17T01:43:00Z",
+      "pages": [
+        3
+      ],
+      "verified_visually": true,
+      "local_files": [
+        "xcmg-sany/XG0807AC-safetylift.pdf",
+        "xcmg-sany/XG0807AC-dutch-page-003.png"
+      ],
+      "discovery_url": "https://www.hinowa.nl/machines/handleidingen-xcmg/",
+      "limitations": [
+        "Dutch translated manual is hosted by Safety Lift, not an XCMG-controlled domain.",
+        "Blank record form does not establish a universal nameplate layout or any serial code."
+      ]
+    },
+    {
+      "id": "xcmg-xg0807ac-portuguese-date-field",
+      "brand": "XCMG",
+      "evidence_type": "manufacturer_authored_manual_mirrored",
+      "url": "https://www.rgpplataformas.com.br/docs/Manual_XCMG_XG0807AC.pdf",
+      "title": "Manual de Operação e Segurança para Plataforma Móvel de Elevação",
+      "model_scope": [
+        "XG0807AC"
+      ],
+      "finding": "PDF page 3 shows separate vehicle identification (VIN), engine-number and manufacture-date year/month blank fields. Cover also names XG0807FA, but the inspected machine record and body identify XG0807AC; do not broaden this record to FA without further checks.",
+      "confidence": "high_for_visible_content_medium_for_mirror_provenance",
+      "recommended_catalog_action": "Add XG0807AC documentation source only; no decoder.",
+      "checked_at": "2026-10-17T01:43:00Z",
+      "pages": [
+        1,
+        3,
+        11
+      ],
+      "verified_visually": true,
+      "local_files": [
+        "xcmg-sany/XG0807AC-Operators-Manual.pdf",
+        "xcmg-sany/XG0807AC-portuguese-page-03.png"
+      ],
+      "limitations": [
+        "Do not infer VIN year encoding from the label VIN.",
+        "June 2021 initial publication and July 2024 revision are not manufacture dates."
+      ]
+    },
+    {
+      "id": "xcmg-na-resource-brochures",
+      "brand": "XCMG",
+      "evidence_type": "official_public_model_resources",
+      "url": "https://xcmg-usa.com/resources/",
+      "title": "XCMG North America Resources",
+      "model_scope": [
+        "XG1930AC",
+        "XG2632AC",
+        "XG3246AC",
+        "XG4047AC"
+      ],
+      "finding": "The four inspected scissor-lift downloads are two-page product brochures. They contain specifications and version labels, not manufacturing-date code instructions.",
+      "confidence": "high",
+      "recommended_catalog_action": "Catalog as model literature; do not treat brochure version or upload path as production year.",
+      "checked_at": "2026-10-17T01:43:00Z",
+      "download_urls": [
+        "https://xcmg-usa.com/wp-content/uploads/2022/07/XCMG_Brochures_XG1930AC_0525_WEB.pdf",
+        "https://xcmg-usa.com/wp-content/uploads/2022/07/XCMG_Brochures_XG2632AC_0425_WEB.pdf",
+        "https://xcmg-usa.com/wp-content/uploads/2022/07/XCMG_Brochures_XG3246AC_0525_WEB.pdf",
+        "https://xcmg-usa.com/wp-content/uploads/2022/07/XCMG_Brochures_XG4047AC_0525_WEB.pdf"
+      ],
+      "local_files": []
+    },
+    {
+      "id": "xcmg-xgss-login",
+      "brand": "XCMG",
+      "evidence_type": "official_authenticated_portal",
+      "url": "https://xgss.xcmg.com/",
+      "title": "XCMG-Global Service System",
+      "model_scope": [],
+      "finding": "Opened in the dot cloud browser. Root redirects to https://xgss.xcmg.com/#/login?redirect=%2F and displays Login, credential fields, Remember, Forget and Register. No anonymous machine-year result observed.",
+      "confidence": "high_for_login_gate_unverified_for_year_output",
+      "recommended_catalog_action": "Add official login-required service route; mark manufacture-date output and scissor coverage unverified.",
+      "checked_at": "2026-10-17T01:43:00Z",
+      "observed_url": "https://xgss.xcmg.com/#/login?redirect=%2F",
+      "login_attempted": false,
+      "local_files": []
+    },
+    {
+      "id": "xcmg-eroute-manufacturing-data",
+      "brand": "XCMG",
+      "evidence_type": "official_service_policy",
+      "url": "https://e-route-hk.xcmg.com/privacy.html",
+      "title": "XCMG E-Route Privacy Policy",
+      "model_scope": [],
+      "finding": "Policy lists manufacturing date among equipment data. It says E-Route accounts are created by XCMG administrators or authorized dealers/agents and issued offline; public self-registration is not offered.",
+      "confidence": "high_for_policy_medium_for_lookup_relevance",
+      "recommended_catalog_action": "Add restricted-access route context only; no proven public year lookup or scissor-specific result.",
+      "checked_at": "2026-10-17T01:43:00Z",
+      "limitations": [
+        "Policy language is not a demonstration that manufacture date is displayed for a scissor lift.",
+        "Do not conflate E-Route with X-GSS registration behavior."
+      ],
+      "local_files": []
+    },
+    {
+      "id": "sany-scissor-official-models",
+      "brand": "SANY",
+      "evidence_type": "official_public_model_catalog",
+      "url": "https://www.sanyglobal.com/product/aerial_work_platform/scissorlift1/200/",
+      "title": "Scissor Lift | SANY Group",
+      "model_scope": [
+        "SPS0407DC",
+        "SPS0608DC",
+        "SPS0608HD",
+        "SPS0808HA",
+        "SPS1012HA",
+        "SPS1212HA",
+        "SPS1414HA"
+      ],
+      "finding": "Official product catalog identifies the target scissor-lift models, but contains no manufacturing-date encoding, populated nameplate, or serial-year lookup.",
+      "confidence": "high",
+      "recommended_catalog_action": "Use to establish model scope only.",
+      "checked_at": "2026-10-17T01:43:00Z",
+      "local_files": []
+    },
+    {
+      "id": "sany-official-awp-brochure",
+      "brand": "SANY",
+      "evidence_type": "official_public_brochure",
+      "url": "https://sanyglobal-img.sany.com.cn/prod/20250414/%E5%9B%BD%E9%99%85%E9%AB%98%E6%9C%BA%E7%94%BB%E5%86%8C20250411%E5%8D%B0%E5%88%B7%E7%89%88_110731.pdf",
+      "title": "SANY Aerial Work Platform brochure, April 2025",
+      "model_scope": [
+        "SPS0407DC",
+        "SPS0608DC",
+        "SPS0608HD",
+        "SPS0808HA",
+        "SPS1012HA",
+        "SPS1212HA",
+        "SPS1414HA"
+      ],
+      "finding": "Downloaded 10-page official PDF. Scissor spreads are PDF pages 3-5. These contain specifications, model aliases and a brochure copyright version, with no serial/year decoding instructions or manufacture-date plate explanation.",
+      "confidence": "high",
+      "recommended_catalog_action": "Catalog official model literature; leave manufacture-year inference unresolved.",
+      "checked_at": "2026-10-17T01:43:00Z",
+      "verified_visually": true,
+      "pages": [
+        3,
+        4,
+        5
+      ],
+      "local_files": [
+        "xcmg-sany/SANY-AWP-Brochure.pdf",
+        "xcmg-sany/SANY-AWP-Brochure.txt",
+        "xcmg-sany/SANY-brochure-03.png",
+        "xcmg-sany/SANY-brochure-04.png",
+        "xcmg-sany/SANY-brochure-05.png"
+      ],
+      "aliases": {
+        "SPS0407DC": "SPS1530DC",
+        "SPS0608DC": "SPS1832DC",
+        "SPS0608HD": "SPS1932HD",
+        "SPS0808HA": "SPS2632HA",
+        "SPS1012HA": "SPS3246HA",
+        "SPS1212HA": "SPS4046HA"
+      },
+      "limitations": [
+        "Copyright version April 2025 is not any machine manufacture date.",
+        "Website specs can differ from brochure; not reconciled because outside manufacture-date task."
+      ]
+    },
+    {
+      "id": "sany-gcp-serial-binding",
+      "brand": "SANY",
+      "evidence_type": "official_authenticated_service_instructions",
+      "url": "https://www.sanyglobal.com/ru/service_cloud/",
+      "title": "SANY Service Cloud guideline",
+      "model_scope": [],
+      "finding": "Official instructions describe login, machine search using serial number, and binding machines using the nameplate serial. Serial validity is checked against registered machines. No manufacture-date result is documented.",
+      "confidence": "high_for_workflow_unverified_for_date_output",
+      "recommended_catalog_action": "Add login-required serial-based equipment management route; do not claim a public manufacture-year lookup.",
+      "checked_at": "2026-10-17T01:43:00Z",
+      "local_files": [
+        "xcmg-sany/SANY-GCP-machines.png"
+      ],
+      "illustration_url": "https://sanyglobal-img.sany.com.cn/static/img/service/4.PNG?x-oss-process=image%2Fformat%2Cwebp",
+      "limitations": [
+        "The public illustration labels its dates Binding Time, not manufacture date.",
+        "Illustrated machine categories/serials are not scissor-specific.",
+        "No login, signup or binding performed."
+      ]
+    },
+    {
+      "id": "sany-mysany-route",
+      "brand": "SANY",
+      "evidence_type": "official_authenticated_service_portal",
+      "url": "https://www.sanyglobal.com/mysany/",
+      "title": "MySANY",
+      "model_scope": [],
+      "finding": "Official page describes equipment details, condition, parts manuals and management. https://mysany.sanyglobal.com/ presents Login. Public My Assets screenshot shows online/update timestamps and equipment usage, not a manufacture-date field.",
+      "confidence": "high_for_route_unverified_for_date_output",
+      "recommended_catalog_action": "Add official MySANY route with access/date-output caveats.",
+      "checked_at": "2026-10-17T01:43:00Z",
+      "portal_url": "https://mysany.sanyglobal.com/",
+      "app_download_url": "https://portal.sanygroup.com/#/appDownload",
+      "local_files": [
+        "xcmg-sany/MySANY-equipment.jpg"
+      ],
+      "limitations": [
+        "No authenticated result inspected.",
+        "A status timestamp must not be used as a manufacture date.",
+        "Scissor model coverage of equipment detail view remains unverified."
+      ]
+    },
+    {
+      "id": "xcmg-xg1930ac-photo-lead",
+      "brand": "XCMG",
+      "evidence_type": "third_party_photo_lead_not_verified",
+      "url": "https://www.crowe.com/ca/crowemackay/-/media/crowe/firms/americas/ca/crowemackay/services/insolvency/corporate-engagements/artic-machinery-ltd/affidavit-5-of-ryan-martin-dated-march-20-2026.pdf?hash=4929623D3F00DCB27ADF108C04EC9856&rev=d49ee5ecc510425889221487d4526e73",
+      "title": "Affidavit 5 of Ryan Martin dated March 20, 2026",
+      "model_scope": [
+        "XG1930AC"
+      ],
+      "finding": "Search index describes a machine-plate photograph with MANUFACTURE DATE 2024 7 and serial XUG0061AGPRL39403. The underlying PDF could not be opened/downloaded successfully (timeout then HTTP 403), so the photo was not visually verified.",
+      "confidence": "low_pending_visual_verification",
+      "recommended_catalog_action": "Keep as an unapproved lead only. Do not activate a date record or serial-year rule.",
+      "checked_at": "2026-10-17T01:43:00Z",
+      "candidate_serial": "XUG0061AGPRL39403",
+      "candidate_manufacture_date": "2024-07",
+      "verified_visually": false,
+      "limitations": [
+        "Search-result description alone is insufficient.",
+        "Even a verified single plate would be an individual observation, not a reusable serial decoder."
+      ],
+      "local_files": []
+    }
+  ],
+  "interpretation_policy": [
+    "Use a legible machine plate explicitly labeled manufacture date/year or a manufacturer-confirmed build record matched to the full model and serial.",
+    "Preserve original date text; normalize only its unambiguous precision. A blank plate illustration is not a per-machine observation.",
+    "Do not apply passenger-car VIN year tables, serial prefixes or recurring letter cycles without brand/model/serial-scope documentation.",
+    "Keep model year, production/launch range, sale/registration year, shipment/service/warranty dates, binding/online timestamps, revision/publication dates and battery/engine/hose dates in separate fields.",
+    "Model-based manuals and parts lookups are not automatically manufacture-date lookup tools. Login-link presence is not proof of available date data.",
+    "All unsupported year fields remain null. No external outreach or account sign-in was performed."
+  ],
+  "excluded_leads": [
+    {
+      "topic": "Zoomlion ZT215J April2024 manual and ZCC2600CR nameplate",
+      "reason": "Boom lift/crane outside scissor-lift scope; date fields cannot be generalized."
+    },
+    {
+      "topic": "Zoomlion shipping and marketplace serial/year pairs",
+      "reason": "Lead-only data; no verified manufacturer mapping and some year/serial-letter associations conflict."
+    },
+    {
+      "topic": "Noblelift 90210300049 / 2022 and 90210300052 / 2021 seller listings",
+      "reason": "Seller dates and similar serial prefixes do not define a manufacture-date code."
+    },
+    {
+      "topic": "Noblelift ACX/TE and SANY PALFINGER SPS30000 nameplate sources",
+      "reason": "Different equipment classes; excluded."
+    }
+  ],
+  "coverage_limits": "Model series were sampled through available official catalogs and manuals. This is not a claim that no internal manufacturer date code exists, nor exhaustive coverage of every historical model or market.",
+  "provenance_manifest": "source-manifest.json"
+}
