@@ -1,0 +1,575 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": "genie-gs1932",
+      "title": "Genie GS-1932 E-Drive product page",
+      "url": "https://www.genielift.com/en/aerial-lifts/Slab-scissor-lifts/gs-1932-e-drive",
+      "locator": "Product heading and Slab Scissor Lifts category",
+      "retrievedOn": "2026-10-17",
+      "documentDate": null,
+      "scope": "English ANSI & CSA product page; identity only"
+    },
+    {
+      "id": "skyjack-index",
+      "title": "Skyjack Technical Publications",
+      "url": "https://techpub.skyjack.com/",
+      "locator": "DC Scissors category: individually named entries",
+      "retrievedOn": "2026-10-17",
+      "documentDate": null,
+      "scope": "North America English technical-publication index; identity only"
+    },
+    {
+      "id": "genie-gs1330m-index",
+      "title": "Genie scissors service manual index",
+      "url": "https://manuals.genielift.com/Parts%20And%20Service%20Manuals/servscissors1.htm",
+      "locator": "GS-1330m (GS30): maintenance PN 1305686 and service PN 1309020, from GS30MD-101",
+      "retrievedOn": "2026-10-17",
+      "documentDate": null,
+      "scope": "English OEM service index; market not specified; identity and document listing only"
+    },
+    {
+      "id": "genie-gs32m-index",
+      "title": "Genie GS32m service manual index",
+      "url": "https://manuals.genielift.com/Parts%20And%20Service%20Manuals/servscissors1.htm",
+      "locator": "GS32m heading and maintenance PN 1332488 listings, from GS32MD-9201, GS32MP-141, GS32MT-101 or GS32MV-101",
+      "retrievedOn": "2026-10-17",
+      "documentDate": null,
+      "scope": "English OEM service index; market not specified; serial applicability is document scope, not a year mapping"
+    },
+    {
+      "id": "jlg-es1932",
+      "title": "JLG ES1932 product page",
+      "url": "https://www.jlg.com/en/equipment/scissor-lifts/es-series/es1932",
+      "locator": "Exact model heading within Scissor Lifts / ES Series",
+      "retrievedOn": "2026-10-17",
+      "documentDate": null,
+      "scope": "English /en product page; regional standard and serial/PVC applicability not established; identity only"
+    },
+    {
+      "id": "jlg-es2632",
+      "title": "JLG ES2632 product page",
+      "url": "https://www.jlg.com/en/equipment/scissor-lifts/es-series/es2632",
+      "locator": "Exact model heading within Scissor Lifts / ES Series",
+      "retrievedOn": "2026-10-17",
+      "documentDate": null,
+      "scope": "English /en product page; regional standard and serial/PVC applicability not established; identity only"
+    },
+    {
+      "id": "jlg-es2646",
+      "title": "JLG ES2646 product page",
+      "url": "https://www.jlg.com/en/equipment/scissor-lifts/es-series/es2646",
+      "locator": "Exact model heading within Scissor Lifts / ES Series",
+      "retrievedOn": "2026-10-17",
+      "documentDate": null,
+      "scope": "English /en product page; regional standard and serial/PVC applicability not established; identity only"
+    },
+    {
+      "id": "skyjack-micro-index",
+      "title": "Skyjack SJ3213/19 micro technical publications",
+      "url": "https://techpub.skyjack.com/products/SJ3213_19_micro",
+      "locator": "Individual operation-manual entries for SJ3213 micro and SJ3219 micro: PN 248548, serial range A104000000\u2013A104999999",
+      "retrievedOn": "2026-10-17",
+      "documentDate": null,
+      "scope": "North America, English, ANSI-CSA operation-manual listing; index last-modified date is not a manufacture date; identity only"
+    },
+    {
+      "id": "manual-genie-1272222-pre20160901",
+      "title": "Service and Repair Manual 1272222GT",
+      "url": "https://manuals.genielift.com/Parts%20And%20Service%20Manuals/data/Service/Scissors/1272222.pdf",
+      "locator": "Covered model list, PDF pages 1, 4",
+      "retrievedOn": "2026-10-17",
+      "documentDate": null,
+      "scope": "Reviewed OEM manual evidence; regional applicability not generalized; see identification guidance for exact document revision and serial scope. Identity only."
+    },
+    {
+      "id": "manual-jlg-3121656-es-country-prefix",
+      "title": "Service & Maintenance Manual 3121656",
+      "url": "https://csapps.jlg.com/OnlineManuals/Manuals/JLG/JLG%20Scissor%20Lifts/ES%20Scissors/1930ES_2030ES_2032ES_2630ES_2632ES_2646ES_3246ES/Service%20Manuals/SN-0200239382%2C%20B200020297%2C%20M200000100%2C%20and%201200025021%20to%20Present/3121656_H_1930ES%2C2032ES%2C2632ES%2C2646ES%2C3246ES_JLG_Service_English.pdf",
+      "locator": "Covered model list, PDF pages 1, 19, 83",
+      "retrievedOn": "2026-10-17",
+      "documentDate": null,
+      "scope": "Reviewed OEM manual evidence; regional applicability not generalized; see identification guidance for exact document revision and serial scope. Identity only."
+    },
+    {
+      "id": "manual-skyjack-dc-e-249533aga-nameplate-and-manufactured-label",
+      "title": "DC Electric Scissors Operation Manual (ANSI/CSA)",
+      "url": "https://techpub.skyjack.com/document?id=249533A&region=NA",
+      "locator": "Covered model list, PDF pages 2, 11, 104",
+      "retrievedOn": "2026-10-17",
+      "documentDate": null,
+      "scope": "Reviewed OEM manual evidence; ANSI/CSA, North America; see identification guidance for exact document revision and serial scope. Identity only."
+    },
+    {
+      "id": "manual-skyjack-rt-257020aca-nameplate-and-manufactured-label",
+      "title": "Rough Terrain Scissors Operation Manual (ANSI/CSA)",
+      "url": "https://techpub.skyjack.com/document?id=257020A&region=NA",
+      "locator": "Covered model list, PDF pages 2, 12, 82",
+      "retrievedOn": "2026-10-17",
+      "documentDate": null,
+      "scope": "Reviewed OEM manual evidence; ANSI/CSA, North America; see identification guidance for exact document revision and serial scope. Identity only."
+    },
+    {
+      "id": "manual-skyjack-sjiii-170469aha-date-manufactured-nameplate",
+      "title": "DC Electric Scissors Operating Manual (ANSI/CSA)",
+      "url": "https://techpub.skyjack.com/document?id=170469A&region=NA",
+      "locator": "Covered model list, PDF pages 2, 37",
+      "retrievedOn": "2026-10-17",
+      "documentDate": null,
+      "scope": "Reviewed OEM manual evidence; ANSI/CSA, North America; see identification guidance for exact document revision and serial scope. Identity only."
+    }
+  ],
+  "models": [
+    {
+      "id": "genie-gs-1932-e-drive",
+      "brand": "Genie",
+      "model": "GS-1932 E-Drive",
+      "identitySource": "genie-gs1932",
+      "productionStartYear": null,
+      "productionEndYear": null,
+      "manufactureDate": null,
+      "platformHeight": null,
+      "workingHeight": null
+    },
+    {
+      "id": "skyjack-sj3013-micro",
+      "brand": "Skyjack",
+      "model": "SJ3013 micro",
+      "identitySource": "skyjack-index",
+      "productionStartYear": null,
+      "productionEndYear": null,
+      "manufactureDate": null,
+      "platformHeight": null,
+      "workingHeight": null
+    },
+    {
+      "id": "skyjack-sj4740-e",
+      "brand": "Skyjack",
+      "model": "SJ4740 E",
+      "identitySource": "skyjack-index",
+      "productionStartYear": null,
+      "productionEndYear": null,
+      "manufactureDate": null,
+      "platformHeight": null,
+      "workingHeight": null
+    },
+    {
+      "id": "skyjack-sj4740",
+      "brand": "Skyjack",
+      "model": "SJ4740",
+      "identitySource": "skyjack-index",
+      "productionStartYear": null,
+      "productionEndYear": null,
+      "manufactureDate": null,
+      "platformHeight": null,
+      "workingHeight": null
+    },
+    {
+      "id": "skyjack-sj5545-e",
+      "brand": "Skyjack",
+      "model": "SJ5545 E",
+      "identitySource": "skyjack-index",
+      "productionStartYear": null,
+      "productionEndYear": null,
+      "manufactureDate": null,
+      "platformHeight": null,
+      "workingHeight": null
+    },
+    {
+      "id": "genie-gs-1330m",
+      "brand": "Genie",
+      "model": "GS-1330m",
+      "identitySource": "genie-gs1330m-index",
+      "productionStartYear": null,
+      "productionEndYear": null,
+      "manufactureDate": null,
+      "platformHeight": null,
+      "workingHeight": null
+    },
+    {
+      "id": "genie-gs-1332m",
+      "brand": "Genie",
+      "model": "GS-1332m",
+      "identitySource": "genie-gs32m-index",
+      "productionStartYear": null,
+      "productionEndYear": null,
+      "manufactureDate": null,
+      "platformHeight": null,
+      "workingHeight": null
+    },
+    {
+      "id": "genie-gs-1432m",
+      "brand": "Genie",
+      "model": "GS-1432m",
+      "identitySource": "genie-gs32m-index",
+      "productionStartYear": null,
+      "productionEndYear": null,
+      "manufactureDate": null,
+      "platformHeight": null,
+      "workingHeight": null
+    },
+    {
+      "id": "genie-gs-1932m",
+      "brand": "Genie",
+      "model": "GS-1932m",
+      "identitySource": "genie-gs32m-index",
+      "productionStartYear": null,
+      "productionEndYear": null,
+      "manufactureDate": null,
+      "platformHeight": null,
+      "workingHeight": null
+    },
+    {
+      "id": "genie-gs-1932m-xh",
+      "brand": "Genie",
+      "model": "GS-1932m XH",
+      "identitySource": "genie-gs32m-index",
+      "productionStartYear": null,
+      "productionEndYear": null,
+      "manufactureDate": null,
+      "platformHeight": null,
+      "workingHeight": null
+    },
+    {
+      "id": "genie-gs-1932m-lite",
+      "brand": "Genie",
+      "model": "GS-1932m Lite",
+      "identitySource": "genie-gs32m-index",
+      "productionStartYear": null,
+      "productionEndYear": null,
+      "manufactureDate": null,
+      "platformHeight": null,
+      "workingHeight": null
+    },
+    {
+      "id": "jlg-es1932",
+      "brand": "JLG",
+      "model": "ES1932",
+      "identitySource": "jlg-es1932",
+      "productionStartYear": null,
+      "productionEndYear": null,
+      "manufactureDate": null,
+      "platformHeight": null,
+      "workingHeight": null
+    },
+    {
+      "id": "jlg-es2632",
+      "brand": "JLG",
+      "model": "ES2632",
+      "identitySource": "jlg-es2632",
+      "productionStartYear": null,
+      "productionEndYear": null,
+      "manufactureDate": null,
+      "platformHeight": null,
+      "workingHeight": null
+    },
+    {
+      "id": "jlg-es2646",
+      "brand": "JLG",
+      "model": "ES2646",
+      "identitySource": "jlg-es2646",
+      "productionStartYear": null,
+      "productionEndYear": null,
+      "manufactureDate": null,
+      "platformHeight": null,
+      "workingHeight": null
+    },
+    {
+      "id": "skyjack-sj3213-micro",
+      "brand": "Skyjack",
+      "model": "SJ3213 micro",
+      "identitySource": "skyjack-micro-index",
+      "productionStartYear": null,
+      "productionEndYear": null,
+      "manufactureDate": null,
+      "platformHeight": null,
+      "workingHeight": null
+    },
+    {
+      "id": "skyjack-sj3219-micro",
+      "brand": "Skyjack",
+      "model": "SJ3219 micro",
+      "identitySource": "skyjack-micro-index",
+      "productionStartYear": null,
+      "productionEndYear": null,
+      "manufactureDate": null,
+      "platformHeight": null,
+      "workingHeight": null
+    },
+    {
+      "id": "genie-gs-3384",
+      "brand": "Genie",
+      "model": "GS-3384",
+      "identitySource": "manual-genie-1272222-pre20160901",
+      "productionStartYear": null,
+      "productionEndYear": null,
+      "manufactureDate": null,
+      "platformHeight": null,
+      "workingHeight": null
+    },
+    {
+      "id": "genie-gs-3390",
+      "brand": "Genie",
+      "model": "GS-3390",
+      "identitySource": "manual-genie-1272222-pre20160901",
+      "productionStartYear": null,
+      "productionEndYear": null,
+      "manufactureDate": null,
+      "platformHeight": null,
+      "workingHeight": null
+    },
+    {
+      "id": "genie-gs-4390",
+      "brand": "Genie",
+      "model": "GS-4390",
+      "identitySource": "manual-genie-1272222-pre20160901",
+      "productionStartYear": null,
+      "productionEndYear": null,
+      "manufactureDate": null,
+      "platformHeight": null,
+      "workingHeight": null
+    },
+    {
+      "id": "genie-gs-5390",
+      "brand": "Genie",
+      "model": "GS-5390",
+      "identitySource": "manual-genie-1272222-pre20160901",
+      "productionStartYear": null,
+      "productionEndYear": null,
+      "manufactureDate": null,
+      "platformHeight": null,
+      "workingHeight": null
+    },
+    {
+      "id": "jlg-1930es",
+      "brand": "JLG",
+      "model": "1930ES",
+      "identitySource": "manual-jlg-3121656-es-country-prefix",
+      "productionStartYear": null,
+      "productionEndYear": null,
+      "manufactureDate": null,
+      "platformHeight": null,
+      "workingHeight": null
+    },
+    {
+      "id": "jlg-2032es",
+      "brand": "JLG",
+      "model": "2032ES",
+      "identitySource": "manual-jlg-3121656-es-country-prefix",
+      "productionStartYear": null,
+      "productionEndYear": null,
+      "manufactureDate": null,
+      "platformHeight": null,
+      "workingHeight": null
+    },
+    {
+      "id": "jlg-2632es",
+      "brand": "JLG",
+      "model": "2632ES",
+      "identitySource": "manual-jlg-3121656-es-country-prefix",
+      "productionStartYear": null,
+      "productionEndYear": null,
+      "manufactureDate": null,
+      "platformHeight": null,
+      "workingHeight": null
+    },
+    {
+      "id": "jlg-2646es",
+      "brand": "JLG",
+      "model": "2646ES",
+      "identitySource": "manual-jlg-3121656-es-country-prefix",
+      "productionStartYear": null,
+      "productionEndYear": null,
+      "manufactureDate": null,
+      "platformHeight": null,
+      "workingHeight": null
+    },
+    {
+      "id": "jlg-3246es",
+      "brand": "JLG",
+      "model": "3246ES",
+      "identitySource": "manual-jlg-3121656-es-country-prefix",
+      "productionStartYear": null,
+      "productionEndYear": null,
+      "manufactureDate": null,
+      "platformHeight": null,
+      "workingHeight": null
+    },
+    {
+      "id": "skyjack-sj3215-e",
+      "brand": "Skyjack",
+      "model": "SJ3215 E",
+      "identitySource": "manual-skyjack-dc-e-249533aga-nameplate-and-manufactured-label",
+      "productionStartYear": null,
+      "productionEndYear": null,
+      "manufactureDate": null,
+      "platformHeight": null,
+      "workingHeight": null
+    },
+    {
+      "id": "skyjack-sj3219-e",
+      "brand": "Skyjack",
+      "model": "SJ3219 E",
+      "identitySource": "manual-skyjack-dc-e-249533aga-nameplate-and-manufactured-label",
+      "productionStartYear": null,
+      "productionEndYear": null,
+      "manufactureDate": null,
+      "platformHeight": null,
+      "workingHeight": null
+    },
+    {
+      "id": "skyjack-sj3220-e",
+      "brand": "Skyjack",
+      "model": "SJ3220 E",
+      "identitySource": "manual-skyjack-dc-e-249533aga-nameplate-and-manufactured-label",
+      "productionStartYear": null,
+      "productionEndYear": null,
+      "manufactureDate": null,
+      "platformHeight": null,
+      "workingHeight": null
+    },
+    {
+      "id": "skyjack-sj3226-e",
+      "brand": "Skyjack",
+      "model": "SJ3226 E",
+      "identitySource": "manual-skyjack-dc-e-249533aga-nameplate-and-manufactured-label",
+      "productionStartYear": null,
+      "productionEndYear": null,
+      "manufactureDate": null,
+      "platformHeight": null,
+      "workingHeight": null
+    },
+    {
+      "id": "skyjack-sj3232-e",
+      "brand": "Skyjack",
+      "model": "SJ3232 E",
+      "identitySource": "manual-skyjack-dc-e-249533aga-nameplate-and-manufactured-label",
+      "productionStartYear": null,
+      "productionEndYear": null,
+      "manufactureDate": null,
+      "platformHeight": null,
+      "workingHeight": null
+    },
+    {
+      "id": "skyjack-sj4726-e",
+      "brand": "Skyjack",
+      "model": "SJ4726 E",
+      "identitySource": "manual-skyjack-dc-e-249533aga-nameplate-and-manufactured-label",
+      "productionStartYear": null,
+      "productionEndYear": null,
+      "manufactureDate": null,
+      "platformHeight": null,
+      "workingHeight": null
+    },
+    {
+      "id": "skyjack-sj4732-e",
+      "brand": "Skyjack",
+      "model": "SJ4732 E",
+      "identitySource": "manual-skyjack-dc-e-249533aga-nameplate-and-manufactured-label",
+      "productionStartYear": null,
+      "productionEndYear": null,
+      "manufactureDate": null,
+      "platformHeight": null,
+      "workingHeight": null
+    },
+    {
+      "id": "skyjack-sj6826-rt",
+      "brand": "Skyjack",
+      "model": "SJ6826 RT",
+      "identitySource": "manual-skyjack-rt-257020aca-nameplate-and-manufactured-label",
+      "productionStartYear": null,
+      "productionEndYear": null,
+      "manufactureDate": null,
+      "platformHeight": null,
+      "workingHeight": null
+    },
+    {
+      "id": "skyjack-sj6832-rt",
+      "brand": "Skyjack",
+      "model": "SJ6832 RT",
+      "identitySource": "manual-skyjack-rt-257020aca-nameplate-and-manufactured-label",
+      "productionStartYear": null,
+      "productionEndYear": null,
+      "manufactureDate": null,
+      "platformHeight": null,
+      "workingHeight": null
+    },
+    {
+      "id": "skyjack-sjiii-3215",
+      "brand": "Skyjack",
+      "model": "SJIII 3215",
+      "identitySource": "manual-skyjack-sjiii-170469aha-date-manufactured-nameplate",
+      "productionStartYear": null,
+      "productionEndYear": null,
+      "manufactureDate": null,
+      "platformHeight": null,
+      "workingHeight": null
+    },
+    {
+      "id": "skyjack-sjiii-3219",
+      "brand": "Skyjack",
+      "model": "SJIII 3219",
+      "identitySource": "manual-skyjack-sjiii-170469aha-date-manufactured-nameplate",
+      "productionStartYear": null,
+      "productionEndYear": null,
+      "manufactureDate": null,
+      "platformHeight": null,
+      "workingHeight": null
+    },
+    {
+      "id": "skyjack-sjiii-3220",
+      "brand": "Skyjack",
+      "model": "SJIII 3220",
+      "identitySource": "manual-skyjack-sjiii-170469aha-date-manufactured-nameplate",
+      "productionStartYear": null,
+      "productionEndYear": null,
+      "manufactureDate": null,
+      "platformHeight": null,
+      "workingHeight": null
+    },
+    {
+      "id": "skyjack-sjiii-3226",
+      "brand": "Skyjack",
+      "model": "SJIII 3226",
+      "identitySource": "manual-skyjack-sjiii-170469aha-date-manufactured-nameplate",
+      "productionStartYear": null,
+      "productionEndYear": null,
+      "manufactureDate": null,
+      "platformHeight": null,
+      "workingHeight": null
+    },
+    {
+      "id": "skyjack-sjiii-4620",
+      "brand": "Skyjack",
+      "model": "SJIII 4620",
+      "identitySource": "manual-skyjack-sjiii-170469aha-date-manufactured-nameplate",
+      "productionStartYear": null,
+      "productionEndYear": null,
+      "manufactureDate": null,
+      "platformHeight": null,
+      "workingHeight": null
+    },
+    {
+      "id": "skyjack-sjiii-4626",
+      "brand": "Skyjack",
+      "model": "SJIII 4626",
+      "identitySource": "manual-skyjack-sjiii-170469aha-date-manufactured-nameplate",
+      "productionStartYear": null,
+      "productionEndYear": null,
+      "manufactureDate": null,
+      "platformHeight": null,
+      "workingHeight": null
+    },
+    {
+      "id": "skyjack-sjiii-4632",
+      "brand": "Skyjack",
+      "model": "SJIII 4632",
+      "identitySource": "manual-skyjack-sjiii-170469aha-date-manufactured-nameplate",
+      "productionStartYear": null,
+      "productionEndYear": null,
+      "manufactureDate": null,
+      "platformHeight": null,
+      "workingHeight": null
+    }
+  ]
+}

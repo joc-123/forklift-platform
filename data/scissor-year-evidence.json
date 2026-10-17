@@ -1,0 +1,607 @@
+{
+  "schema_version": 1,
+  "verified_on": "2026-10-17",
+  "scope": "Scissor-only, model/document-scoped identification evidence; not universal decoders or production-year catalog",
+  "records": [
+    {
+      "manufacturer": "Genie",
+      "models": [
+        "GS-3384",
+        "GS-3390",
+        "GS-4390",
+        "GS-5390"
+      ],
+      "source_url": "https://manuals.genielift.com/Parts%20And%20Service%20Manuals/data/Service/Scissors/1272222.pdf",
+      "document": "Service and Repair Manual 1272222GT",
+      "revision": "B1",
+      "document_date": "June 2021",
+      "pages": [
+        {
+          "pdf_page_1_based": 1,
+          "printed_page": "cover"
+        },
+        {
+          "pdf_page_1_based": 4,
+          "printed_page": "iv"
+        }
+      ],
+      "verification": "Cover and legend visually checked from official PDF",
+      "document_serial_scope": [
+        [
+          "GS8413-42181",
+          "GS8415-42382"
+        ],
+        [
+          "GS8416F-42383",
+          "GS8416F-45499"
+        ],
+        [
+          "GS84F-45500",
+          "GS84F-45999"
+        ],
+        [
+          "GS84D-101",
+          "GS84D-400"
+        ],
+        [
+          "GS9013-48427",
+          "GS9015-51063"
+        ],
+        [
+          "GS9016F-51064",
+          "GS9016F-53299"
+        ],
+        [
+          "GS90F-53300",
+          "GS90F-55999"
+        ],
+        [
+          "GS90D-101",
+          "GS90D-3200"
+        ]
+      ],
+      "serial_scope_note": "Transcribed as cover intervals, not a single numeric range. The cover presents four model names and two serial-family blocks without per-model pairing. Do not use prefix alone to infer an exact commercial model.",
+      "plate_location": "Inside cover; duplicate serial stamped on chassis, as shown in diagram.",
+      "id": "genie-1272222-pre20160901",
+      "evidence_type": "model_year_component",
+      "period_label": "To August 31, 2016",
+      "example_serial": "GS8416F-12345",
+      "serial_segments": [
+        {
+          "value": "GS84",
+          "meaning": "Model (family code in example)",
+          "positions_1_based": [
+            1,
+            4
+          ]
+        },
+        {
+          "value": "16",
+          "meaning": "Model year",
+          "positions_1_based": [
+            5,
+            6
+          ]
+        },
+        {
+          "value": "F",
+          "meaning": "Facility code",
+          "positions_1_based": [
+            7,
+            7
+          ]
+        },
+        {
+          "value": "12345",
+          "meaning": "Sequence number",
+          "positions_1_based": [
+            9,
+            13
+          ]
+        }
+      ],
+      "supported_output": "The illustrated 16 is model year 2016; never label this manufacture year.",
+      "manufacture_date_evidence": "The same example plate separately prints Manufacture date: 1/2/16 and Model year: 2016. Date ordering is not explained here; preserve raw date.",
+      "ambiguities": [
+        "Positions count the compact example including its hyphen; arbitrary normalization is not authorized.",
+        "No full century/pivot table is supplied. Do not implement unbounded 2000+YY mapping.",
+        "Earlier cover serials GS8413-... and GS8415-... omit the facility letter; this diagram does not establish their complete parser.",
+        "The example sequence 12345 is illustrative and outside the cover F range, not a real in-scope machine record."
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "source_sha256": "28f2067d82efc2323d95dff27996bb0175bc2e7e89a635f9d7384e620b58e8c8"
+    },
+    {
+      "manufacturer": "Genie",
+      "models": [
+        "GS-3384",
+        "GS-3390",
+        "GS-4390",
+        "GS-5390"
+      ],
+      "source_url": "https://manuals.genielift.com/Parts%20And%20Service%20Manuals/data/Service/Scissors/1272222.pdf",
+      "document": "Service and Repair Manual 1272222GT",
+      "revision": "B1",
+      "document_date": "June 2021",
+      "pages": [
+        {
+          "pdf_page_1_based": 1,
+          "printed_page": "cover"
+        },
+        {
+          "pdf_page_1_based": 4,
+          "printed_page": "iv"
+        }
+      ],
+      "verification": "Cover and legend visually checked from official PDF",
+      "document_serial_scope": [
+        [
+          "GS8413-42181",
+          "GS8415-42382"
+        ],
+        [
+          "GS8416F-42383",
+          "GS8416F-45499"
+        ],
+        [
+          "GS84F-45500",
+          "GS84F-45999"
+        ],
+        [
+          "GS84D-101",
+          "GS84D-400"
+        ],
+        [
+          "GS9013-48427",
+          "GS9015-51063"
+        ],
+        [
+          "GS9016F-51064",
+          "GS9016F-53299"
+        ],
+        [
+          "GS90F-53300",
+          "GS90F-55999"
+        ],
+        [
+          "GS90D-101",
+          "GS90D-3200"
+        ]
+      ],
+      "serial_scope_note": "Transcribed as cover intervals, not a single numeric range. The cover presents four model names and two serial-family blocks without per-model pairing. Do not use prefix alone to infer an exact commercial model.",
+      "plate_location": "Inside cover; duplicate serial stamped on chassis, as shown in diagram.",
+      "id": "genie-1272222-post20160901",
+      "evidence_type": "no_year_component",
+      "period_label": "From September 1, 2016",
+      "example_serial": "GS84F-12345",
+      "serial_segments": [
+        {
+          "value": "GS84",
+          "meaning": "Model (family code in example)",
+          "positions_1_based": [
+            1,
+            4
+          ]
+        },
+        {
+          "value": "F",
+          "meaning": "Facility code",
+          "positions_1_based": [
+            5,
+            5
+          ]
+        },
+        {
+          "value": "12345",
+          "meaning": "Sequence number",
+          "positions_1_based": [
+            7,
+            11
+          ]
+        }
+      ],
+      "supported_output": "Serial legend has no year component. Obtain year of manufacture from the separate plate field or manufacturer record.",
+      "manufacture_date_evidence": "Illustrated plate separately prints Year of manufacture: 2016; no month/day shown.",
+      "ambiguities": [
+        "An undated serial with no year digits cannot yield an exact year from this legend.",
+        "F and D are facility-code characters, not year codes; this page does not name facilities.",
+        "The format transition is not proof of any individual machine manufacture date.",
+        "Example serial is illustrative, not an in-scope unit record."
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "source_sha256": "28f2067d82efc2323d95dff27996bb0175bc2e7e89a635f9d7384e620b58e8c8"
+    },
+    {
+      "id": "jlg-3121656-es-country-prefix",
+      "manufacturer": "JLG",
+      "models": [
+        "1930ES",
+        "2032ES",
+        "2632ES",
+        "2646ES",
+        "3246ES"
+      ],
+      "source_url": "https://csapps.jlg.com/OnlineManuals/Manuals/JLG/JLG%20Scissor%20Lifts/ES%20Scissors/1930ES_2030ES_2032ES_2630ES_2632ES_2646ES_3246ES/Service%20Manuals/SN-0200239382%2C%20B200020297%2C%20M200000100%2C%20and%201200025021%20to%20Present/3121656_H_1930ES%2C2032ES%2C2632ES%2C2646ES%2C3246ES_JLG_Service_English.pdf",
+      "document": "Service & Maintenance Manual 3121656",
+      "revision": "H",
+      "document_date": "July 23, 2018",
+      "pages": [
+        {
+          "pdf_page_1_based": 1,
+          "printed_page": "cover"
+        },
+        {
+          "pdf_page_1_based": 19,
+          "printed_page": "1-7"
+        },
+        {
+          "pdf_page_1_based": 83,
+          "printed_page": "4-5"
+        }
+      ],
+      "verification": "Official PDF downloaded; cover extracted, prefix note visually checked on page 1-7.",
+      "document_serial_scope": [
+        {
+          "country": "USA",
+          "from": "0200239382",
+          "to_raw": "Present"
+        },
+        {
+          "country": "China",
+          "from": "B200020297",
+          "to_raw": "Present"
+        },
+        {
+          "country": "Mexico",
+          "from": "M200000100",
+          "to_raw": "Present"
+        },
+        {
+          "country": "Belgium",
+          "from": "1200025021",
+          "to_raw": "Present"
+        }
+      ],
+      "plate_location": "Left rear of machine, for country-of-origin check.",
+      "evidence_type": "country_prefix_not_year",
+      "serial_segments": [
+        {
+          "value": "02",
+          "positions_1_based": [
+            1,
+            2
+          ],
+          "meaning": "USA built; diagrammed format 02XXXXXXXX"
+        },
+        {
+          "value": "B2",
+          "positions_1_based": [
+            1,
+            2
+          ],
+          "meaning": "China built; diagrammed format B2XXXXXXXX"
+        }
+      ],
+      "supported_output": "Country-prefix context and manual applicability only. No scissor machine year decoder or manufacture-date plate field was established from this source.",
+      "ambiguities": [
+        "Present is the wording of the 2018 manual, not verified applicability to every later machine.",
+        "URL directory includes 2030ES/2630ES, but the actual cover does not. Only cover models are included.",
+        "No year interpretation of the ten-character serial is supported.",
+        "Battery-charger or other component date codes are not whole-machine manufacture dates."
+      ],
+      "automatic_manufacture_year_decode_allowed": false,
+      "source_sha256": "cf697577a9f8720ce14e051370044fb750cb4943e6949fb380b6e77e11a92584"
+    },
+    {
+      "manufacturer": "Skyjack",
+      "equipment_type": "scissor_lift",
+      "source_type": "official_manufacturer_operation_manual",
+      "verified_date_utc": "2026-10-17",
+      "verification_method": "Official techpub.skyjack.com document wrapper inspected to obtain embedded PDF URL; PDF downloaded, text extracted, cited pages rendered and visually verified.",
+      "year_decoding_supported": false,
+      "ambiguities": [
+        "No serial-number-to-year algorithm is established by this source.",
+        "Manual revision/publication date and serial applicability are not the manufacture date of an individual machine.",
+        "Read the actual machine label; leave absent, illegible, or conflicting date values unresolved.",
+        "The manual notes serial-plate information varies between MEWPs. No rule equating model year and manufacture year is supplied."
+      ],
+      "id": "skyjack-dc-e-249533aga-nameplate-and-manufactured-label",
+      "title": "DC Electric Scissors Operation Manual (ANSI/CSA)",
+      "source_url": "https://techpub.skyjack.com/document?id=249533A&region=NA",
+      "pdf_url": "https://skyjack.tor1.cdn.digitaloceanspaces.com/skyjack/uploads/249533AGA-2.pdf",
+      "catalog_url": "https://techpub.skyjack.com/products/SJ3215_19_E",
+      "document_revision": "249533AGA",
+      "document_date": "2026-07-14",
+      "document_date_as_printed": "July 14 2026",
+      "pdf_page_count": 128,
+      "models": [
+        "SJ3215 E",
+        "SJ3219 E",
+        "SJ3220 E",
+        "SJ3226 E",
+        "SJ3232 E",
+        "SJ4726 E",
+        "SJ4732 E",
+        "SJ4740 E"
+      ],
+      "serial_applicability": [
+        {
+          "models": [
+            "SJ3215 E",
+            "SJ3219 E"
+          ],
+          "from": "A100040000",
+          "through": "A100999999"
+        },
+        {
+          "models": [
+            "SJ3220 E",
+            "SJ3226 E",
+            "SJ3232 E"
+          ],
+          "from": "A101019000",
+          "through": "A101999999"
+        },
+        {
+          "models": [
+            "SJ4726 E",
+            "SJ4732 E"
+          ],
+          "from": "A102014000",
+          "through": "A102999999"
+        },
+        {
+          "models": [
+            "SJ4740 E"
+          ],
+          "from": "A103007000",
+          "through": "A103999999"
+        }
+      ],
+      "serial_scope_source": {
+        "pdf_page_1_based": 2,
+        "pdf_page_index_0_based": 1,
+        "printed_page": null
+      },
+      "evidence": [
+        {
+          "section": "1.3 Serial number nameplate",
+          "pdf_page_1_based": 11,
+          "pdf_page_index_0_based": 10,
+          "printed_page": "11",
+          "field_label": "Model year",
+          "location": "Rear of MEWP; diagram depicts SJ3219 E",
+          "meaning": "Nameplate explicitly includes model year."
+        },
+        {
+          "section": "8.5 Rear, label 4",
+          "pdf_page_1_based": 104,
+          "pdf_page_index_0_based": 103,
+          "printed_page": "104",
+          "field_label": "Manufactured MM/YYYY",
+          "location": "Rear; diagram depicts SJ3219 E, separate label below/near serial plate",
+          "meaning": "Separate label supplies month and year of manufacture."
+        }
+      ],
+      "supported_use": "Preserve model year and manufacture month/year as separate fields; use actual labels for the listed serial scopes.",
+      "source_sha256": "15a51f0a3791789667eaf5269d7e94824e29e1ee4ca3c75598c7df49e3e732b5",
+      "automatic_manufacture_year_decode_allowed": false,
+      "document": "DC Electric Scissors Operation Manual (ANSI/CSA)",
+      "revision": "249533AGA",
+      "pages": [
+        {
+          "pdf_page_1_based": 2,
+          "pdf_page_index_0_based": 1,
+          "printed_page": null
+        },
+        {
+          "pdf_page_1_based": 11,
+          "pdf_page_index_0_based": 10,
+          "printed_page": "11"
+        },
+        {
+          "pdf_page_1_based": 104,
+          "pdf_page_index_0_based": 103,
+          "printed_page": "104"
+        }
+      ],
+      "evidence_type": "explicit_plate_or_label_fields"
+    },
+    {
+      "manufacturer": "Skyjack",
+      "equipment_type": "scissor_lift",
+      "source_type": "official_manufacturer_operation_manual",
+      "verified_date_utc": "2026-10-17",
+      "verification_method": "Official techpub.skyjack.com document wrapper inspected to obtain embedded PDF URL; PDF downloaded, text extracted, cited pages rendered and visually verified.",
+      "year_decoding_supported": false,
+      "ambiguities": [
+        "No serial-number-to-year algorithm is established by this source.",
+        "Manual revision/publication date and serial applicability are not the manufacture date of an individual machine.",
+        "Read the actual machine label; leave absent, illegible, or conflicting date values unresolved.",
+        "No rule equating model year and manufacture year is supplied."
+      ],
+      "id": "skyjack-rt-257020aca-nameplate-and-manufactured-label",
+      "title": "Rough Terrain Scissors Operation Manual (ANSI/CSA)",
+      "source_url": "https://techpub.skyjack.com/document?id=257020A&region=NA",
+      "pdf_url": "https://skyjack.tor1.cdn.digitaloceanspaces.com/skyjack/uploads/257020ACA.pdf",
+      "catalog_url": "https://techpub.skyjack.com/products/SJ6826_32_RT",
+      "document_revision": "257020ACA",
+      "document_date": "2026-06",
+      "document_date_as_printed": "June 2026",
+      "pdf_page_count": 102,
+      "models": [
+        "SJ6826 RT",
+        "SJ6832 RT"
+      ],
+      "serial_applicability": [
+        {
+          "models": [
+            "SJ6826 RT",
+            "SJ6832 RT"
+          ],
+          "from": "A200010000",
+          "through": "A200999999"
+        }
+      ],
+      "serial_scope_source": {
+        "pdf_page_1_based": 2,
+        "pdf_page_index_0_based": 1,
+        "printed_page": null
+      },
+      "evidence": [
+        {
+          "section": "1.3 Serial number nameplate",
+          "pdf_page_1_based": 12,
+          "pdf_page_index_0_based": 11,
+          "printed_page": "12",
+          "field_label": "Model year",
+          "location": "Side of MEWP",
+          "meaning": "Nameplate explicitly includes model year."
+        },
+        {
+          "section": "8.2 Right side (continued), label 15",
+          "pdf_page_1_based": 82,
+          "pdf_page_index_0_based": 81,
+          "printed_page": "82",
+          "field_label": "Manufactured MM/YYYY",
+          "location": "Right side of MEWP, lower chassis area; use diagram for precise location",
+          "meaning": "Separate manufactured month/year label."
+        }
+      ],
+      "supported_use": "Read explicit model-year and manufactured month/year fields for these RT scissor models and serial scope; retain date semantics separately.",
+      "source_sha256": "393ca69383ddd0ace7e4e29bc0ee550e5c0df6caf7dbf539c9f88c2ebe1e25b0",
+      "automatic_manufacture_year_decode_allowed": false,
+      "document": "Rough Terrain Scissors Operation Manual (ANSI/CSA)",
+      "revision": "257020ACA",
+      "pages": [
+        {
+          "pdf_page_1_based": 2,
+          "pdf_page_index_0_based": 1,
+          "printed_page": null
+        },
+        {
+          "pdf_page_1_based": 12,
+          "pdf_page_index_0_based": 11,
+          "printed_page": "12"
+        },
+        {
+          "pdf_page_1_based": 82,
+          "pdf_page_index_0_based": 81,
+          "printed_page": "82"
+        }
+      ],
+      "evidence_type": "explicit_plate_or_label_fields"
+    },
+    {
+      "manufacturer": "Skyjack",
+      "equipment_type": "scissor_lift",
+      "source_type": "official_manufacturer_operation_manual",
+      "verified_date_utc": "2026-10-17",
+      "verification_method": "Official techpub.skyjack.com document wrapper inspected to obtain embedded PDF URL; PDF downloaded, text extracted, cited pages rendered and visually verified.",
+      "year_decoding_supported": false,
+      "ambiguities": [
+        "No serial-number-to-year algorithm is established by this source.",
+        "Manual revision/publication date and serial applicability are not the manufacture date of an individual machine.",
+        "Read the actual machine label; leave absent, illegible, or conflicting date values unresolved.",
+        "Date format is not specified in this passage.",
+        "The cover scope says & Above; current catalog narrows SJIII 3215 to 10001094-10099999 and SJIII 3219 to 22067625-22199999. Do not transfer these SJIII ranges to successor models."
+      ],
+      "id": "skyjack-sjiii-170469aha-date-manufactured-nameplate",
+      "title": "DC Electric Scissors Operating Manual (ANSI/CSA)",
+      "source_url": "https://techpub.skyjack.com/document?id=170469A&region=NA",
+      "pdf_url": "https://skyjack.tor1.cdn.digitaloceanspaces.com/skyjack/uploads/170469AHA-1.pdf",
+      "catalog_url": "https://techpub.skyjack.com/products/SJIII_3215_19",
+      "document_revision": "170469AHA",
+      "document_date": "2022-11-03",
+      "document_date_as_printed": "November 3 2022",
+      "pdf_page_count": 108,
+      "models": [
+        "SJIII 3215",
+        "SJIII 3219",
+        "SJIII 3220",
+        "SJIII 3226",
+        "SJIII 4620",
+        "SJIII 4626",
+        "SJIII 4632"
+      ],
+      "serial_applicability": [
+        {
+          "models": [
+            "SJIII 3215"
+          ],
+          "from": "10001094",
+          "through": null,
+          "printed_scope": "10 001 094 & Above"
+        },
+        {
+          "models": [
+            "SJIII 3219"
+          ],
+          "from": "22067625",
+          "through": null,
+          "printed_scope": "22 067 625 & Above"
+        },
+        {
+          "models": [
+            "SJIII 3220"
+          ],
+          "from": "60004661",
+          "through": null,
+          "printed_scope": "60 004 661 & Above"
+        },
+        {
+          "models": [
+            "SJIII 3226"
+          ],
+          "from": "27020827",
+          "through": null,
+          "printed_scope": "27 020 827 & Above"
+        },
+        {
+          "models": [
+            "SJIII 4620",
+            "SJIII 4626",
+            "SJIII 4632"
+          ],
+          "from": "70020612",
+          "through": null,
+          "printed_scope": "SJIII 46XX: 70 020 612 & Above"
+        }
+      ],
+      "serial_scope_source": {
+        "pdf_page_1_based": 2,
+        "pdf_page_index_0_based": 1,
+        "printed_page": null
+      },
+      "evidence": [
+        {
+          "section": "3.4 Serial Number Nameplate",
+          "pdf_page_1_based": 37,
+          "pdf_page_index_0_based": 36,
+          "printed_page": "37",
+          "field_label": "Date manufactured",
+          "location": "Rear of aerial platform",
+          "meaning": "Nameplate includes date manufactured."
+        }
+      ],
+      "supported_use": "Read the explicit manufacture-date field on the rear nameplate; do not assign a serial-coded year.",
+      "source_sha256": "aa1066c456609cb32d4591bc8e5e22bd69463c10f9c5e8e3ac2d81fbd974a87f",
+      "automatic_manufacture_year_decode_allowed": false,
+      "document": "DC Electric Scissors Operating Manual (ANSI/CSA)",
+      "revision": "170469AHA",
+      "pages": [
+        {
+          "pdf_page_1_based": 2,
+          "pdf_page_index_0_based": 1,
+          "printed_page": null
+        },
+        {
+          "pdf_page_1_based": 37,
+          "pdf_page_index_0_based": 36,
+          "printed_page": "37"
+        }
+      ],
+      "evidence_type": "explicit_plate_or_label_fields"
+    }
+  ]
+}
